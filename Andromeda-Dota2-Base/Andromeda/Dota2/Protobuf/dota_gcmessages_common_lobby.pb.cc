@@ -1696,12 +1696,13 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fcommon_5flobby_2eproto[
   "yMemberCoachRequestState_None\020\000\022,\n(k_eLo"
   "bbyMemberCoachRequestState_Accepted\020\001\022,\n"
   "(k_eLobbyMemberCoachRequestState_Rejecte"
-  "d\020\002*e\n\020LobbyDotaTVDelay\022\022\n\016LobbyDotaTV_1"
-  "0\020\000\022\023\n\017LobbyDotaTV_120\020\001\022\023\n\017LobbyDotaTV_"
-  "300\020\002\022\023\n\017LobbyDotaTV_900\020\003*\203\001\n\025LobbyDota"
-  "PauseSetting\022#\n\037LobbyDotaPauseSetting_Un"
-  "limited\020\000\022!\n\035LobbyDotaPauseSetting_Limit"
-  "ed\020\001\022\"\n\036LobbyDotaPauseSetting_Disabled\020\002"
+  "d\020\002*y\n\020LobbyDotaTVDelay\022\022\n\016LobbyDotaTV_1"
+  "0\020\000\022\022\n\016LobbyDotaTV_60\020\001\022\023\n\017LobbyDotaTV_1"
+  "20\020\002\022\023\n\017LobbyDotaTV_300\020\003\022\023\n\017LobbyDotaTV"
+  "_900\020\004*\203\001\n\025LobbyDotaPauseSetting\022#\n\037Lobb"
+  "yDotaPauseSetting_Unlimited\020\000\022!\n\035LobbyDo"
+  "taPauseSetting_Limited\020\001\022\"\n\036LobbyDotaPau"
+  "seSetting_Disabled\020\002"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5fcommon_5flobby_2eproto_deps[3] = {
   &::descriptor_table_dota_5fshared_5fenums_2eproto,
@@ -1710,7 +1711,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5
 };
 static ::_pbi::once_flag descriptor_table_dota_5fgcmessages_5fcommon_5flobby_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fgcmessages_5fcommon_5flobby_2eproto = {
-    false, false, 10000, descriptor_table_protodef_dota_5fgcmessages_5fcommon_5flobby_2eproto,
+    false, false, 10020, descriptor_table_protodef_dota_5fgcmessages_5fcommon_5flobby_2eproto,
     "dota_gcmessages_common_lobby.proto",
     &descriptor_table_dota_5fgcmessages_5fcommon_5flobby_2eproto_once, descriptor_table_dota_5fgcmessages_5fcommon_5flobby_2eproto_deps, 3, 32,
     schemas, file_default_instances, TableStruct_dota_5fgcmessages_5fcommon_5flobby_2eproto::offsets,
@@ -1820,6 +1821,7 @@ bool LobbyDotaTVDelay_IsValid(int value) {
     case 1:
     case 2:
     case 3:
+    case 4:
       return true;
     default:
       return false;

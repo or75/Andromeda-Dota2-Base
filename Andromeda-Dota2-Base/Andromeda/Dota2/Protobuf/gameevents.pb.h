@@ -471,6 +471,7 @@ class CMsgPlaceDecalEvent final :
     kNormalFieldNumber = 2,
     kSaxisFieldNumber = 3,
     kPositionObjectspaceFieldNumber = 14,
+    kNormalObjectspaceFieldNumber = 15,
     kBoneindexFieldNumber = 4,
     kFlagsFieldNumber = 5,
     kColorFieldNumber = 6,
@@ -553,6 +554,24 @@ class CMsgPlaceDecalEvent final :
   void unsafe_arena_set_allocated_position_objectspace(
       ::CMsgVector* position_objectspace);
   ::CMsgVector* unsafe_arena_release_position_objectspace();
+
+  // optional .CMsgVector normal_objectspace = 15;
+  bool has_normal_objectspace() const;
+  private:
+  bool _internal_has_normal_objectspace() const;
+  public:
+  void clear_normal_objectspace();
+  const ::CMsgVector& normal_objectspace() const;
+  PROTOBUF_NODISCARD ::CMsgVector* release_normal_objectspace();
+  ::CMsgVector* mutable_normal_objectspace();
+  void set_allocated_normal_objectspace(::CMsgVector* normal_objectspace);
+  private:
+  const ::CMsgVector& _internal_normal_objectspace() const;
+  ::CMsgVector* _internal_mutable_normal_objectspace();
+  public:
+  void unsafe_arena_set_allocated_normal_objectspace(
+      ::CMsgVector* normal_objectspace);
+  ::CMsgVector* unsafe_arena_release_normal_objectspace();
 
   // optional int32 boneindex = 4;
   bool has_boneindex() const;
@@ -698,6 +717,7 @@ class CMsgPlaceDecalEvent final :
     ::CMsgVector* normal_;
     ::CMsgVector* saxis_;
     ::CMsgVector* position_objectspace_;
+    ::CMsgVector* normal_objectspace_;
     int32_t boneindex_;
     uint32_t flags_;
     uint32_t color_;
@@ -4229,7 +4249,7 @@ inline void CMsgPlaceDecalEvent::set_allocated_saxis(::CMsgVector* saxis) {
 
 // optional int32 boneindex = 4;
 inline bool CMsgPlaceDecalEvent::_internal_has_boneindex() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool CMsgPlaceDecalEvent::has_boneindex() const {
@@ -4237,7 +4257,7 @@ inline bool CMsgPlaceDecalEvent::has_boneindex() const {
 }
 inline void CMsgPlaceDecalEvent::clear_boneindex() {
   _impl_.boneindex_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline int32_t CMsgPlaceDecalEvent::_internal_boneindex() const {
   return _impl_.boneindex_;
@@ -4247,7 +4267,7 @@ inline int32_t CMsgPlaceDecalEvent::boneindex() const {
   return _internal_boneindex();
 }
 inline void CMsgPlaceDecalEvent::_internal_set_boneindex(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   _impl_.boneindex_ = value;
 }
 inline void CMsgPlaceDecalEvent::set_boneindex(int32_t value) {
@@ -4257,7 +4277,7 @@ inline void CMsgPlaceDecalEvent::set_boneindex(int32_t value) {
 
 // optional int32 triangleindex = 13;
 inline bool CMsgPlaceDecalEvent::_internal_has_triangleindex() const {
-  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
   return value;
 }
 inline bool CMsgPlaceDecalEvent::has_triangleindex() const {
@@ -4265,7 +4285,7 @@ inline bool CMsgPlaceDecalEvent::has_triangleindex() const {
 }
 inline void CMsgPlaceDecalEvent::clear_triangleindex() {
   _impl_.triangleindex_ = 0;
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00002000u;
 }
 inline int32_t CMsgPlaceDecalEvent::_internal_triangleindex() const {
   return _impl_.triangleindex_;
@@ -4275,7 +4295,7 @@ inline int32_t CMsgPlaceDecalEvent::triangleindex() const {
   return _internal_triangleindex();
 }
 inline void CMsgPlaceDecalEvent::_internal_set_triangleindex(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00002000u;
   _impl_.triangleindex_ = value;
 }
 inline void CMsgPlaceDecalEvent::set_triangleindex(int32_t value) {
@@ -4285,7 +4305,7 @@ inline void CMsgPlaceDecalEvent::set_triangleindex(int32_t value) {
 
 // optional uint32 flags = 5;
 inline bool CMsgPlaceDecalEvent::_internal_has_flags() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline bool CMsgPlaceDecalEvent::has_flags() const {
@@ -4293,7 +4313,7 @@ inline bool CMsgPlaceDecalEvent::has_flags() const {
 }
 inline void CMsgPlaceDecalEvent::clear_flags() {
   _impl_.flags_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline uint32_t CMsgPlaceDecalEvent::_internal_flags() const {
   return _impl_.flags_;
@@ -4303,7 +4323,7 @@ inline uint32_t CMsgPlaceDecalEvent::flags() const {
   return _internal_flags();
 }
 inline void CMsgPlaceDecalEvent::_internal_set_flags(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   _impl_.flags_ = value;
 }
 inline void CMsgPlaceDecalEvent::set_flags(uint32_t value) {
@@ -4313,7 +4333,7 @@ inline void CMsgPlaceDecalEvent::set_flags(uint32_t value) {
 
 // optional fixed32 color = 6;
 inline bool CMsgPlaceDecalEvent::_internal_has_color() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
   return value;
 }
 inline bool CMsgPlaceDecalEvent::has_color() const {
@@ -4321,7 +4341,7 @@ inline bool CMsgPlaceDecalEvent::has_color() const {
 }
 inline void CMsgPlaceDecalEvent::clear_color() {
   _impl_.color_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000040u;
+  _impl_._has_bits_[0] &= ~0x00000080u;
 }
 inline uint32_t CMsgPlaceDecalEvent::_internal_color() const {
   return _impl_.color_;
@@ -4331,7 +4351,7 @@ inline uint32_t CMsgPlaceDecalEvent::color() const {
   return _internal_color();
 }
 inline void CMsgPlaceDecalEvent::_internal_set_color(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_._has_bits_[0] |= 0x00000080u;
   _impl_.color_ = value;
 }
 inline void CMsgPlaceDecalEvent::set_color(uint32_t value) {
@@ -4341,7 +4361,7 @@ inline void CMsgPlaceDecalEvent::set_color(uint32_t value) {
 
 // optional int32 random_seed = 7;
 inline bool CMsgPlaceDecalEvent::_internal_has_random_seed() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
   return value;
 }
 inline bool CMsgPlaceDecalEvent::has_random_seed() const {
@@ -4349,7 +4369,7 @@ inline bool CMsgPlaceDecalEvent::has_random_seed() const {
 }
 inline void CMsgPlaceDecalEvent::clear_random_seed() {
   _impl_.random_seed_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000080u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
 }
 inline int32_t CMsgPlaceDecalEvent::_internal_random_seed() const {
   return _impl_.random_seed_;
@@ -4359,7 +4379,7 @@ inline int32_t CMsgPlaceDecalEvent::random_seed() const {
   return _internal_random_seed();
 }
 inline void CMsgPlaceDecalEvent::_internal_set_random_seed(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_._has_bits_[0] |= 0x00000100u;
   _impl_.random_seed_ = value;
 }
 inline void CMsgPlaceDecalEvent::set_random_seed(int32_t value) {
@@ -4369,7 +4389,7 @@ inline void CMsgPlaceDecalEvent::set_random_seed(int32_t value) {
 
 // optional uint32 decal_group_name = 8;
 inline bool CMsgPlaceDecalEvent::_internal_has_decal_group_name() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
   return value;
 }
 inline bool CMsgPlaceDecalEvent::has_decal_group_name() const {
@@ -4377,7 +4397,7 @@ inline bool CMsgPlaceDecalEvent::has_decal_group_name() const {
 }
 inline void CMsgPlaceDecalEvent::clear_decal_group_name() {
   _impl_.decal_group_name_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000100u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
 }
 inline uint32_t CMsgPlaceDecalEvent::_internal_decal_group_name() const {
   return _impl_.decal_group_name_;
@@ -4387,7 +4407,7 @@ inline uint32_t CMsgPlaceDecalEvent::decal_group_name() const {
   return _internal_decal_group_name();
 }
 inline void CMsgPlaceDecalEvent::_internal_set_decal_group_name(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_._has_bits_[0] |= 0x00000200u;
   _impl_.decal_group_name_ = value;
 }
 inline void CMsgPlaceDecalEvent::set_decal_group_name(uint32_t value) {
@@ -4397,7 +4417,7 @@ inline void CMsgPlaceDecalEvent::set_decal_group_name(uint32_t value) {
 
 // optional float size_override = 9;
 inline bool CMsgPlaceDecalEvent::_internal_has_size_override() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
   return value;
 }
 inline bool CMsgPlaceDecalEvent::has_size_override() const {
@@ -4405,7 +4425,7 @@ inline bool CMsgPlaceDecalEvent::has_size_override() const {
 }
 inline void CMsgPlaceDecalEvent::clear_size_override() {
   _impl_.size_override_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000400u;
 }
 inline float CMsgPlaceDecalEvent::_internal_size_override() const {
   return _impl_.size_override_;
@@ -4415,7 +4435,7 @@ inline float CMsgPlaceDecalEvent::size_override() const {
   return _internal_size_override();
 }
 inline void CMsgPlaceDecalEvent::_internal_set_size_override(float value) {
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000400u;
   _impl_.size_override_ = value;
 }
 inline void CMsgPlaceDecalEvent::set_size_override(float value) {
@@ -4425,7 +4445,7 @@ inline void CMsgPlaceDecalEvent::set_size_override(float value) {
 
 // optional uint32 entityhandle = 10 [default = 16777215];
 inline bool CMsgPlaceDecalEvent::_internal_has_entityhandle() const {
-  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
   return value;
 }
 inline bool CMsgPlaceDecalEvent::has_entityhandle() const {
@@ -4433,7 +4453,7 @@ inline bool CMsgPlaceDecalEvent::has_entityhandle() const {
 }
 inline void CMsgPlaceDecalEvent::clear_entityhandle() {
   _impl_.entityhandle_ = 16777215u;
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00004000u;
 }
 inline uint32_t CMsgPlaceDecalEvent::_internal_entityhandle() const {
   return _impl_.entityhandle_;
@@ -4443,7 +4463,7 @@ inline uint32_t CMsgPlaceDecalEvent::entityhandle() const {
   return _internal_entityhandle();
 }
 inline void CMsgPlaceDecalEvent::_internal_set_entityhandle(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_._has_bits_[0] |= 0x00004000u;
   _impl_.entityhandle_ = value;
 }
 inline void CMsgPlaceDecalEvent::set_entityhandle(uint32_t value) {
@@ -4453,7 +4473,7 @@ inline void CMsgPlaceDecalEvent::set_entityhandle(uint32_t value) {
 
 // optional uint64 material_id = 11;
 inline bool CMsgPlaceDecalEvent::_internal_has_material_id() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
   return value;
 }
 inline bool CMsgPlaceDecalEvent::has_material_id() const {
@@ -4461,7 +4481,7 @@ inline bool CMsgPlaceDecalEvent::has_material_id() const {
 }
 inline void CMsgPlaceDecalEvent::clear_material_id() {
   _impl_.material_id_ = uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000400u;
+  _impl_._has_bits_[0] &= ~0x00000800u;
 }
 inline uint64_t CMsgPlaceDecalEvent::_internal_material_id() const {
   return _impl_.material_id_;
@@ -4471,7 +4491,7 @@ inline uint64_t CMsgPlaceDecalEvent::material_id() const {
   return _internal_material_id();
 }
 inline void CMsgPlaceDecalEvent::_internal_set_material_id(uint64_t value) {
-  _impl_._has_bits_[0] |= 0x00000400u;
+  _impl_._has_bits_[0] |= 0x00000800u;
   _impl_.material_id_ = value;
 }
 inline void CMsgPlaceDecalEvent::set_material_id(uint64_t value) {
@@ -4481,7 +4501,7 @@ inline void CMsgPlaceDecalEvent::set_material_id(uint64_t value) {
 
 // optional uint32 sequence_name = 12;
 inline bool CMsgPlaceDecalEvent::_internal_has_sequence_name() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
   return value;
 }
 inline bool CMsgPlaceDecalEvent::has_sequence_name() const {
@@ -4489,7 +4509,7 @@ inline bool CMsgPlaceDecalEvent::has_sequence_name() const {
 }
 inline void CMsgPlaceDecalEvent::clear_sequence_name() {
   _impl_.sequence_name_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000800u;
+  _impl_._has_bits_[0] &= ~0x00001000u;
 }
 inline uint32_t CMsgPlaceDecalEvent::_internal_sequence_name() const {
   return _impl_.sequence_name_;
@@ -4499,7 +4519,7 @@ inline uint32_t CMsgPlaceDecalEvent::sequence_name() const {
   return _internal_sequence_name();
 }
 inline void CMsgPlaceDecalEvent::_internal_set_sequence_name(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_._has_bits_[0] |= 0x00001000u;
   _impl_.sequence_name_ = value;
 }
 inline void CMsgPlaceDecalEvent::set_sequence_name(uint32_t value) {
@@ -4592,6 +4612,93 @@ inline void CMsgPlaceDecalEvent::set_allocated_position_objectspace(::CMsgVector
   }
   _impl_.position_objectspace_ = position_objectspace;
   // @@protoc_insertion_point(field_set_allocated:CMsgPlaceDecalEvent.position_objectspace)
+}
+
+// optional .CMsgVector normal_objectspace = 15;
+inline bool CMsgPlaceDecalEvent::_internal_has_normal_objectspace() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.normal_objectspace_ != nullptr);
+  return value;
+}
+inline bool CMsgPlaceDecalEvent::has_normal_objectspace() const {
+  return _internal_has_normal_objectspace();
+}
+inline const ::CMsgVector& CMsgPlaceDecalEvent::_internal_normal_objectspace() const {
+  const ::CMsgVector* p = _impl_.normal_objectspace_;
+  return p != nullptr ? *p : reinterpret_cast<const ::CMsgVector&>(
+      ::_CMsgVector_default_instance_);
+}
+inline const ::CMsgVector& CMsgPlaceDecalEvent::normal_objectspace() const {
+  // @@protoc_insertion_point(field_get:CMsgPlaceDecalEvent.normal_objectspace)
+  return _internal_normal_objectspace();
+}
+inline void CMsgPlaceDecalEvent::unsafe_arena_set_allocated_normal_objectspace(
+    ::CMsgVector* normal_objectspace) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.normal_objectspace_);
+  }
+  _impl_.normal_objectspace_ = normal_objectspace;
+  if (normal_objectspace) {
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:CMsgPlaceDecalEvent.normal_objectspace)
+}
+inline ::CMsgVector* CMsgPlaceDecalEvent::release_normal_objectspace() {
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  ::CMsgVector* temp = _impl_.normal_objectspace_;
+  _impl_.normal_objectspace_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::CMsgVector* CMsgPlaceDecalEvent::unsafe_arena_release_normal_objectspace() {
+  // @@protoc_insertion_point(field_release:CMsgPlaceDecalEvent.normal_objectspace)
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  ::CMsgVector* temp = _impl_.normal_objectspace_;
+  _impl_.normal_objectspace_ = nullptr;
+  return temp;
+}
+inline ::CMsgVector* CMsgPlaceDecalEvent::_internal_mutable_normal_objectspace() {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  if (_impl_.normal_objectspace_ == nullptr) {
+    auto* p = CreateMaybeMessage<::CMsgVector>(GetArenaForAllocation());
+    _impl_.normal_objectspace_ = p;
+  }
+  return _impl_.normal_objectspace_;
+}
+inline ::CMsgVector* CMsgPlaceDecalEvent::mutable_normal_objectspace() {
+  ::CMsgVector* _msg = _internal_mutable_normal_objectspace();
+  // @@protoc_insertion_point(field_mutable:CMsgPlaceDecalEvent.normal_objectspace)
+  return _msg;
+}
+inline void CMsgPlaceDecalEvent::set_allocated_normal_objectspace(::CMsgVector* normal_objectspace) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.normal_objectspace_);
+  }
+  if (normal_objectspace) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(normal_objectspace));
+    if (message_arena != submessage_arena) {
+      normal_objectspace = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, normal_objectspace, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+  _impl_.normal_objectspace_ = normal_objectspace;
+  // @@protoc_insertion_point(field_set_allocated:CMsgPlaceDecalEvent.normal_objectspace)
 }
 
 // -------------------------------------------------------------------

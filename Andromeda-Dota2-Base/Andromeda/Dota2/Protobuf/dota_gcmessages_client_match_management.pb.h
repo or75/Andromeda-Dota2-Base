@@ -15365,7 +15365,7 @@ inline bool CMsgPracticeLobbySetDetails::has_dota_tv_delay() const {
   return _internal_has_dota_tv_delay();
 }
 inline void CMsgPracticeLobbySetDetails::clear_dota_tv_delay() {
-  _impl_.dota_tv_delay_ = 1;
+  _impl_.dota_tv_delay_ = 2;
   _impl_._has_bits_[1] &= ~0x00000080u;
 }
 inline ::LobbyDotaTVDelay CMsgPracticeLobbySetDetails::_internal_dota_tv_delay() const {

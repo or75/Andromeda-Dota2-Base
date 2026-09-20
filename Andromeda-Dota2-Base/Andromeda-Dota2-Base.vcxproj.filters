@@ -432,6 +432,18 @@
     <ClCompile Include="Andromeda\Dota2\Protobuf\source2_steam_stats.pb.cc">
       <Filter>Andromeda\Dota2\Protobuf</Filter>
     </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\event_gcmessages_client.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\event_gcmessages_common.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\event_gcmessages_server.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\events.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Andromeda\DllLauncher.hpp">
@@ -876,6 +888,18 @@
       <Filter>Andromeda\Dota2\Protobuf</Filter>
     </ClInclude>
     <ClInclude Include="Andromeda\Dota2\Protobuf\source2_steam_stats.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\event_gcmessages_client.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\event_gcmessages_common.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\event_gcmessages_server.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\events.pb.h">
       <Filter>Andromeda\Dota2\Protobuf</Filter>
     </ClInclude>
   </ItemGroup>

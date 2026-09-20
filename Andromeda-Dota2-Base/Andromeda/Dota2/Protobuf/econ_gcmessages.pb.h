@@ -696,6 +696,35 @@ inline bool CMsgRedeemCodeResponse_EResultCode_Parse(
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CMsgRedeemCodeResponse_EResultCode>(
     CMsgRedeemCodeResponse_EResultCode_descriptor(), name, value);
 }
+enum CMsgDevNewItemRequestResponse_EResponse : int {
+  CMsgDevNewItemRequestResponse_EResponse_k_eInternalError = 0,
+  CMsgDevNewItemRequestResponse_EResponse_k_eSuccess = 1,
+  CMsgDevNewItemRequestResponse_EResponse_k_eTooBusy = 2,
+  CMsgDevNewItemRequestResponse_EResponse_k_eDisabled = 3,
+  CMsgDevNewItemRequestResponse_EResponse_k_eTimeout = 4,
+  CMsgDevNewItemRequestResponse_EResponse_k_eNotAllowed = 5,
+  CMsgDevNewItemRequestResponse_EResponse_k_eUnknownItemDef = 6,
+  CMsgDevNewItemRequestResponse_EResponse_k_eItemDefNotAllowed = 7
+};
+bool CMsgDevNewItemRequestResponse_EResponse_IsValid(int value);
+constexpr CMsgDevNewItemRequestResponse_EResponse CMsgDevNewItemRequestResponse_EResponse_EResponse_MIN = CMsgDevNewItemRequestResponse_EResponse_k_eInternalError;
+constexpr CMsgDevNewItemRequestResponse_EResponse CMsgDevNewItemRequestResponse_EResponse_EResponse_MAX = CMsgDevNewItemRequestResponse_EResponse_k_eItemDefNotAllowed;
+constexpr int CMsgDevNewItemRequestResponse_EResponse_EResponse_ARRAYSIZE = CMsgDevNewItemRequestResponse_EResponse_EResponse_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CMsgDevNewItemRequestResponse_EResponse_descriptor();
+template<typename T>
+inline const std::string& CMsgDevNewItemRequestResponse_EResponse_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, CMsgDevNewItemRequestResponse_EResponse>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function CMsgDevNewItemRequestResponse_EResponse_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    CMsgDevNewItemRequestResponse_EResponse_descriptor(), enum_t_value);
+}
+inline bool CMsgDevNewItemRequestResponse_EResponse_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, CMsgDevNewItemRequestResponse_EResponse* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CMsgDevNewItemRequestResponse_EResponse>(
+    CMsgDevNewItemRequestResponse_EResponse_descriptor(), name, value);
+}
 enum CMsgClientToGCUnpackBundleResponse_EUnpackBundle : int {
   CMsgClientToGCUnpackBundleResponse_EUnpackBundle_k_UnpackBundle_Succeeded = 0,
   CMsgClientToGCUnpackBundleResponse_EUnpackBundle_k_UnpackBundle_Failed_ItemIsNotBundle = 1,
@@ -9625,22 +9654,64 @@ class CMsgDevNewItemRequestResponse final :
 
   // nested types ----------------------------------------------------
 
+  typedef CMsgDevNewItemRequestResponse_EResponse EResponse;
+  static constexpr EResponse k_eInternalError =
+    CMsgDevNewItemRequestResponse_EResponse_k_eInternalError;
+  static constexpr EResponse k_eSuccess =
+    CMsgDevNewItemRequestResponse_EResponse_k_eSuccess;
+  static constexpr EResponse k_eTooBusy =
+    CMsgDevNewItemRequestResponse_EResponse_k_eTooBusy;
+  static constexpr EResponse k_eDisabled =
+    CMsgDevNewItemRequestResponse_EResponse_k_eDisabled;
+  static constexpr EResponse k_eTimeout =
+    CMsgDevNewItemRequestResponse_EResponse_k_eTimeout;
+  static constexpr EResponse k_eNotAllowed =
+    CMsgDevNewItemRequestResponse_EResponse_k_eNotAllowed;
+  static constexpr EResponse k_eUnknownItemDef =
+    CMsgDevNewItemRequestResponse_EResponse_k_eUnknownItemDef;
+  static constexpr EResponse k_eItemDefNotAllowed =
+    CMsgDevNewItemRequestResponse_EResponse_k_eItemDefNotAllowed;
+  static inline bool EResponse_IsValid(int value) {
+    return CMsgDevNewItemRequestResponse_EResponse_IsValid(value);
+  }
+  static constexpr EResponse EResponse_MIN =
+    CMsgDevNewItemRequestResponse_EResponse_EResponse_MIN;
+  static constexpr EResponse EResponse_MAX =
+    CMsgDevNewItemRequestResponse_EResponse_EResponse_MAX;
+  static constexpr int EResponse_ARRAYSIZE =
+    CMsgDevNewItemRequestResponse_EResponse_EResponse_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  EResponse_descriptor() {
+    return CMsgDevNewItemRequestResponse_EResponse_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& EResponse_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, EResponse>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function EResponse_Name.");
+    return CMsgDevNewItemRequestResponse_EResponse_Name(enum_t_value);
+  }
+  static inline bool EResponse_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      EResponse* value) {
+    return CMsgDevNewItemRequestResponse_EResponse_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSuccessFieldNumber = 1,
+    kResultFieldNumber = 1,
   };
-  // optional bool success = 1;
-  bool has_success() const;
+  // optional .CMsgDevNewItemRequestResponse.EResponse result = 1 [default = k_eInternalError];
+  bool has_result() const;
   private:
-  bool _internal_has_success() const;
+  bool _internal_has_result() const;
   public:
-  void clear_success();
-  bool success() const;
-  void set_success(bool value);
+  void clear_result();
+  ::CMsgDevNewItemRequestResponse_EResponse result() const;
+  void set_result(::CMsgDevNewItemRequestResponse_EResponse value);
   private:
-  bool _internal_success() const;
-  void _internal_set_success(bool value);
+  ::CMsgDevNewItemRequestResponse_EResponse _internal_result() const;
+  void _internal_set_result(::CMsgDevNewItemRequestResponse_EResponse value);
   public:
 
   // @@protoc_insertion_point(class_scope:CMsgDevNewItemRequestResponse)
@@ -9653,7 +9724,7 @@ class CMsgDevNewItemRequestResponse final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    bool success_;
+    int result_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_econ_5fgcmessages_2eproto;
@@ -33003,32 +33074,33 @@ inline void CMsgDevNewItemRequest::set_item_quality(uint32_t value) {
 
 // CMsgDevNewItemRequestResponse
 
-// optional bool success = 1;
-inline bool CMsgDevNewItemRequestResponse::_internal_has_success() const {
+// optional .CMsgDevNewItemRequestResponse.EResponse result = 1 [default = k_eInternalError];
+inline bool CMsgDevNewItemRequestResponse::_internal_has_result() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
 }
-inline bool CMsgDevNewItemRequestResponse::has_success() const {
-  return _internal_has_success();
+inline bool CMsgDevNewItemRequestResponse::has_result() const {
+  return _internal_has_result();
 }
-inline void CMsgDevNewItemRequestResponse::clear_success() {
-  _impl_.success_ = false;
+inline void CMsgDevNewItemRequestResponse::clear_result() {
+  _impl_.result_ = 0;
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline bool CMsgDevNewItemRequestResponse::_internal_success() const {
-  return _impl_.success_;
+inline ::CMsgDevNewItemRequestResponse_EResponse CMsgDevNewItemRequestResponse::_internal_result() const {
+  return static_cast< ::CMsgDevNewItemRequestResponse_EResponse >(_impl_.result_);
 }
-inline bool CMsgDevNewItemRequestResponse::success() const {
-  // @@protoc_insertion_point(field_get:CMsgDevNewItemRequestResponse.success)
-  return _internal_success();
+inline ::CMsgDevNewItemRequestResponse_EResponse CMsgDevNewItemRequestResponse::result() const {
+  // @@protoc_insertion_point(field_get:CMsgDevNewItemRequestResponse.result)
+  return _internal_result();
 }
-inline void CMsgDevNewItemRequestResponse::_internal_set_success(bool value) {
+inline void CMsgDevNewItemRequestResponse::_internal_set_result(::CMsgDevNewItemRequestResponse_EResponse value) {
+  assert(::CMsgDevNewItemRequestResponse_EResponse_IsValid(value));
   _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.success_ = value;
+  _impl_.result_ = value;
 }
-inline void CMsgDevNewItemRequestResponse::set_success(bool value) {
-  _internal_set_success(value);
-  // @@protoc_insertion_point(field_set:CMsgDevNewItemRequestResponse.success)
+inline void CMsgDevNewItemRequestResponse::set_result(::CMsgDevNewItemRequestResponse_EResponse value) {
+  _internal_set_result(value);
+  // @@protoc_insertion_point(field_set:CMsgDevNewItemRequestResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -43128,6 +43200,11 @@ template <> struct is_proto_enum< ::CMsgRedeemCodeResponse_EResultCode> : ::std:
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::CMsgRedeemCodeResponse_EResultCode>() {
   return ::CMsgRedeemCodeResponse_EResultCode_descriptor();
+}
+template <> struct is_proto_enum< ::CMsgDevNewItemRequestResponse_EResponse> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::CMsgDevNewItemRequestResponse_EResponse>() {
+  return ::CMsgDevNewItemRequestResponse_EResponse_descriptor();
 }
 template <> struct is_proto_enum< ::CMsgClientToGCUnpackBundleResponse_EUnpackBundle> : ::std::true_type {};
 template <>

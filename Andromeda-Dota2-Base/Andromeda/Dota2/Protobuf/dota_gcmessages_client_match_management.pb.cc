@@ -225,7 +225,7 @@ PROTOBUF_CONSTEXPR CMsgPracticeLobbySetDetails::CMsgPracticeLobbySetDetails(
   , /*decltype(_impl_.selection_priority_rules_)*/0
   , /*decltype(_impl_.bot_dire_)*/uint64_t{0u}
   , /*decltype(_impl_.league_node_id_)*/0u
-  , /*decltype(_impl_.dota_tv_delay_)*/1} {}
+  , /*decltype(_impl_.dota_tv_delay_)*/2} {}
 struct CMsgPracticeLobbySetDetailsDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CMsgPracticeLobbySetDetailsDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -5644,7 +5644,7 @@ inline void CMsgPracticeLobbySetDetails::SharedCtor(
     , decltype(_impl_.selection_priority_rules_){0}
     , decltype(_impl_.bot_dire_){uint64_t{0u}}
     , decltype(_impl_.league_node_id_){0u}
-    , decltype(_impl_.dota_tv_delay_){1}
+    , decltype(_impl_.dota_tv_delay_){2}
   };
   _impl_.game_name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -5751,7 +5751,7 @@ void CMsgPracticeLobbySetDetails::Clear() {
     ::memset(&_impl_.do_player_draft_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.league_node_id_) -
         reinterpret_cast<char*>(&_impl_.do_player_draft_)) + sizeof(_impl_.league_node_id_));
-    _impl_.dota_tv_delay_ = 1;
+    _impl_.dota_tv_delay_ = 2;
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();

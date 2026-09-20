@@ -40557,6 +40557,7 @@ class CDOTAUserMsg_GiveItem final :
 
   enum : int {
     kGiveStatusFieldNumber = 4,
+    kIdFieldNumber = 5,
     kItemEntIndexFieldNumber = 3,
     kGiverEntIndexFieldNumber = 1,
     kReceiverEntIndexFieldNumber = 2,
@@ -40572,6 +40573,19 @@ class CDOTAUserMsg_GiveItem final :
   private:
   ::CDOTAUserMsg_GiveItem_EGiveStatus _internal_give_status() const;
   void _internal_set_give_status(::CDOTAUserMsg_GiveItem_EGiveStatus value);
+  public:
+
+  // optional uint32 id = 5;
+  bool has_id() const;
+  private:
+  bool _internal_has_id() const;
+  public:
+  void clear_id();
+  uint32_t id() const;
+  void set_id(uint32_t value);
+  private:
+  uint32_t _internal_id() const;
+  void _internal_set_id(uint32_t value);
   public:
 
   // optional uint32 item_ent_index = 3 [default = 16777215];
@@ -40624,6 +40638,7 @@ class CDOTAUserMsg_GiveItem final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     int give_status_;
+    uint32_t id_;
     uint32_t item_ent_index_;
     uint32_t giver_ent_index_;
     uint32_t receiver_ent_index_;
@@ -65789,7 +65804,7 @@ inline void CDOTAUserMsg_KillEffect::set_killer_player_id(int32_t value) {
 
 // optional uint32 giver_ent_index = 1 [default = 16777215];
 inline bool CDOTAUserMsg_GiveItem::_internal_has_giver_ent_index() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool CDOTAUserMsg_GiveItem::has_giver_ent_index() const {
@@ -65797,7 +65812,7 @@ inline bool CDOTAUserMsg_GiveItem::has_giver_ent_index() const {
 }
 inline void CDOTAUserMsg_GiveItem::clear_giver_ent_index() {
   _impl_.giver_ent_index_ = 16777215u;
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline uint32_t CDOTAUserMsg_GiveItem::_internal_giver_ent_index() const {
   return _impl_.giver_ent_index_;
@@ -65807,7 +65822,7 @@ inline uint32_t CDOTAUserMsg_GiveItem::giver_ent_index() const {
   return _internal_giver_ent_index();
 }
 inline void CDOTAUserMsg_GiveItem::_internal_set_giver_ent_index(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.giver_ent_index_ = value;
 }
 inline void CDOTAUserMsg_GiveItem::set_giver_ent_index(uint32_t value) {
@@ -65817,7 +65832,7 @@ inline void CDOTAUserMsg_GiveItem::set_giver_ent_index(uint32_t value) {
 
 // optional uint32 receiver_ent_index = 2 [default = 16777215];
 inline bool CDOTAUserMsg_GiveItem::_internal_has_receiver_ent_index() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool CDOTAUserMsg_GiveItem::has_receiver_ent_index() const {
@@ -65825,7 +65840,7 @@ inline bool CDOTAUserMsg_GiveItem::has_receiver_ent_index() const {
 }
 inline void CDOTAUserMsg_GiveItem::clear_receiver_ent_index() {
   _impl_.receiver_ent_index_ = 16777215u;
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline uint32_t CDOTAUserMsg_GiveItem::_internal_receiver_ent_index() const {
   return _impl_.receiver_ent_index_;
@@ -65835,7 +65850,7 @@ inline uint32_t CDOTAUserMsg_GiveItem::receiver_ent_index() const {
   return _internal_receiver_ent_index();
 }
 inline void CDOTAUserMsg_GiveItem::_internal_set_receiver_ent_index(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.receiver_ent_index_ = value;
 }
 inline void CDOTAUserMsg_GiveItem::set_receiver_ent_index(uint32_t value) {
@@ -65845,7 +65860,7 @@ inline void CDOTAUserMsg_GiveItem::set_receiver_ent_index(uint32_t value) {
 
 // optional uint32 item_ent_index = 3 [default = 16777215];
 inline bool CDOTAUserMsg_GiveItem::_internal_has_item_ent_index() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool CDOTAUserMsg_GiveItem::has_item_ent_index() const {
@@ -65853,7 +65868,7 @@ inline bool CDOTAUserMsg_GiveItem::has_item_ent_index() const {
 }
 inline void CDOTAUserMsg_GiveItem::clear_item_ent_index() {
   _impl_.item_ent_index_ = 16777215u;
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline uint32_t CDOTAUserMsg_GiveItem::_internal_item_ent_index() const {
   return _impl_.item_ent_index_;
@@ -65863,7 +65878,7 @@ inline uint32_t CDOTAUserMsg_GiveItem::item_ent_index() const {
   return _internal_item_ent_index();
 }
 inline void CDOTAUserMsg_GiveItem::_internal_set_item_ent_index(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.item_ent_index_ = value;
 }
 inline void CDOTAUserMsg_GiveItem::set_item_ent_index(uint32_t value) {
@@ -65898,6 +65913,34 @@ inline void CDOTAUserMsg_GiveItem::_internal_set_give_status(::CDOTAUserMsg_Give
 inline void CDOTAUserMsg_GiveItem::set_give_status(::CDOTAUserMsg_GiveItem_EGiveStatus value) {
   _internal_set_give_status(value);
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_GiveItem.give_status)
+}
+
+// optional uint32 id = 5;
+inline bool CDOTAUserMsg_GiveItem::_internal_has_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CDOTAUserMsg_GiveItem::has_id() const {
+  return _internal_has_id();
+}
+inline void CDOTAUserMsg_GiveItem::clear_id() {
+  _impl_.id_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline uint32_t CDOTAUserMsg_GiveItem::_internal_id() const {
+  return _impl_.id_;
+}
+inline uint32_t CDOTAUserMsg_GiveItem::id() const {
+  // @@protoc_insertion_point(field_get:CDOTAUserMsg_GiveItem.id)
+  return _internal_id();
+}
+inline void CDOTAUserMsg_GiveItem::_internal_set_id(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.id_ = value;
+}
+inline void CDOTAUserMsg_GiveItem::set_id(uint32_t value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAUserMsg_GiveItem.id)
 }
 
 #ifdef __GNUC__

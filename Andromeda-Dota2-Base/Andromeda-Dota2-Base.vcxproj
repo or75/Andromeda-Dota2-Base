@@ -216,6 +216,10 @@
     <ClCompile Include="Andromeda\Dota2\Protobuf\econ_shared_enums.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\engine_gcmessages.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\enums_clientserver.pb.cc" />
+    <ClCompile Include="Andromeda\Dota2\Protobuf\events.pb.cc" />
+    <ClCompile Include="Andromeda\Dota2\Protobuf\event_gcmessages_client.pb.cc" />
+    <ClCompile Include="Andromeda\Dota2\Protobuf\event_gcmessages_common.pb.cc" />
+    <ClCompile Include="Andromeda\Dota2\Protobuf\event_gcmessages_server.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\gameevents.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\gcsdk_gcmessages.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\gcsystemmsgs.pb.cc" />
@@ -346,6 +350,10 @@
     <ClInclude Include="Andromeda\Dota2\Protobuf\econ_shared_enums.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\engine_gcmessages.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\enums_clientserver.pb.h" />
+    <ClInclude Include="Andromeda\Dota2\Protobuf\events.pb.h" />
+    <ClInclude Include="Andromeda\Dota2\Protobuf\event_gcmessages_client.pb.h" />
+    <ClInclude Include="Andromeda\Dota2\Protobuf\event_gcmessages_common.pb.h" />
+    <ClInclude Include="Andromeda\Dota2\Protobuf\event_gcmessages_server.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\gameevents.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\gcsdk_gcmessages.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\gcsystemmsgs.pb.h" />

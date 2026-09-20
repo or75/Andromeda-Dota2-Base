@@ -70,6 +70,9 @@ extern CMsgClientToGCFantasyCraftingGenerateTabletsDefaultTypeInternal _CMsgClie
 class CMsgClientToGCFantasyCraftingGenerateTabletsResponse;
 struct CMsgClientToGCFantasyCraftingGenerateTabletsResponseDefaultTypeInternal;
 extern CMsgClientToGCFantasyCraftingGenerateTabletsResponseDefaultTypeInternal _CMsgClientToGCFantasyCraftingGenerateTabletsResponse_default_instance_;
+class CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice;
+struct CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoiceDefaultTypeInternal;
+extern CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoiceDefaultTypeInternal _CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice_default_instance_;
 class CMsgClientToGCFantasyCraftingGetData;
 struct CMsgClientToGCFantasyCraftingGetDataDefaultTypeInternal;
 extern CMsgClientToGCFantasyCraftingGetDataDefaultTypeInternal _CMsgClientToGCFantasyCraftingGetData_default_instance_;
@@ -91,12 +94,30 @@ extern CMsgClientToGCFantasyCraftingRerollOptionsDefaultTypeInternal _CMsgClient
 class CMsgClientToGCFantasyCraftingRerollOptionsResponse;
 struct CMsgClientToGCFantasyCraftingRerollOptionsResponseDefaultTypeInternal;
 extern CMsgClientToGCFantasyCraftingRerollOptionsResponseDefaultTypeInternal _CMsgClientToGCFantasyCraftingRerollOptionsResponse_default_instance_;
+class CMsgClientToGCFantasyCraftingSelectGlobalPrefix;
+struct CMsgClientToGCFantasyCraftingSelectGlobalPrefixDefaultTypeInternal;
+extern CMsgClientToGCFantasyCraftingSelectGlobalPrefixDefaultTypeInternal _CMsgClientToGCFantasyCraftingSelectGlobalPrefix_default_instance_;
+class CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse;
+struct CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponseDefaultTypeInternal;
+extern CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponseDefaultTypeInternal _CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_default_instance_;
+class CMsgClientToGCFantasyCraftingSelectGlobalSuffix;
+struct CMsgClientToGCFantasyCraftingSelectGlobalSuffixDefaultTypeInternal;
+extern CMsgClientToGCFantasyCraftingSelectGlobalSuffixDefaultTypeInternal _CMsgClientToGCFantasyCraftingSelectGlobalSuffix_default_instance_;
+class CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse;
+struct CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponseDefaultTypeInternal;
+extern CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponseDefaultTypeInternal _CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_default_instance_;
 class CMsgClientToGCFantasyCraftingSelectPlayer;
 struct CMsgClientToGCFantasyCraftingSelectPlayerDefaultTypeInternal;
 extern CMsgClientToGCFantasyCraftingSelectPlayerDefaultTypeInternal _CMsgClientToGCFantasyCraftingSelectPlayer_default_instance_;
 class CMsgClientToGCFantasyCraftingSelectPlayerResponse;
 struct CMsgClientToGCFantasyCraftingSelectPlayerResponseDefaultTypeInternal;
 extern CMsgClientToGCFantasyCraftingSelectPlayerResponseDefaultTypeInternal _CMsgClientToGCFantasyCraftingSelectPlayerResponse_default_instance_;
+class CMsgClientToGCFantasyCraftingSelectTeam;
+struct CMsgClientToGCFantasyCraftingSelectTeamDefaultTypeInternal;
+extern CMsgClientToGCFantasyCraftingSelectTeamDefaultTypeInternal _CMsgClientToGCFantasyCraftingSelectTeam_default_instance_;
+class CMsgClientToGCFantasyCraftingSelectTeamResponse;
+struct CMsgClientToGCFantasyCraftingSelectTeamResponseDefaultTypeInternal;
+extern CMsgClientToGCFantasyCraftingSelectTeamResponseDefaultTypeInternal _CMsgClientToGCFantasyCraftingSelectTeamResponse_default_instance_;
 class CMsgClientToGCGetPlayerCardRosterRequest;
 struct CMsgClientToGCGetPlayerCardRosterRequestDefaultTypeInternal;
 extern CMsgClientToGCGetPlayerCardRosterRequestDefaultTypeInternal _CMsgClientToGCGetPlayerCardRosterRequest_default_instance_;
@@ -232,6 +253,7 @@ template<> ::CMsgClientToGCFantasyCraftingDevModifyTablet* Arena::CreateMaybeMes
 template<> ::CMsgClientToGCFantasyCraftingDevModifyTabletResponse* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingDevModifyTabletResponse>(Arena*);
 template<> ::CMsgClientToGCFantasyCraftingGenerateTablets* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingGenerateTablets>(Arena*);
 template<> ::CMsgClientToGCFantasyCraftingGenerateTabletsResponse* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingGenerateTabletsResponse>(Arena*);
+template<> ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice>(Arena*);
 template<> ::CMsgClientToGCFantasyCraftingGetData* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingGetData>(Arena*);
 template<> ::CMsgClientToGCFantasyCraftingGetDataResponse* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingGetDataResponse>(Arena*);
 template<> ::CMsgClientToGCFantasyCraftingPerformOperation* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingPerformOperation>(Arena*);
@@ -239,8 +261,14 @@ template<> ::CMsgClientToGCFantasyCraftingPerformOperationResponse* Arena::Creat
 template<> ::CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice>(Arena*);
 template<> ::CMsgClientToGCFantasyCraftingRerollOptions* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingRerollOptions>(Arena*);
 template<> ::CMsgClientToGCFantasyCraftingRerollOptionsResponse* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingRerollOptionsResponse>(Arena*);
+template<> ::CMsgClientToGCFantasyCraftingSelectGlobalPrefix* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingSelectGlobalPrefix>(Arena*);
+template<> ::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse>(Arena*);
+template<> ::CMsgClientToGCFantasyCraftingSelectGlobalSuffix* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingSelectGlobalSuffix>(Arena*);
+template<> ::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse>(Arena*);
 template<> ::CMsgClientToGCFantasyCraftingSelectPlayer* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingSelectPlayer>(Arena*);
 template<> ::CMsgClientToGCFantasyCraftingSelectPlayerResponse* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingSelectPlayerResponse>(Arena*);
+template<> ::CMsgClientToGCFantasyCraftingSelectTeam* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingSelectTeam>(Arena*);
+template<> ::CMsgClientToGCFantasyCraftingSelectTeamResponse* Arena::CreateMaybeMessage<::CMsgClientToGCFantasyCraftingSelectTeamResponse>(Arena*);
 template<> ::CMsgClientToGCGetPlayerCardRosterRequest* Arena::CreateMaybeMessage<::CMsgClientToGCGetPlayerCardRosterRequest>(Arena*);
 template<> ::CMsgClientToGCGetPlayerCardRosterResponse* Arena::CreateMaybeMessage<::CMsgClientToGCGetPlayerCardRosterResponse>(Arena*);
 template<> ::CMsgClientToGCSetPlayerCardRosterRequest* Arena::CreateMaybeMessage<::CMsgClientToGCSetPlayerCardRosterRequest>(Arena*);
@@ -528,6 +556,90 @@ inline bool CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse_Parse(
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse>(
     CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse_descriptor(), name, value);
 }
+enum CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse : int {
+  CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eInternalError = 0,
+  CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eSuccess = 1,
+  CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eTooBusy = 2,
+  CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eDisabled = 3,
+  CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eTimeout = 4,
+  CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eInvalidLeague = 5,
+  CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eInvalidTeam = 7
+};
+bool CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_IsValid(int value);
+constexpr CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_EResponse_MIN = CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eInternalError;
+constexpr CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_EResponse_MAX = CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eInvalidTeam;
+constexpr int CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_EResponse_ARRAYSIZE = CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_EResponse_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_descriptor();
+template<typename T>
+inline const std::string& CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_descriptor(), enum_t_value);
+}
+inline bool CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse>(
+    CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_descriptor(), name, value);
+}
+enum CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse : int {
+  CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eInternalError = 0,
+  CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eSuccess = 1,
+  CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eTooBusy = 2,
+  CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eDisabled = 3,
+  CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eTimeout = 4,
+  CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eInvalidLeague = 5,
+  CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eInvalidPrefix = 7
+};
+bool CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_IsValid(int value);
+constexpr CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_EResponse_MIN = CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eInternalError;
+constexpr CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_EResponse_MAX = CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eInvalidPrefix;
+constexpr int CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_EResponse_ARRAYSIZE = CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_EResponse_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_descriptor();
+template<typename T>
+inline const std::string& CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_descriptor(), enum_t_value);
+}
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse>(
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_descriptor(), name, value);
+}
+enum CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse : int {
+  CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eInternalError = 0,
+  CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eSuccess = 1,
+  CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eTooBusy = 2,
+  CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eDisabled = 3,
+  CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eTimeout = 4,
+  CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eInvalidLeague = 5,
+  CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eInvalidSuffix = 7
+};
+bool CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_IsValid(int value);
+constexpr CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_EResponse_MIN = CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eInternalError;
+constexpr CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_EResponse_MAX = CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eInvalidSuffix;
+constexpr int CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_EResponse_ARRAYSIZE = CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_EResponse_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_descriptor();
+template<typename T>
+inline const std::string& CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_descriptor(), enum_t_value);
+}
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse>(
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_descriptor(), name, value);
+}
 enum CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse : int {
   CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eInternalError = 0,
   CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eSuccess = 1,
@@ -535,11 +647,12 @@ enum CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse : int {
   CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eDisabled = 3,
   CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eTimeout = 4,
   CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eInvalidLeague = 5,
-  CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eInvalidPlayer = 6
+  CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eInvalidPlayer = 6,
+  CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eInvalidTeam = 7
 };
 bool CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_IsValid(int value);
 constexpr CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_EResponse_MIN = CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eInternalError;
-constexpr CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_EResponse_MAX = CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eInvalidPlayer;
+constexpr CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_EResponse_MAX = CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eInvalidTeam;
 constexpr int CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_EResponse_ARRAYSIZE = CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_EResponse_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_descriptor();
@@ -7734,6 +7847,7 @@ class CMsgDotaFantasyCraftingTabletPeriodData_Tablet final :
     kSuffixFieldNumber = 6,
     kScoreFieldNumber = 8,
     kBestSeriesFieldNumber = 9,
+    kTeamIdFieldNumber = 10,
   };
   // repeated .CMsgDotaFantasyCraftingTabletPeriodData.Gem gems = 7;
   int gems_size() const;
@@ -7857,6 +7971,19 @@ class CMsgDotaFantasyCraftingTabletPeriodData_Tablet final :
   void _internal_set_best_series(uint32_t value);
   public:
 
+  // optional uint32 team_id = 10;
+  bool has_team_id() const;
+  private:
+  bool _internal_has_team_id() const;
+  public:
+  void clear_team_id();
+  uint32_t team_id() const;
+  void set_team_id(uint32_t value);
+  private:
+  uint32_t _internal_team_id() const;
+  void _internal_set_team_id(uint32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:CMsgDotaFantasyCraftingTabletPeriodData.Tablet)
  private:
   class _Internal;
@@ -7876,6 +8003,7 @@ class CMsgDotaFantasyCraftingTabletPeriodData_Tablet final :
     uint32_t suffix_;
     float score_;
     uint32_t best_series_;
+    uint32_t team_id_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fgcmessages_5fclient_5ffantasy_2eproto;
@@ -11726,6 +11854,1381 @@ class CMsgClientToGCFantasyCraftingSelectPlayerResponse final :
 };
 // -------------------------------------------------------------------
 
+class CMsgClientToGCFantasyCraftingSelectTeam final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgClientToGCFantasyCraftingSelectTeam) */ {
+ public:
+  inline CMsgClientToGCFantasyCraftingSelectTeam() : CMsgClientToGCFantasyCraftingSelectTeam(nullptr) {}
+  ~CMsgClientToGCFantasyCraftingSelectTeam() override;
+  explicit PROTOBUF_CONSTEXPR CMsgClientToGCFantasyCraftingSelectTeam(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgClientToGCFantasyCraftingSelectTeam(const CMsgClientToGCFantasyCraftingSelectTeam& from);
+  CMsgClientToGCFantasyCraftingSelectTeam(CMsgClientToGCFantasyCraftingSelectTeam&& from) noexcept
+    : CMsgClientToGCFantasyCraftingSelectTeam() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgClientToGCFantasyCraftingSelectTeam& operator=(const CMsgClientToGCFantasyCraftingSelectTeam& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgClientToGCFantasyCraftingSelectTeam& operator=(CMsgClientToGCFantasyCraftingSelectTeam&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgClientToGCFantasyCraftingSelectTeam& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgClientToGCFantasyCraftingSelectTeam* internal_default_instance() {
+    return reinterpret_cast<const CMsgClientToGCFantasyCraftingSelectTeam*>(
+               &_CMsgClientToGCFantasyCraftingSelectTeam_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    53;
+
+  friend void swap(CMsgClientToGCFantasyCraftingSelectTeam& a, CMsgClientToGCFantasyCraftingSelectTeam& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgClientToGCFantasyCraftingSelectTeam* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgClientToGCFantasyCraftingSelectTeam* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgClientToGCFantasyCraftingSelectTeam* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgClientToGCFantasyCraftingSelectTeam>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgClientToGCFantasyCraftingSelectTeam& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgClientToGCFantasyCraftingSelectTeam& from) {
+    CMsgClientToGCFantasyCraftingSelectTeam::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgClientToGCFantasyCraftingSelectTeam* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgClientToGCFantasyCraftingSelectTeam";
+  }
+  protected:
+  explicit CMsgClientToGCFantasyCraftingSelectTeam(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kFantasyLeagueFieldNumber = 1,
+    kRoleFieldNumber = 2,
+    kTeamIdFieldNumber = 3,
+  };
+  // optional uint32 fantasy_league = 1;
+  bool has_fantasy_league() const;
+  private:
+  bool _internal_has_fantasy_league() const;
+  public:
+  void clear_fantasy_league();
+  uint32_t fantasy_league() const;
+  void set_fantasy_league(uint32_t value);
+  private:
+  uint32_t _internal_fantasy_league() const;
+  void _internal_set_fantasy_league(uint32_t value);
+  public:
+
+  // optional .Fantasy_Roles role = 2 [default = FANTASY_ROLE_UNDEFINED];
+  bool has_role() const;
+  private:
+  bool _internal_has_role() const;
+  public:
+  void clear_role();
+  ::Fantasy_Roles role() const;
+  void set_role(::Fantasy_Roles value);
+  private:
+  ::Fantasy_Roles _internal_role() const;
+  void _internal_set_role(::Fantasy_Roles value);
+  public:
+
+  // optional uint32 team_id = 3;
+  bool has_team_id() const;
+  private:
+  bool _internal_has_team_id() const;
+  public:
+  void clear_team_id();
+  uint32_t team_id() const;
+  void set_team_id(uint32_t value);
+  private:
+  uint32_t _internal_team_id() const;
+  void _internal_set_team_id(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgClientToGCFantasyCraftingSelectTeam)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint32_t fantasy_league_;
+    int role_;
+    uint32_t team_id_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fgcmessages_5fclient_5ffantasy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CMsgClientToGCFantasyCraftingSelectTeamResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgClientToGCFantasyCraftingSelectTeamResponse) */ {
+ public:
+  inline CMsgClientToGCFantasyCraftingSelectTeamResponse() : CMsgClientToGCFantasyCraftingSelectTeamResponse(nullptr) {}
+  ~CMsgClientToGCFantasyCraftingSelectTeamResponse() override;
+  explicit PROTOBUF_CONSTEXPR CMsgClientToGCFantasyCraftingSelectTeamResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgClientToGCFantasyCraftingSelectTeamResponse(const CMsgClientToGCFantasyCraftingSelectTeamResponse& from);
+  CMsgClientToGCFantasyCraftingSelectTeamResponse(CMsgClientToGCFantasyCraftingSelectTeamResponse&& from) noexcept
+    : CMsgClientToGCFantasyCraftingSelectTeamResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgClientToGCFantasyCraftingSelectTeamResponse& operator=(const CMsgClientToGCFantasyCraftingSelectTeamResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgClientToGCFantasyCraftingSelectTeamResponse& operator=(CMsgClientToGCFantasyCraftingSelectTeamResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgClientToGCFantasyCraftingSelectTeamResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgClientToGCFantasyCraftingSelectTeamResponse* internal_default_instance() {
+    return reinterpret_cast<const CMsgClientToGCFantasyCraftingSelectTeamResponse*>(
+               &_CMsgClientToGCFantasyCraftingSelectTeamResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    54;
+
+  friend void swap(CMsgClientToGCFantasyCraftingSelectTeamResponse& a, CMsgClientToGCFantasyCraftingSelectTeamResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgClientToGCFantasyCraftingSelectTeamResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgClientToGCFantasyCraftingSelectTeamResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgClientToGCFantasyCraftingSelectTeamResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgClientToGCFantasyCraftingSelectTeamResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgClientToGCFantasyCraftingSelectTeamResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgClientToGCFantasyCraftingSelectTeamResponse& from) {
+    CMsgClientToGCFantasyCraftingSelectTeamResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgClientToGCFantasyCraftingSelectTeamResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgClientToGCFantasyCraftingSelectTeamResponse";
+  }
+  protected:
+  explicit CMsgClientToGCFantasyCraftingSelectTeamResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse EResponse;
+  static constexpr EResponse k_eInternalError =
+    CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eInternalError;
+  static constexpr EResponse k_eSuccess =
+    CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eSuccess;
+  static constexpr EResponse k_eTooBusy =
+    CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eTooBusy;
+  static constexpr EResponse k_eDisabled =
+    CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eDisabled;
+  static constexpr EResponse k_eTimeout =
+    CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eTimeout;
+  static constexpr EResponse k_eInvalidLeague =
+    CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eInvalidLeague;
+  static constexpr EResponse k_eInvalidTeam =
+    CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_k_eInvalidTeam;
+  static inline bool EResponse_IsValid(int value) {
+    return CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_IsValid(value);
+  }
+  static constexpr EResponse EResponse_MIN =
+    CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_EResponse_MIN;
+  static constexpr EResponse EResponse_MAX =
+    CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_EResponse_MAX;
+  static constexpr int EResponse_ARRAYSIZE =
+    CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_EResponse_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  EResponse_descriptor() {
+    return CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& EResponse_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, EResponse>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function EResponse_Name.");
+    return CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_Name(enum_t_value);
+  }
+  static inline bool EResponse_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      EResponse* value) {
+    return CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTabletDataFieldNumber = 2,
+    kResponseFieldNumber = 1,
+  };
+  // optional .CMsgDotaFantasyCraftingTabletData tablet_data = 2;
+  bool has_tablet_data() const;
+  private:
+  bool _internal_has_tablet_data() const;
+  public:
+  void clear_tablet_data();
+  const ::CMsgDotaFantasyCraftingTabletData& tablet_data() const;
+  PROTOBUF_NODISCARD ::CMsgDotaFantasyCraftingTabletData* release_tablet_data();
+  ::CMsgDotaFantasyCraftingTabletData* mutable_tablet_data();
+  void set_allocated_tablet_data(::CMsgDotaFantasyCraftingTabletData* tablet_data);
+  private:
+  const ::CMsgDotaFantasyCraftingTabletData& _internal_tablet_data() const;
+  ::CMsgDotaFantasyCraftingTabletData* _internal_mutable_tablet_data();
+  public:
+  void unsafe_arena_set_allocated_tablet_data(
+      ::CMsgDotaFantasyCraftingTabletData* tablet_data);
+  ::CMsgDotaFantasyCraftingTabletData* unsafe_arena_release_tablet_data();
+
+  // optional .CMsgClientToGCFantasyCraftingSelectTeamResponse.EResponse response = 1 [default = k_eInternalError];
+  bool has_response() const;
+  private:
+  bool _internal_has_response() const;
+  public:
+  void clear_response();
+  ::CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse response() const;
+  void set_response(::CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse value);
+  private:
+  ::CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse _internal_response() const;
+  void _internal_set_response(::CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgClientToGCFantasyCraftingSelectTeamResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::CMsgDotaFantasyCraftingTabletData* tablet_data_;
+    int response_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fgcmessages_5fclient_5ffantasy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CMsgClientToGCFantasyCraftingSelectGlobalPrefix final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgClientToGCFantasyCraftingSelectGlobalPrefix) */ {
+ public:
+  inline CMsgClientToGCFantasyCraftingSelectGlobalPrefix() : CMsgClientToGCFantasyCraftingSelectGlobalPrefix(nullptr) {}
+  ~CMsgClientToGCFantasyCraftingSelectGlobalPrefix() override;
+  explicit PROTOBUF_CONSTEXPR CMsgClientToGCFantasyCraftingSelectGlobalPrefix(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgClientToGCFantasyCraftingSelectGlobalPrefix(const CMsgClientToGCFantasyCraftingSelectGlobalPrefix& from);
+  CMsgClientToGCFantasyCraftingSelectGlobalPrefix(CMsgClientToGCFantasyCraftingSelectGlobalPrefix&& from) noexcept
+    : CMsgClientToGCFantasyCraftingSelectGlobalPrefix() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgClientToGCFantasyCraftingSelectGlobalPrefix& operator=(const CMsgClientToGCFantasyCraftingSelectGlobalPrefix& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgClientToGCFantasyCraftingSelectGlobalPrefix& operator=(CMsgClientToGCFantasyCraftingSelectGlobalPrefix&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgClientToGCFantasyCraftingSelectGlobalPrefix& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgClientToGCFantasyCraftingSelectGlobalPrefix* internal_default_instance() {
+    return reinterpret_cast<const CMsgClientToGCFantasyCraftingSelectGlobalPrefix*>(
+               &_CMsgClientToGCFantasyCraftingSelectGlobalPrefix_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    55;
+
+  friend void swap(CMsgClientToGCFantasyCraftingSelectGlobalPrefix& a, CMsgClientToGCFantasyCraftingSelectGlobalPrefix& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgClientToGCFantasyCraftingSelectGlobalPrefix* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgClientToGCFantasyCraftingSelectGlobalPrefix* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgClientToGCFantasyCraftingSelectGlobalPrefix* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgClientToGCFantasyCraftingSelectGlobalPrefix>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgClientToGCFantasyCraftingSelectGlobalPrefix& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgClientToGCFantasyCraftingSelectGlobalPrefix& from) {
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefix::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgClientToGCFantasyCraftingSelectGlobalPrefix* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgClientToGCFantasyCraftingSelectGlobalPrefix";
+  }
+  protected:
+  explicit CMsgClientToGCFantasyCraftingSelectGlobalPrefix(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kFantasyLeagueFieldNumber = 1,
+    kPrefixFieldNumber = 2,
+  };
+  // optional uint32 fantasy_league = 1;
+  bool has_fantasy_league() const;
+  private:
+  bool _internal_has_fantasy_league() const;
+  public:
+  void clear_fantasy_league();
+  uint32_t fantasy_league() const;
+  void set_fantasy_league(uint32_t value);
+  private:
+  uint32_t _internal_fantasy_league() const;
+  void _internal_set_fantasy_league(uint32_t value);
+  public:
+
+  // optional uint32 prefix = 2;
+  bool has_prefix() const;
+  private:
+  bool _internal_has_prefix() const;
+  public:
+  void clear_prefix();
+  uint32_t prefix() const;
+  void set_prefix(uint32_t value);
+  private:
+  uint32_t _internal_prefix() const;
+  void _internal_set_prefix(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgClientToGCFantasyCraftingSelectGlobalPrefix)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint32_t fantasy_league_;
+    uint32_t prefix_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fgcmessages_5fclient_5ffantasy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse) */ {
+ public:
+  inline CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse() : CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse(nullptr) {}
+  ~CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse() override;
+  explicit PROTOBUF_CONSTEXPR CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse(const CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse& from);
+  CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse(CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse&& from) noexcept
+    : CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse& operator=(const CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse& operator=(CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse* internal_default_instance() {
+    return reinterpret_cast<const CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse*>(
+               &_CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    56;
+
+  friend void swap(CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse& a, CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse& from) {
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse";
+  }
+  protected:
+  explicit CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse EResponse;
+  static constexpr EResponse k_eInternalError =
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eInternalError;
+  static constexpr EResponse k_eSuccess =
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eSuccess;
+  static constexpr EResponse k_eTooBusy =
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eTooBusy;
+  static constexpr EResponse k_eDisabled =
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eDisabled;
+  static constexpr EResponse k_eTimeout =
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eTimeout;
+  static constexpr EResponse k_eInvalidLeague =
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eInvalidLeague;
+  static constexpr EResponse k_eInvalidPrefix =
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_k_eInvalidPrefix;
+  static inline bool EResponse_IsValid(int value) {
+    return CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_IsValid(value);
+  }
+  static constexpr EResponse EResponse_MIN =
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_EResponse_MIN;
+  static constexpr EResponse EResponse_MAX =
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_EResponse_MAX;
+  static constexpr int EResponse_ARRAYSIZE =
+    CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_EResponse_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  EResponse_descriptor() {
+    return CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& EResponse_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, EResponse>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function EResponse_Name.");
+    return CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_Name(enum_t_value);
+  }
+  static inline bool EResponse_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      EResponse* value) {
+    return CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTabletDataFieldNumber = 2,
+    kResponseFieldNumber = 1,
+  };
+  // optional .CMsgDotaFantasyCraftingTabletData tablet_data = 2;
+  bool has_tablet_data() const;
+  private:
+  bool _internal_has_tablet_data() const;
+  public:
+  void clear_tablet_data();
+  const ::CMsgDotaFantasyCraftingTabletData& tablet_data() const;
+  PROTOBUF_NODISCARD ::CMsgDotaFantasyCraftingTabletData* release_tablet_data();
+  ::CMsgDotaFantasyCraftingTabletData* mutable_tablet_data();
+  void set_allocated_tablet_data(::CMsgDotaFantasyCraftingTabletData* tablet_data);
+  private:
+  const ::CMsgDotaFantasyCraftingTabletData& _internal_tablet_data() const;
+  ::CMsgDotaFantasyCraftingTabletData* _internal_mutable_tablet_data();
+  public:
+  void unsafe_arena_set_allocated_tablet_data(
+      ::CMsgDotaFantasyCraftingTabletData* tablet_data);
+  ::CMsgDotaFantasyCraftingTabletData* unsafe_arena_release_tablet_data();
+
+  // optional .CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.EResponse response = 1 [default = k_eInternalError];
+  bool has_response() const;
+  private:
+  bool _internal_has_response() const;
+  public:
+  void clear_response();
+  ::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse response() const;
+  void set_response(::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse value);
+  private:
+  ::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse _internal_response() const;
+  void _internal_set_response(::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::CMsgDotaFantasyCraftingTabletData* tablet_data_;
+    int response_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fgcmessages_5fclient_5ffantasy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CMsgClientToGCFantasyCraftingSelectGlobalSuffix final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgClientToGCFantasyCraftingSelectGlobalSuffix) */ {
+ public:
+  inline CMsgClientToGCFantasyCraftingSelectGlobalSuffix() : CMsgClientToGCFantasyCraftingSelectGlobalSuffix(nullptr) {}
+  ~CMsgClientToGCFantasyCraftingSelectGlobalSuffix() override;
+  explicit PROTOBUF_CONSTEXPR CMsgClientToGCFantasyCraftingSelectGlobalSuffix(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgClientToGCFantasyCraftingSelectGlobalSuffix(const CMsgClientToGCFantasyCraftingSelectGlobalSuffix& from);
+  CMsgClientToGCFantasyCraftingSelectGlobalSuffix(CMsgClientToGCFantasyCraftingSelectGlobalSuffix&& from) noexcept
+    : CMsgClientToGCFantasyCraftingSelectGlobalSuffix() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgClientToGCFantasyCraftingSelectGlobalSuffix& operator=(const CMsgClientToGCFantasyCraftingSelectGlobalSuffix& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgClientToGCFantasyCraftingSelectGlobalSuffix& operator=(CMsgClientToGCFantasyCraftingSelectGlobalSuffix&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgClientToGCFantasyCraftingSelectGlobalSuffix& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgClientToGCFantasyCraftingSelectGlobalSuffix* internal_default_instance() {
+    return reinterpret_cast<const CMsgClientToGCFantasyCraftingSelectGlobalSuffix*>(
+               &_CMsgClientToGCFantasyCraftingSelectGlobalSuffix_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    57;
+
+  friend void swap(CMsgClientToGCFantasyCraftingSelectGlobalSuffix& a, CMsgClientToGCFantasyCraftingSelectGlobalSuffix& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgClientToGCFantasyCraftingSelectGlobalSuffix* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgClientToGCFantasyCraftingSelectGlobalSuffix* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgClientToGCFantasyCraftingSelectGlobalSuffix* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgClientToGCFantasyCraftingSelectGlobalSuffix>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgClientToGCFantasyCraftingSelectGlobalSuffix& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgClientToGCFantasyCraftingSelectGlobalSuffix& from) {
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffix::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgClientToGCFantasyCraftingSelectGlobalSuffix* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgClientToGCFantasyCraftingSelectGlobalSuffix";
+  }
+  protected:
+  explicit CMsgClientToGCFantasyCraftingSelectGlobalSuffix(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kFantasyLeagueFieldNumber = 1,
+    kSuffixFieldNumber = 2,
+  };
+  // optional uint32 fantasy_league = 1;
+  bool has_fantasy_league() const;
+  private:
+  bool _internal_has_fantasy_league() const;
+  public:
+  void clear_fantasy_league();
+  uint32_t fantasy_league() const;
+  void set_fantasy_league(uint32_t value);
+  private:
+  uint32_t _internal_fantasy_league() const;
+  void _internal_set_fantasy_league(uint32_t value);
+  public:
+
+  // optional uint32 suffix = 2;
+  bool has_suffix() const;
+  private:
+  bool _internal_has_suffix() const;
+  public:
+  void clear_suffix();
+  uint32_t suffix() const;
+  void set_suffix(uint32_t value);
+  private:
+  uint32_t _internal_suffix() const;
+  void _internal_set_suffix(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgClientToGCFantasyCraftingSelectGlobalSuffix)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint32_t fantasy_league_;
+    uint32_t suffix_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fgcmessages_5fclient_5ffantasy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse) */ {
+ public:
+  inline CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse() : CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse(nullptr) {}
+  ~CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse() override;
+  explicit PROTOBUF_CONSTEXPR CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse(const CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse& from);
+  CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse(CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse&& from) noexcept
+    : CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse& operator=(const CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse& operator=(CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse* internal_default_instance() {
+    return reinterpret_cast<const CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse*>(
+               &_CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    58;
+
+  friend void swap(CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse& a, CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse& from) {
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse";
+  }
+  protected:
+  explicit CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse EResponse;
+  static constexpr EResponse k_eInternalError =
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eInternalError;
+  static constexpr EResponse k_eSuccess =
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eSuccess;
+  static constexpr EResponse k_eTooBusy =
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eTooBusy;
+  static constexpr EResponse k_eDisabled =
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eDisabled;
+  static constexpr EResponse k_eTimeout =
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eTimeout;
+  static constexpr EResponse k_eInvalidLeague =
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eInvalidLeague;
+  static constexpr EResponse k_eInvalidSuffix =
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_k_eInvalidSuffix;
+  static inline bool EResponse_IsValid(int value) {
+    return CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_IsValid(value);
+  }
+  static constexpr EResponse EResponse_MIN =
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_EResponse_MIN;
+  static constexpr EResponse EResponse_MAX =
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_EResponse_MAX;
+  static constexpr int EResponse_ARRAYSIZE =
+    CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_EResponse_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  EResponse_descriptor() {
+    return CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& EResponse_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, EResponse>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function EResponse_Name.");
+    return CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_Name(enum_t_value);
+  }
+  static inline bool EResponse_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      EResponse* value) {
+    return CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTabletDataFieldNumber = 2,
+    kResponseFieldNumber = 1,
+  };
+  // optional .CMsgDotaFantasyCraftingTabletData tablet_data = 2;
+  bool has_tablet_data() const;
+  private:
+  bool _internal_has_tablet_data() const;
+  public:
+  void clear_tablet_data();
+  const ::CMsgDotaFantasyCraftingTabletData& tablet_data() const;
+  PROTOBUF_NODISCARD ::CMsgDotaFantasyCraftingTabletData* release_tablet_data();
+  ::CMsgDotaFantasyCraftingTabletData* mutable_tablet_data();
+  void set_allocated_tablet_data(::CMsgDotaFantasyCraftingTabletData* tablet_data);
+  private:
+  const ::CMsgDotaFantasyCraftingTabletData& _internal_tablet_data() const;
+  ::CMsgDotaFantasyCraftingTabletData* _internal_mutable_tablet_data();
+  public:
+  void unsafe_arena_set_allocated_tablet_data(
+      ::CMsgDotaFantasyCraftingTabletData* tablet_data);
+  ::CMsgDotaFantasyCraftingTabletData* unsafe_arena_release_tablet_data();
+
+  // optional .CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.EResponse response = 1 [default = k_eInternalError];
+  bool has_response() const;
+  private:
+  bool _internal_has_response() const;
+  public:
+  void clear_response();
+  ::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse response() const;
+  void set_response(::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse value);
+  private:
+  ::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse _internal_response() const;
+  void _internal_set_response(::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::CMsgDotaFantasyCraftingTabletData* tablet_data_;
+    int response_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fgcmessages_5fclient_5ffantasy_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoice) */ {
+ public:
+  inline CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice() : CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice(nullptr) {}
+  ~CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice() override;
+  explicit PROTOBUF_CONSTEXPR CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice(const CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice& from);
+  CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice(CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice&& from) noexcept
+    : CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice& operator=(const CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice& operator=(CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice* internal_default_instance() {
+    return reinterpret_cast<const CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice*>(
+               &_CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    59;
+
+  friend void swap(CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice& a, CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice& from) {
+    CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoice";
+  }
+  protected:
+  explicit CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kFantasyRoleFieldNumber = 1,
+    kTeamIdFieldNumber = 2,
+  };
+  // optional .Fantasy_Roles fantasy_role = 1 [default = FANTASY_ROLE_UNDEFINED];
+  bool has_fantasy_role() const;
+  private:
+  bool _internal_has_fantasy_role() const;
+  public:
+  void clear_fantasy_role();
+  ::Fantasy_Roles fantasy_role() const;
+  void set_fantasy_role(::Fantasy_Roles value);
+  private:
+  ::Fantasy_Roles _internal_fantasy_role() const;
+  void _internal_set_fantasy_role(::Fantasy_Roles value);
+  public:
+
+  // optional uint32 team_id = 2;
+  bool has_team_id() const;
+  private:
+  bool _internal_has_team_id() const;
+  public:
+  void clear_team_id();
+  uint32_t team_id() const;
+  void set_team_id(uint32_t value);
+  private:
+  uint32_t _internal_team_id() const;
+  void _internal_set_team_id(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoice)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    int fantasy_role_;
+    uint32_t team_id_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fgcmessages_5fclient_5ffantasy_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CMsgClientToGCFantasyCraftingGenerateTablets final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgClientToGCFantasyCraftingGenerateTablets) */ {
  public:
@@ -11781,7 +13284,7 @@ class CMsgClientToGCFantasyCraftingGenerateTablets final :
                &_CMsgClientToGCFantasyCraftingGenerateTablets_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    60;
 
   friend void swap(CMsgClientToGCFantasyCraftingGenerateTablets& a, CMsgClientToGCFantasyCraftingGenerateTablets& b) {
     a.Swap(&b);
@@ -11851,10 +13354,13 @@ class CMsgClientToGCFantasyCraftingGenerateTablets final :
 
   // nested types ----------------------------------------------------
 
+  typedef CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice TeamChoice;
+
   // accessors -------------------------------------------------------
 
   enum : int {
     kAccountIdsFieldNumber = 2,
+    kSelectedTeamsFieldNumber = 3,
     kFantasyLeagueFieldNumber = 1,
   };
   // repeated uint32 account_ids = 2;
@@ -11878,6 +13384,24 @@ class CMsgClientToGCFantasyCraftingGenerateTablets final :
       account_ids() const;
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
       mutable_account_ids();
+
+  // repeated .CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoice selected_teams = 3;
+  int selected_teams_size() const;
+  private:
+  int _internal_selected_teams_size() const;
+  public:
+  void clear_selected_teams();
+  ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice* mutable_selected_teams(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice >*
+      mutable_selected_teams();
+  private:
+  const ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice& _internal_selected_teams(int index) const;
+  ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice* _internal_add_selected_teams();
+  public:
+  const ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice& selected_teams(int index) const;
+  ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice* add_selected_teams();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice >&
+      selected_teams() const;
 
   // optional uint32 fantasy_league = 1;
   bool has_fantasy_league() const;
@@ -11903,6 +13427,7 @@ class CMsgClientToGCFantasyCraftingGenerateTablets final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t > account_ids_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice > selected_teams_;
     uint32_t fantasy_league_;
   };
   union { Impl_ _impl_; };
@@ -11965,7 +13490,7 @@ class CMsgClientToGCFantasyCraftingGenerateTabletsResponse final :
                &_CMsgClientToGCFantasyCraftingGenerateTabletsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    61;
 
   friend void swap(CMsgClientToGCFantasyCraftingGenerateTabletsResponse& a, CMsgClientToGCFantasyCraftingGenerateTabletsResponse& b) {
     a.Swap(&b);
@@ -12050,6 +13575,8 @@ class CMsgClientToGCFantasyCraftingGenerateTabletsResponse final :
     CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eInvalidLeague;
   static constexpr EResponse k_eInvalidPlayer =
     CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eInvalidPlayer;
+  static constexpr EResponse k_eInvalidTeam =
+    CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_k_eInvalidTeam;
   static inline bool EResponse_IsValid(int value) {
     return CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse_IsValid(value);
   }
@@ -12205,7 +13732,7 @@ class CMsgClientToGcFantasyCraftingUpgradeTablets final :
                &_CMsgClientToGcFantasyCraftingUpgradeTablets_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    62;
 
   friend void swap(CMsgClientToGcFantasyCraftingUpgradeTablets& a, CMsgClientToGcFantasyCraftingUpgradeTablets& b) {
     a.Swap(&b);
@@ -12365,7 +13892,7 @@ class CMsgClientToGcFantasyCraftingUpgradeTabletsResponse final :
                &_CMsgClientToGcFantasyCraftingUpgradeTabletsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    63;
 
   friend void swap(CMsgClientToGcFantasyCraftingUpgradeTabletsResponse& a, CMsgClientToGcFantasyCraftingUpgradeTabletsResponse& b) {
     a.Swap(&b);
@@ -12583,7 +14110,7 @@ class CMsgClientToGCFantasyCraftingRerollOptions final :
                &_CMsgClientToGCFantasyCraftingRerollOptions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    64;
 
   friend void swap(CMsgClientToGCFantasyCraftingRerollOptions& a, CMsgClientToGCFantasyCraftingRerollOptions& b) {
     a.Swap(&b);
@@ -12743,7 +14270,7 @@ class CMsgClientToGCFantasyCraftingRerollOptionsResponse final :
                &_CMsgClientToGCFantasyCraftingRerollOptionsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    65;
 
   friend void swap(CMsgClientToGCFantasyCraftingRerollOptionsResponse& a, CMsgClientToGCFantasyCraftingRerollOptionsResponse& b) {
     a.Swap(&b);
@@ -17478,6 +19005,34 @@ inline void CMsgDotaFantasyCraftingTabletPeriodData_Tablet::set_suffix(uint32_t 
   // @@protoc_insertion_point(field_set:CMsgDotaFantasyCraftingTabletPeriodData.Tablet.suffix)
 }
 
+// optional uint32 team_id = 10;
+inline bool CMsgDotaFantasyCraftingTabletPeriodData_Tablet::_internal_has_team_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  return value;
+}
+inline bool CMsgDotaFantasyCraftingTabletPeriodData_Tablet::has_team_id() const {
+  return _internal_has_team_id();
+}
+inline void CMsgDotaFantasyCraftingTabletPeriodData_Tablet::clear_team_id() {
+  _impl_.team_id_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
+}
+inline uint32_t CMsgDotaFantasyCraftingTabletPeriodData_Tablet::_internal_team_id() const {
+  return _impl_.team_id_;
+}
+inline uint32_t CMsgDotaFantasyCraftingTabletPeriodData_Tablet::team_id() const {
+  // @@protoc_insertion_point(field_get:CMsgDotaFantasyCraftingTabletPeriodData.Tablet.team_id)
+  return _internal_team_id();
+}
+inline void CMsgDotaFantasyCraftingTabletPeriodData_Tablet::_internal_set_team_id(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_.team_id_ = value;
+}
+inline void CMsgDotaFantasyCraftingTabletPeriodData_Tablet::set_team_id(uint32_t value) {
+  _internal_set_team_id(value);
+  // @@protoc_insertion_point(field_set:CMsgDotaFantasyCraftingTabletPeriodData.Tablet.team_id)
+}
+
 // repeated .CMsgDotaFantasyCraftingTabletPeriodData.Gem gems = 7;
 inline int CMsgDotaFantasyCraftingTabletPeriodData_Tablet::_internal_gems_size() const {
   return _impl_.gems_.size();
@@ -20032,6 +21587,645 @@ inline void CMsgClientToGCFantasyCraftingSelectPlayerResponse::set_allocated_tab
 
 // -------------------------------------------------------------------
 
+// CMsgClientToGCFantasyCraftingSelectTeam
+
+// optional uint32 fantasy_league = 1;
+inline bool CMsgClientToGCFantasyCraftingSelectTeam::_internal_has_fantasy_league() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingSelectTeam::has_fantasy_league() const {
+  return _internal_has_fantasy_league();
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeam::clear_fantasy_league() {
+  _impl_.fantasy_league_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingSelectTeam::_internal_fantasy_league() const {
+  return _impl_.fantasy_league_;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingSelectTeam::fantasy_league() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingSelectTeam.fantasy_league)
+  return _internal_fantasy_league();
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeam::_internal_set_fantasy_league(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.fantasy_league_ = value;
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeam::set_fantasy_league(uint32_t value) {
+  _internal_set_fantasy_league(value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCFantasyCraftingSelectTeam.fantasy_league)
+}
+
+// optional .Fantasy_Roles role = 2 [default = FANTASY_ROLE_UNDEFINED];
+inline bool CMsgClientToGCFantasyCraftingSelectTeam::_internal_has_role() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingSelectTeam::has_role() const {
+  return _internal_has_role();
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeam::clear_role() {
+  _impl_.role_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline ::Fantasy_Roles CMsgClientToGCFantasyCraftingSelectTeam::_internal_role() const {
+  return static_cast< ::Fantasy_Roles >(_impl_.role_);
+}
+inline ::Fantasy_Roles CMsgClientToGCFantasyCraftingSelectTeam::role() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingSelectTeam.role)
+  return _internal_role();
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeam::_internal_set_role(::Fantasy_Roles value) {
+  assert(::Fantasy_Roles_IsValid(value));
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.role_ = value;
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeam::set_role(::Fantasy_Roles value) {
+  _internal_set_role(value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCFantasyCraftingSelectTeam.role)
+}
+
+// optional uint32 team_id = 3;
+inline bool CMsgClientToGCFantasyCraftingSelectTeam::_internal_has_team_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingSelectTeam::has_team_id() const {
+  return _internal_has_team_id();
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeam::clear_team_id() {
+  _impl_.team_id_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingSelectTeam::_internal_team_id() const {
+  return _impl_.team_id_;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingSelectTeam::team_id() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingSelectTeam.team_id)
+  return _internal_team_id();
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeam::_internal_set_team_id(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.team_id_ = value;
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeam::set_team_id(uint32_t value) {
+  _internal_set_team_id(value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCFantasyCraftingSelectTeam.team_id)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgClientToGCFantasyCraftingSelectTeamResponse
+
+// optional .CMsgClientToGCFantasyCraftingSelectTeamResponse.EResponse response = 1 [default = k_eInternalError];
+inline bool CMsgClientToGCFantasyCraftingSelectTeamResponse::_internal_has_response() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingSelectTeamResponse::has_response() const {
+  return _internal_has_response();
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeamResponse::clear_response() {
+  _impl_.response_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline ::CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse CMsgClientToGCFantasyCraftingSelectTeamResponse::_internal_response() const {
+  return static_cast< ::CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse >(_impl_.response_);
+}
+inline ::CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse CMsgClientToGCFantasyCraftingSelectTeamResponse::response() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingSelectTeamResponse.response)
+  return _internal_response();
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeamResponse::_internal_set_response(::CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse value) {
+  assert(::CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_IsValid(value));
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.response_ = value;
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeamResponse::set_response(::CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse value) {
+  _internal_set_response(value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCFantasyCraftingSelectTeamResponse.response)
+}
+
+// optional .CMsgDotaFantasyCraftingTabletData tablet_data = 2;
+inline bool CMsgClientToGCFantasyCraftingSelectTeamResponse::_internal_has_tablet_data() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.tablet_data_ != nullptr);
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingSelectTeamResponse::has_tablet_data() const {
+  return _internal_has_tablet_data();
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeamResponse::clear_tablet_data() {
+  if (_impl_.tablet_data_ != nullptr) _impl_.tablet_data_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::CMsgDotaFantasyCraftingTabletData& CMsgClientToGCFantasyCraftingSelectTeamResponse::_internal_tablet_data() const {
+  const ::CMsgDotaFantasyCraftingTabletData* p = _impl_.tablet_data_;
+  return p != nullptr ? *p : reinterpret_cast<const ::CMsgDotaFantasyCraftingTabletData&>(
+      ::_CMsgDotaFantasyCraftingTabletData_default_instance_);
+}
+inline const ::CMsgDotaFantasyCraftingTabletData& CMsgClientToGCFantasyCraftingSelectTeamResponse::tablet_data() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingSelectTeamResponse.tablet_data)
+  return _internal_tablet_data();
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeamResponse::unsafe_arena_set_allocated_tablet_data(
+    ::CMsgDotaFantasyCraftingTabletData* tablet_data) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.tablet_data_);
+  }
+  _impl_.tablet_data_ = tablet_data;
+  if (tablet_data) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:CMsgClientToGCFantasyCraftingSelectTeamResponse.tablet_data)
+}
+inline ::CMsgDotaFantasyCraftingTabletData* CMsgClientToGCFantasyCraftingSelectTeamResponse::release_tablet_data() {
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::CMsgDotaFantasyCraftingTabletData* temp = _impl_.tablet_data_;
+  _impl_.tablet_data_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::CMsgDotaFantasyCraftingTabletData* CMsgClientToGCFantasyCraftingSelectTeamResponse::unsafe_arena_release_tablet_data() {
+  // @@protoc_insertion_point(field_release:CMsgClientToGCFantasyCraftingSelectTeamResponse.tablet_data)
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::CMsgDotaFantasyCraftingTabletData* temp = _impl_.tablet_data_;
+  _impl_.tablet_data_ = nullptr;
+  return temp;
+}
+inline ::CMsgDotaFantasyCraftingTabletData* CMsgClientToGCFantasyCraftingSelectTeamResponse::_internal_mutable_tablet_data() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  if (_impl_.tablet_data_ == nullptr) {
+    auto* p = CreateMaybeMessage<::CMsgDotaFantasyCraftingTabletData>(GetArenaForAllocation());
+    _impl_.tablet_data_ = p;
+  }
+  return _impl_.tablet_data_;
+}
+inline ::CMsgDotaFantasyCraftingTabletData* CMsgClientToGCFantasyCraftingSelectTeamResponse::mutable_tablet_data() {
+  ::CMsgDotaFantasyCraftingTabletData* _msg = _internal_mutable_tablet_data();
+  // @@protoc_insertion_point(field_mutable:CMsgClientToGCFantasyCraftingSelectTeamResponse.tablet_data)
+  return _msg;
+}
+inline void CMsgClientToGCFantasyCraftingSelectTeamResponse::set_allocated_tablet_data(::CMsgDotaFantasyCraftingTabletData* tablet_data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.tablet_data_;
+  }
+  if (tablet_data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(tablet_data);
+    if (message_arena != submessage_arena) {
+      tablet_data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, tablet_data, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.tablet_data_ = tablet_data;
+  // @@protoc_insertion_point(field_set_allocated:CMsgClientToGCFantasyCraftingSelectTeamResponse.tablet_data)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgClientToGCFantasyCraftingSelectGlobalPrefix
+
+// optional uint32 fantasy_league = 1;
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalPrefix::_internal_has_fantasy_league() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalPrefix::has_fantasy_league() const {
+  return _internal_has_fantasy_league();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalPrefix::clear_fantasy_league() {
+  _impl_.fantasy_league_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingSelectGlobalPrefix::_internal_fantasy_league() const {
+  return _impl_.fantasy_league_;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingSelectGlobalPrefix::fantasy_league() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingSelectGlobalPrefix.fantasy_league)
+  return _internal_fantasy_league();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalPrefix::_internal_set_fantasy_league(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.fantasy_league_ = value;
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalPrefix::set_fantasy_league(uint32_t value) {
+  _internal_set_fantasy_league(value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCFantasyCraftingSelectGlobalPrefix.fantasy_league)
+}
+
+// optional uint32 prefix = 2;
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalPrefix::_internal_has_prefix() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalPrefix::has_prefix() const {
+  return _internal_has_prefix();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalPrefix::clear_prefix() {
+  _impl_.prefix_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingSelectGlobalPrefix::_internal_prefix() const {
+  return _impl_.prefix_;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingSelectGlobalPrefix::prefix() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingSelectGlobalPrefix.prefix)
+  return _internal_prefix();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalPrefix::_internal_set_prefix(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.prefix_ = value;
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalPrefix::set_prefix(uint32_t value) {
+  _internal_set_prefix(value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCFantasyCraftingSelectGlobalPrefix.prefix)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse
+
+// optional .CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.EResponse response = 1 [default = k_eInternalError];
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::_internal_has_response() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::has_response() const {
+  return _internal_has_response();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::clear_response() {
+  _impl_.response_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline ::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::_internal_response() const {
+  return static_cast< ::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse >(_impl_.response_);
+}
+inline ::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::response() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.response)
+  return _internal_response();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::_internal_set_response(::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse value) {
+  assert(::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_IsValid(value));
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.response_ = value;
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::set_response(::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse value) {
+  _internal_set_response(value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.response)
+}
+
+// optional .CMsgDotaFantasyCraftingTabletData tablet_data = 2;
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::_internal_has_tablet_data() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.tablet_data_ != nullptr);
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::has_tablet_data() const {
+  return _internal_has_tablet_data();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::clear_tablet_data() {
+  if (_impl_.tablet_data_ != nullptr) _impl_.tablet_data_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::CMsgDotaFantasyCraftingTabletData& CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::_internal_tablet_data() const {
+  const ::CMsgDotaFantasyCraftingTabletData* p = _impl_.tablet_data_;
+  return p != nullptr ? *p : reinterpret_cast<const ::CMsgDotaFantasyCraftingTabletData&>(
+      ::_CMsgDotaFantasyCraftingTabletData_default_instance_);
+}
+inline const ::CMsgDotaFantasyCraftingTabletData& CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::tablet_data() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.tablet_data)
+  return _internal_tablet_data();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::unsafe_arena_set_allocated_tablet_data(
+    ::CMsgDotaFantasyCraftingTabletData* tablet_data) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.tablet_data_);
+  }
+  _impl_.tablet_data_ = tablet_data;
+  if (tablet_data) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.tablet_data)
+}
+inline ::CMsgDotaFantasyCraftingTabletData* CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::release_tablet_data() {
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::CMsgDotaFantasyCraftingTabletData* temp = _impl_.tablet_data_;
+  _impl_.tablet_data_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::CMsgDotaFantasyCraftingTabletData* CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::unsafe_arena_release_tablet_data() {
+  // @@protoc_insertion_point(field_release:CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.tablet_data)
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::CMsgDotaFantasyCraftingTabletData* temp = _impl_.tablet_data_;
+  _impl_.tablet_data_ = nullptr;
+  return temp;
+}
+inline ::CMsgDotaFantasyCraftingTabletData* CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::_internal_mutable_tablet_data() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  if (_impl_.tablet_data_ == nullptr) {
+    auto* p = CreateMaybeMessage<::CMsgDotaFantasyCraftingTabletData>(GetArenaForAllocation());
+    _impl_.tablet_data_ = p;
+  }
+  return _impl_.tablet_data_;
+}
+inline ::CMsgDotaFantasyCraftingTabletData* CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::mutable_tablet_data() {
+  ::CMsgDotaFantasyCraftingTabletData* _msg = _internal_mutable_tablet_data();
+  // @@protoc_insertion_point(field_mutable:CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.tablet_data)
+  return _msg;
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse::set_allocated_tablet_data(::CMsgDotaFantasyCraftingTabletData* tablet_data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.tablet_data_;
+  }
+  if (tablet_data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(tablet_data);
+    if (message_arena != submessage_arena) {
+      tablet_data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, tablet_data, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.tablet_data_ = tablet_data;
+  // @@protoc_insertion_point(field_set_allocated:CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse.tablet_data)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgClientToGCFantasyCraftingSelectGlobalSuffix
+
+// optional uint32 fantasy_league = 1;
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalSuffix::_internal_has_fantasy_league() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalSuffix::has_fantasy_league() const {
+  return _internal_has_fantasy_league();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalSuffix::clear_fantasy_league() {
+  _impl_.fantasy_league_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingSelectGlobalSuffix::_internal_fantasy_league() const {
+  return _impl_.fantasy_league_;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingSelectGlobalSuffix::fantasy_league() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingSelectGlobalSuffix.fantasy_league)
+  return _internal_fantasy_league();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalSuffix::_internal_set_fantasy_league(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.fantasy_league_ = value;
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalSuffix::set_fantasy_league(uint32_t value) {
+  _internal_set_fantasy_league(value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCFantasyCraftingSelectGlobalSuffix.fantasy_league)
+}
+
+// optional uint32 suffix = 2;
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalSuffix::_internal_has_suffix() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalSuffix::has_suffix() const {
+  return _internal_has_suffix();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalSuffix::clear_suffix() {
+  _impl_.suffix_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingSelectGlobalSuffix::_internal_suffix() const {
+  return _impl_.suffix_;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingSelectGlobalSuffix::suffix() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingSelectGlobalSuffix.suffix)
+  return _internal_suffix();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalSuffix::_internal_set_suffix(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.suffix_ = value;
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalSuffix::set_suffix(uint32_t value) {
+  _internal_set_suffix(value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCFantasyCraftingSelectGlobalSuffix.suffix)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse
+
+// optional .CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.EResponse response = 1 [default = k_eInternalError];
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::_internal_has_response() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::has_response() const {
+  return _internal_has_response();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::clear_response() {
+  _impl_.response_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline ::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::_internal_response() const {
+  return static_cast< ::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse >(_impl_.response_);
+}
+inline ::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::response() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.response)
+  return _internal_response();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::_internal_set_response(::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse value) {
+  assert(::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_IsValid(value));
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.response_ = value;
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::set_response(::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse value) {
+  _internal_set_response(value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.response)
+}
+
+// optional .CMsgDotaFantasyCraftingTabletData tablet_data = 2;
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::_internal_has_tablet_data() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.tablet_data_ != nullptr);
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::has_tablet_data() const {
+  return _internal_has_tablet_data();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::clear_tablet_data() {
+  if (_impl_.tablet_data_ != nullptr) _impl_.tablet_data_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::CMsgDotaFantasyCraftingTabletData& CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::_internal_tablet_data() const {
+  const ::CMsgDotaFantasyCraftingTabletData* p = _impl_.tablet_data_;
+  return p != nullptr ? *p : reinterpret_cast<const ::CMsgDotaFantasyCraftingTabletData&>(
+      ::_CMsgDotaFantasyCraftingTabletData_default_instance_);
+}
+inline const ::CMsgDotaFantasyCraftingTabletData& CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::tablet_data() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.tablet_data)
+  return _internal_tablet_data();
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::unsafe_arena_set_allocated_tablet_data(
+    ::CMsgDotaFantasyCraftingTabletData* tablet_data) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(_impl_.tablet_data_);
+  }
+  _impl_.tablet_data_ = tablet_data;
+  if (tablet_data) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.tablet_data)
+}
+inline ::CMsgDotaFantasyCraftingTabletData* CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::release_tablet_data() {
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::CMsgDotaFantasyCraftingTabletData* temp = _impl_.tablet_data_;
+  _impl_.tablet_data_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::CMsgDotaFantasyCraftingTabletData* CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::unsafe_arena_release_tablet_data() {
+  // @@protoc_insertion_point(field_release:CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.tablet_data)
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::CMsgDotaFantasyCraftingTabletData* temp = _impl_.tablet_data_;
+  _impl_.tablet_data_ = nullptr;
+  return temp;
+}
+inline ::CMsgDotaFantasyCraftingTabletData* CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::_internal_mutable_tablet_data() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  if (_impl_.tablet_data_ == nullptr) {
+    auto* p = CreateMaybeMessage<::CMsgDotaFantasyCraftingTabletData>(GetArenaForAllocation());
+    _impl_.tablet_data_ = p;
+  }
+  return _impl_.tablet_data_;
+}
+inline ::CMsgDotaFantasyCraftingTabletData* CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::mutable_tablet_data() {
+  ::CMsgDotaFantasyCraftingTabletData* _msg = _internal_mutable_tablet_data();
+  // @@protoc_insertion_point(field_mutable:CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.tablet_data)
+  return _msg;
+}
+inline void CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse::set_allocated_tablet_data(::CMsgDotaFantasyCraftingTabletData* tablet_data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete _impl_.tablet_data_;
+  }
+  if (tablet_data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(tablet_data);
+    if (message_arena != submessage_arena) {
+      tablet_data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, tablet_data, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.tablet_data_ = tablet_data;
+  // @@protoc_insertion_point(field_set_allocated:CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse.tablet_data)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice
+
+// optional .Fantasy_Roles fantasy_role = 1 [default = FANTASY_ROLE_UNDEFINED];
+inline bool CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::_internal_has_fantasy_role() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::has_fantasy_role() const {
+  return _internal_has_fantasy_role();
+}
+inline void CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::clear_fantasy_role() {
+  _impl_.fantasy_role_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::Fantasy_Roles CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::_internal_fantasy_role() const {
+  return static_cast< ::Fantasy_Roles >(_impl_.fantasy_role_);
+}
+inline ::Fantasy_Roles CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::fantasy_role() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoice.fantasy_role)
+  return _internal_fantasy_role();
+}
+inline void CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::_internal_set_fantasy_role(::Fantasy_Roles value) {
+  assert(::Fantasy_Roles_IsValid(value));
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.fantasy_role_ = value;
+}
+inline void CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::set_fantasy_role(::Fantasy_Roles value) {
+  _internal_set_fantasy_role(value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoice.fantasy_role)
+}
+
+// optional uint32 team_id = 2;
+inline bool CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::_internal_has_team_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::has_team_id() const {
+  return _internal_has_team_id();
+}
+inline void CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::clear_team_id() {
+  _impl_.team_id_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::_internal_team_id() const {
+  return _impl_.team_id_;
+}
+inline uint32_t CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::team_id() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoice.team_id)
+  return _internal_team_id();
+}
+inline void CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::_internal_set_team_id(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.team_id_ = value;
+}
+inline void CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice::set_team_id(uint32_t value) {
+  _internal_set_team_id(value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoice.team_id)
+}
+
+// -------------------------------------------------------------------
+
 // CMsgClientToGCFantasyCraftingGenerateTablets
 
 // optional uint32 fantasy_league = 1;
@@ -20107,6 +22301,46 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
 CMsgClientToGCFantasyCraftingGenerateTablets::mutable_account_ids() {
   // @@protoc_insertion_point(field_mutable_list:CMsgClientToGCFantasyCraftingGenerateTablets.account_ids)
   return _internal_mutable_account_ids();
+}
+
+// repeated .CMsgClientToGCFantasyCraftingGenerateTablets.TeamChoice selected_teams = 3;
+inline int CMsgClientToGCFantasyCraftingGenerateTablets::_internal_selected_teams_size() const {
+  return _impl_.selected_teams_.size();
+}
+inline int CMsgClientToGCFantasyCraftingGenerateTablets::selected_teams_size() const {
+  return _internal_selected_teams_size();
+}
+inline void CMsgClientToGCFantasyCraftingGenerateTablets::clear_selected_teams() {
+  _impl_.selected_teams_.Clear();
+}
+inline ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice* CMsgClientToGCFantasyCraftingGenerateTablets::mutable_selected_teams(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgClientToGCFantasyCraftingGenerateTablets.selected_teams)
+  return _impl_.selected_teams_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice >*
+CMsgClientToGCFantasyCraftingGenerateTablets::mutable_selected_teams() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgClientToGCFantasyCraftingGenerateTablets.selected_teams)
+  return &_impl_.selected_teams_;
+}
+inline const ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice& CMsgClientToGCFantasyCraftingGenerateTablets::_internal_selected_teams(int index) const {
+  return _impl_.selected_teams_.Get(index);
+}
+inline const ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice& CMsgClientToGCFantasyCraftingGenerateTablets::selected_teams(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCFantasyCraftingGenerateTablets.selected_teams)
+  return _internal_selected_teams(index);
+}
+inline ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice* CMsgClientToGCFantasyCraftingGenerateTablets::_internal_add_selected_teams() {
+  return _impl_.selected_teams_.Add();
+}
+inline ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice* CMsgClientToGCFantasyCraftingGenerateTablets::add_selected_teams() {
+  ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice* _add = _internal_add_selected_teams();
+  // @@protoc_insertion_point(field_add:CMsgClientToGCFantasyCraftingGenerateTablets.selected_teams)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgClientToGCFantasyCraftingGenerateTablets_TeamChoice >&
+CMsgClientToGCFantasyCraftingGenerateTablets::selected_teams() const {
+  // @@protoc_insertion_point(field_list:CMsgClientToGCFantasyCraftingGenerateTablets.selected_teams)
+  return _impl_.selected_teams_;
 }
 
 // -------------------------------------------------------------------
@@ -20751,6 +22985,20 @@ inline void CMsgClientToGCFantasyCraftingRerollOptionsResponse::set_allocated_us
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -20801,6 +23049,21 @@ template <> struct is_proto_enum< ::CMsgClientToGCFantasyCraftingSelectPlayerRes
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse>() {
   return ::CMsgClientToGCFantasyCraftingSelectPlayerResponse_EResponse_descriptor();
+}
+template <> struct is_proto_enum< ::CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse>() {
+  return ::CMsgClientToGCFantasyCraftingSelectTeamResponse_EResponse_descriptor();
+}
+template <> struct is_proto_enum< ::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse>() {
+  return ::CMsgClientToGCFantasyCraftingSelectGlobalPrefixResponse_EResponse_descriptor();
+}
+template <> struct is_proto_enum< ::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse>() {
+  return ::CMsgClientToGCFantasyCraftingSelectGlobalSuffixResponse_EResponse_descriptor();
 }
 template <> struct is_proto_enum< ::CMsgClientToGCFantasyCraftingGenerateTabletsResponse_EResponse> : ::std::true_type {};
 template <>

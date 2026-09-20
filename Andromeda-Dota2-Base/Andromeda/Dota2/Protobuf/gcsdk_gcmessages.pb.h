@@ -7036,7 +7036,6 @@ class CMsgClientHello final :
 
   enum : int {
     kSocacheHaveVersionsFieldNumber = 2,
-    kSecretKeyFieldNumber = 5,
     kSteamdatagramLoginFieldNumber = 8,
     kGameMsgFieldNumber = 10,
     kPlatformNameFieldNumber = 23,
@@ -7076,24 +7075,6 @@ class CMsgClientHello final :
   ::CMsgSOCacheHaveVersion* add_socache_have_versions();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgSOCacheHaveVersion >&
       socache_have_versions() const;
-
-  // optional string secret_key = 5;
-  bool has_secret_key() const;
-  private:
-  bool _internal_has_secret_key() const;
-  public:
-  void clear_secret_key();
-  const std::string& secret_key() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_secret_key(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_secret_key();
-  PROTOBUF_NODISCARD std::string* release_secret_key();
-  void set_allocated_secret_key(std::string* secret_key);
-  private:
-  const std::string& _internal_secret_key() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_secret_key(const std::string& value);
-  std::string* _internal_mutable_secret_key();
-  public:
 
   // optional bytes steamdatagram_login = 8;
   bool has_steamdatagram_login() const;
@@ -7394,7 +7375,6 @@ class CMsgClientHello final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgSOCacheHaveVersion > socache_have_versions_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr secret_key_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr steamdatagram_login_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr game_msg_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr platform_name_;
@@ -19279,7 +19259,7 @@ inline void CMsgSOCacheHaveVersion::set_cached_file_version(uint32_t value) {
 
 // optional uint32 version = 1;
 inline bool CMsgClientHello::_internal_has_version() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_version() const {
@@ -19287,7 +19267,7 @@ inline bool CMsgClientHello::has_version() const {
 }
 inline void CMsgClientHello::clear_version() {
   _impl_.version_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline uint32_t CMsgClientHello::_internal_version() const {
   return _impl_.version_;
@@ -19297,7 +19277,7 @@ inline uint32_t CMsgClientHello::version() const {
   return _internal_version();
 }
 inline void CMsgClientHello::_internal_set_version(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.version_ = value;
 }
 inline void CMsgClientHello::set_version(uint32_t value) {
@@ -19347,7 +19327,7 @@ CMsgClientHello::socache_have_versions() const {
 
 // optional uint32 client_session_need = 3;
 inline bool CMsgClientHello::_internal_has_client_session_need() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_client_session_need() const {
@@ -19355,7 +19335,7 @@ inline bool CMsgClientHello::has_client_session_need() const {
 }
 inline void CMsgClientHello::clear_client_session_need() {
   _impl_.client_session_need_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline uint32_t CMsgClientHello::_internal_client_session_need() const {
   return _impl_.client_session_need_;
@@ -19365,7 +19345,7 @@ inline uint32_t CMsgClientHello::client_session_need() const {
   return _internal_client_session_need();
 }
 inline void CMsgClientHello::_internal_set_client_session_need(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.client_session_need_ = value;
 }
 inline void CMsgClientHello::set_client_session_need(uint32_t value) {
@@ -19375,7 +19355,7 @@ inline void CMsgClientHello::set_client_session_need(uint32_t value) {
 
 // optional .PartnerAccountType client_launcher = 4 [default = PARTNER_NONE];
 inline bool CMsgClientHello::_internal_has_client_launcher() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_client_launcher() const {
@@ -19383,7 +19363,7 @@ inline bool CMsgClientHello::has_client_launcher() const {
 }
 inline void CMsgClientHello::clear_client_launcher() {
   _impl_.client_launcher_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000040u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline ::PartnerAccountType CMsgClientHello::_internal_client_launcher() const {
   return static_cast< ::PartnerAccountType >(_impl_.client_launcher_);
@@ -19394,7 +19374,7 @@ inline ::PartnerAccountType CMsgClientHello::client_launcher() const {
 }
 inline void CMsgClientHello::_internal_set_client_launcher(::PartnerAccountType value) {
   assert(::PartnerAccountType_IsValid(value));
-  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   _impl_.client_launcher_ = value;
 }
 inline void CMsgClientHello::set_client_launcher(::PartnerAccountType value) {
@@ -19402,77 +19382,9 @@ inline void CMsgClientHello::set_client_launcher(::PartnerAccountType value) {
   // @@protoc_insertion_point(field_set:CMsgClientHello.client_launcher)
 }
 
-// optional string secret_key = 5;
-inline bool CMsgClientHello::_internal_has_secret_key() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool CMsgClientHello::has_secret_key() const {
-  return _internal_has_secret_key();
-}
-inline void CMsgClientHello::clear_secret_key() {
-  _impl_.secret_key_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline const std::string& CMsgClientHello::secret_key() const {
-  // @@protoc_insertion_point(field_get:CMsgClientHello.secret_key)
-  return _internal_secret_key();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CMsgClientHello::set_secret_key(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000001u;
- _impl_.secret_key_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:CMsgClientHello.secret_key)
-}
-inline std::string* CMsgClientHello::mutable_secret_key() {
-  std::string* _s = _internal_mutable_secret_key();
-  // @@protoc_insertion_point(field_mutable:CMsgClientHello.secret_key)
-  return _s;
-}
-inline const std::string& CMsgClientHello::_internal_secret_key() const {
-  return _impl_.secret_key_.Get();
-}
-inline void CMsgClientHello::_internal_set_secret_key(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.secret_key_.Set(value, GetArenaForAllocation());
-}
-inline std::string* CMsgClientHello::_internal_mutable_secret_key() {
-  _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.secret_key_.Mutable(GetArenaForAllocation());
-}
-inline std::string* CMsgClientHello::release_secret_key() {
-  // @@protoc_insertion_point(field_release:CMsgClientHello.secret_key)
-  if (!_internal_has_secret_key()) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* p = _impl_.secret_key_.Release();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.secret_key_.IsDefault()) {
-    _impl_.secret_key_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
-}
-inline void CMsgClientHello::set_allocated_secret_key(std::string* secret_key) {
-  if (secret_key != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  _impl_.secret_key_.SetAllocated(secret_key, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.secret_key_.IsDefault()) {
-    _impl_.secret_key_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:CMsgClientHello.secret_key)
-}
-
 // optional uint32 client_language = 6;
 inline bool CMsgClientHello::_internal_has_client_language() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_client_language() const {
@@ -19480,7 +19392,7 @@ inline bool CMsgClientHello::has_client_language() const {
 }
 inline void CMsgClientHello::clear_client_language() {
   _impl_.client_language_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000080u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline uint32_t CMsgClientHello::_internal_client_language() const {
   return _impl_.client_language_;
@@ -19490,7 +19402,7 @@ inline uint32_t CMsgClientHello::client_language() const {
   return _internal_client_language();
 }
 inline void CMsgClientHello::_internal_set_client_language(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   _impl_.client_language_ = value;
 }
 inline void CMsgClientHello::set_client_language(uint32_t value) {
@@ -19500,7 +19412,7 @@ inline void CMsgClientHello::set_client_language(uint32_t value) {
 
 // optional .ESourceEngine engine = 7 [default = k_ESE_Source1];
 inline bool CMsgClientHello::_internal_has_engine() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_engine() const {
@@ -19508,7 +19420,7 @@ inline bool CMsgClientHello::has_engine() const {
 }
 inline void CMsgClientHello::clear_engine() {
   _impl_.engine_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000100u;
+  _impl_._has_bits_[0] &= ~0x00000080u;
 }
 inline ::ESourceEngine CMsgClientHello::_internal_engine() const {
   return static_cast< ::ESourceEngine >(_impl_.engine_);
@@ -19519,7 +19431,7 @@ inline ::ESourceEngine CMsgClientHello::engine() const {
 }
 inline void CMsgClientHello::_internal_set_engine(::ESourceEngine value) {
   assert(::ESourceEngine_IsValid(value));
-  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_._has_bits_[0] |= 0x00000080u;
   _impl_.engine_ = value;
 }
 inline void CMsgClientHello::set_engine(::ESourceEngine value) {
@@ -19529,7 +19441,7 @@ inline void CMsgClientHello::set_engine(::ESourceEngine value) {
 
 // optional bytes steamdatagram_login = 8;
 inline bool CMsgClientHello::_internal_has_steamdatagram_login() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_steamdatagram_login() const {
@@ -19537,7 +19449,7 @@ inline bool CMsgClientHello::has_steamdatagram_login() const {
 }
 inline void CMsgClientHello::clear_steamdatagram_login() {
   _impl_.steamdatagram_login_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline const std::string& CMsgClientHello::steamdatagram_login() const {
   // @@protoc_insertion_point(field_get:CMsgClientHello.steamdatagram_login)
@@ -19546,7 +19458,7 @@ inline const std::string& CMsgClientHello::steamdatagram_login() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void CMsgClientHello::set_steamdatagram_login(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000002u;
+ _impl_._has_bits_[0] |= 0x00000001u;
  _impl_.steamdatagram_login_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:CMsgClientHello.steamdatagram_login)
 }
@@ -19559,11 +19471,11 @@ inline const std::string& CMsgClientHello::_internal_steamdatagram_login() const
   return _impl_.steamdatagram_login_.Get();
 }
 inline void CMsgClientHello::_internal_set_steamdatagram_login(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.steamdatagram_login_.Set(value, GetArenaForAllocation());
 }
 inline std::string* CMsgClientHello::_internal_mutable_steamdatagram_login() {
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   return _impl_.steamdatagram_login_.Mutable(GetArenaForAllocation());
 }
 inline std::string* CMsgClientHello::release_steamdatagram_login() {
@@ -19571,7 +19483,7 @@ inline std::string* CMsgClientHello::release_steamdatagram_login() {
   if (!_internal_has_steamdatagram_login()) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
   auto* p = _impl_.steamdatagram_login_.Release();
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (_impl_.steamdatagram_login_.IsDefault()) {
@@ -19582,9 +19494,9 @@ inline std::string* CMsgClientHello::release_steamdatagram_login() {
 }
 inline void CMsgClientHello::set_allocated_steamdatagram_login(std::string* steamdatagram_login) {
   if (steamdatagram_login != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.steamdatagram_login_.SetAllocated(steamdatagram_login, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -19597,7 +19509,7 @@ inline void CMsgClientHello::set_allocated_steamdatagram_login(std::string* stea
 
 // optional uint32 platform_id = 9;
 inline bool CMsgClientHello::_internal_has_platform_id() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_platform_id() const {
@@ -19605,7 +19517,7 @@ inline bool CMsgClientHello::has_platform_id() const {
 }
 inline void CMsgClientHello::clear_platform_id() {
   _impl_.platform_id_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
 }
 inline uint32_t CMsgClientHello::_internal_platform_id() const {
   return _impl_.platform_id_;
@@ -19615,7 +19527,7 @@ inline uint32_t CMsgClientHello::platform_id() const {
   return _internal_platform_id();
 }
 inline void CMsgClientHello::_internal_set_platform_id(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000100u;
   _impl_.platform_id_ = value;
 }
 inline void CMsgClientHello::set_platform_id(uint32_t value) {
@@ -19625,7 +19537,7 @@ inline void CMsgClientHello::set_platform_id(uint32_t value) {
 
 // optional bytes game_msg = 10;
 inline bool CMsgClientHello::_internal_has_game_msg() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_game_msg() const {
@@ -19633,7 +19545,7 @@ inline bool CMsgClientHello::has_game_msg() const {
 }
 inline void CMsgClientHello::clear_game_msg() {
   _impl_.game_msg_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline const std::string& CMsgClientHello::game_msg() const {
   // @@protoc_insertion_point(field_get:CMsgClientHello.game_msg)
@@ -19642,7 +19554,7 @@ inline const std::string& CMsgClientHello::game_msg() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void CMsgClientHello::set_game_msg(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000004u;
+ _impl_._has_bits_[0] |= 0x00000002u;
  _impl_.game_msg_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:CMsgClientHello.game_msg)
 }
@@ -19655,11 +19567,11 @@ inline const std::string& CMsgClientHello::_internal_game_msg() const {
   return _impl_.game_msg_.Get();
 }
 inline void CMsgClientHello::_internal_set_game_msg(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.game_msg_.Set(value, GetArenaForAllocation());
 }
 inline std::string* CMsgClientHello::_internal_mutable_game_msg() {
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   return _impl_.game_msg_.Mutable(GetArenaForAllocation());
 }
 inline std::string* CMsgClientHello::release_game_msg() {
@@ -19667,7 +19579,7 @@ inline std::string* CMsgClientHello::release_game_msg() {
   if (!_internal_has_game_msg()) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
   auto* p = _impl_.game_msg_.Release();
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (_impl_.game_msg_.IsDefault()) {
@@ -19678,9 +19590,9 @@ inline std::string* CMsgClientHello::release_game_msg() {
 }
 inline void CMsgClientHello::set_allocated_game_msg(std::string* game_msg) {
   if (game_msg != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   _impl_.game_msg_.SetAllocated(game_msg, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -19693,7 +19605,7 @@ inline void CMsgClientHello::set_allocated_game_msg(std::string* game_msg) {
 
 // optional int32 os_type = 11;
 inline bool CMsgClientHello::_internal_has_os_type() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_os_type() const {
@@ -19701,7 +19613,7 @@ inline bool CMsgClientHello::has_os_type() const {
 }
 inline void CMsgClientHello::clear_os_type() {
   _impl_.os_type_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000400u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
 }
 inline int32_t CMsgClientHello::_internal_os_type() const {
   return _impl_.os_type_;
@@ -19711,7 +19623,7 @@ inline int32_t CMsgClientHello::os_type() const {
   return _internal_os_type();
 }
 inline void CMsgClientHello::_internal_set_os_type(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000400u;
+  _impl_._has_bits_[0] |= 0x00000200u;
   _impl_.os_type_ = value;
 }
 inline void CMsgClientHello::set_os_type(int32_t value) {
@@ -19721,7 +19633,7 @@ inline void CMsgClientHello::set_os_type(int32_t value) {
 
 // optional uint32 render_system = 12;
 inline bool CMsgClientHello::_internal_has_render_system() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_render_system() const {
@@ -19729,7 +19641,7 @@ inline bool CMsgClientHello::has_render_system() const {
 }
 inline void CMsgClientHello::clear_render_system() {
   _impl_.render_system_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000800u;
+  _impl_._has_bits_[0] &= ~0x00000400u;
 }
 inline uint32_t CMsgClientHello::_internal_render_system() const {
   return _impl_.render_system_;
@@ -19739,7 +19651,7 @@ inline uint32_t CMsgClientHello::render_system() const {
   return _internal_render_system();
 }
 inline void CMsgClientHello::_internal_set_render_system(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_._has_bits_[0] |= 0x00000400u;
   _impl_.render_system_ = value;
 }
 inline void CMsgClientHello::set_render_system(uint32_t value) {
@@ -19749,7 +19661,7 @@ inline void CMsgClientHello::set_render_system(uint32_t value) {
 
 // optional uint32 render_system_req = 13;
 inline bool CMsgClientHello::_internal_has_render_system_req() const {
-  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_render_system_req() const {
@@ -19757,7 +19669,7 @@ inline bool CMsgClientHello::has_render_system_req() const {
 }
 inline void CMsgClientHello::clear_render_system_req() {
   _impl_.render_system_req_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00000800u;
 }
 inline uint32_t CMsgClientHello::_internal_render_system_req() const {
   return _impl_.render_system_req_;
@@ -19767,7 +19679,7 @@ inline uint32_t CMsgClientHello::render_system_req() const {
   return _internal_render_system_req();
 }
 inline void CMsgClientHello::_internal_set_render_system_req(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00000800u;
   _impl_.render_system_req_ = value;
 }
 inline void CMsgClientHello::set_render_system_req(uint32_t value) {
@@ -19777,7 +19689,7 @@ inline void CMsgClientHello::set_render_system_req(uint32_t value) {
 
 // optional uint32 screen_width = 14;
 inline bool CMsgClientHello::_internal_has_screen_width() const {
-  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_screen_width() const {
@@ -19785,7 +19697,7 @@ inline bool CMsgClientHello::has_screen_width() const {
 }
 inline void CMsgClientHello::clear_screen_width() {
   _impl_.screen_width_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00001000u;
 }
 inline uint32_t CMsgClientHello::_internal_screen_width() const {
   return _impl_.screen_width_;
@@ -19795,7 +19707,7 @@ inline uint32_t CMsgClientHello::screen_width() const {
   return _internal_screen_width();
 }
 inline void CMsgClientHello::_internal_set_screen_width(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_._has_bits_[0] |= 0x00001000u;
   _impl_.screen_width_ = value;
 }
 inline void CMsgClientHello::set_screen_width(uint32_t value) {
@@ -19805,7 +19717,7 @@ inline void CMsgClientHello::set_screen_width(uint32_t value) {
 
 // optional uint32 screen_height = 15;
 inline bool CMsgClientHello::_internal_has_screen_height() const {
-  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_screen_height() const {
@@ -19813,7 +19725,7 @@ inline bool CMsgClientHello::has_screen_height() const {
 }
 inline void CMsgClientHello::clear_screen_height() {
   _impl_.screen_height_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00004000u;
+  _impl_._has_bits_[0] &= ~0x00002000u;
 }
 inline uint32_t CMsgClientHello::_internal_screen_height() const {
   return _impl_.screen_height_;
@@ -19823,7 +19735,7 @@ inline uint32_t CMsgClientHello::screen_height() const {
   return _internal_screen_height();
 }
 inline void CMsgClientHello::_internal_set_screen_height(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00004000u;
+  _impl_._has_bits_[0] |= 0x00002000u;
   _impl_.screen_height_ = value;
 }
 inline void CMsgClientHello::set_screen_height(uint32_t value) {
@@ -19833,7 +19745,7 @@ inline void CMsgClientHello::set_screen_height(uint32_t value) {
 
 // optional uint32 screen_refresh = 16;
 inline bool CMsgClientHello::_internal_has_screen_refresh() const {
-  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_screen_refresh() const {
@@ -19841,7 +19753,7 @@ inline bool CMsgClientHello::has_screen_refresh() const {
 }
 inline void CMsgClientHello::clear_screen_refresh() {
   _impl_.screen_refresh_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00008000u;
+  _impl_._has_bits_[0] &= ~0x00004000u;
 }
 inline uint32_t CMsgClientHello::_internal_screen_refresh() const {
   return _impl_.screen_refresh_;
@@ -19851,7 +19763,7 @@ inline uint32_t CMsgClientHello::screen_refresh() const {
   return _internal_screen_refresh();
 }
 inline void CMsgClientHello::_internal_set_screen_refresh(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00008000u;
+  _impl_._has_bits_[0] |= 0x00004000u;
   _impl_.screen_refresh_ = value;
 }
 inline void CMsgClientHello::set_screen_refresh(uint32_t value) {
@@ -19861,7 +19773,7 @@ inline void CMsgClientHello::set_screen_refresh(uint32_t value) {
 
 // optional uint32 render_width = 17;
 inline bool CMsgClientHello::_internal_has_render_width() const {
-  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_render_width() const {
@@ -19869,7 +19781,7 @@ inline bool CMsgClientHello::has_render_width() const {
 }
 inline void CMsgClientHello::clear_render_width() {
   _impl_.render_width_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00010000u;
+  _impl_._has_bits_[0] &= ~0x00008000u;
 }
 inline uint32_t CMsgClientHello::_internal_render_width() const {
   return _impl_.render_width_;
@@ -19879,7 +19791,7 @@ inline uint32_t CMsgClientHello::render_width() const {
   return _internal_render_width();
 }
 inline void CMsgClientHello::_internal_set_render_width(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00010000u;
+  _impl_._has_bits_[0] |= 0x00008000u;
   _impl_.render_width_ = value;
 }
 inline void CMsgClientHello::set_render_width(uint32_t value) {
@@ -19889,7 +19801,7 @@ inline void CMsgClientHello::set_render_width(uint32_t value) {
 
 // optional uint32 render_height = 18;
 inline bool CMsgClientHello::_internal_has_render_height() const {
-  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_render_height() const {
@@ -19897,7 +19809,7 @@ inline bool CMsgClientHello::has_render_height() const {
 }
 inline void CMsgClientHello::clear_render_height() {
   _impl_.render_height_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00020000u;
+  _impl_._has_bits_[0] &= ~0x00010000u;
 }
 inline uint32_t CMsgClientHello::_internal_render_height() const {
   return _impl_.render_height_;
@@ -19907,7 +19819,7 @@ inline uint32_t CMsgClientHello::render_height() const {
   return _internal_render_height();
 }
 inline void CMsgClientHello::_internal_set_render_height(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00020000u;
+  _impl_._has_bits_[0] |= 0x00010000u;
   _impl_.render_height_ = value;
 }
 inline void CMsgClientHello::set_render_height(uint32_t value) {
@@ -19917,7 +19829,7 @@ inline void CMsgClientHello::set_render_height(uint32_t value) {
 
 // optional uint32 swap_width = 19;
 inline bool CMsgClientHello::_internal_has_swap_width() const {
-  bool value = (_impl_._has_bits_[0] & 0x00040000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_swap_width() const {
@@ -19925,7 +19837,7 @@ inline bool CMsgClientHello::has_swap_width() const {
 }
 inline void CMsgClientHello::clear_swap_width() {
   _impl_.swap_width_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00040000u;
+  _impl_._has_bits_[0] &= ~0x00020000u;
 }
 inline uint32_t CMsgClientHello::_internal_swap_width() const {
   return _impl_.swap_width_;
@@ -19935,7 +19847,7 @@ inline uint32_t CMsgClientHello::swap_width() const {
   return _internal_swap_width();
 }
 inline void CMsgClientHello::_internal_set_swap_width(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00040000u;
+  _impl_._has_bits_[0] |= 0x00020000u;
   _impl_.swap_width_ = value;
 }
 inline void CMsgClientHello::set_swap_width(uint32_t value) {
@@ -19945,7 +19857,7 @@ inline void CMsgClientHello::set_swap_width(uint32_t value) {
 
 // optional uint32 swap_height = 20;
 inline bool CMsgClientHello::_internal_has_swap_height() const {
-  bool value = (_impl_._has_bits_[0] & 0x00080000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00040000u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_swap_height() const {
@@ -19953,7 +19865,7 @@ inline bool CMsgClientHello::has_swap_height() const {
 }
 inline void CMsgClientHello::clear_swap_height() {
   _impl_.swap_height_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00080000u;
+  _impl_._has_bits_[0] &= ~0x00040000u;
 }
 inline uint32_t CMsgClientHello::_internal_swap_height() const {
   return _impl_.swap_height_;
@@ -19963,7 +19875,7 @@ inline uint32_t CMsgClientHello::swap_height() const {
   return _internal_swap_height();
 }
 inline void CMsgClientHello::_internal_set_swap_height(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00080000u;
+  _impl_._has_bits_[0] |= 0x00040000u;
   _impl_.swap_height_ = value;
 }
 inline void CMsgClientHello::set_swap_height(uint32_t value) {
@@ -19973,7 +19885,7 @@ inline void CMsgClientHello::set_swap_height(uint32_t value) {
 
 // optional bool is_steam_china = 22;
 inline bool CMsgClientHello::_internal_has_is_steam_china() const {
-  bool value = (_impl_._has_bits_[0] & 0x00100000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00080000u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_is_steam_china() const {
@@ -19981,7 +19893,7 @@ inline bool CMsgClientHello::has_is_steam_china() const {
 }
 inline void CMsgClientHello::clear_is_steam_china() {
   _impl_.is_steam_china_ = false;
-  _impl_._has_bits_[0] &= ~0x00100000u;
+  _impl_._has_bits_[0] &= ~0x00080000u;
 }
 inline bool CMsgClientHello::_internal_is_steam_china() const {
   return _impl_.is_steam_china_;
@@ -19991,7 +19903,7 @@ inline bool CMsgClientHello::is_steam_china() const {
   return _internal_is_steam_china();
 }
 inline void CMsgClientHello::_internal_set_is_steam_china(bool value) {
-  _impl_._has_bits_[0] |= 0x00100000u;
+  _impl_._has_bits_[0] |= 0x00080000u;
   _impl_.is_steam_china_ = value;
 }
 inline void CMsgClientHello::set_is_steam_china(bool value) {
@@ -20001,7 +19913,7 @@ inline void CMsgClientHello::set_is_steam_china(bool value) {
 
 // optional bool is_steam_china_client = 24;
 inline bool CMsgClientHello::_internal_has_is_steam_china_client() const {
-  bool value = (_impl_._has_bits_[0] & 0x00200000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00100000u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_is_steam_china_client() const {
@@ -20009,7 +19921,7 @@ inline bool CMsgClientHello::has_is_steam_china_client() const {
 }
 inline void CMsgClientHello::clear_is_steam_china_client() {
   _impl_.is_steam_china_client_ = false;
-  _impl_._has_bits_[0] &= ~0x00200000u;
+  _impl_._has_bits_[0] &= ~0x00100000u;
 }
 inline bool CMsgClientHello::_internal_is_steam_china_client() const {
   return _impl_.is_steam_china_client_;
@@ -20019,7 +19931,7 @@ inline bool CMsgClientHello::is_steam_china_client() const {
   return _internal_is_steam_china_client();
 }
 inline void CMsgClientHello::_internal_set_is_steam_china_client(bool value) {
-  _impl_._has_bits_[0] |= 0x00200000u;
+  _impl_._has_bits_[0] |= 0x00100000u;
   _impl_.is_steam_china_client_ = value;
 }
 inline void CMsgClientHello::set_is_steam_china_client(bool value) {
@@ -20029,7 +19941,7 @@ inline void CMsgClientHello::set_is_steam_china_client(bool value) {
 
 // optional string platform_name = 23;
 inline bool CMsgClientHello::_internal_has_platform_name() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool CMsgClientHello::has_platform_name() const {
@@ -20037,7 +19949,7 @@ inline bool CMsgClientHello::has_platform_name() const {
 }
 inline void CMsgClientHello::clear_platform_name() {
   _impl_.platform_name_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline const std::string& CMsgClientHello::platform_name() const {
   // @@protoc_insertion_point(field_get:CMsgClientHello.platform_name)
@@ -20046,7 +19958,7 @@ inline const std::string& CMsgClientHello::platform_name() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void CMsgClientHello::set_platform_name(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000008u;
+ _impl_._has_bits_[0] |= 0x00000004u;
  _impl_.platform_name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:CMsgClientHello.platform_name)
 }
@@ -20059,11 +19971,11 @@ inline const std::string& CMsgClientHello::_internal_platform_name() const {
   return _impl_.platform_name_.Get();
 }
 inline void CMsgClientHello::_internal_set_platform_name(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.platform_name_.Set(value, GetArenaForAllocation());
 }
 inline std::string* CMsgClientHello::_internal_mutable_platform_name() {
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   return _impl_.platform_name_.Mutable(GetArenaForAllocation());
 }
 inline std::string* CMsgClientHello::release_platform_name() {
@@ -20071,7 +19983,7 @@ inline std::string* CMsgClientHello::release_platform_name() {
   if (!_internal_has_platform_name()) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
   auto* p = _impl_.platform_name_.Release();
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (_impl_.platform_name_.IsDefault()) {
@@ -20082,9 +19994,9 @@ inline std::string* CMsgClientHello::release_platform_name() {
 }
 inline void CMsgClientHello::set_allocated_platform_name(std::string* platform_name) {
   if (platform_name != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000008u;
+    _impl_._has_bits_[0] |= 0x00000004u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000008u;
+    _impl_._has_bits_[0] &= ~0x00000004u;
   }
   _impl_.platform_name_.SetAllocated(platform_name, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING

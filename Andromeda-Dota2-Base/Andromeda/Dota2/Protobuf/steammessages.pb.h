@@ -73,13 +73,11 @@ enum EGCPlatform : int {
   k_eGCPlatform_None = 0,
   k_eGCPlatform_PC = 1,
   k_eGCPlatform_Mac = 2,
-  k_eGCPlatform_Linux = 3,
-  k_eGCPlatform_Android = 4,
-  k_eGCPlatform_iOS = 5
+  k_eGCPlatform_Linux = 3
 };
 bool EGCPlatform_IsValid(int value);
 constexpr EGCPlatform EGCPlatform_MIN = k_eGCPlatform_None;
-constexpr EGCPlatform EGCPlatform_MAX = k_eGCPlatform_iOS;
+constexpr EGCPlatform EGCPlatform_MAX = k_eGCPlatform_Linux;
 constexpr int EGCPlatform_ARRAYSIZE = EGCPlatform_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EGCPlatform_descriptor();

@@ -1331,17 +1331,17 @@ class CMsgClientPingData final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
       mutable_region_pings();
 
-  // optional uint32 region_ping_failed_bitmask = 10;
+  // optional uint64 region_ping_failed_bitmask = 10;
   bool has_region_ping_failed_bitmask() const;
   private:
   bool _internal_has_region_ping_failed_bitmask() const;
   public:
   void clear_region_ping_failed_bitmask();
-  uint32_t region_ping_failed_bitmask() const;
-  void set_region_ping_failed_bitmask(uint32_t value);
+  uint64_t region_ping_failed_bitmask() const;
+  void set_region_ping_failed_bitmask(uint64_t value);
   private:
-  uint32_t _internal_region_ping_failed_bitmask() const;
-  void _internal_set_region_ping_failed_bitmask(uint32_t value);
+  uint64_t _internal_region_ping_failed_bitmask() const;
+  void _internal_set_region_ping_failed_bitmask(uint64_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:CMsgClientPingData)
@@ -1361,7 +1361,7 @@ class CMsgClientPingData final :
     mutable std::atomic<int> _region_codes_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t > region_pings_;
     mutable std::atomic<int> _region_pings_cached_byte_size_;
-    uint32_t region_ping_failed_bitmask_;
+    uint64_t region_ping_failed_bitmask_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_base_5fgcmessages_2eproto;
@@ -12574,7 +12574,7 @@ CMsgClientPingData::mutable_region_pings() {
   return _internal_mutable_region_pings();
 }
 
-// optional uint32 region_ping_failed_bitmask = 10;
+// optional uint64 region_ping_failed_bitmask = 10;
 inline bool CMsgClientPingData::_internal_has_region_ping_failed_bitmask() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
@@ -12583,21 +12583,21 @@ inline bool CMsgClientPingData::has_region_ping_failed_bitmask() const {
   return _internal_has_region_ping_failed_bitmask();
 }
 inline void CMsgClientPingData::clear_region_ping_failed_bitmask() {
-  _impl_.region_ping_failed_bitmask_ = 0u;
+  _impl_.region_ping_failed_bitmask_ = uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline uint32_t CMsgClientPingData::_internal_region_ping_failed_bitmask() const {
+inline uint64_t CMsgClientPingData::_internal_region_ping_failed_bitmask() const {
   return _impl_.region_ping_failed_bitmask_;
 }
-inline uint32_t CMsgClientPingData::region_ping_failed_bitmask() const {
+inline uint64_t CMsgClientPingData::region_ping_failed_bitmask() const {
   // @@protoc_insertion_point(field_get:CMsgClientPingData.region_ping_failed_bitmask)
   return _internal_region_ping_failed_bitmask();
 }
-inline void CMsgClientPingData::_internal_set_region_ping_failed_bitmask(uint32_t value) {
+inline void CMsgClientPingData::_internal_set_region_ping_failed_bitmask(uint64_t value) {
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.region_ping_failed_bitmask_ = value;
 }
-inline void CMsgClientPingData::set_region_ping_failed_bitmask(uint32_t value) {
+inline void CMsgClientPingData::set_region_ping_failed_bitmask(uint64_t value) {
   _internal_set_region_ping_failed_bitmask(value);
   // @@protoc_insertion_point(field_set:CMsgClientPingData.region_ping_failed_bitmask)
 }

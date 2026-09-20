@@ -356,6 +356,8 @@ PROTOBUF_CONSTEXPR CMsgDotaScenario_Hero::CMsgDotaScenario_Hero(
   , /*decltype(_impl_.total_madstone_)*/0u
   , /*decltype(_impl_.current_madstone_)*/0u
   , /*decltype(_impl_.refresher_charges_used_)*/0
+  , /*decltype(_impl_.summon_kill_gold_)*/0
+  , /*decltype(_impl_.wisdom_shrines_taken_)*/0
   , /*decltype(_impl_.player_id_)*/-1
   , /*decltype(_impl_.respawn_seconds_)*/-1} {}
 struct CMsgDotaScenario_HeroDefaultTypeInternal {
@@ -786,8 +788,10 @@ const uint32_t TableStruct_dota_5fscenariomessages_2eproto::offsets[] PROTOBUF_S
   PROTOBUF_FIELD_OFFSET(::CMsgDotaScenario_Hero, _impl_.current_madstone_),
   PROTOBUF_FIELD_OFFSET(::CMsgDotaScenario_Hero, _impl_.neutral_tiers_),
   PROTOBUF_FIELD_OFFSET(::CMsgDotaScenario_Hero, _impl_.refresher_charges_used_),
+  PROTOBUF_FIELD_OFFSET(::CMsgDotaScenario_Hero, _impl_.summon_kill_gold_),
+  PROTOBUF_FIELD_OFFSET(::CMsgDotaScenario_Hero, _impl_.wisdom_shrines_taken_),
   2,
-  62,
+  64,
   3,
   0,
   4,
@@ -839,7 +843,7 @@ const uint32_t TableStruct_dota_5fscenariomessages_2eproto::offsets[] PROTOBUF_S
   50,
   51,
   52,
-  63,
+  65,
   53,
   54,
   55,
@@ -854,6 +858,8 @@ const uint32_t TableStruct_dota_5fscenariomessages_2eproto::offsets[] PROTOBUF_S
   60,
   ~0u,
   61,
+  62,
+  63,
   PROTOBUF_FIELD_OFFSET(::CMsgDotaScenario_Stock, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CMsgDotaScenario_Stock, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1008,13 +1014,13 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 174, 183, -1, sizeof(::CMsgDotaScenario_HeroAbility)},
   { 186, 195, -1, sizeof(::CMsgDotaScenario_HeroNeutralChoice)},
   { 198, 208, -1, sizeof(::CMsgDotaScenario_HeroNeutralTier)},
-  { 212, 286, -1, sizeof(::CMsgDotaScenario_Hero)},
-  { 354, 366, -1, sizeof(::CMsgDotaScenario_Stock)},
-  { 372, 383, -1, sizeof(::CMsgDotaScenario_Building)},
-  { 388, 398, -1, sizeof(::CMsgDotaScenario_Entity)},
-  { 402, 418, -1, sizeof(::CMsgDotaScenario_Item)},
-  { 428, 450, -1, sizeof(::CMsgDotaScenario_Modifier)},
-  { 466, 481, -1, sizeof(::CMsgDotaScenario)},
+  { 212, 288, -1, sizeof(::CMsgDotaScenario_Hero)},
+  { 358, 370, -1, sizeof(::CMsgDotaScenario_Stock)},
+  { 376, 387, -1, sizeof(::CMsgDotaScenario_Building)},
+  { 392, 402, -1, sizeof(::CMsgDotaScenario_Entity)},
+  { 406, 422, -1, sizeof(::CMsgDotaScenario_Item)},
+  { 432, 454, -1, sizeof(::CMsgDotaScenario_Modifier)},
+  { 470, 485, -1, sizeof(::CMsgDotaScenario)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1060,7 +1066,7 @@ const char descriptor_table_protodef_dota_5fscenariomessages_2eproto[] PROTOBUF_
   "CScenarioEnt_SpiritBear\022\024\n\010owner_id\030\001 \001("
   "\005:\002-1\022\017\n\007team_id\030\002 \001(\005\"A\n\030CScenarioEnt_D"
   "roppedItem\022%\n\010position\030\001 \001(\0132\023.CScenario"
-  "_Position\"\355#\n\020CMsgDotaScenario\022\020\n\010lobby_"
+  "_Position\"\247$\n\020CMsgDotaScenario\022\020\n\010lobby_"
   "id\030\001 \001(\004\022$\n\004game\030\002 \001(\0132\026.CMsgDotaScenari"
   "o.Game\022%\n\005teams\030\003 \003(\0132\026.CMsgDotaScenario"
   ".Team\022&\n\006heroes\030\004 \003(\0132\026.CMsgDotaScenario"
@@ -1097,7 +1103,7 @@ const char descriptor_table_protodef_dota_5fscenariomessages_2eproto[] PROTOBUF_
   "\216\001\n\017HeroNeutralTier\022\014\n\004tier\030\001 \001(\r\0224\n\007cho"
   "ices\030\002 \003(\0132#.CMsgDotaScenario.HeroNeutra"
   "lChoice\022\031\n\021selected_artifact\030\003 \001(\005\022\034\n\024se"
-  "lected_enchantment\030\004 \001(\005\032\201\016\n\004Hero\022\020\n\010ste"
+  "lected_enchantment\030\004 \001(\005\032\273\016\n\004Hero\022\020\n\010ste"
   "am_id\030\001 \001(\006\022\025\n\tplayer_id\030\002 \001(\005:\002-1\022\017\n\007te"
   "am_id\030\003 \001(\005\022\014\n\004hero\030\004 \001(\t\022\020\n\010total_xp\030\005 "
   "\001(\005\022\030\n\020bkb_charges_used\030\006 \001(\005\022\031\n\021aeon_ch"
@@ -1142,47 +1148,48 @@ const char descriptor_table_protodef_dota_5fscenariomessages_2eproto[] PROTOBUF_
   "total_madstone\030\232\001 \001(\r\022\031\n\020current_madston"
   "e\030\233\001 \001(\r\0229\n\rneutral_tiers\030\234\001 \003(\0132!.CMsgD"
   "otaScenario.HeroNeutralTier\022\037\n\026refresher"
-  "_charges_used\030\235\001 \001(\005\032\203\001\n\005Stock\022\014\n\004name\030\001"
-  " \001(\t\022\027\n\013team_number\030\002 \001(\005:\002-1\022\025\n\tplayer_"
-  "id\030\003 \001(\005:\002-1\022\025\n\rcurrent_stock\030\004 \001(\005\022\020\n\010c"
-  "ooldown\030\005 \001(\002\022\023\n\013bonus_stock\030\006 \001(\005\032t\n\010Bu"
-  "ilding\022\023\n\013entity_name\030\001 \001(\t\022\024\n\014entity_cl"
-  "ass\030\002 \001(\t\022\017\n\007team_id\030\003 \001(\005\022\024\n\014is_destroy"
-  "ed\030\004 \001(\010\022\026\n\013health_frac\030\005 \001(\002:\0011\032\260\001\n\006Ent"
-  "ity\022&\n\007courier\030\001 \001(\0132\025.CScenarioEnt_Cour"
-  "ier\022\036\n\003npc\030\002 \001(\0132\021.CScenarioEnt_NPC\022-\n\013s"
-  "pirit_bear\030\003 \001(\0132\030.CScenarioEnt_SpiritBe"
-  "ar\022/\n\014dropped_item\030\004 \001(\0132\031.CScenarioEnt_"
-  "DroppedItem\032\371\001\n\004Item\022\014\n\004name\030\001 \001(\t\022-\n\010lo"
-  "cation\030\002 \001(\0132\033.CMsgDotaScenario.EntityRe"
-  "f\022\024\n\010owner_id\030\003 \001(\005:\002-1\022\021\n\titem_slot\030\004 \001"
-  "(\005\022\031\n\021neutral_drop_team\030\005 \001(\005\022\017\n\007charges"
-  "\030\006 \001(\005\022\031\n\021secondary_charges\030\007 \001(\005\022\024\n\010lif"
-  "etime\030\010 \001(\002:\002-1\022\034\n\020stored_rune_type\030\t \001("
-  "\005:\002-1\022\020\n\005level\030\n \001(\005:\0011\032\347\004\n\010Modifier\022\014\n\004"
-  "name\030\001 \001(\t\022+\n\006parent\030\002 \001(\0132\033.CMsgDotaSce"
-  "nario.EntityRef\022+\n\006caster\030\003 \001(\0132\033.CMsgDo"
-  "taScenario.EntityRef\022,\n\007ability\030\004 \001(\0132\033."
-  "CMsgDotaScenario.EntityRef\022\024\n\010duration\030\005"
-  " \001(\002:\002-1\022\035\n\022lifetime_remaining\030\006 \001(\002:\0010\022"
-  "\023\n\013stack_count\030\007 \001(\005\022\037\n\027create_even_if_e"
-  "xisting\030\010 \001(\010\022\035\n\025create_without_caster\030\t"
-  " \001(\010\022\036\n\026create_without_ability\030\n \001(\010\022 \n\030"
-  "moonshard_consumed_bonus\030d \001(\005\022-\n%moonsh"
-  "ard_consumed_bonus_night_vision\030e \001(\005\022\033\n"
-  "\023wardtruesight_range\030n \001(\005\022;\n3ultimate_s"
-  "cepter_consumed_alchemist_bonus_all_stat"
-  "s\030x \001(\005\0228\n0ultimate_scepter_consumed_alc"
-  "hemist_bonus_health\030y \001(\005\0226\n.ultimate_sc"
-  "epter_consumed_alchemist_bonus_mana\030z \001("
-  "\005"
+  "_charges_used\030\235\001 \001(\005\022\031\n\020summon_kill_gold"
+  "\030\236\001 \001(\005\022\035\n\024wisdom_shrines_taken\030\237\001 \001(\005\032\203"
+  "\001\n\005Stock\022\014\n\004name\030\001 \001(\t\022\027\n\013team_number\030\002 "
+  "\001(\005:\002-1\022\025\n\tplayer_id\030\003 \001(\005:\002-1\022\025\n\rcurren"
+  "t_stock\030\004 \001(\005\022\020\n\010cooldown\030\005 \001(\002\022\023\n\013bonus"
+  "_stock\030\006 \001(\005\032t\n\010Building\022\023\n\013entity_name\030"
+  "\001 \001(\t\022\024\n\014entity_class\030\002 \001(\t\022\017\n\007team_id\030\003"
+  " \001(\005\022\024\n\014is_destroyed\030\004 \001(\010\022\026\n\013health_fra"
+  "c\030\005 \001(\002:\0011\032\260\001\n\006Entity\022&\n\007courier\030\001 \001(\0132\025"
+  ".CScenarioEnt_Courier\022\036\n\003npc\030\002 \001(\0132\021.CSc"
+  "enarioEnt_NPC\022-\n\013spirit_bear\030\003 \001(\0132\030.CSc"
+  "enarioEnt_SpiritBear\022/\n\014dropped_item\030\004 \001"
+  "(\0132\031.CScenarioEnt_DroppedItem\032\371\001\n\004Item\022\014"
+  "\n\004name\030\001 \001(\t\022-\n\010location\030\002 \001(\0132\033.CMsgDot"
+  "aScenario.EntityRef\022\024\n\010owner_id\030\003 \001(\005:\002-"
+  "1\022\021\n\titem_slot\030\004 \001(\005\022\031\n\021neutral_drop_tea"
+  "m\030\005 \001(\005\022\017\n\007charges\030\006 \001(\005\022\031\n\021secondary_ch"
+  "arges\030\007 \001(\005\022\024\n\010lifetime\030\010 \001(\002:\002-1\022\034\n\020sto"
+  "red_rune_type\030\t \001(\005:\002-1\022\020\n\005level\030\n \001(\005:\001"
+  "1\032\347\004\n\010Modifier\022\014\n\004name\030\001 \001(\t\022+\n\006parent\030\002"
+  " \001(\0132\033.CMsgDotaScenario.EntityRef\022+\n\006cas"
+  "ter\030\003 \001(\0132\033.CMsgDotaScenario.EntityRef\022,"
+  "\n\007ability\030\004 \001(\0132\033.CMsgDotaScenario.Entit"
+  "yRef\022\024\n\010duration\030\005 \001(\002:\002-1\022\035\n\022lifetime_r"
+  "emaining\030\006 \001(\002:\0010\022\023\n\013stack_count\030\007 \001(\005\022\037"
+  "\n\027create_even_if_existing\030\010 \001(\010\022\035\n\025creat"
+  "e_without_caster\030\t \001(\010\022\036\n\026create_without"
+  "_ability\030\n \001(\010\022 \n\030moonshard_consumed_bon"
+  "us\030d \001(\005\022-\n%moonshard_consumed_bonus_nig"
+  "ht_vision\030e \001(\005\022\033\n\023wardtruesight_range\030n"
+  " \001(\005\022;\n3ultimate_scepter_consumed_alchem"
+  "ist_bonus_all_stats\030x \001(\005\0228\n0ultimate_sc"
+  "epter_consumed_alchemist_bonus_health\030y "
+  "\001(\005\0226\n.ultimate_scepter_consumed_alchemi"
+  "st_bonus_mana\030z \001(\005"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fscenariomessages_2eproto_deps[1] = {
   &::descriptor_table_dota_5fshared_5fenums_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_dota_5fscenariomessages_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fscenariomessages_2eproto = {
-    false, false, 5241, descriptor_table_protodef_dota_5fscenariomessages_2eproto,
+    false, false, 5299, descriptor_table_protodef_dota_5fscenariomessages_2eproto,
     "dota_scenariomessages.proto",
     &descriptor_table_dota_5fscenariomessages_2eproto_once, descriptor_table_dota_5fscenariomessages_2eproto_deps, 1, 23,
     schemas, file_default_instances, TableStruct_dota_5fscenariomessages_2eproto::offsets,
@@ -5998,7 +6005,7 @@ class CMsgDotaScenario_Hero::_Internal {
     (*has_bits)[0] |= 4u;
   }
   static void set_has_player_id(HasBits* has_bits) {
-    (*has_bits)[1] |= 1073741824u;
+    (*has_bits)[2] |= 1u;
   }
   static void set_has_team_id(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
@@ -6154,7 +6161,7 @@ class CMsgDotaScenario_Hero::_Internal {
     (*has_bits)[1] |= 1048576u;
   }
   static void set_has_respawn_seconds(HasBits* has_bits) {
-    (*has_bits)[1] |= 2147483648u;
+    (*has_bits)[2] |= 2u;
   }
   static void set_has_last_buyback_time(HasBits* has_bits) {
     (*has_bits)[1] |= 2097152u;
@@ -6186,6 +6193,12 @@ class CMsgDotaScenario_Hero::_Internal {
   }
   static void set_has_refresher_charges_used(HasBits* has_bits) {
     (*has_bits)[1] |= 536870912u;
+  }
+  static void set_has_summon_kill_gold(HasBits* has_bits) {
+    (*has_bits)[1] |= 1073741824u;
+  }
+  static void set_has_wisdom_shrines_taken(HasBits* has_bits) {
+    (*has_bits)[1] |= 2147483648u;
   }
 };
 
@@ -6271,6 +6284,8 @@ CMsgDotaScenario_Hero::CMsgDotaScenario_Hero(const CMsgDotaScenario_Hero& from)
     , decltype(_impl_.total_madstone_){}
     , decltype(_impl_.current_madstone_){}
     , decltype(_impl_.refresher_charges_used_){}
+    , decltype(_impl_.summon_kill_gold_){}
+    , decltype(_impl_.wisdom_shrines_taken_){}
     , decltype(_impl_.player_id_){}
     , decltype(_impl_.respawn_seconds_){}};
 
@@ -6365,6 +6380,8 @@ inline void CMsgDotaScenario_Hero::SharedCtor(
     , decltype(_impl_.total_madstone_){0u}
     , decltype(_impl_.current_madstone_){0u}
     , decltype(_impl_.refresher_charges_used_){0}
+    , decltype(_impl_.summon_kill_gold_){0}
+    , decltype(_impl_.wisdom_shrines_taken_){0}
     , decltype(_impl_.player_id_){-1}
     , decltype(_impl_.respawn_seconds_){-1}
   };
@@ -6455,8 +6472,11 @@ void CMsgDotaScenario_Hero::Clear() {
   }
   if (cached_has_bits & 0xff000000u) {
     ::memset(&_impl_.bounty_runes_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.refresher_charges_used_) -
-        reinterpret_cast<char*>(&_impl_.bounty_runes_)) + sizeof(_impl_.refresher_charges_used_));
+        reinterpret_cast<char*>(&_impl_.wisdom_shrines_taken_) -
+        reinterpret_cast<char*>(&_impl_.bounty_runes_)) + sizeof(_impl_.wisdom_shrines_taken_));
+  }
+  cached_has_bits = _impl_._has_bits_[2];
+  if (cached_has_bits & 0x00000003u) {
     _impl_.player_id_ = -1;
     _impl_.respawn_seconds_ = -1;
   }
@@ -7100,6 +7120,24 @@ const char* CMsgDotaScenario_Hero::_InternalParse(const char* ptr, ::_pbi::Parse
         } else
           goto handle_unusual;
         continue;
+      // optional int32 summon_kill_gold = 158;
+      case 158:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 240)) {
+          _Internal::set_has_summon_kill_gold(&_impl_._has_bits_);
+          _impl_.summon_kill_gold_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional int32 wisdom_shrines_taken = 159;
+      case 159:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 248)) {
+          _Internal::set_has_wisdom_shrines_taken(&_impl_._has_bits_);
+          _impl_.wisdom_shrines_taken_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -7136,9 +7174,9 @@ uint8_t* CMsgDotaScenario_Hero::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteFixed64ToArray(1, this->_internal_steam_id(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[1];
+  cached_has_bits = _impl_._has_bits_[2];
   // optional int32 player_id = 2 [default = -1];
-  if (cached_has_bits & 0x40000000u) {
+  if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_player_id(), target);
   }
@@ -7455,12 +7493,14 @@ uint8_t* CMsgDotaScenario_Hero::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(65, this->_internal_kill_streak(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[2];
   // optional int32 respawn_seconds = 68 [default = -1];
-  if (cached_has_bits & 0x80000000u) {
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(68, this->_internal_respawn_seconds(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional int32 last_buyback_time = 69;
   if (cached_has_bits & 0x00200000u) {
     target = stream->EnsureSpace(target);
@@ -7554,6 +7594,18 @@ uint8_t* CMsgDotaScenario_Hero::_InternalSerialize(
   if (cached_has_bits & 0x20000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(157, this->_internal_refresher_charges_used(), target);
+  }
+
+  // optional int32 summon_kill_gold = 158;
+  if (cached_has_bits & 0x40000000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(158, this->_internal_summon_kill_gold(), target);
+  }
+
+  // optional int32 wisdom_shrines_taken = 159;
+  if (cached_has_bits & 0x80000000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(159, this->_internal_wisdom_shrines_taken(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -8011,13 +8063,30 @@ size_t CMsgDotaScenario_Hero::ByteSizeLong() const {
           this->_internal_refresher_charges_used());
     }
 
-    // optional int32 player_id = 2 [default = -1];
+    // optional int32 summon_kill_gold = 158;
     if (cached_has_bits & 0x40000000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(
+          this->_internal_summon_kill_gold());
+    }
+
+    // optional int32 wisdom_shrines_taken = 159;
+    if (cached_has_bits & 0x80000000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::Int32Size(
+          this->_internal_wisdom_shrines_taken());
+    }
+
+  }
+  cached_has_bits = _impl_._has_bits_[2];
+  if (cached_has_bits & 0x00000003u) {
+    // optional int32 player_id = 2 [default = -1];
+    if (cached_has_bits & 0x00000001u) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_player_id());
     }
 
     // optional int32 respawn_seconds = 68 [default = -1];
-    if (cached_has_bits & 0x80000000u) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::Int32Size(
           this->_internal_respawn_seconds());
@@ -8258,12 +8327,22 @@ void CMsgDotaScenario_Hero::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, 
       _this->_impl_.refresher_charges_used_ = from._impl_.refresher_charges_used_;
     }
     if (cached_has_bits & 0x40000000u) {
-      _this->_impl_.player_id_ = from._impl_.player_id_;
+      _this->_impl_.summon_kill_gold_ = from._impl_.summon_kill_gold_;
     }
     if (cached_has_bits & 0x80000000u) {
-      _this->_impl_.respawn_seconds_ = from._impl_.respawn_seconds_;
+      _this->_impl_.wisdom_shrines_taken_ = from._impl_.wisdom_shrines_taken_;
     }
     _this->_impl_._has_bits_[1] |= cached_has_bits;
+  }
+  cached_has_bits = from._impl_._has_bits_[2];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.player_id_ = from._impl_.player_id_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.respawn_seconds_ = from._impl_.respawn_seconds_;
+    }
+    _this->_impl_._has_bits_[2] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -8286,6 +8365,7 @@ void CMsgDotaScenario_Hero::InternalSwap(CMsgDotaScenario_Hero* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   swap(_impl_._has_bits_[1], other->_impl_._has_bits_[1]);
+  swap(_impl_._has_bits_[2], other->_impl_._has_bits_[2]);
   _impl_.enemy_kills_.InternalSwap(&other->_impl_.enemy_kills_);
   _impl_.damage_stats_.InternalSwap(&other->_impl_.damage_stats_);
   _impl_.abilities_.InternalSwap(&other->_impl_.abilities_);
@@ -8295,8 +8375,8 @@ void CMsgDotaScenario_Hero::InternalSwap(CMsgDotaScenario_Hero* other) {
       &other->_impl_.hero_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CMsgDotaScenario_Hero, _impl_.refresher_charges_used_)
-      + sizeof(CMsgDotaScenario_Hero::_impl_.refresher_charges_used_)
+      PROTOBUF_FIELD_OFFSET(CMsgDotaScenario_Hero, _impl_.wisdom_shrines_taken_)
+      + sizeof(CMsgDotaScenario_Hero::_impl_.wisdom_shrines_taken_)
       - PROTOBUF_FIELD_OFFSET(CMsgDotaScenario_Hero, _impl_.position_)>(
           reinterpret_cast<char*>(&_impl_.position_),
           reinterpret_cast<char*>(&other->_impl_.position_));

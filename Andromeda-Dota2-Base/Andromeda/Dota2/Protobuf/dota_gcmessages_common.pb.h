@@ -1271,11 +1271,13 @@ enum CDotaMsgStructuredTooltipProperties_EAttributeType : int {
   CDotaMsgStructuredTooltipProperties_EAttributeType_kBuffDuration = 19,
   CDotaMsgStructuredTooltipProperties_EAttributeType_kAbilityDefinedDamage = 20,
   CDotaMsgStructuredTooltipProperties_EAttributeType_kDispellability = 21,
-  CDotaMsgStructuredTooltipProperties_EAttributeType_kSpellImmunityPiercing = 22
+  CDotaMsgStructuredTooltipProperties_EAttributeType_kSpellImmunityPiercing = 22,
+  CDotaMsgStructuredTooltipProperties_EAttributeType_kHealthPercentageAsPureDamage = 23,
+  CDotaMsgStructuredTooltipProperties_EAttributeType_kPhysicalDamagePercentage = 24
 };
 bool CDotaMsgStructuredTooltipProperties_EAttributeType_IsValid(int value);
 constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties_EAttributeType_EAttributeType_MIN = CDotaMsgStructuredTooltipProperties_EAttributeType_kUnknown;
-constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties_EAttributeType_EAttributeType_MAX = CDotaMsgStructuredTooltipProperties_EAttributeType_kSpellImmunityPiercing;
+constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties_EAttributeType_EAttributeType_MAX = CDotaMsgStructuredTooltipProperties_EAttributeType_kPhysicalDamagePercentage;
 constexpr int CDotaMsgStructuredTooltipProperties_EAttributeType_EAttributeType_ARRAYSIZE = CDotaMsgStructuredTooltipProperties_EAttributeType_EAttributeType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CDotaMsgStructuredTooltipProperties_EAttributeType_descriptor();
@@ -5009,6 +5011,7 @@ class CMatchPlayerTimedStats final :
     kWardsPlacedFieldNumber = 39,
     kTripleKillsFieldNumber = 40,
     kRampagesFieldNumber = 41,
+    kSummonKillGoldFieldNumber = 43,
   };
   // repeated .CMatchPlayerTimedCustomStat custom_stats = 42;
   int custom_stats_size() const;
@@ -5496,6 +5499,19 @@ class CMatchPlayerTimedStats final :
   void _internal_set_rampages(uint32_t value);
   public:
 
+  // optional uint32 summon_kill_gold = 43;
+  bool has_summon_kill_gold() const;
+  private:
+  bool _internal_has_summon_kill_gold() const;
+  public:
+  void clear_summon_kill_gold();
+  uint32_t summon_kill_gold() const;
+  void set_summon_kill_gold(uint32_t value);
+  private:
+  uint32_t _internal_summon_kill_gold() const;
+  void _internal_set_summon_kill_gold(uint32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:CMatchPlayerTimedStats)
  private:
   class _Internal;
@@ -5543,6 +5559,7 @@ class CMatchPlayerTimedStats final :
     uint32_t wards_placed_;
     uint32_t triple_kills_;
     uint32_t rampages_;
+    uint32_t summon_kill_gold_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fgcmessages_5fcommon_2eproto;
@@ -45337,7 +45354,7 @@ class CDotaMsgStructuredTooltipProperties_Attribute final :
     kInternalNameFieldNumber = 1,
     kLocalizedNameTextFieldNumber = 2,
     kValueFieldNumber = 4,
-    kTypeFieldNumber = 3,
+    kResolvedTypeFieldNumber = 3,
   };
   // optional string internal_name = 1;
   bool has_internal_name() const;
@@ -45393,17 +45410,17 @@ class CDotaMsgStructuredTooltipProperties_Attribute final :
       ::CDotaMsgStructuredTooltipProperties_AttributeValue* value);
   ::CDotaMsgStructuredTooltipProperties_AttributeValue* unsafe_arena_release_value();
 
-  // optional .CDotaMsgStructuredTooltipProperties.EAttributeType type = 3 [default = kUnknown];
-  bool has_type() const;
+  // optional .CDotaMsgStructuredTooltipProperties.EAttributeType resolved_type = 3 [default = kUnknown];
+  bool has_resolved_type() const;
   private:
-  bool _internal_has_type() const;
+  bool _internal_has_resolved_type() const;
   public:
-  void clear_type();
-  ::CDotaMsgStructuredTooltipProperties_EAttributeType type() const;
-  void set_type(::CDotaMsgStructuredTooltipProperties_EAttributeType value);
+  void clear_resolved_type();
+  ::CDotaMsgStructuredTooltipProperties_EAttributeType resolved_type() const;
+  void set_resolved_type(::CDotaMsgStructuredTooltipProperties_EAttributeType value);
   private:
-  ::CDotaMsgStructuredTooltipProperties_EAttributeType _internal_type() const;
-  void _internal_set_type(::CDotaMsgStructuredTooltipProperties_EAttributeType value);
+  ::CDotaMsgStructuredTooltipProperties_EAttributeType _internal_resolved_type() const;
+  void _internal_set_resolved_type(::CDotaMsgStructuredTooltipProperties_EAttributeType value);
   public:
 
   // @@protoc_insertion_point(class_scope:CDotaMsgStructuredTooltipProperties.Attribute)
@@ -45419,7 +45436,7 @@ class CDotaMsgStructuredTooltipProperties_Attribute final :
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr internal_name_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr localized_name_text_;
     ::CDotaMsgStructuredTooltipProperties_AttributeValue* value_;
-    int type_;
+    int resolved_type_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fgcmessages_5fcommon_2eproto;
@@ -46916,6 +46933,10 @@ class CDotaMsgStructuredTooltipProperties final :
     CDotaMsgStructuredTooltipProperties_EAttributeType_kDispellability;
   static constexpr EAttributeType kSpellImmunityPiercing =
     CDotaMsgStructuredTooltipProperties_EAttributeType_kSpellImmunityPiercing;
+  static constexpr EAttributeType kHealthPercentageAsPureDamage =
+    CDotaMsgStructuredTooltipProperties_EAttributeType_kHealthPercentageAsPureDamage;
+  static constexpr EAttributeType kPhysicalDamagePercentage =
+    CDotaMsgStructuredTooltipProperties_EAttributeType_kPhysicalDamagePercentage;
   static inline bool EAttributeType_IsValid(int value) {
     return CDotaMsgStructuredTooltipProperties_EAttributeType_IsValid(value);
   }
@@ -51171,6 +51192,34 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMatchPlayerTimedCusto
 CMatchPlayerTimedStats::custom_stats() const {
   // @@protoc_insertion_point(field_list:CMatchPlayerTimedStats.custom_stats)
   return _impl_.custom_stats_;
+}
+
+// optional uint32 summon_kill_gold = 43;
+inline bool CMatchPlayerTimedStats::_internal_has_summon_kill_gold() const {
+  bool value = (_impl_._has_bits_[1] & 0x00000010u) != 0;
+  return value;
+}
+inline bool CMatchPlayerTimedStats::has_summon_kill_gold() const {
+  return _internal_has_summon_kill_gold();
+}
+inline void CMatchPlayerTimedStats::clear_summon_kill_gold() {
+  _impl_.summon_kill_gold_ = 0u;
+  _impl_._has_bits_[1] &= ~0x00000010u;
+}
+inline uint32_t CMatchPlayerTimedStats::_internal_summon_kill_gold() const {
+  return _impl_.summon_kill_gold_;
+}
+inline uint32_t CMatchPlayerTimedStats::summon_kill_gold() const {
+  // @@protoc_insertion_point(field_get:CMatchPlayerTimedStats.summon_kill_gold)
+  return _internal_summon_kill_gold();
+}
+inline void CMatchPlayerTimedStats::_internal_set_summon_kill_gold(uint32_t value) {
+  _impl_._has_bits_[1] |= 0x00000010u;
+  _impl_.summon_kill_gold_ = value;
+}
+inline void CMatchPlayerTimedStats::set_summon_kill_gold(uint32_t value) {
+  _internal_set_summon_kill_gold(value);
+  // @@protoc_insertion_point(field_set:CMatchPlayerTimedStats.summon_kill_gold)
 }
 
 // -------------------------------------------------------------------
@@ -85238,33 +85287,33 @@ inline void CDotaMsgStructuredTooltipProperties_Attribute::set_allocated_localiz
   // @@protoc_insertion_point(field_set_allocated:CDotaMsgStructuredTooltipProperties.Attribute.localized_name_text)
 }
 
-// optional .CDotaMsgStructuredTooltipProperties.EAttributeType type = 3 [default = kUnknown];
-inline bool CDotaMsgStructuredTooltipProperties_Attribute::_internal_has_type() const {
+// optional .CDotaMsgStructuredTooltipProperties.EAttributeType resolved_type = 3 [default = kUnknown];
+inline bool CDotaMsgStructuredTooltipProperties_Attribute::_internal_has_resolved_type() const {
   bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
-inline bool CDotaMsgStructuredTooltipProperties_Attribute::has_type() const {
-  return _internal_has_type();
+inline bool CDotaMsgStructuredTooltipProperties_Attribute::has_resolved_type() const {
+  return _internal_has_resolved_type();
 }
-inline void CDotaMsgStructuredTooltipProperties_Attribute::clear_type() {
-  _impl_.type_ = 0;
+inline void CDotaMsgStructuredTooltipProperties_Attribute::clear_resolved_type() {
+  _impl_.resolved_type_ = 0;
   _impl_._has_bits_[0] &= ~0x00000008u;
 }
-inline ::CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties_Attribute::_internal_type() const {
-  return static_cast< ::CDotaMsgStructuredTooltipProperties_EAttributeType >(_impl_.type_);
+inline ::CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties_Attribute::_internal_resolved_type() const {
+  return static_cast< ::CDotaMsgStructuredTooltipProperties_EAttributeType >(_impl_.resolved_type_);
 }
-inline ::CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties_Attribute::type() const {
-  // @@protoc_insertion_point(field_get:CDotaMsgStructuredTooltipProperties.Attribute.type)
-  return _internal_type();
+inline ::CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties_Attribute::resolved_type() const {
+  // @@protoc_insertion_point(field_get:CDotaMsgStructuredTooltipProperties.Attribute.resolved_type)
+  return _internal_resolved_type();
 }
-inline void CDotaMsgStructuredTooltipProperties_Attribute::_internal_set_type(::CDotaMsgStructuredTooltipProperties_EAttributeType value) {
+inline void CDotaMsgStructuredTooltipProperties_Attribute::_internal_set_resolved_type(::CDotaMsgStructuredTooltipProperties_EAttributeType value) {
   assert(::CDotaMsgStructuredTooltipProperties_EAttributeType_IsValid(value));
   _impl_._has_bits_[0] |= 0x00000008u;
-  _impl_.type_ = value;
+  _impl_.resolved_type_ = value;
 }
-inline void CDotaMsgStructuredTooltipProperties_Attribute::set_type(::CDotaMsgStructuredTooltipProperties_EAttributeType value) {
-  _internal_set_type(value);
-  // @@protoc_insertion_point(field_set:CDotaMsgStructuredTooltipProperties.Attribute.type)
+inline void CDotaMsgStructuredTooltipProperties_Attribute::set_resolved_type(::CDotaMsgStructuredTooltipProperties_EAttributeType value) {
+  _internal_set_resolved_type(value);
+  // @@protoc_insertion_point(field_set:CDotaMsgStructuredTooltipProperties.Attribute.resolved_type)
 }
 
 // optional .CDotaMsgStructuredTooltipProperties.AttributeValue value = 4;

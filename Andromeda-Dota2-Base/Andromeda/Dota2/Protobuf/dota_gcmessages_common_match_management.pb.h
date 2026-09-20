@@ -837,17 +837,17 @@ class CSODOTAPartyMember final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
       mutable_banned_hero_ids();
 
-  // optional uint32 region_ping_failed_bitmask = 6;
+  // optional uint64 region_ping_failed_bitmask = 6;
   bool has_region_ping_failed_bitmask() const;
   private:
   bool _internal_has_region_ping_failed_bitmask() const;
   public:
   void clear_region_ping_failed_bitmask();
-  uint32_t region_ping_failed_bitmask() const;
-  void set_region_ping_failed_bitmask(uint32_t value);
+  uint64_t region_ping_failed_bitmask() const;
+  void set_region_ping_failed_bitmask(uint64_t value);
   private:
-  uint32_t _internal_region_ping_failed_bitmask() const;
-  void _internal_set_region_ping_failed_bitmask(uint32_t value);
+  uint64_t _internal_region_ping_failed_bitmask() const;
+  void _internal_set_region_ping_failed_bitmask(uint64_t value);
   public:
 
   // optional uint32 tourney_skill_level = 7;
@@ -1008,7 +1008,7 @@ class CSODOTAPartyMember final :
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t > region_ping_times_;
     mutable std::atomic<int> _region_ping_times_cached_byte_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > banned_hero_ids_;
-    uint32_t region_ping_failed_bitmask_;
+    uint64_t region_ping_failed_bitmask_;
     uint32_t tourney_skill_level_;
     uint32_t tourney_buyin_;
     uint32_t tourney_prevent_until_;
@@ -5237,7 +5237,7 @@ CSODOTAPartyMember::mutable_region_ping_times() {
   return _internal_mutable_region_ping_times();
 }
 
-// optional uint32 region_ping_failed_bitmask = 6;
+// optional uint64 region_ping_failed_bitmask = 6;
 inline bool CSODOTAPartyMember::_internal_has_region_ping_failed_bitmask() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
@@ -5246,21 +5246,21 @@ inline bool CSODOTAPartyMember::has_region_ping_failed_bitmask() const {
   return _internal_has_region_ping_failed_bitmask();
 }
 inline void CSODOTAPartyMember::clear_region_ping_failed_bitmask() {
-  _impl_.region_ping_failed_bitmask_ = 0u;
+  _impl_.region_ping_failed_bitmask_ = uint64_t{0u};
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline uint32_t CSODOTAPartyMember::_internal_region_ping_failed_bitmask() const {
+inline uint64_t CSODOTAPartyMember::_internal_region_ping_failed_bitmask() const {
   return _impl_.region_ping_failed_bitmask_;
 }
-inline uint32_t CSODOTAPartyMember::region_ping_failed_bitmask() const {
+inline uint64_t CSODOTAPartyMember::region_ping_failed_bitmask() const {
   // @@protoc_insertion_point(field_get:CSODOTAPartyMember.region_ping_failed_bitmask)
   return _internal_region_ping_failed_bitmask();
 }
-inline void CSODOTAPartyMember::_internal_set_region_ping_failed_bitmask(uint32_t value) {
+inline void CSODOTAPartyMember::_internal_set_region_ping_failed_bitmask(uint64_t value) {
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.region_ping_failed_bitmask_ = value;
 }
-inline void CSODOTAPartyMember::set_region_ping_failed_bitmask(uint32_t value) {
+inline void CSODOTAPartyMember::set_region_ping_failed_bitmask(uint64_t value) {
   _internal_set_region_ping_failed_bitmask(value);
   // @@protoc_insertion_point(field_set:CSODOTAPartyMember.region_ping_failed_bitmask)
 }

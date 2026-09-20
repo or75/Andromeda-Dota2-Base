@@ -29,7 +29,7 @@ PROTOBUF_CONSTEXPR CSODOTAPartyMember::CSODOTAPartyMember(
   , /*decltype(_impl_.region_ping_times_)*/{}
   , /*decltype(_impl_._region_ping_times_cached_byte_size_)*/{0}
   , /*decltype(_impl_.banned_hero_ids_)*/{}
-  , /*decltype(_impl_.region_ping_failed_bitmask_)*/0u
+  , /*decltype(_impl_.region_ping_failed_bitmask_)*/uint64_t{0u}
   , /*decltype(_impl_.tourney_skill_level_)*/0u
   , /*decltype(_impl_.tourney_buyin_)*/0u
   , /*decltype(_impl_.tourney_prevent_until_)*/0u
@@ -669,7 +669,7 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fmatch_5fmanage
   "\n\022CSODOTAPartyMember\022\020\n\010is_coach\030\002 \001(\010\022\035"
   "\n\021region_ping_codes\030\004 \003(\rB\002\020\001\022\035\n\021region_"
   "ping_times\030\005 \003(\rB\002\020\001\022\"\n\032region_ping_fail"
-  "ed_bitmask\030\006 \001(\r\022\032\n\022is_plus_subscriber\030\n"
+  "ed_bitmask\030\006 \001(\004\022\032\n\022is_plus_subscriber\030\n"
   " \001(\010\022\033\n\023tourney_skill_level\030\007 \001(\r\022\025\n\rtou"
   "rney_buyin\030\010 \001(\r\022\035\n\025tourney_prevent_unti"
   "l\030\t \001(\r\022\025\n\rmm_data_valid\030\r \001(\010\022\034\n\024lane_s"
@@ -1997,7 +1997,7 @@ inline void CSODOTAPartyMember::SharedCtor(
     , decltype(_impl_.region_ping_times_){arena}
     , /*decltype(_impl_._region_ping_times_cached_byte_size_)*/{0}
     , decltype(_impl_.banned_hero_ids_){arena}
-    , decltype(_impl_.region_ping_failed_bitmask_){0u}
+    , decltype(_impl_.region_ping_failed_bitmask_){uint64_t{0u}}
     , decltype(_impl_.tourney_skill_level_){0u}
     , decltype(_impl_.tourney_buyin_){0u}
     , decltype(_impl_.tourney_prevent_until_){0u}
@@ -2094,11 +2094,11 @@ const char* CSODOTAPartyMember::_InternalParse(const char* ptr, ::_pbi::ParseCon
         } else
           goto handle_unusual;
         continue;
-      // optional uint32 region_ping_failed_bitmask = 6;
+      // optional uint64 region_ping_failed_bitmask = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
           _Internal::set_has_region_ping_failed_bitmask(&has_bits);
-          _impl_.region_ping_failed_bitmask_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.region_ping_failed_bitmask_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2264,10 +2264,10 @@ uint8_t* CSODOTAPartyMember::_InternalSerialize(
     }
   }
 
-  // optional uint32 region_ping_failed_bitmask = 6;
+  // optional uint64 region_ping_failed_bitmask = 6;
   if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(6, this->_internal_region_ping_failed_bitmask(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(6, this->_internal_region_ping_failed_bitmask(), target);
   }
 
   // optional uint32 tourney_skill_level = 7;
@@ -2391,9 +2391,9 @@ size_t CSODOTAPartyMember::ByteSizeLong() const {
 
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
-    // optional uint32 region_ping_failed_bitmask = 6;
+    // optional uint64 region_ping_failed_bitmask = 6;
     if (cached_has_bits & 0x00000001u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_region_ping_failed_bitmask());
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_region_ping_failed_bitmask());
     }
 
     // optional uint32 tourney_skill_level = 7;

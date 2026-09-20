@@ -31,6 +31,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "events.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_dota_5fshared_5fenums_2eproto
@@ -222,86 +223,6 @@ inline bool DOTA_GC_TEAM_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, DOTA_GC_TEAM* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<DOTA_GC_TEAM>(
     DOTA_GC_TEAM_descriptor(), name, value);
-}
-enum EEvent : int {
-  EVENT_ID_NONE = 0,
-  EVENT_ID_DIRETIDE = 1,
-  EVENT_ID_SPRING_FESTIVAL = 2,
-  EVENT_ID_FROSTIVUS_2013 = 3,
-  EVENT_ID_COMPENDIUM_2014 = 4,
-  EVENT_ID_NEXON_PC_BANG = 5,
-  EVENT_ID_PWRD_DAC_2015 = 6,
-  EVENT_ID_NEW_BLOOM_2015 = 7,
-  EVENT_ID_INTERNATIONAL_2015 = 8,
-  EVENT_ID_FALL_MAJOR_2015 = 9,
-  EVENT_ID_ORACLE_PA = 10,
-  EVENT_ID_NEW_BLOOM_2015_PREBEAST = 11,
-  EVENT_ID_FROSTIVUS = 12,
-  EVENT_ID_WINTER_MAJOR_2016 = 13,
-  EVENT_ID_INTERNATIONAL_2016 = 14,
-  EVENT_ID_FALL_MAJOR_2016 = 15,
-  EVENT_ID_WINTER_MAJOR_2017 = 16,
-  EVENT_ID_NEW_BLOOM_2017 = 17,
-  EVENT_ID_INTERNATIONAL_2017 = 18,
-  EVENT_ID_PLUS_SUBSCRIPTION = 19,
-  EVENT_ID_SINGLES_DAY_2017 = 20,
-  EVENT_ID_FROSTIVUS_2017 = 21,
-  EVENT_ID_INTERNATIONAL_2018 = 22,
-  EVENT_ID_FROSTIVUS_2018 = 23,
-  EVENT_ID_NEW_BLOOM_2019 = 24,
-  EVENT_ID_INTERNATIONAL_2019 = 25,
-  EVENT_ID_NEW_PLAYER_EXPERIENCE = 26,
-  EVENT_ID_FROSTIVUS_2019 = 27,
-  EVENT_ID_NEW_BLOOM_2020 = 28,
-  EVENT_ID_INTERNATIONAL_2020 = 29,
-  EVENT_ID_TEAM_FANDOM = 30,
-  EVENT_ID_DIRETIDE_2020 = 31,
-  EVENT_ID_SPRING_2021 = 32,
-  EVENT_ID_FALL_2021 = 33,
-  EVENT_ID_TEAM_FANDOM_FALL_2021 = 34,
-  EVENT_ID_TEAM_2021_2022_TOUR2 = 35,
-  EVENT_ID_INTERNATIONAL_2022 = 36,
-  EVENT_ID_TEAM_2021_2022_TOUR3 = 37,
-  EVENT_ID_TEAM_INTERNATIONAL_2022 = 38,
-  EVENT_ID_PERMANENT_GRANTS = 39,
-  EVENT_ID_MUERTA_RELEASE_SPRING2023 = 40,
-  EVENT_ID_TEAM_2023_TOUR1 = 41,
-  EVENT_ID_TEAM_2023_TOUR2 = 42,
-  EVENT_ID_TEAM_2023_TOUR3 = 43,
-  EVENT_ID_INTERNATIONAL_2023 = 45,
-  EVENT_ID_10TH_ANNIVERSARY = 46,
-  EVENT_ID_CROWNFALL = 47,
-  EVENT_ID_FROSTIVUS_2023 = 48,
-  EVENT_ID_INTERNATIONAL_2024 = 49,
-  EVENT_ID_FROSTIVUS_2024 = 50,
-  EVENT_ID_MONSTER_HUNTER = 51,
-  EVENT_ID_INTERNATIONAL_2025 = 52,
-  EVENT_ID_FALL_2025 = 53,
-  EVENT_ID_WINTER_2025 = 55,
-  EVENT_ID_SPRING_2026 = 56,
-  EVENT_ID_SUMMER_2026 = 57,
-  EVENT_ID_FALL_2026 = 58,
-  EVENT_ID_WINTER_2026 = 59,
-  EVENT_ID_INTERNATIONAL_2026 = 60
-};
-bool EEvent_IsValid(int value);
-constexpr EEvent EEvent_MIN = EVENT_ID_NONE;
-constexpr EEvent EEvent_MAX = EVENT_ID_INTERNATIONAL_2026;
-constexpr int EEvent_ARRAYSIZE = EEvent_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EEvent_descriptor();
-template<typename T>
-inline const std::string& EEvent_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, EEvent>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function EEvent_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    EEvent_descriptor(), enum_t_value);
-}
-inline bool EEvent_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, EEvent* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<EEvent>(
-    EEvent_descriptor(), name, value);
 }
 enum ERankType : int {
   k_ERankType_Invalid = 0,
@@ -1274,11 +1195,16 @@ enum EBadgeType : int {
   k_EBadgeType_TI14_FinalsDay2 = 23,
   k_EBadgeType_TI14_FinalsDay3 = 24,
   k_EBadgeType_TI14_FinalsDay4 = 25,
-  k_EBadgeType_TI14_Special = 26
+  k_EBadgeType_TI14_Special = 26,
+  k_EBadgeType_TI15_FinalsDay1 = 27,
+  k_EBadgeType_TI15_FinalsDay2 = 28,
+  k_EBadgeType_TI15_FinalsDay3 = 29,
+  k_EBadgeType_TI15_FinalsDay4 = 30,
+  k_EBadgeType_TI15_Special = 31
 };
 bool EBadgeType_IsValid(int value);
 constexpr EBadgeType EBadgeType_MIN = k_EBadgeType_Invalid;
-constexpr EBadgeType EBadgeType_MAX = k_EBadgeType_TI14_Special;
+constexpr EBadgeType EBadgeType_MAX = k_EBadgeType_TI15_Special;
 constexpr int EBadgeType_ARRAYSIZE = EBadgeType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EBadgeType_descriptor();
@@ -10138,11 +10064,6 @@ template <> struct is_proto_enum< ::DOTA_GC_TEAM> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::DOTA_GC_TEAM>() {
   return ::DOTA_GC_TEAM_descriptor();
-}
-template <> struct is_proto_enum< ::EEvent> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::EEvent>() {
-  return ::EEvent_descriptor();
 }
 template <> struct is_proto_enum< ::ERankType> : ::std::true_type {};
 template <>

@@ -267,9 +267,10 @@ inline bool ELobbyMemberCoachRequestState_Parse(
 }
 enum LobbyDotaTVDelay : int {
   LobbyDotaTV_10 = 0,
-  LobbyDotaTV_120 = 1,
-  LobbyDotaTV_300 = 2,
-  LobbyDotaTV_900 = 3
+  LobbyDotaTV_60 = 1,
+  LobbyDotaTV_120 = 2,
+  LobbyDotaTV_300 = 3,
+  LobbyDotaTV_900 = 4
 };
 bool LobbyDotaTVDelay_IsValid(int value);
 constexpr LobbyDotaTVDelay LobbyDotaTVDelay_MIN = LobbyDotaTV_10;

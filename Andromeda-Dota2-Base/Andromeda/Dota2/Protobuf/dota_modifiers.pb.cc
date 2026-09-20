@@ -24,6 +24,8 @@ PROTOBUF_CONSTEXPR CDOTAModifierBuffTableEntry::CDOTAModifierBuffTableEntry(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.custom_int_values_)*/{}
+  , /*decltype(_impl_.custom_float_values_)*/{}
   , /*decltype(_impl_.portal_loop_appear_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.portal_loop_disappear_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.hero_loop_appear_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -143,6 +145,8 @@ const uint32_t TableStruct_dota_5fmodifiers_2eproto::offsets[] PROTOBUF_SECTION_
   PROTOBUF_FIELD_OFFSET(::CDOTAModifierBuffTableEntry, _impl_.move_slow_),
   PROTOBUF_FIELD_OFFSET(::CDOTAModifierBuffTableEntry, _impl_.has_scepter_),
   PROTOBUF_FIELD_OFFSET(::CDOTAModifierBuffTableEntry, _impl_.has_shard_),
+  PROTOBUF_FIELD_OFFSET(::CDOTAModifierBuffTableEntry, _impl_.custom_int_values_),
+  PROTOBUF_FIELD_OFFSET(::CDOTAModifierBuffTableEntry, _impl_.custom_float_values_),
   34,
   35,
   9,
@@ -185,6 +189,8 @@ const uint32_t TableStruct_dota_5fmodifiers_2eproto::offsets[] PROTOBUF_SECTION_
   31,
   32,
   33,
+  ~0u,
+  ~0u,
   PROTOBUF_FIELD_OFFSET(::CDOTALuaModifierEntry, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CDOTALuaModifierEntry, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -197,8 +203,8 @@ const uint32_t TableStruct_dota_5fmodifiers_2eproto::offsets[] PROTOBUF_SECTION_
   0,
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 48, -1, sizeof(::CDOTAModifierBuffTableEntry)},
-  { 90, 98, -1, sizeof(::CDOTALuaModifierEntry)},
+  { 0, 50, -1, sizeof(::CDOTAModifierBuffTableEntry)},
+  { 94, 102, -1, sizeof(::CDOTALuaModifierEntry)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -208,7 +214,7 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_dota_5fmodifiers_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\024dota_modifiers.proto\032\026networkbasetypes"
-  ".proto\"\215\010\n\033CDOTAModifierBuffTableEntry\022N"
+  ".proto\"\305\010\n\033CDOTAModifierBuffTableEntry\022N"
   "\n\nentry_type\030\001 \001(\0162\031.DOTA_MODIFIER_ENTRY"
   "_TYPE:\037DOTA_MODIFIER_ENTRY_TYPE_ACTIVE\022\030"
   "\n\006parent\030\002 \001(\r:\01016777215\022\r\n\005index\030\003 \001(\005\022"
@@ -234,18 +240,19 @@ const char descriptor_table_protodef_dota_5fmodifiers_2eproto[] PROTOBUF_SECTION
   "a\030% \001(\005\022\037\n\rcustom_entity\030& \001(\r:\01016777215"
   "\022\031\n\021aura_within_range\030\' \001(\010\022\021\n\tmove_slow"
   "\030( \001(\002\022\023\n\013has_scepter\030) \001(\010\022\021\n\thas_shard"
-  "\030* \001(\010\"I\n\025CDOTALuaModifierEntry\022\025\n\rmodif"
-  "ier_type\030\001 \001(\005\022\031\n\021modifier_filename\030\002 \001("
-  "\t*e\n\030DOTA_MODIFIER_ENTRY_TYPE\022#\n\037DOTA_MO"
-  "DIFIER_ENTRY_TYPE_ACTIVE\020\001\022$\n DOTA_MODIF"
-  "IER_ENTRY_TYPE_REMOVED\020\002"
+  "\030* \001(\010\022\031\n\021custom_int_values\030+ \003(\005\022\033\n\023cus"
+  "tom_float_values\030, \003(\002\"I\n\025CDOTALuaModifi"
+  "erEntry\022\025\n\rmodifier_type\030\001 \001(\005\022\031\n\021modifi"
+  "er_filename\030\002 \001(\t*e\n\030DOTA_MODIFIER_ENTRY"
+  "_TYPE\022#\n\037DOTA_MODIFIER_ENTRY_TYPE_ACTIVE"
+  "\020\001\022$\n DOTA_MODIFIER_ENTRY_TYPE_REMOVED\020\002"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fmodifiers_2eproto_deps[1] = {
   &::descriptor_table_networkbasetypes_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_dota_5fmodifiers_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fmodifiers_2eproto = {
-    false, false, 1264, descriptor_table_protodef_dota_5fmodifiers_2eproto,
+    false, false, 1320, descriptor_table_protodef_dota_5fmodifiers_2eproto,
     "dota_modifiers.proto",
     &descriptor_table_dota_5fmodifiers_2eproto_once, descriptor_table_dota_5fmodifiers_2eproto_deps, 1, 2,
     schemas, file_default_instances, TableStruct_dota_5fmodifiers_2eproto::offsets,
@@ -436,6 +443,8 @@ CDOTAModifierBuffTableEntry::CDOTAModifierBuffTableEntry(const CDOTAModifierBuff
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.custom_int_values_){from._impl_.custom_int_values_}
+    , decltype(_impl_.custom_float_values_){from._impl_.custom_float_values_}
     , decltype(_impl_.portal_loop_appear_){}
     , decltype(_impl_.portal_loop_disappear_){}
     , decltype(_impl_.hero_loop_appear_){}
@@ -555,6 +564,8 @@ inline void CDOTAModifierBuffTableEntry::SharedCtor(
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.custom_int_values_){arena}
+    , decltype(_impl_.custom_float_values_){arena}
     , decltype(_impl_.portal_loop_appear_){}
     , decltype(_impl_.portal_loop_disappear_){}
     , decltype(_impl_.hero_loop_appear_){}
@@ -639,6 +650,8 @@ CDOTAModifierBuffTableEntry::~CDOTAModifierBuffTableEntry() {
 
 inline void CDOTAModifierBuffTableEntry::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.custom_int_values_.~RepeatedField();
+  _impl_.custom_float_values_.~RepeatedField();
   _impl_.portal_loop_appear_.Destroy();
   _impl_.portal_loop_disappear_.Destroy();
   _impl_.hero_loop_appear_.Destroy();
@@ -660,6 +673,8 @@ void CDOTAModifierBuffTableEntry::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.custom_int_values_.Clear();
+  _impl_.custom_float_values_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
@@ -1134,6 +1149,38 @@ const char* CDOTAModifierBuffTableEntry::_InternalParse(const char* ptr, ::_pbi:
         } else
           goto handle_unusual;
         continue;
+      // repeated int32 custom_int_values = 43;
+      case 43:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            _internal_add_custom_int_values(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<344>(ptr));
+        } else if (static_cast<uint8_t>(tag) == 90) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_custom_int_values(), ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated float custom_float_values = 44;
+      case 44:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 101)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            _internal_add_custom_float_values(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+            ptr += sizeof(float);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<357>(ptr));
+        } else if (static_cast<uint8_t>(tag) == 98) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_custom_float_values(), ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -1457,6 +1504,18 @@ uint8_t* CDOTAModifierBuffTableEntry::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteBoolToArray(42, this->_internal_has_shard(), target);
   }
 
+  // repeated int32 custom_int_values = 43;
+  for (int i = 0, n = this->_internal_custom_int_values_size(); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(43, this->_internal_custom_int_values(i), target);
+  }
+
+  // repeated float custom_float_values = 44;
+  for (int i = 0, n = this->_internal_custom_float_values_size(); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(44, this->_internal_custom_float_values(i), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1472,6 +1531,24 @@ size_t CDOTAModifierBuffTableEntry::ByteSizeLong() const {
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated int32 custom_int_values = 43;
+  {
+    size_t data_size = ::_pbi::WireFormatLite::
+      Int32Size(this->_impl_.custom_int_values_);
+    total_size += 2 *
+                  ::_pbi::FromIntSize(this->_internal_custom_int_values_size());
+    total_size += data_size;
+  }
+
+  // repeated float custom_float_values = 44;
+  {
+    unsigned int count = static_cast<unsigned int>(this->_internal_custom_float_values_size());
+    size_t data_size = 4UL * count;
+    total_size += 2 *
+                  ::_pbi::FromIntSize(this->_internal_custom_float_values_size());
+    total_size += data_size;
+  }
 
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
@@ -1758,6 +1835,8 @@ void CDOTAModifierBuffTableEntry::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_impl_.custom_int_values_.MergeFrom(from._impl_.custom_int_values_);
+  _this->_impl_.custom_float_values_.MergeFrom(from._impl_.custom_float_values_);
   cached_has_bits = from._impl_._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
@@ -1926,6 +2005,8 @@ void CDOTAModifierBuffTableEntry::InternalSwap(CDOTAModifierBuffTableEntry* othe
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   swap(_impl_._has_bits_[1], other->_impl_._has_bits_[1]);
+  _impl_.custom_int_values_.InternalSwap(&other->_impl_.custom_int_values_);
+  _impl_.custom_float_values_.InternalSwap(&other->_impl_.custom_float_values_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.portal_loop_appear_, lhs_arena,
       &other->_impl_.portal_loop_appear_, rhs_arena

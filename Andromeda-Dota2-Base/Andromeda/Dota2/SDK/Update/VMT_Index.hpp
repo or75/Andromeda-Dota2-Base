@@ -10,6 +10,6 @@ namespace SDK::VMT_Index
 	enum IVEngineClient2 : int
 	{
 		GetLocalPlayer = 22 ,
-		GetScreenSize = 60,
+		GetScreenSize = 61,
 	};
 }

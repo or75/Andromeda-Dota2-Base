@@ -210,6 +210,8 @@ class CDOTAModifierBuffTableEntry final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kCustomIntValuesFieldNumber = 43,
+    kCustomFloatValuesFieldNumber = 44,
     kPortalLoopAppearFieldNumber = 18,
     kPortalLoopDisappearFieldNumber = 19,
     kHeroLoopAppearFieldNumber = 20,
@@ -253,6 +255,50 @@ class CDOTAModifierBuffTableEntry final :
     kAuraOwnerFieldNumber = 34,
     kCustomEntityFieldNumber = 38,
   };
+  // repeated int32 custom_int_values = 43;
+  int custom_int_values_size() const;
+  private:
+  int _internal_custom_int_values_size() const;
+  public:
+  void clear_custom_int_values();
+  private:
+  int32_t _internal_custom_int_values(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_custom_int_values() const;
+  void _internal_add_custom_int_values(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_custom_int_values();
+  public:
+  int32_t custom_int_values(int index) const;
+  void set_custom_int_values(int index, int32_t value);
+  void add_custom_int_values(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      custom_int_values() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_custom_int_values();
+
+  // repeated float custom_float_values = 44;
+  int custom_float_values_size() const;
+  private:
+  int _internal_custom_float_values_size() const;
+  public:
+  void clear_custom_float_values();
+  private:
+  float _internal_custom_float_values(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      _internal_custom_float_values() const;
+  void _internal_add_custom_float_values(float value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      _internal_mutable_custom_float_values();
+  public:
+  float custom_float_values(int index) const;
+  void set_custom_float_values(int index, float value);
+  void add_custom_float_values(float value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+      custom_float_values() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+      mutable_custom_float_values();
+
   // optional string portal_loop_appear = 18;
   bool has_portal_loop_appear() const;
   private:
@@ -854,6 +900,8 @@ class CDOTAModifierBuffTableEntry final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<2> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > custom_int_values_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > custom_float_values_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr portal_loop_appear_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr portal_loop_disappear_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hero_loop_appear_;
@@ -2664,6 +2712,100 @@ inline void CDOTAModifierBuffTableEntry::_internal_set_has_shard(bool value) {
 inline void CDOTAModifierBuffTableEntry::set_has_shard(bool value) {
   _internal_set_has_shard(value);
   // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.has_shard)
+}
+
+// repeated int32 custom_int_values = 43;
+inline int CDOTAModifierBuffTableEntry::_internal_custom_int_values_size() const {
+  return _impl_.custom_int_values_.size();
+}
+inline int CDOTAModifierBuffTableEntry::custom_int_values_size() const {
+  return _internal_custom_int_values_size();
+}
+inline void CDOTAModifierBuffTableEntry::clear_custom_int_values() {
+  _impl_.custom_int_values_.Clear();
+}
+inline int32_t CDOTAModifierBuffTableEntry::_internal_custom_int_values(int index) const {
+  return _impl_.custom_int_values_.Get(index);
+}
+inline int32_t CDOTAModifierBuffTableEntry::custom_int_values(int index) const {
+  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.custom_int_values)
+  return _internal_custom_int_values(index);
+}
+inline void CDOTAModifierBuffTableEntry::set_custom_int_values(int index, int32_t value) {
+  _impl_.custom_int_values_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.custom_int_values)
+}
+inline void CDOTAModifierBuffTableEntry::_internal_add_custom_int_values(int32_t value) {
+  _impl_.custom_int_values_.Add(value);
+}
+inline void CDOTAModifierBuffTableEntry::add_custom_int_values(int32_t value) {
+  _internal_add_custom_int_values(value);
+  // @@protoc_insertion_point(field_add:CDOTAModifierBuffTableEntry.custom_int_values)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+CDOTAModifierBuffTableEntry::_internal_custom_int_values() const {
+  return _impl_.custom_int_values_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+CDOTAModifierBuffTableEntry::custom_int_values() const {
+  // @@protoc_insertion_point(field_list:CDOTAModifierBuffTableEntry.custom_int_values)
+  return _internal_custom_int_values();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+CDOTAModifierBuffTableEntry::_internal_mutable_custom_int_values() {
+  return &_impl_.custom_int_values_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+CDOTAModifierBuffTableEntry::mutable_custom_int_values() {
+  // @@protoc_insertion_point(field_mutable_list:CDOTAModifierBuffTableEntry.custom_int_values)
+  return _internal_mutable_custom_int_values();
+}
+
+// repeated float custom_float_values = 44;
+inline int CDOTAModifierBuffTableEntry::_internal_custom_float_values_size() const {
+  return _impl_.custom_float_values_.size();
+}
+inline int CDOTAModifierBuffTableEntry::custom_float_values_size() const {
+  return _internal_custom_float_values_size();
+}
+inline void CDOTAModifierBuffTableEntry::clear_custom_float_values() {
+  _impl_.custom_float_values_.Clear();
+}
+inline float CDOTAModifierBuffTableEntry::_internal_custom_float_values(int index) const {
+  return _impl_.custom_float_values_.Get(index);
+}
+inline float CDOTAModifierBuffTableEntry::custom_float_values(int index) const {
+  // @@protoc_insertion_point(field_get:CDOTAModifierBuffTableEntry.custom_float_values)
+  return _internal_custom_float_values(index);
+}
+inline void CDOTAModifierBuffTableEntry::set_custom_float_values(int index, float value) {
+  _impl_.custom_float_values_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CDOTAModifierBuffTableEntry.custom_float_values)
+}
+inline void CDOTAModifierBuffTableEntry::_internal_add_custom_float_values(float value) {
+  _impl_.custom_float_values_.Add(value);
+}
+inline void CDOTAModifierBuffTableEntry::add_custom_float_values(float value) {
+  _internal_add_custom_float_values(value);
+  // @@protoc_insertion_point(field_add:CDOTAModifierBuffTableEntry.custom_float_values)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+CDOTAModifierBuffTableEntry::_internal_custom_float_values() const {
+  return _impl_.custom_float_values_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >&
+CDOTAModifierBuffTableEntry::custom_float_values() const {
+  // @@protoc_insertion_point(field_list:CDOTAModifierBuffTableEntry.custom_float_values)
+  return _internal_custom_float_values();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+CDOTAModifierBuffTableEntry::_internal_mutable_custom_float_values() {
+  return &_impl_.custom_float_values_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< float >*
+CDOTAModifierBuffTableEntry::mutable_custom_float_values() {
+  // @@protoc_insertion_point(field_mutable_list:CDOTAModifierBuffTableEntry.custom_float_values)
+  return _internal_mutable_custom_float_values();
 }
 
 // -------------------------------------------------------------------

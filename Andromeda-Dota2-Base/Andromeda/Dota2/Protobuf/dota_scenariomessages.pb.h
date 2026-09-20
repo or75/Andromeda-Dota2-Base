@@ -3596,6 +3596,8 @@ class CMsgDotaScenario_Hero final :
     kTotalMadstoneFieldNumber = 154,
     kCurrentMadstoneFieldNumber = 155,
     kRefresherChargesUsedFieldNumber = 157,
+    kSummonKillGoldFieldNumber = 158,
+    kWisdomShrinesTakenFieldNumber = 159,
     kPlayerIdFieldNumber = 2,
     kRespawnSecondsFieldNumber = 68,
   };
@@ -4487,6 +4489,32 @@ class CMsgDotaScenario_Hero final :
   void _internal_set_refresher_charges_used(int32_t value);
   public:
 
+  // optional int32 summon_kill_gold = 158;
+  bool has_summon_kill_gold() const;
+  private:
+  bool _internal_has_summon_kill_gold() const;
+  public:
+  void clear_summon_kill_gold();
+  int32_t summon_kill_gold() const;
+  void set_summon_kill_gold(int32_t value);
+  private:
+  int32_t _internal_summon_kill_gold() const;
+  void _internal_set_summon_kill_gold(int32_t value);
+  public:
+
+  // optional int32 wisdom_shrines_taken = 159;
+  bool has_wisdom_shrines_taken() const;
+  private:
+  bool _internal_has_wisdom_shrines_taken() const;
+  public:
+  void clear_wisdom_shrines_taken();
+  int32_t wisdom_shrines_taken() const;
+  void set_wisdom_shrines_taken(int32_t value);
+  private:
+  int32_t _internal_wisdom_shrines_taken() const;
+  void _internal_set_wisdom_shrines_taken(int32_t value);
+  public:
+
   // optional int32 player_id = 2 [default = -1];
   bool has_player_id() const;
   private:
@@ -4521,7 +4549,7 @@ class CMsgDotaScenario_Hero final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<2> _has_bits_;
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<3> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgDotaScenario_HeroHeroInt > enemy_kills_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgDotaScenario_DamageStatsByType > damage_stats_;
@@ -4589,6 +4617,8 @@ class CMsgDotaScenario_Hero final :
     uint32_t total_madstone_;
     uint32_t current_madstone_;
     int32_t refresher_charges_used_;
+    int32_t summon_kill_gold_;
+    int32_t wisdom_shrines_taken_;
     int32_t player_id_;
     int32_t respawn_seconds_;
   };
@@ -8658,7 +8688,7 @@ inline void CMsgDotaScenario_Hero::set_steam_id(uint64_t value) {
 
 // optional int32 player_id = 2 [default = -1];
 inline bool CMsgDotaScenario_Hero::_internal_has_player_id() const {
-  bool value = (_impl_._has_bits_[1] & 0x40000000u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00000001u) != 0;
   return value;
 }
 inline bool CMsgDotaScenario_Hero::has_player_id() const {
@@ -8666,7 +8696,7 @@ inline bool CMsgDotaScenario_Hero::has_player_id() const {
 }
 inline void CMsgDotaScenario_Hero::clear_player_id() {
   _impl_.player_id_ = -1;
-  _impl_._has_bits_[1] &= ~0x40000000u;
+  _impl_._has_bits_[2] &= ~0x00000001u;
 }
 inline int32_t CMsgDotaScenario_Hero::_internal_player_id() const {
   return _impl_.player_id_;
@@ -8676,7 +8706,7 @@ inline int32_t CMsgDotaScenario_Hero::player_id() const {
   return _internal_player_id();
 }
 inline void CMsgDotaScenario_Hero::_internal_set_player_id(int32_t value) {
-  _impl_._has_bits_[1] |= 0x40000000u;
+  _impl_._has_bits_[2] |= 0x00000001u;
   _impl_.player_id_ = value;
 }
 inline void CMsgDotaScenario_Hero::set_player_id(int32_t value) {
@@ -10154,7 +10184,7 @@ inline void CMsgDotaScenario_Hero::set_kill_streak(int32_t value) {
 
 // optional int32 respawn_seconds = 68 [default = -1];
 inline bool CMsgDotaScenario_Hero::_internal_has_respawn_seconds() const {
-  bool value = (_impl_._has_bits_[1] & 0x80000000u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00000002u) != 0;
   return value;
 }
 inline bool CMsgDotaScenario_Hero::has_respawn_seconds() const {
@@ -10162,7 +10192,7 @@ inline bool CMsgDotaScenario_Hero::has_respawn_seconds() const {
 }
 inline void CMsgDotaScenario_Hero::clear_respawn_seconds() {
   _impl_.respawn_seconds_ = -1;
-  _impl_._has_bits_[1] &= ~0x80000000u;
+  _impl_._has_bits_[2] &= ~0x00000002u;
 }
 inline int32_t CMsgDotaScenario_Hero::_internal_respawn_seconds() const {
   return _impl_.respawn_seconds_;
@@ -10172,7 +10202,7 @@ inline int32_t CMsgDotaScenario_Hero::respawn_seconds() const {
   return _internal_respawn_seconds();
 }
 inline void CMsgDotaScenario_Hero::_internal_set_respawn_seconds(int32_t value) {
-  _impl_._has_bits_[1] |= 0x80000000u;
+  _impl_._has_bits_[2] |= 0x00000002u;
   _impl_.respawn_seconds_ = value;
 }
 inline void CMsgDotaScenario_Hero::set_respawn_seconds(int32_t value) {
@@ -10680,6 +10710,62 @@ inline void CMsgDotaScenario_Hero::_internal_set_refresher_charges_used(int32_t 
 inline void CMsgDotaScenario_Hero::set_refresher_charges_used(int32_t value) {
   _internal_set_refresher_charges_used(value);
   // @@protoc_insertion_point(field_set:CMsgDotaScenario.Hero.refresher_charges_used)
+}
+
+// optional int32 summon_kill_gold = 158;
+inline bool CMsgDotaScenario_Hero::_internal_has_summon_kill_gold() const {
+  bool value = (_impl_._has_bits_[1] & 0x40000000u) != 0;
+  return value;
+}
+inline bool CMsgDotaScenario_Hero::has_summon_kill_gold() const {
+  return _internal_has_summon_kill_gold();
+}
+inline void CMsgDotaScenario_Hero::clear_summon_kill_gold() {
+  _impl_.summon_kill_gold_ = 0;
+  _impl_._has_bits_[1] &= ~0x40000000u;
+}
+inline int32_t CMsgDotaScenario_Hero::_internal_summon_kill_gold() const {
+  return _impl_.summon_kill_gold_;
+}
+inline int32_t CMsgDotaScenario_Hero::summon_kill_gold() const {
+  // @@protoc_insertion_point(field_get:CMsgDotaScenario.Hero.summon_kill_gold)
+  return _internal_summon_kill_gold();
+}
+inline void CMsgDotaScenario_Hero::_internal_set_summon_kill_gold(int32_t value) {
+  _impl_._has_bits_[1] |= 0x40000000u;
+  _impl_.summon_kill_gold_ = value;
+}
+inline void CMsgDotaScenario_Hero::set_summon_kill_gold(int32_t value) {
+  _internal_set_summon_kill_gold(value);
+  // @@protoc_insertion_point(field_set:CMsgDotaScenario.Hero.summon_kill_gold)
+}
+
+// optional int32 wisdom_shrines_taken = 159;
+inline bool CMsgDotaScenario_Hero::_internal_has_wisdom_shrines_taken() const {
+  bool value = (_impl_._has_bits_[1] & 0x80000000u) != 0;
+  return value;
+}
+inline bool CMsgDotaScenario_Hero::has_wisdom_shrines_taken() const {
+  return _internal_has_wisdom_shrines_taken();
+}
+inline void CMsgDotaScenario_Hero::clear_wisdom_shrines_taken() {
+  _impl_.wisdom_shrines_taken_ = 0;
+  _impl_._has_bits_[1] &= ~0x80000000u;
+}
+inline int32_t CMsgDotaScenario_Hero::_internal_wisdom_shrines_taken() const {
+  return _impl_.wisdom_shrines_taken_;
+}
+inline int32_t CMsgDotaScenario_Hero::wisdom_shrines_taken() const {
+  // @@protoc_insertion_point(field_get:CMsgDotaScenario.Hero.wisdom_shrines_taken)
+  return _internal_wisdom_shrines_taken();
+}
+inline void CMsgDotaScenario_Hero::_internal_set_wisdom_shrines_taken(int32_t value) {
+  _impl_._has_bits_[1] |= 0x80000000u;
+  _impl_.wisdom_shrines_taken_ = value;
+}
+inline void CMsgDotaScenario_Hero::set_wisdom_shrines_taken(int32_t value) {
+  _internal_set_wisdom_shrines_taken(value);
+  // @@protoc_insertion_point(field_set:CMsgDotaScenario.Hero.wisdom_shrines_taken)
 }
 
 // -------------------------------------------------------------------

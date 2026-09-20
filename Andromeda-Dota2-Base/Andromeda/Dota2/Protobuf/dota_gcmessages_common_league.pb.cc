@@ -25,7 +25,8 @@ PROTOBUF_CONSTEXPR CMsgDOTALeagueNode_MatchDetails::CMsgDOTALeagueNode_MatchDeta
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.match_id_)*/uint64_t{0u}
-  , /*decltype(_impl_.winning_team_id_)*/0u} {}
+  , /*decltype(_impl_.winning_team_id_)*/0u
+  , /*decltype(_impl_.duration_)*/0u} {}
 struct CMsgDOTALeagueNode_MatchDetailsDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CMsgDOTALeagueNode_MatchDetailsDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -102,7 +103,8 @@ PROTOBUF_CONSTEXPR CMsgDOTALeagueNodeGroup_TeamStanding::CMsgDOTALeagueNodeGroup
   , /*decltype(_impl_.tiebreak_game_win_pct_)*/0u
   , /*decltype(_impl_.tiebreak_opponent_match_wins_)*/0u
   , /*decltype(_impl_.tiebreak_opponent_game_win_pct_)*/0u
-  , /*decltype(_impl_.tiebreak_coinflip_)*/0u} {}
+  , /*decltype(_impl_.tiebreak_coinflip_)*/0u
+  , /*decltype(_impl_.tiebereak_average_game_length_)*/0u} {}
 struct CMsgDOTALeagueNodeGroup_TeamStandingDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CMsgDOTALeagueNodeGroup_TeamStandingDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -723,8 +725,10 @@ const uint32_t TableStruct_dota_5fgcmessages_5fcommon_5fleague_2eproto::offsets[
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::CMsgDOTALeagueNode_MatchDetails, _impl_.match_id_),
   PROTOBUF_FIELD_OFFSET(::CMsgDOTALeagueNode_MatchDetails, _impl_.winning_team_id_),
+  PROTOBUF_FIELD_OFFSET(::CMsgDOTALeagueNode_MatchDetails, _impl_.duration_),
   0,
   1,
+  2,
   PROTOBUF_FIELD_OFFSET(::CMsgDOTALeagueNode_VOD, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CMsgDOTALeagueNode_VOD, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -804,6 +808,7 @@ const uint32_t TableStruct_dota_5fgcmessages_5fcommon_5fleague_2eproto::offsets[
   PROTOBUF_FIELD_OFFSET(::CMsgDOTALeagueNodeGroup_TeamStanding, _impl_.tiebreak_opponent_match_wins_),
   PROTOBUF_FIELD_OFFSET(::CMsgDOTALeagueNodeGroup_TeamStanding, _impl_.tiebreak_opponent_game_win_pct_),
   PROTOBUF_FIELD_OFFSET(::CMsgDOTALeagueNodeGroup_TeamStanding, _impl_.tiebreak_coinflip_),
+  PROTOBUF_FIELD_OFFSET(::CMsgDOTALeagueNodeGroup_TeamStanding, _impl_.tiebereak_average_game_length_),
   4,
   5,
   0,
@@ -819,6 +824,7 @@ const uint32_t TableStruct_dota_5fgcmessages_5fcommon_5fleague_2eproto::offsets[
   12,
   13,
   14,
+  15,
   PROTOBUF_FIELD_OFFSET(::CMsgDOTALeagueNodeGroup, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CMsgDOTALeagueNodeGroup, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1364,43 +1370,43 @@ const uint32_t TableStruct_dota_5fgcmessages_5fcommon_5fleague_2eproto::offsets[
   0,
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 8, -1, sizeof(::CMsgDOTALeagueNode_MatchDetails)},
-  { 10, 19, -1, sizeof(::CMsgDOTALeagueNode_VOD)},
-  { 22, 48, -1, sizeof(::CMsgDOTALeagueNode)},
-  { 68, 89, -1, sizeof(::CMsgDOTALeagueNodeGroup_TeamStanding)},
-  { 104, 137, -1, sizeof(::CMsgDOTALeagueNodeGroup)},
-  { 164, 184, -1, sizeof(::CMsgDOTALeague_Info)},
-  { 198, 207, -1, sizeof(::CMsgDOTALeague_Admin)},
-  { 210, 220, -1, sizeof(::CMsgDOTALeague_PrizePoolItem)},
-  { 224, 234, -1, sizeof(::CMsgDOTALeague_PrizePool)},
-  { 238, 250, -1, sizeof(::CMsgDOTALeague_Stream)},
-  { 256, 268, -1, sizeof(::CMsgDOTALeague_SeriesInfo)},
-  { 274, 283, -1, sizeof(::CMsgDOTALeague_Player)},
-  { 286, 299, -1, sizeof(::CMsgDOTALeague)},
-  { 306, -1, -1, sizeof(::CMsgDOTALeagueList)},
-  { 313, 328, -1, sizeof(::CMsgDOTALeagueInfo)},
-  { 337, -1, -1, sizeof(::CMsgDOTALeagueInfoList)},
-  { 344, 363, -1, sizeof(::CMsgDOTALeagueLiveGames_LiveGame)},
-  { 376, -1, -1, sizeof(::CMsgDOTALeagueLiveGames)},
-  { 383, 392, -1, sizeof(::CMsgDOTALeagueMessages_Message)},
-  { 395, -1, -1, sizeof(::CMsgDOTALeagueMessages)},
-  { 402, 410, -1, sizeof(::CMsgDOTALeaguePrizePool)},
-  { 412, -1, -1, sizeof(::CMsgDOTALeagueInfoListAdminsRequest)},
-  { 418, 425, -1, sizeof(::CMsgDOTALeagueAvailableLobbyNodesRequest)},
-  { 426, 437, -1, sizeof(::CMsgDOTALeagueAvailableLobbyNodes_NodeInfo)},
-  { 442, -1, -1, sizeof(::CMsgDOTALeagueAvailableLobbyNodes)},
-  { 449, 472, -1, sizeof(::CMsgDOTALeagueNodeResults_Result)},
-  { 489, -1, -1, sizeof(::CMsgDOTALeagueNodeResults)},
-  { 496, 512, -1, sizeof(::CMsgDOTADPCLeagueResults_Result)},
-  { 522, -1, -1, sizeof(::CMsgDOTADPCLeagueResults)},
-  { 531, 542, -1, sizeof(::CMsgDOTADPCTeamResults_Result)},
-  { 547, -1, -1, sizeof(::CMsgDOTADPCTeamResults)},
-  { 554, 567, -1, sizeof(::CMsgDOTADPCSeasonResults_TeamLeagueResult)},
-  { 574, 588, -1, sizeof(::CMsgDOTADPCSeasonResults_TeamResult)},
-  { 596, 608, -1, sizeof(::CMsgDOTADPCSeasonResults_StandingEntry)},
-  { 614, 623, -1, sizeof(::CMsgDOTADPCSeasonResults_Standing)},
-  { 626, -1, -1, sizeof(::CMsgDOTADPCSeasonResults)},
-  { 637, 645, -1, sizeof(::CMsgDOTADPCSeasonSpoilerResults)},
+  { 0, 9, -1, sizeof(::CMsgDOTALeagueNode_MatchDetails)},
+  { 12, 21, -1, sizeof(::CMsgDOTALeagueNode_VOD)},
+  { 24, 50, -1, sizeof(::CMsgDOTALeagueNode)},
+  { 70, 92, -1, sizeof(::CMsgDOTALeagueNodeGroup_TeamStanding)},
+  { 108, 141, -1, sizeof(::CMsgDOTALeagueNodeGroup)},
+  { 168, 188, -1, sizeof(::CMsgDOTALeague_Info)},
+  { 202, 211, -1, sizeof(::CMsgDOTALeague_Admin)},
+  { 214, 224, -1, sizeof(::CMsgDOTALeague_PrizePoolItem)},
+  { 228, 238, -1, sizeof(::CMsgDOTALeague_PrizePool)},
+  { 242, 254, -1, sizeof(::CMsgDOTALeague_Stream)},
+  { 260, 272, -1, sizeof(::CMsgDOTALeague_SeriesInfo)},
+  { 278, 287, -1, sizeof(::CMsgDOTALeague_Player)},
+  { 290, 303, -1, sizeof(::CMsgDOTALeague)},
+  { 310, -1, -1, sizeof(::CMsgDOTALeagueList)},
+  { 317, 332, -1, sizeof(::CMsgDOTALeagueInfo)},
+  { 341, -1, -1, sizeof(::CMsgDOTALeagueInfoList)},
+  { 348, 367, -1, sizeof(::CMsgDOTALeagueLiveGames_LiveGame)},
+  { 380, -1, -1, sizeof(::CMsgDOTALeagueLiveGames)},
+  { 387, 396, -1, sizeof(::CMsgDOTALeagueMessages_Message)},
+  { 399, -1, -1, sizeof(::CMsgDOTALeagueMessages)},
+  { 406, 414, -1, sizeof(::CMsgDOTALeaguePrizePool)},
+  { 416, -1, -1, sizeof(::CMsgDOTALeagueInfoListAdminsRequest)},
+  { 422, 429, -1, sizeof(::CMsgDOTALeagueAvailableLobbyNodesRequest)},
+  { 430, 441, -1, sizeof(::CMsgDOTALeagueAvailableLobbyNodes_NodeInfo)},
+  { 446, -1, -1, sizeof(::CMsgDOTALeagueAvailableLobbyNodes)},
+  { 453, 476, -1, sizeof(::CMsgDOTALeagueNodeResults_Result)},
+  { 493, -1, -1, sizeof(::CMsgDOTALeagueNodeResults)},
+  { 500, 516, -1, sizeof(::CMsgDOTADPCLeagueResults_Result)},
+  { 526, -1, -1, sizeof(::CMsgDOTADPCLeagueResults)},
+  { 535, 546, -1, sizeof(::CMsgDOTADPCTeamResults_Result)},
+  { 551, -1, -1, sizeof(::CMsgDOTADPCTeamResults)},
+  { 558, 571, -1, sizeof(::CMsgDOTADPCSeasonResults_TeamLeagueResult)},
+  { 578, 592, -1, sizeof(::CMsgDOTADPCSeasonResults_TeamResult)},
+  { 600, 612, -1, sizeof(::CMsgDOTADPCSeasonResults_StandingEntry)},
+  { 618, 627, -1, sizeof(::CMsgDOTADPCSeasonResults_Standing)},
+  { 630, -1, -1, sizeof(::CMsgDOTADPCSeasonResults)},
+  { 641, 649, -1, sizeof(::CMsgDOTADPCSeasonSpoilerResults)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1445,7 +1451,7 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fleague_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n#dota_gcmessages_common_league.proto\032\027d"
-  "ota_shared_enums.proto\"\213\005\n\022CMsgDOTALeagu"
+  "ota_shared_enums.proto\"\235\005\n\022CMsgDOTALeagu"
   "eNode\022\014\n\004name\030\001 \001(\t\022\017\n\007node_id\030\002 \001(\r\022\025\n\r"
   "node_group_id\030\003 \001(\r\022\027\n\017winning_node_id\030\004"
   " \001(\r\022\026\n\016losing_node_id\030\005 \001(\r\022\032\n\022incoming"
@@ -1458,181 +1464,183 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fleague_2eproto
   ".MatchDetails\022\023\n\013team_1_wins\030\016 \001(\r\022\023\n\013te"
   "am_2_wins\030\017 \001(\r\022\023\n\013has_started\030\020 \001(\010\022\024\n\014"
   "is_completed\030\021 \001(\010\022\022\n\nstream_ids\030\022 \003(\r\022%"
-  "\n\004vods\030\024 \003(\0132\027.CMsgDOTALeagueNode.VOD\0329\n"
+  "\n\004vods\030\024 \003(\0132\027.CMsgDOTALeagueNode.VOD\032K\n"
   "\014MatchDetails\022\020\n\010match_id\030\001 \001(\004\022\027\n\017winni"
-  "ng_team_id\030\002 \001(\r\032:\n\003VOD\022\023\n\013series_game\030\001"
-  " \001(\r\022\021\n\tstream_id\030\002 \001(\r\022\013\n\003url\030\003 \001(\t\"\232\n\n"
-  "\027CMsgDOTALeagueNodeGroup\022\014\n\004name\030\001 \001(\t\022\025"
-  "\n\rnode_group_id\030\002 \001(\r\022\034\n\024parent_node_gro"
-  "up_id\030\003 \001(\r\022\037\n\027incoming_node_group_ids\030\004"
-  " \003(\r\022\037\n\027advancing_node_group_id\030\005 \001(\r\022\034\n"
-  "\024advancing_team_count\030\006 \001(\r\022\022\n\nteam_coun"
-  "t\030\007 \001(\r\022B\n\017node_group_type\030\010 \001(\0162\025.ELeag"
-  "ueNodeGroupType:\022INVALID_GROUP_TYPE\022>\n\021d"
-  "efault_node_type\030\t \001(\0162\020.ELeagueNodeType"
-  ":\021INVALID_NODE_TYPE\022\r\n\005round\030\n \001(\r\022\022\n\nma"
-  "x_rounds\030\013 \001(\r\022\026\n\016win_loss_limit\030\033 \001(\r\022\025"
-  "\n\ris_tiebreaker\030\014 \001(\010\022\026\n\016is_final_group\030"
-  "\r \001(\010\022\024\n\014is_completed\030\016 \001(\010\0220\n\005phase\030\022 \001"
-  "(\0162\r.ELeaguePhase:\022LEAGUE_PHASE_UNSET\0223\n"
-  "\006region\030\023 \001(\0162\016.ELeagueRegion:\023LEAGUE_RE"
-  "GION_UNSET\022\022\n\nstart_time\030\024 \001(\r\022\020\n\010end_ti"
-  "me\030\025 \001(\r\022)\n!secondary_advancing_node_gro"
-  "up_id\030\026 \001(\r\022&\n\036secondary_advancing_team_"
-  "count\030\027 \001(\r\022(\n tertiary_advancing_node_g"
-  "roup_id\030\030 \001(\r\022%\n\035tertiary_advancing_team"
-  "_count\030\031 \001(\r\022\036\n\026elimination_dpc_points\030\032"
-  " \001(\r\022=\n\016team_standings\030\017 \003(\0132%.CMsgDOTAL"
-  "eagueNodeGroup.TeamStanding\022\"\n\005nodes\030\020 \003"
-  "(\0132\023.CMsgDOTALeagueNode\022-\n\013node_groups\030\021"
-  " \003(\0132\030.CMsgDOTALeagueNodeGroup\032\340\002\n\014TeamS"
-  "tanding\022\020\n\010standing\030\001 \001(\r\022\017\n\007team_id\030\002 \001"
-  "(\r\022\021\n\tteam_name\030\003 \001(\t\022\020\n\010team_tag\030\004 \001(\t\022"
-  "\021\n\tteam_logo\030\005 \001(\004\022\025\n\rteam_logo_url\030\006 \001("
-  "\t\022\014\n\004wins\030\007 \001(\r\022\016\n\006losses\030\010 \001(\r\022\r\n\005score"
-  "\030\t \001(\003\022\031\n\021team_abbreviation\030\n \001(\t\022\016\n\006is_"
-  "pro\030\016 \001(\010\022\035\n\025tiebreak_game_win_pct\030\017 \001(\r"
-  "\022$\n\034tiebreak_opponent_match_wins\030\020 \001(\r\022&"
-  "\n\036tiebreak_opponent_game_win_pct\030\021 \001(\r\022\031"
-  "\n\021tiebreak_coinflip\030\022 \001(\r\"\242\013\n\016CMsgDOTALe"
-  "ague\022\"\n\004info\030\001 \001(\0132\024.CMsgDOTALeague.Info"
-  "\022-\n\nprize_pool\030\002 \001(\0132\031.CMsgDOTALeague.Pr"
-  "izePool\022%\n\006admins\030\003 \003(\0132\025.CMsgDOTALeague"
-  ".Admin\022\'\n\007streams\030\004 \003(\0132\026.CMsgDOTALeague"
-  ".Stream\022-\n\013node_groups\030\005 \003(\0132\030.CMsgDOTAL"
-  "eagueNodeGroup\0220\n\014series_infos\030\006 \003(\0132\032.C"
-  "MsgDOTALeague.SeriesInfo\0222\n\022registered_p"
-  "layers\030\007 \003(\0132\026.CMsgDOTALeague.Player\032\214\003\n"
-  "\004Info\022\021\n\tleague_id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022-"
-  "\n\004tier\030\003 \001(\0162\014.ELeagueTier:\021LEAGUE_TIER_"
-  "UNSET\0223\n\006region\030\004 \001(\0162\016.ELeagueRegion:\023L"
-  "EAGUE_REGION_UNSET\022\013\n\003url\030\005 \001(\t\022\023\n\013descr"
-  "iption\030\006 \001(\t\022\r\n\005notes\030\007 \001(\t\022\027\n\017start_tim"
-  "estamp\030\010 \001(\r\022\025\n\rend_timestamp\030\t \001(\r\022\032\n\022p"
-  "ro_circuit_points\030\n \001(\r\022\022\n\nimage_bits\030\013 "
-  "\001(\r\0223\n\006status\030\014 \001(\0162\016.ELeagueStatus:\023LEA"
-  "GUE_STATUS_UNSET\022\034\n\024most_recent_activity"
-  "\030\r \001(\r\022\033\n\023registration_period\030\016 \001(\r\032F\n\005A"
-  "dmin\022\022\n\naccount_id\030\001 \001(\r\022\022\n\nis_primary\030\002"
-  " \001(\010\022\025\n\remail_address\030\003 \001(\t\032t\n\rPrizePool"
-  "Item\022\020\n\010item_def\030\001 \001(\r\022\034\n\024sales_stop_tim"
-  "estamp\030\002 \001(\r\022\023\n\013revenue_pct\030\003 \001(\r\022\036\n\026rev"
-  "enue_cents_per_sale\030\004 \001(\r\032\225\001\n\tPrizePool\022"
-  "\027\n\017base_prize_pool\030\001 \001(\r\022\030\n\020total_prize_"
-  "pool\030\002 \001(\r\022\034\n\024prize_split_pct_x100\030\003 \003(\r"
-  "\0227\n\020prize_pool_items\030\004 \003(\0132\035.CMsgDOTALea"
-  "gue.PrizePoolItem\032\261\001\n\006Stream\022\021\n\tstream_i"
-  "d\030\001 \001(\r\022\020\n\010language\030\002 \001(\r\022\014\n\004name\030\003 \001(\t\022"
-  "O\n\022broadcast_provider\030\004 \001(\0162\031.ELeagueBro"
-  "adcastProvider:\030LEAGUE_BROADCAST_UNKNOWN"
-  "\022\022\n\nstream_url\030\005 \001(\t\022\017\n\007vod_url\030\006 \001(\t\032\201\001"
-  "\n\nSeriesInfo\022\021\n\tseries_id\030\001 \001(\r\022\023\n\013serie"
-  "s_type\030\002 \001(\r\022\022\n\nstart_time\030\003 \001(\r\022\021\n\tmatc"
-  "h_ids\030\004 \003(\004\022\021\n\tteam_id_1\030\005 \001(\r\022\021\n\tteam_i"
-  "d_2\030\006 \001(\r\032;\n\006Player\022\022\n\naccount_id\030\001 \001(\r\022"
-  "\014\n\004name\030\002 \001(\t\022\017\n\007team_id\030\003 \001(\r\"6\n\022CMsgDO"
-  "TALeagueList\022 \n\007leagues\030\001 \003(\0132\017.CMsgDOTA"
-  "League\"\221\002\n\022CMsgDOTALeagueInfo\022\021\n\tleague_"
-  "id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022-\n\004tier\030\003 \001(\0162\014.E"
-  "LeagueTier:\021LEAGUE_TIER_UNSET\0223\n\006region\030"
-  "\004 \001(\0162\016.ELeagueRegion:\023LEAGUE_REGION_UNS"
-  "ET\022\034\n\024most_recent_activity\030\005 \001(\r\022\030\n\020tota"
-  "l_prize_pool\030\006 \001(\r\022\027\n\017start_timestamp\030\007 "
-  "\001(\r\022\025\n\rend_timestamp\030\010 \001(\r\022\016\n\006status\030\t \001"
-  "(\r\"<\n\026CMsgDOTALeagueInfoList\022\"\n\005infos\030\001 "
-  "\003(\0132\023.CMsgDOTALeagueInfo\"\344\002\n\027CMsgDOTALea"
-  "gueLiveGames\0220\n\005games\030\001 \003(\0132!.CMsgDOTALe"
-  "agueLiveGames.LiveGame\032\226\002\n\010LiveGame\022\021\n\tl"
-  "eague_id\030\001 \001(\r\022\027\n\017server_steam_id\030\002 \001(\004\022"
-  "\024\n\014radiant_name\030\003 \001(\t\022\024\n\014radiant_logo\030\004 "
-  "\001(\004\022\027\n\017radiant_team_id\030\t \001(\r\022\021\n\tdire_nam"
-  "e\030\005 \001(\t\022\021\n\tdire_logo\030\006 \001(\004\022\024\n\014dire_team_"
-  "id\030\n \001(\r\022\014\n\004time\030\007 \001(\r\022\022\n\nspectators\030\010 \001"
-  "(\r\022\026\n\016league_node_id\030\013 \001(\r\022\021\n\tseries_id\030"
-  "\014 \001(\r\022\020\n\010match_id\030\r \001(\004\"\225\001\n\026CMsgDOTALeag"
-  "ueMessages\0221\n\010messages\030\001 \003(\0132\037.CMsgDOTAL"
-  "eagueMessages.Message\032H\n\007Message\022\031\n\021auth"
-  "or_account_id\030\001 \001(\r\022\021\n\ttimestamp\030\002 \001(\r\022\017"
-  "\n\007message\030\003 \001(\t\"K\n\027CMsgDOTALeaguePrizePo"
-  "ol\022\022\n\nprize_pool\030\001 \001(\r\022\034\n\024increment_per_"
-  "second\030\002 \001(\002\"%\n#CMsgDOTALeagueInfoListAd"
-  "minsRequest\"=\n(CMsgDOTALeagueAvailableLo"
-  "bbyNodesRequest\022\021\n\tleague_id\030\001 \001(\r\"\323\001\n!C"
-  "MsgDOTALeagueAvailableLobbyNodes\022\?\n\nnode"
-  "_infos\030\001 \003(\0132+.CMsgDOTALeagueAvailableLo"
-  "bbyNodes.NodeInfo\032m\n\010NodeInfo\022\017\n\007node_id"
-  "\030\001 \001(\r\022\021\n\tnode_name\030\002 \001(\t\022\027\n\017node_group_"
-  "name\030\003 \001(\t\022\021\n\tteam_id_1\030\004 \001(\r\022\021\n\tteam_id"
-  "_2\030\005 \001(\r\"\332\003\n\031CMsgDOTALeagueNodeResults\0227"
-  "\n\014node_results\030\001 \003(\0132!.CMsgDOTALeagueNod"
-  "eResults.Result\032\203\003\n\006Result\022\017\n\007node_id\030\001 "
-  "\001(\r\022\027\n\017winning_node_id\030\002 \001(\r\022\026\n\016losing_n"
-  "ode_id\030\003 \001(\r\022\032\n\022incoming_node_id_1\030\004 \001(\r"
-  "\022\032\n\022incoming_node_id_2\030\005 \001(\r\022\021\n\tteam_id_"
-  "1\030\006 \001(\r\022\021\n\tteam_id_2\030\007 \001(\r\022\023\n\013team_1_nam"
-  "e\030\010 \001(\t\022\023\n\013team_2_name\030\t \001(\t\022\023\n\013team_1_w"
-  "ins\030\n \001(\r\022\023\n\013team_2_wins\030\013 \001(\r\022\027\n\017winnin"
-  "g_team_id\030\014 \001(\r\022\026\n\016losing_team_id\030\r \001(\r\022"
-  "\023\n\013has_started\030\016 \001(\010\022\024\n\014is_completed\030\017 \001"
-  "(\010\022\026\n\016scheduled_time\030\020 \001(\r\022\021\n\tmatch_ids\030"
-  "\021 \003(\004\"\333\002\n\030CMsgDOTADPCLeagueResults\0221\n\007re"
-  "sults\030\001 \003(\0132 .CMsgDOTADPCLeagueResults.R"
-  "esult\022\016\n\006points\030\002 \003(\r\022\017\n\007dollars\030\003 \003(\r\032\352"
-  "\001\n\006Result\022\020\n\010standing\030\001 \001(\r\022\017\n\007team_id\030\002"
-  " \001(\r\022\021\n\tteam_name\030\003 \001(\t\022\021\n\tteam_logo\030\004 \001"
-  "(\004\022\025\n\rteam_logo_url\030\005 \001(\t\022\016\n\006points\030\006 \001("
-  "\r\022\020\n\010earnings\030\007 \001(\r\022\021\n\ttimestamp\030\010 \001(\r\0220"
-  "\n\005phase\030\t \001(\0162\r.ELeaguePhase:\022LEAGUE_PHA"
-  "SE_UNSET\022\031\n\021team_abbreviation\030\n \001(\t\"\255\001\n\026"
-  "CMsgDOTADPCTeamResults\022/\n\007results\030\001 \003(\0132"
-  "\036.CMsgDOTADPCTeamResults.Result\032b\n\006Resul"
-  "t\022\021\n\tleague_id\030\001 \001(\r\022\020\n\010standing\030\002 \001(\r\022\016"
-  "\n\006points\030\003 \001(\r\022\020\n\010earnings\030\004 \001(\r\022\021\n\ttime"
-  "stamp\030\005 \001(\r\"\237\010\n\030CMsgDOTADPCSeasonResults"
-  "\0225\n\007results\030\001 \003(\0132$.CMsgDOTADPCSeasonRes"
-  "ults.TeamResult\0225\n\tstandings\030\002 \003(\0132\".CMs"
-  "gDOTADPCSeasonResults.Standing\022I\n\030major_"
-  "wildcard_standings\030\003 \003(\0132\'.CMsgDOTADPCSe"
-  "asonResults.StandingEntry\022F\n\025major_group"
-  "_standings\030\004 \003(\0132\'.CMsgDOTADPCSeasonResu"
-  "lts.StandingEntry\022H\n\027major_playoff_stand"
-  "ings\030\005 \003(\0132\'.CMsgDOTADPCSeasonResults.St"
-  "andingEntry\032\226\001\n\020TeamLeagueResult\022\021\n\ttime"
-  "stamp\030\001 \001(\r\022\021\n\tleague_id\030\002 \001(\r\022\020\n\010standi"
-  "ng\030\003 \001(\r\022\016\n\006points\030\004 \001(\r\022\020\n\010earnings\030\005 \001"
-  "(\r\022\024\n\014audit_action\030\006 \001(\r\022\022\n\naudit_data\030\007"
-  " \001(\r\032\347\001\n\nTeamResult\022\017\n\007team_id\030\001 \001(\r\022\021\n\t"
-  "team_name\030\002 \001(\t\022\031\n\021team_abbreviation\030\010 \001"
-  "(\t\022\021\n\tteam_logo\030\003 \001(\004\022\025\n\rteam_logo_url\030\004"
-  " \001(\t\022\024\n\014total_points\030\005 \001(\r\022\026\n\016total_earn"
-  "ings\030\006 \001(\r\022B\n\016league_results\030\007 \003(\0132*.CMs"
-  "gDOTADPCSeasonResults.TeamLeagueResult\032~"
-  "\n\rStandingEntry\022\017\n\007team_id\030\001 \001(\r\022\014\n\004wins"
-  "\030\002 \001(\r\022\016\n\006losses\030\003 \001(\r\022\020\n\010team_url\030\004 \001(\t"
-  "\022\021\n\tteam_name\030\005 \001(\t\022\031\n\021team_abbreviation"
-  "\030\006 \001(\t\032\264\001\n\010Standing\0223\n\006region\030\001 \001(\0162\016.EL"
-  "eagueRegion:\023LEAGUE_REGION_UNSET\0229\n\010divi"
-  "sion\030\002 \001(\0162\020.ELeagueDivision:\025LEAGUE_DIV"
-  "ISION_UNSET\0228\n\007entries\030\003 \003(\0132\'.CMsgDOTAD"
-  "PCSeasonResults.StandingEntry\"n\n\037CMsgDOT"
-  "ADPCSeasonSpoilerResults\022\031\n\021time_last_up"
-  "dated\030\001 \001(\r\0220\n\rsaved_results\030\002 \001(\0132\031.CMs"
-  "gDOTADPCSeasonResults*\327\001\n\024ELeagueNodeGro"
-  "upType\022\026\n\022INVALID_GROUP_TYPE\020\000\022\022\n\016ORGANI"
-  "ZATIONAL\020\001\022\017\n\013ROUND_ROBIN\020\002\022\t\n\005SWISS\020\003\022\022"
-  "\n\016BRACKET_SINGLE\020\004\022\035\n\031BRACKET_DOUBLE_SEE"
-  "D_LOSER\020\005\022\035\n\031BRACKET_DOUBLE_ALL_WINNER\020\006"
-  "\022\r\n\tSHOWMATCH\020\007\022\007\n\003GSL\020\010\022\r\n\tPLACEMENT\020\t*"
-  "o\n\017ELeagueNodeType\022\025\n\021INVALID_NODE_TYPE\020"
-  "\000\022\017\n\013BEST_OF_ONE\020\001\022\021\n\rBEST_OF_THREE\020\002\022\020\n"
-  "\014BEST_OF_FIVE\020\003\022\017\n\013BEST_OF_TWO\020\004"
+  "ng_team_id\030\002 \001(\r\022\020\n\010duration\030\003 \001(\r\032:\n\003VO"
+  "D\022\023\n\013series_game\030\001 \001(\r\022\021\n\tstream_id\030\002 \001("
+  "\r\022\013\n\003url\030\003 \001(\t\"\301\n\n\027CMsgDOTALeagueNodeGro"
+  "up\022\014\n\004name\030\001 \001(\t\022\025\n\rnode_group_id\030\002 \001(\r\022"
+  "\034\n\024parent_node_group_id\030\003 \001(\r\022\037\n\027incomin"
+  "g_node_group_ids\030\004 \003(\r\022\037\n\027advancing_node"
+  "_group_id\030\005 \001(\r\022\034\n\024advancing_team_count\030"
+  "\006 \001(\r\022\022\n\nteam_count\030\007 \001(\r\022B\n\017node_group_"
+  "type\030\010 \001(\0162\025.ELeagueNodeGroupType:\022INVAL"
+  "ID_GROUP_TYPE\022>\n\021default_node_type\030\t \001(\016"
+  "2\020.ELeagueNodeType:\021INVALID_NODE_TYPE\022\r\n"
+  "\005round\030\n \001(\r\022\022\n\nmax_rounds\030\013 \001(\r\022\026\n\016win_"
+  "loss_limit\030\033 \001(\r\022\025\n\ris_tiebreaker\030\014 \001(\010\022"
+  "\026\n\016is_final_group\030\r \001(\010\022\024\n\014is_completed\030"
+  "\016 \001(\010\0220\n\005phase\030\022 \001(\0162\r.ELeaguePhase:\022LEA"
+  "GUE_PHASE_UNSET\0223\n\006region\030\023 \001(\0162\016.ELeagu"
+  "eRegion:\023LEAGUE_REGION_UNSET\022\022\n\nstart_ti"
+  "me\030\024 \001(\r\022\020\n\010end_time\030\025 \001(\r\022)\n!secondary_"
+  "advancing_node_group_id\030\026 \001(\r\022&\n\036seconda"
+  "ry_advancing_team_count\030\027 \001(\r\022(\n tertiar"
+  "y_advancing_node_group_id\030\030 \001(\r\022%\n\035terti"
+  "ary_advancing_team_count\030\031 \001(\r\022\036\n\026elimin"
+  "ation_dpc_points\030\032 \001(\r\022=\n\016team_standings"
+  "\030\017 \003(\0132%.CMsgDOTALeagueNodeGroup.TeamSta"
+  "nding\022\"\n\005nodes\030\020 \003(\0132\023.CMsgDOTALeagueNod"
+  "e\022-\n\013node_groups\030\021 \003(\0132\030.CMsgDOTALeagueN"
+  "odeGroup\032\207\003\n\014TeamStanding\022\020\n\010standing\030\001 "
+  "\001(\r\022\017\n\007team_id\030\002 \001(\r\022\021\n\tteam_name\030\003 \001(\t\022"
+  "\020\n\010team_tag\030\004 \001(\t\022\021\n\tteam_logo\030\005 \001(\004\022\025\n\r"
+  "team_logo_url\030\006 \001(\t\022\014\n\004wins\030\007 \001(\r\022\016\n\006los"
+  "ses\030\010 \001(\r\022\r\n\005score\030\t \001(\003\022\031\n\021team_abbrevi"
+  "ation\030\n \001(\t\022\016\n\006is_pro\030\016 \001(\010\022\035\n\025tiebreak_"
+  "game_win_pct\030\017 \001(\r\022$\n\034tiebreak_opponent_"
+  "match_wins\030\020 \001(\r\022&\n\036tiebreak_opponent_ga"
+  "me_win_pct\030\021 \001(\r\022\031\n\021tiebreak_coinflip\030\022 "
+  "\001(\r\022%\n\035tiebereak_average_game_length\030\023 \001"
+  "(\r\"\242\013\n\016CMsgDOTALeague\022\"\n\004info\030\001 \001(\0132\024.CM"
+  "sgDOTALeague.Info\022-\n\nprize_pool\030\002 \001(\0132\031."
+  "CMsgDOTALeague.PrizePool\022%\n\006admins\030\003 \003(\013"
+  "2\025.CMsgDOTALeague.Admin\022\'\n\007streams\030\004 \003(\013"
+  "2\026.CMsgDOTALeague.Stream\022-\n\013node_groups\030"
+  "\005 \003(\0132\030.CMsgDOTALeagueNodeGroup\0220\n\014serie"
+  "s_infos\030\006 \003(\0132\032.CMsgDOTALeague.SeriesInf"
+  "o\0222\n\022registered_players\030\007 \003(\0132\026.CMsgDOTA"
+  "League.Player\032\214\003\n\004Info\022\021\n\tleague_id\030\001 \001("
+  "\r\022\014\n\004name\030\002 \001(\t\022-\n\004tier\030\003 \001(\0162\014.ELeagueT"
+  "ier:\021LEAGUE_TIER_UNSET\0223\n\006region\030\004 \001(\0162\016"
+  ".ELeagueRegion:\023LEAGUE_REGION_UNSET\022\013\n\003u"
+  "rl\030\005 \001(\t\022\023\n\013description\030\006 \001(\t\022\r\n\005notes\030\007"
+  " \001(\t\022\027\n\017start_timestamp\030\010 \001(\r\022\025\n\rend_tim"
+  "estamp\030\t \001(\r\022\032\n\022pro_circuit_points\030\n \001(\r"
+  "\022\022\n\nimage_bits\030\013 \001(\r\0223\n\006status\030\014 \001(\0162\016.E"
+  "LeagueStatus:\023LEAGUE_STATUS_UNSET\022\034\n\024mos"
+  "t_recent_activity\030\r \001(\r\022\033\n\023registration_"
+  "period\030\016 \001(\r\032F\n\005Admin\022\022\n\naccount_id\030\001 \001("
+  "\r\022\022\n\nis_primary\030\002 \001(\010\022\025\n\remail_address\030\003"
+  " \001(\t\032t\n\rPrizePoolItem\022\020\n\010item_def\030\001 \001(\r\022"
+  "\034\n\024sales_stop_timestamp\030\002 \001(\r\022\023\n\013revenue"
+  "_pct\030\003 \001(\r\022\036\n\026revenue_cents_per_sale\030\004 \001"
+  "(\r\032\225\001\n\tPrizePool\022\027\n\017base_prize_pool\030\001 \001("
+  "\r\022\030\n\020total_prize_pool\030\002 \001(\r\022\034\n\024prize_spl"
+  "it_pct_x100\030\003 \003(\r\0227\n\020prize_pool_items\030\004 "
+  "\003(\0132\035.CMsgDOTALeague.PrizePoolItem\032\261\001\n\006S"
+  "tream\022\021\n\tstream_id\030\001 \001(\r\022\020\n\010language\030\002 \001"
+  "(\r\022\014\n\004name\030\003 \001(\t\022O\n\022broadcast_provider\030\004"
+  " \001(\0162\031.ELeagueBroadcastProvider:\030LEAGUE_"
+  "BROADCAST_UNKNOWN\022\022\n\nstream_url\030\005 \001(\t\022\017\n"
+  "\007vod_url\030\006 \001(\t\032\201\001\n\nSeriesInfo\022\021\n\tseries_"
+  "id\030\001 \001(\r\022\023\n\013series_type\030\002 \001(\r\022\022\n\nstart_t"
+  "ime\030\003 \001(\r\022\021\n\tmatch_ids\030\004 \003(\004\022\021\n\tteam_id_"
+  "1\030\005 \001(\r\022\021\n\tteam_id_2\030\006 \001(\r\032;\n\006Player\022\022\n\n"
+  "account_id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\017\n\007team_i"
+  "d\030\003 \001(\r\"6\n\022CMsgDOTALeagueList\022 \n\007leagues"
+  "\030\001 \003(\0132\017.CMsgDOTALeague\"\221\002\n\022CMsgDOTALeag"
+  "ueInfo\022\021\n\tleague_id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022"
+  "-\n\004tier\030\003 \001(\0162\014.ELeagueTier:\021LEAGUE_TIER"
+  "_UNSET\0223\n\006region\030\004 \001(\0162\016.ELeagueRegion:\023"
+  "LEAGUE_REGION_UNSET\022\034\n\024most_recent_activ"
+  "ity\030\005 \001(\r\022\030\n\020total_prize_pool\030\006 \001(\r\022\027\n\017s"
+  "tart_timestamp\030\007 \001(\r\022\025\n\rend_timestamp\030\010 "
+  "\001(\r\022\016\n\006status\030\t \001(\r\"<\n\026CMsgDOTALeagueInf"
+  "oList\022\"\n\005infos\030\001 \003(\0132\023.CMsgDOTALeagueInf"
+  "o\"\344\002\n\027CMsgDOTALeagueLiveGames\0220\n\005games\030\001"
+  " \003(\0132!.CMsgDOTALeagueLiveGames.LiveGame\032"
+  "\226\002\n\010LiveGame\022\021\n\tleague_id\030\001 \001(\r\022\027\n\017serve"
+  "r_steam_id\030\002 \001(\004\022\024\n\014radiant_name\030\003 \001(\t\022\024"
+  "\n\014radiant_logo\030\004 \001(\004\022\027\n\017radiant_team_id\030"
+  "\t \001(\r\022\021\n\tdire_name\030\005 \001(\t\022\021\n\tdire_logo\030\006 "
+  "\001(\004\022\024\n\014dire_team_id\030\n \001(\r\022\014\n\004time\030\007 \001(\r\022"
+  "\022\n\nspectators\030\010 \001(\r\022\026\n\016league_node_id\030\013 "
+  "\001(\r\022\021\n\tseries_id\030\014 \001(\r\022\020\n\010match_id\030\r \001(\004"
+  "\"\225\001\n\026CMsgDOTALeagueMessages\0221\n\010messages\030"
+  "\001 \003(\0132\037.CMsgDOTALeagueMessages.Message\032H"
+  "\n\007Message\022\031\n\021author_account_id\030\001 \001(\r\022\021\n\t"
+  "timestamp\030\002 \001(\r\022\017\n\007message\030\003 \001(\t\"K\n\027CMsg"
+  "DOTALeaguePrizePool\022\022\n\nprize_pool\030\001 \001(\r\022"
+  "\034\n\024increment_per_second\030\002 \001(\002\"%\n#CMsgDOT"
+  "ALeagueInfoListAdminsRequest\"=\n(CMsgDOTA"
+  "LeagueAvailableLobbyNodesRequest\022\021\n\tleag"
+  "ue_id\030\001 \001(\r\"\323\001\n!CMsgDOTALeagueAvailableL"
+  "obbyNodes\022\?\n\nnode_infos\030\001 \003(\0132+.CMsgDOTA"
+  "LeagueAvailableLobbyNodes.NodeInfo\032m\n\010No"
+  "deInfo\022\017\n\007node_id\030\001 \001(\r\022\021\n\tnode_name\030\002 \001"
+  "(\t\022\027\n\017node_group_name\030\003 \001(\t\022\021\n\tteam_id_1"
+  "\030\004 \001(\r\022\021\n\tteam_id_2\030\005 \001(\r\"\332\003\n\031CMsgDOTALe"
+  "agueNodeResults\0227\n\014node_results\030\001 \003(\0132!."
+  "CMsgDOTALeagueNodeResults.Result\032\203\003\n\006Res"
+  "ult\022\017\n\007node_id\030\001 \001(\r\022\027\n\017winning_node_id\030"
+  "\002 \001(\r\022\026\n\016losing_node_id\030\003 \001(\r\022\032\n\022incomin"
+  "g_node_id_1\030\004 \001(\r\022\032\n\022incoming_node_id_2\030"
+  "\005 \001(\r\022\021\n\tteam_id_1\030\006 \001(\r\022\021\n\tteam_id_2\030\007 "
+  "\001(\r\022\023\n\013team_1_name\030\010 \001(\t\022\023\n\013team_2_name\030"
+  "\t \001(\t\022\023\n\013team_1_wins\030\n \001(\r\022\023\n\013team_2_win"
+  "s\030\013 \001(\r\022\027\n\017winning_team_id\030\014 \001(\r\022\026\n\016losi"
+  "ng_team_id\030\r \001(\r\022\023\n\013has_started\030\016 \001(\010\022\024\n"
+  "\014is_completed\030\017 \001(\010\022\026\n\016scheduled_time\030\020 "
+  "\001(\r\022\021\n\tmatch_ids\030\021 \003(\004\"\333\002\n\030CMsgDOTADPCLe"
+  "agueResults\0221\n\007results\030\001 \003(\0132 .CMsgDOTAD"
+  "PCLeagueResults.Result\022\016\n\006points\030\002 \003(\r\022\017"
+  "\n\007dollars\030\003 \003(\r\032\352\001\n\006Result\022\020\n\010standing\030\001"
+  " \001(\r\022\017\n\007team_id\030\002 \001(\r\022\021\n\tteam_name\030\003 \001(\t"
+  "\022\021\n\tteam_logo\030\004 \001(\004\022\025\n\rteam_logo_url\030\005 \001"
+  "(\t\022\016\n\006points\030\006 \001(\r\022\020\n\010earnings\030\007 \001(\r\022\021\n\t"
+  "timestamp\030\010 \001(\r\0220\n\005phase\030\t \001(\0162\r.ELeague"
+  "Phase:\022LEAGUE_PHASE_UNSET\022\031\n\021team_abbrev"
+  "iation\030\n \001(\t\"\255\001\n\026CMsgDOTADPCTeamResults\022"
+  "/\n\007results\030\001 \003(\0132\036.CMsgDOTADPCTeamResult"
+  "s.Result\032b\n\006Result\022\021\n\tleague_id\030\001 \001(\r\022\020\n"
+  "\010standing\030\002 \001(\r\022\016\n\006points\030\003 \001(\r\022\020\n\010earni"
+  "ngs\030\004 \001(\r\022\021\n\ttimestamp\030\005 \001(\r\"\237\010\n\030CMsgDOT"
+  "ADPCSeasonResults\0225\n\007results\030\001 \003(\0132$.CMs"
+  "gDOTADPCSeasonResults.TeamResult\0225\n\tstan"
+  "dings\030\002 \003(\0132\".CMsgDOTADPCSeasonResults.S"
+  "tanding\022I\n\030major_wildcard_standings\030\003 \003("
+  "\0132\'.CMsgDOTADPCSeasonResults.StandingEnt"
+  "ry\022F\n\025major_group_standings\030\004 \003(\0132\'.CMsg"
+  "DOTADPCSeasonResults.StandingEntry\022H\n\027ma"
+  "jor_playoff_standings\030\005 \003(\0132\'.CMsgDOTADP"
+  "CSeasonResults.StandingEntry\032\226\001\n\020TeamLea"
+  "gueResult\022\021\n\ttimestamp\030\001 \001(\r\022\021\n\tleague_i"
+  "d\030\002 \001(\r\022\020\n\010standing\030\003 \001(\r\022\016\n\006points\030\004 \001("
+  "\r\022\020\n\010earnings\030\005 \001(\r\022\024\n\014audit_action\030\006 \001("
+  "\r\022\022\n\naudit_data\030\007 \001(\r\032\347\001\n\nTeamResult\022\017\n\007"
+  "team_id\030\001 \001(\r\022\021\n\tteam_name\030\002 \001(\t\022\031\n\021team"
+  "_abbreviation\030\010 \001(\t\022\021\n\tteam_logo\030\003 \001(\004\022\025"
+  "\n\rteam_logo_url\030\004 \001(\t\022\024\n\014total_points\030\005 "
+  "\001(\r\022\026\n\016total_earnings\030\006 \001(\r\022B\n\016league_re"
+  "sults\030\007 \003(\0132*.CMsgDOTADPCSeasonResults.T"
+  "eamLeagueResult\032~\n\rStandingEntry\022\017\n\007team"
+  "_id\030\001 \001(\r\022\014\n\004wins\030\002 \001(\r\022\016\n\006losses\030\003 \001(\r\022"
+  "\020\n\010team_url\030\004 \001(\t\022\021\n\tteam_name\030\005 \001(\t\022\031\n\021"
+  "team_abbreviation\030\006 \001(\t\032\264\001\n\010Standing\0223\n\006"
+  "region\030\001 \001(\0162\016.ELeagueRegion:\023LEAGUE_REG"
+  "ION_UNSET\0229\n\010division\030\002 \001(\0162\020.ELeagueDiv"
+  "ision:\025LEAGUE_DIVISION_UNSET\0228\n\007entries\030"
+  "\003 \003(\0132\'.CMsgDOTADPCSeasonResults.Standin"
+  "gEntry\"n\n\037CMsgDOTADPCSeasonSpoilerResult"
+  "s\022\031\n\021time_last_updated\030\001 \001(\r\0220\n\rsaved_re"
+  "sults\030\002 \001(\0132\031.CMsgDOTADPCSeasonResults*\327"
+  "\001\n\024ELeagueNodeGroupType\022\026\n\022INVALID_GROUP"
+  "_TYPE\020\000\022\022\n\016ORGANIZATIONAL\020\001\022\017\n\013ROUND_ROB"
+  "IN\020\002\022\t\n\005SWISS\020\003\022\022\n\016BRACKET_SINGLE\020\004\022\035\n\031B"
+  "RACKET_DOUBLE_SEED_LOSER\020\005\022\035\n\031BRACKET_DO"
+  "UBLE_ALL_WINNER\020\006\022\r\n\tSHOWMATCH\020\007\022\007\n\003GSL\020"
+  "\010\022\r\n\tPLACEMENT\020\t*o\n\017ELeagueNodeType\022\025\n\021I"
+  "NVALID_NODE_TYPE\020\000\022\017\n\013BEST_OF_ONE\020\001\022\021\n\rB"
+  "EST_OF_THREE\020\002\022\020\n\014BEST_OF_FIVE\020\003\022\017\n\013BEST"
+  "_OF_TWO\020\004"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5fcommon_5fleague_2eproto_deps[1] = {
   &::descriptor_table_dota_5fshared_5fenums_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_dota_5fgcmessages_5fcommon_5fleague_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fgcmessages_5fcommon_5fleague_2eproto = {
-    false, false, 7272, descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fleague_2eproto,
+    false, false, 7329, descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fleague_2eproto,
     "dota_gcmessages_common_league.proto",
     &descriptor_table_dota_5fgcmessages_5fcommon_5fleague_2eproto_once, descriptor_table_dota_5fgcmessages_5fcommon_5fleague_2eproto_deps, 1, 37,
     schemas, file_default_instances, TableStruct_dota_5fgcmessages_5fcommon_5fleague_2eproto::offsets,
@@ -1696,6 +1704,9 @@ class CMsgDOTALeagueNode_MatchDetails::_Internal {
   static void set_has_winning_team_id(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
+  static void set_has_duration(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
 };
 
 CMsgDOTALeagueNode_MatchDetails::CMsgDOTALeagueNode_MatchDetails(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1711,12 +1722,13 @@ CMsgDOTALeagueNode_MatchDetails::CMsgDOTALeagueNode_MatchDetails(const CMsgDOTAL
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.match_id_){}
-    , decltype(_impl_.winning_team_id_){}};
+    , decltype(_impl_.winning_team_id_){}
+    , decltype(_impl_.duration_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_impl_.match_id_, &from._impl_.match_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.winning_team_id_) -
-    reinterpret_cast<char*>(&_impl_.match_id_)) + sizeof(_impl_.winning_team_id_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.duration_) -
+    reinterpret_cast<char*>(&_impl_.match_id_)) + sizeof(_impl_.duration_));
   // @@protoc_insertion_point(copy_constructor:CMsgDOTALeagueNode.MatchDetails)
 }
 
@@ -1729,6 +1741,7 @@ inline void CMsgDOTALeagueNode_MatchDetails::SharedCtor(
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.match_id_){uint64_t{0u}}
     , decltype(_impl_.winning_team_id_){0u}
+    , decltype(_impl_.duration_){0u}
   };
 }
 
@@ -1756,10 +1769,10 @@ void CMsgDOTALeagueNode_MatchDetails::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     ::memset(&_impl_.match_id_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.winning_team_id_) -
-        reinterpret_cast<char*>(&_impl_.match_id_)) + sizeof(_impl_.winning_team_id_));
+        reinterpret_cast<char*>(&_impl_.duration_) -
+        reinterpret_cast<char*>(&_impl_.match_id_)) + sizeof(_impl_.duration_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1786,6 +1799,15 @@ const char* CMsgDOTALeagueNode_MatchDetails::_InternalParse(const char* ptr, ::_
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_winning_team_id(&has_bits);
           _impl_.winning_team_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 duration = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _Internal::set_has_duration(&has_bits);
+          _impl_.duration_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1833,6 +1855,12 @@ uint8_t* CMsgDOTALeagueNode_MatchDetails::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_winning_team_id(), target);
   }
 
+  // optional uint32 duration = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_duration(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1850,7 +1878,7 @@ size_t CMsgDOTALeagueNode_MatchDetails::ByteSizeLong() const {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     // optional uint64 match_id = 1;
     if (cached_has_bits & 0x00000001u) {
       total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_match_id());
@@ -1859,6 +1887,11 @@ size_t CMsgDOTALeagueNode_MatchDetails::ByteSizeLong() const {
     // optional uint32 winning_team_id = 2;
     if (cached_has_bits & 0x00000002u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_winning_team_id());
+    }
+
+    // optional uint32 duration = 3;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_duration());
     }
 
   }
@@ -1881,12 +1914,15 @@ void CMsgDOTALeagueNode_MatchDetails::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
       _this->_impl_.match_id_ = from._impl_.match_id_;
     }
     if (cached_has_bits & 0x00000002u) {
       _this->_impl_.winning_team_id_ = from._impl_.winning_team_id_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.duration_ = from._impl_.duration_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
@@ -1909,8 +1945,8 @@ void CMsgDOTALeagueNode_MatchDetails::InternalSwap(CMsgDOTALeagueNode_MatchDetai
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CMsgDOTALeagueNode_MatchDetails, _impl_.winning_team_id_)
-      + sizeof(CMsgDOTALeagueNode_MatchDetails::_impl_.winning_team_id_)
+      PROTOBUF_FIELD_OFFSET(CMsgDOTALeagueNode_MatchDetails, _impl_.duration_)
+      + sizeof(CMsgDOTALeagueNode_MatchDetails::_impl_.duration_)
       - PROTOBUF_FIELD_OFFSET(CMsgDOTALeagueNode_MatchDetails, _impl_.match_id_)>(
           reinterpret_cast<char*>(&_impl_.match_id_),
           reinterpret_cast<char*>(&other->_impl_.match_id_));
@@ -3080,6 +3116,9 @@ class CMsgDOTALeagueNodeGroup_TeamStanding::_Internal {
   static void set_has_tiebreak_coinflip(HasBits* has_bits) {
     (*has_bits)[0] |= 16384u;
   }
+  static void set_has_tiebereak_average_game_length(HasBits* has_bits) {
+    (*has_bits)[0] |= 32768u;
+  }
 };
 
 CMsgDOTALeagueNodeGroup_TeamStanding::CMsgDOTALeagueNodeGroup_TeamStanding(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -3108,7 +3147,8 @@ CMsgDOTALeagueNodeGroup_TeamStanding::CMsgDOTALeagueNodeGroup_TeamStanding(const
     , decltype(_impl_.tiebreak_game_win_pct_){}
     , decltype(_impl_.tiebreak_opponent_match_wins_){}
     , decltype(_impl_.tiebreak_opponent_game_win_pct_){}
-    , decltype(_impl_.tiebreak_coinflip_){}};
+    , decltype(_impl_.tiebreak_coinflip_){}
+    , decltype(_impl_.tiebereak_average_game_length_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.team_name_.InitDefault();
@@ -3144,8 +3184,8 @@ CMsgDOTALeagueNodeGroup_TeamStanding::CMsgDOTALeagueNodeGroup_TeamStanding(const
       _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.standing_, &from._impl_.standing_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.tiebreak_coinflip_) -
-    reinterpret_cast<char*>(&_impl_.standing_)) + sizeof(_impl_.tiebreak_coinflip_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.tiebereak_average_game_length_) -
+    reinterpret_cast<char*>(&_impl_.standing_)) + sizeof(_impl_.tiebereak_average_game_length_));
   // @@protoc_insertion_point(copy_constructor:CMsgDOTALeagueNodeGroup.TeamStanding)
 }
 
@@ -3171,6 +3211,7 @@ inline void CMsgDOTALeagueNodeGroup_TeamStanding::SharedCtor(
     , decltype(_impl_.tiebreak_opponent_match_wins_){0u}
     , decltype(_impl_.tiebreak_opponent_game_win_pct_){0u}
     , decltype(_impl_.tiebreak_coinflip_){0u}
+    , decltype(_impl_.tiebereak_average_game_length_){0u}
   };
   _impl_.team_name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -3237,10 +3278,10 @@ void CMsgDOTALeagueNodeGroup_TeamStanding::Clear() {
         reinterpret_cast<char*>(&_impl_.wins_) -
         reinterpret_cast<char*>(&_impl_.standing_)) + sizeof(_impl_.wins_));
   }
-  if (cached_has_bits & 0x00007f00u) {
+  if (cached_has_bits & 0x0000ff00u) {
     ::memset(&_impl_.losses_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.tiebreak_coinflip_) -
-        reinterpret_cast<char*>(&_impl_.losses_)) + sizeof(_impl_.tiebreak_coinflip_));
+        reinterpret_cast<char*>(&_impl_.tiebereak_average_game_length_) -
+        reinterpret_cast<char*>(&_impl_.losses_)) + sizeof(_impl_.tiebereak_average_game_length_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -3400,6 +3441,15 @@ const char* CMsgDOTALeagueNodeGroup_TeamStanding::_InternalParse(const char* ptr
         } else
           goto handle_unusual;
         continue;
+      // optional uint32 tiebereak_average_game_length = 19;
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 152)) {
+          _Internal::set_has_tiebereak_average_game_length(&has_bits);
+          _impl_.tiebereak_average_game_length_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -3537,6 +3587,12 @@ uint8_t* CMsgDOTALeagueNodeGroup_TeamStanding::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(18, this->_internal_tiebreak_coinflip(), target);
   }
 
+  // optional uint32 tiebereak_average_game_length = 19;
+  if (cached_has_bits & 0x00008000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(19, this->_internal_tiebereak_average_game_length(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -3604,7 +3660,7 @@ size_t CMsgDOTALeagueNodeGroup_TeamStanding::ByteSizeLong() const {
     }
 
   }
-  if (cached_has_bits & 0x00007f00u) {
+  if (cached_has_bits & 0x0000ff00u) {
     // optional uint32 losses = 8;
     if (cached_has_bits & 0x00000100u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_losses());
@@ -3644,6 +3700,13 @@ size_t CMsgDOTALeagueNodeGroup_TeamStanding::ByteSizeLong() const {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_tiebreak_coinflip());
+    }
+
+    // optional uint32 tiebereak_average_game_length = 19;
+    if (cached_has_bits & 0x00008000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_tiebereak_average_game_length());
     }
 
   }
@@ -3693,7 +3756,7 @@ void CMsgDOTALeagueNodeGroup_TeamStanding::MergeImpl(::PROTOBUF_NAMESPACE_ID::Me
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x00007f00u) {
+  if (cached_has_bits & 0x0000ff00u) {
     if (cached_has_bits & 0x00000100u) {
       _this->_impl_.losses_ = from._impl_.losses_;
     }
@@ -3714,6 +3777,9 @@ void CMsgDOTALeagueNodeGroup_TeamStanding::MergeImpl(::PROTOBUF_NAMESPACE_ID::Me
     }
     if (cached_has_bits & 0x00004000u) {
       _this->_impl_.tiebreak_coinflip_ = from._impl_.tiebreak_coinflip_;
+    }
+    if (cached_has_bits & 0x00008000u) {
+      _this->_impl_.tiebereak_average_game_length_ = from._impl_.tiebereak_average_game_length_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
@@ -3754,8 +3820,8 @@ void CMsgDOTALeagueNodeGroup_TeamStanding::InternalSwap(CMsgDOTALeagueNodeGroup_
       &other->_impl_.team_abbreviation_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CMsgDOTALeagueNodeGroup_TeamStanding, _impl_.tiebreak_coinflip_)
-      + sizeof(CMsgDOTALeagueNodeGroup_TeamStanding::_impl_.tiebreak_coinflip_)
+      PROTOBUF_FIELD_OFFSET(CMsgDOTALeagueNodeGroup_TeamStanding, _impl_.tiebereak_average_game_length_)
+      + sizeof(CMsgDOTALeagueNodeGroup_TeamStanding::_impl_.tiebereak_average_game_length_)
       - PROTOBUF_FIELD_OFFSET(CMsgDOTALeagueNodeGroup_TeamStanding, _impl_.standing_)>(
           reinterpret_cast<char*>(&_impl_.standing_),
           reinterpret_cast<char*>(&other->_impl_.standing_));

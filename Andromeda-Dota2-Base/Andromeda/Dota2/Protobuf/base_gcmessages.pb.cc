@@ -82,7 +82,7 @@ PROTOBUF_CONSTEXPR CMsgClientPingData::CMsgClientPingData(
   , /*decltype(_impl_._region_codes_cached_byte_size_)*/{0}
   , /*decltype(_impl_.region_pings_)*/{}
   , /*decltype(_impl_._region_pings_cached_byte_size_)*/{0}
-  , /*decltype(_impl_.region_ping_failed_bitmask_)*/0u} {}
+  , /*decltype(_impl_.region_ping_failed_bitmask_)*/uint64_t{0u}} {}
 struct CMsgClientPingDataDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CMsgClientPingDataDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -1785,7 +1785,7 @@ const char descriptor_table_protodef_base_5fgcmessages_2eproto[] PROTOBUF_SECTIO
   "elay_codes\030\004 \003(\007B\002\020\001\022\027\n\013relay_pings\030\005 \003("
   "\rB\002\020\001\022\030\n\014region_codes\030\010 \003(\rB\002\020\001\022\030\n\014regio"
   "n_pings\030\t \003(\rB\002\020\001\022\"\n\032region_ping_failed_"
-  "bitmask\030\n \001(\r\"\210\001\n\021CMsgInviteToParty\022\020\n\010s"
+  "bitmask\030\n \001(\004\"\210\001\n\021CMsgInviteToParty\022\020\n\010s"
   "team_id\030\001 \001(\006\022\026\n\016client_version\030\002 \001(\r\022\017\n"
   "\007team_id\030\003 \001(\r\022\020\n\010as_coach\030\004 \001(\010\022&\n\tping"
   "_data\030\005 \001(\0132\023.CMsgClientPingData\"=\n\021CMsg"
@@ -3130,7 +3130,7 @@ inline void CMsgClientPingData::SharedCtor(
     , /*decltype(_impl_._region_codes_cached_byte_size_)*/{0}
     , decltype(_impl_.region_pings_){arena}
     , /*decltype(_impl_._region_pings_cached_byte_size_)*/{0}
-    , decltype(_impl_.region_ping_failed_bitmask_){0u}
+    , decltype(_impl_.region_ping_failed_bitmask_){uint64_t{0u}}
   };
 }
 
@@ -3165,7 +3165,7 @@ void CMsgClientPingData::Clear() {
   _impl_.relay_pings_.Clear();
   _impl_.region_codes_.Clear();
   _impl_.region_pings_.Clear();
-  _impl_.region_ping_failed_bitmask_ = 0u;
+  _impl_.region_ping_failed_bitmask_ = uint64_t{0u};
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -3221,11 +3221,11 @@ const char* CMsgClientPingData::_InternalParse(const char* ptr, ::_pbi::ParseCon
         } else
           goto handle_unusual;
         continue;
-      // optional uint32 region_ping_failed_bitmask = 10;
+      // optional uint64 region_ping_failed_bitmask = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
           _Internal::set_has_region_ping_failed_bitmask(&has_bits);
-          _impl_.region_ping_failed_bitmask_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.region_ping_failed_bitmask_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3293,10 +3293,10 @@ uint8_t* CMsgClientPingData::_InternalSerialize(
   }
 
   cached_has_bits = _impl_._has_bits_[0];
-  // optional uint32 region_ping_failed_bitmask = 10;
+  // optional uint64 region_ping_failed_bitmask = 10;
   if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(10, this->_internal_region_ping_failed_bitmask(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(10, this->_internal_region_ping_failed_bitmask(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3368,10 +3368,10 @@ size_t CMsgClientPingData::ByteSizeLong() const {
     total_size += data_size;
   }
 
-  // optional uint32 region_ping_failed_bitmask = 10;
+  // optional uint64 region_ping_failed_bitmask = 10;
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_region_ping_failed_bitmask());
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_region_ping_failed_bitmask());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);

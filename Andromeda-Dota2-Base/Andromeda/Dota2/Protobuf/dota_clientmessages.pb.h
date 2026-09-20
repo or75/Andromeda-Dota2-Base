@@ -6278,6 +6278,7 @@ class CDOTAClientMsg_QuickBuyAction final :
     kSlotIndexFieldNumber = 3,
     kNewSlotIndexFieldNumber = 5,
     kTopLevelItemFieldNumber = 6,
+    kDisableBuybackProtectionForPurchaseFieldNumber = 8,
     kPurchaserEntindexFieldNumber = 4,
     kActionFieldNumber = 1,
     kItemAbilityIdFieldNumber = 2,
@@ -6343,6 +6344,19 @@ class CDOTAClientMsg_QuickBuyAction final :
   void _internal_set_top_level_item(bool value);
   public:
 
+  // optional bool disable_buyback_protection_for_purchase = 8;
+  bool has_disable_buyback_protection_for_purchase() const;
+  private:
+  bool _internal_has_disable_buyback_protection_for_purchase() const;
+  public:
+  void clear_disable_buyback_protection_for_purchase();
+  bool disable_buyback_protection_for_purchase() const;
+  void set_disable_buyback_protection_for_purchase(bool value);
+  private:
+  bool _internal_disable_buyback_protection_for_purchase() const;
+  void _internal_set_disable_buyback_protection_for_purchase(bool value);
+  public:
+
   // optional int32 purchaser_entindex = 4 [default = -1];
   bool has_purchaser_entindex() const;
   private:
@@ -6396,6 +6410,7 @@ class CDOTAClientMsg_QuickBuyAction final :
     int32_t slot_index_;
     int32_t new_slot_index_;
     bool top_level_item_;
+    bool disable_buyback_protection_for_purchase_;
     int32_t purchaser_entindex_;
     int action_;
     int32_t item_ability_id_;
@@ -24093,7 +24108,7 @@ CDOTAClientMsg_UpdateQuickBuy::mutable_goal_item_ability_ids() {
 
 // optional .CDOTAClientMsg_QuickBuyAction.EActionType action = 1 [default = INVALID];
 inline bool CDOTAClientMsg_QuickBuyAction::_internal_has_action() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool CDOTAClientMsg_QuickBuyAction::has_action() const {
@@ -24101,7 +24116,7 @@ inline bool CDOTAClientMsg_QuickBuyAction::has_action() const {
 }
 inline void CDOTAClientMsg_QuickBuyAction::clear_action() {
   _impl_.action_ = -1;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline ::CDOTAClientMsg_QuickBuyAction_EActionType CDOTAClientMsg_QuickBuyAction::_internal_action() const {
   return static_cast< ::CDOTAClientMsg_QuickBuyAction_EActionType >(_impl_.action_);
@@ -24112,7 +24127,7 @@ inline ::CDOTAClientMsg_QuickBuyAction_EActionType CDOTAClientMsg_QuickBuyAction
 }
 inline void CDOTAClientMsg_QuickBuyAction::_internal_set_action(::CDOTAClientMsg_QuickBuyAction_EActionType value) {
   assert(::CDOTAClientMsg_QuickBuyAction_EActionType_IsValid(value));
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   _impl_.action_ = value;
 }
 inline void CDOTAClientMsg_QuickBuyAction::set_action(::CDOTAClientMsg_QuickBuyAction_EActionType value) {
@@ -24122,7 +24137,7 @@ inline void CDOTAClientMsg_QuickBuyAction::set_action(::CDOTAClientMsg_QuickBuyA
 
 // optional int32 item_ability_id = 2 [default = -1];
 inline bool CDOTAClientMsg_QuickBuyAction::_internal_has_item_ability_id() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline bool CDOTAClientMsg_QuickBuyAction::has_item_ability_id() const {
@@ -24130,7 +24145,7 @@ inline bool CDOTAClientMsg_QuickBuyAction::has_item_ability_id() const {
 }
 inline void CDOTAClientMsg_QuickBuyAction::clear_item_ability_id() {
   _impl_.item_ability_id_ = -1;
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline int32_t CDOTAClientMsg_QuickBuyAction::_internal_item_ability_id() const {
   return _impl_.item_ability_id_;
@@ -24140,7 +24155,7 @@ inline int32_t CDOTAClientMsg_QuickBuyAction::item_ability_id() const {
   return _internal_item_ability_id();
 }
 inline void CDOTAClientMsg_QuickBuyAction::_internal_set_item_ability_id(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   _impl_.item_ability_id_ = value;
 }
 inline void CDOTAClientMsg_QuickBuyAction::set_item_ability_id(int32_t value) {
@@ -24178,7 +24193,7 @@ inline void CDOTAClientMsg_QuickBuyAction::set_slot_index(int32_t value) {
 
 // optional int32 purchaser_entindex = 4 [default = -1];
 inline bool CDOTAClientMsg_QuickBuyAction::_internal_has_purchaser_entindex() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool CDOTAClientMsg_QuickBuyAction::has_purchaser_entindex() const {
@@ -24186,7 +24201,7 @@ inline bool CDOTAClientMsg_QuickBuyAction::has_purchaser_entindex() const {
 }
 inline void CDOTAClientMsg_QuickBuyAction::clear_purchaser_entindex() {
   _impl_.purchaser_entindex_ = -1;
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline int32_t CDOTAClientMsg_QuickBuyAction::_internal_purchaser_entindex() const {
   return _impl_.purchaser_entindex_;
@@ -24196,7 +24211,7 @@ inline int32_t CDOTAClientMsg_QuickBuyAction::purchaser_entindex() const {
   return _internal_purchaser_entindex();
 }
 inline void CDOTAClientMsg_QuickBuyAction::_internal_set_purchaser_entindex(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.purchaser_entindex_ = value;
 }
 inline void CDOTAClientMsg_QuickBuyAction::set_purchaser_entindex(int32_t value) {
@@ -24305,6 +24320,34 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
 CDOTAClientMsg_QuickBuyAction::mutable_old_slot_ability_ids() {
   // @@protoc_insertion_point(field_mutable_list:CDOTAClientMsg_QuickBuyAction.old_slot_ability_ids)
   return _internal_mutable_old_slot_ability_ids();
+}
+
+// optional bool disable_buyback_protection_for_purchase = 8;
+inline bool CDOTAClientMsg_QuickBuyAction::_internal_has_disable_buyback_protection_for_purchase() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool CDOTAClientMsg_QuickBuyAction::has_disable_buyback_protection_for_purchase() const {
+  return _internal_has_disable_buyback_protection_for_purchase();
+}
+inline void CDOTAClientMsg_QuickBuyAction::clear_disable_buyback_protection_for_purchase() {
+  _impl_.disable_buyback_protection_for_purchase_ = false;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline bool CDOTAClientMsg_QuickBuyAction::_internal_disable_buyback_protection_for_purchase() const {
+  return _impl_.disable_buyback_protection_for_purchase_;
+}
+inline bool CDOTAClientMsg_QuickBuyAction::disable_buyback_protection_for_purchase() const {
+  // @@protoc_insertion_point(field_get:CDOTAClientMsg_QuickBuyAction.disable_buyback_protection_for_purchase)
+  return _internal_disable_buyback_protection_for_purchase();
+}
+inline void CDOTAClientMsg_QuickBuyAction::_internal_set_disable_buyback_protection_for_purchase(bool value) {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.disable_buyback_protection_for_purchase_ = value;
+}
+inline void CDOTAClientMsg_QuickBuyAction::set_disable_buyback_protection_for_purchase(bool value) {
+  _internal_set_disable_buyback_protection_for_purchase(value);
+  // @@protoc_insertion_point(field_set:CDOTAClientMsg_QuickBuyAction.disable_buyback_protection_for_purchase)
 }
 
 // -------------------------------------------------------------------

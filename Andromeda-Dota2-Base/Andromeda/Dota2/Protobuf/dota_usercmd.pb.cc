@@ -84,25 +84,27 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_dota_5fusercmd_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\022dota_usercmd.proto\032\026networkbasetypes.p"
-  "roto\032\rusercmd.proto\"\243\002\n\017CDota2UserCmdPB\022"
-  "\035\n\004base\030\001 \001(\0132\017.CBaseUserCmdPB\022%\n\035specta"
-  "tor_query_unit_entindex\030\002 \001(\005\022#\n\016crossha"
-  "irtrace\030\003 \001(\0132\013.CMsgVector\022\030\n\020cameraposi"
-  "tion_x\030\004 \001(\005\022\030\n\020cameraposition_y\030\005 \001(\005\022\025"
-  "\n\rclickbehavior\030\006 \001(\r\022\022\n\nstatspanel\030\007 \001("
-  "\r\022\021\n\tshoppanel\030\010 \001(\r\022\026\n\016stats_dropdown\030\t"
-  " \001(\r\022\033\n\023stats_dropdown_sort\030\n \001(\r"
+  "\n\022dota_usercmd.proto\032\025valveextensions.pr"
+  "oto\032\026networkbasetypes.proto\032\rusercmd.pro"
+  "to\"\251\002\n\017CDota2UserCmdPB\022\035\n\004base\030\001 \001(\0132\017.C"
+  "BaseUserCmdPB\022%\n\035spectator_query_unit_en"
+  "tindex\030\002 \001(\005\022#\n\016crosshairtrace\030\003 \001(\0132\013.C"
+  "MsgVector\022\030\n\020cameraposition_x\030\004 \001(\005\022\030\n\020c"
+  "ameraposition_y\030\005 \001(\005\022\025\n\rclickbehavior\030\006"
+  " \001(\r\022\022\n\nstatspanel\030\007 \001(\r\022\021\n\tshoppanel\030\010 "
+  "\001(\r\022\026\n\016stats_dropdown\030\t \001(\r\022\033\n\023stats_dro"
+  "pdown_sort\030\n \001(\r:\004\300\344\035\001"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fusercmd_2eproto_deps[2] = {
+static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fusercmd_2eproto_deps[3] = {
   &::descriptor_table_networkbasetypes_2eproto,
   &::descriptor_table_usercmd_2eproto,
+  &::descriptor_table_valveextensions_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_dota_5fusercmd_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fusercmd_2eproto = {
-    false, false, 353, descriptor_table_protodef_dota_5fusercmd_2eproto,
+    false, false, 382, descriptor_table_protodef_dota_5fusercmd_2eproto,
     "dota_usercmd.proto",
-    &descriptor_table_dota_5fusercmd_2eproto_once, descriptor_table_dota_5fusercmd_2eproto_deps, 2, 1,
+    &descriptor_table_dota_5fusercmd_2eproto_once, descriptor_table_dota_5fusercmd_2eproto_deps, 3, 1,
     schemas, file_default_instances, TableStruct_dota_5fusercmd_2eproto::offsets,
     file_level_metadata_dota_5fusercmd_2eproto, file_level_enum_descriptors_dota_5fusercmd_2eproto,
     file_level_service_descriptors_dota_5fusercmd_2eproto,

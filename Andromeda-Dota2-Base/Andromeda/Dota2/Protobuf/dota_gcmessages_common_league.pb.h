@@ -387,6 +387,7 @@ class CMsgDOTALeagueNode_MatchDetails final :
   enum : int {
     kMatchIdFieldNumber = 1,
     kWinningTeamIdFieldNumber = 2,
+    kDurationFieldNumber = 3,
   };
   // optional uint64 match_id = 1;
   bool has_match_id() const;
@@ -414,6 +415,19 @@ class CMsgDOTALeagueNode_MatchDetails final :
   void _internal_set_winning_team_id(uint32_t value);
   public:
 
+  // optional uint32 duration = 3;
+  bool has_duration() const;
+  private:
+  bool _internal_has_duration() const;
+  public:
+  void clear_duration();
+  uint32_t duration() const;
+  void set_duration(uint32_t value);
+  private:
+  uint32_t _internal_duration() const;
+  void _internal_set_duration(uint32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:CMsgDOTALeagueNode.MatchDetails)
  private:
   class _Internal;
@@ -426,6 +440,7 @@ class CMsgDOTALeagueNode_MatchDetails final :
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     uint64_t match_id_;
     uint32_t winning_team_id_;
+    uint32_t duration_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fgcmessages_5fcommon_5fleague_2eproto;
@@ -1242,6 +1257,7 @@ class CMsgDOTALeagueNodeGroup_TeamStanding final :
     kTiebreakOpponentMatchWinsFieldNumber = 16,
     kTiebreakOpponentGameWinPctFieldNumber = 17,
     kTiebreakCoinflipFieldNumber = 18,
+    kTiebereakAverageGameLengthFieldNumber = 19,
   };
   // optional string team_name = 3;
   bool has_team_name() const;
@@ -1458,6 +1474,19 @@ class CMsgDOTALeagueNodeGroup_TeamStanding final :
   void _internal_set_tiebreak_coinflip(uint32_t value);
   public:
 
+  // optional uint32 tiebereak_average_game_length = 19;
+  bool has_tiebereak_average_game_length() const;
+  private:
+  bool _internal_has_tiebereak_average_game_length() const;
+  public:
+  void clear_tiebereak_average_game_length();
+  uint32_t tiebereak_average_game_length() const;
+  void set_tiebereak_average_game_length(uint32_t value);
+  private:
+  uint32_t _internal_tiebereak_average_game_length() const;
+  void _internal_set_tiebereak_average_game_length(uint32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:CMsgDOTALeagueNodeGroup.TeamStanding)
  private:
   class _Internal;
@@ -1483,6 +1512,7 @@ class CMsgDOTALeagueNodeGroup_TeamStanding final :
     uint32_t tiebreak_opponent_match_wins_;
     uint32_t tiebreak_opponent_game_win_pct_;
     uint32_t tiebreak_coinflip_;
+    uint32_t tiebereak_average_game_length_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fgcmessages_5fcommon_5fleague_2eproto;
@@ -9361,6 +9391,34 @@ inline void CMsgDOTALeagueNode_MatchDetails::set_winning_team_id(uint32_t value)
   // @@protoc_insertion_point(field_set:CMsgDOTALeagueNode.MatchDetails.winning_team_id)
 }
 
+// optional uint32 duration = 3;
+inline bool CMsgDOTALeagueNode_MatchDetails::_internal_has_duration() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CMsgDOTALeagueNode_MatchDetails::has_duration() const {
+  return _internal_has_duration();
+}
+inline void CMsgDOTALeagueNode_MatchDetails::clear_duration() {
+  _impl_.duration_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline uint32_t CMsgDOTALeagueNode_MatchDetails::_internal_duration() const {
+  return _impl_.duration_;
+}
+inline uint32_t CMsgDOTALeagueNode_MatchDetails::duration() const {
+  // @@protoc_insertion_point(field_get:CMsgDOTALeagueNode.MatchDetails.duration)
+  return _internal_duration();
+}
+inline void CMsgDOTALeagueNode_MatchDetails::_internal_set_duration(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.duration_ = value;
+}
+inline void CMsgDOTALeagueNode_MatchDetails::set_duration(uint32_t value) {
+  _internal_set_duration(value);
+  // @@protoc_insertion_point(field_set:CMsgDOTALeagueNode.MatchDetails.duration)
+}
+
 // -------------------------------------------------------------------
 
 // CMsgDOTALeagueNode_VOD
@@ -10719,6 +10777,34 @@ inline void CMsgDOTALeagueNodeGroup_TeamStanding::_internal_set_tiebreak_coinfli
 inline void CMsgDOTALeagueNodeGroup_TeamStanding::set_tiebreak_coinflip(uint32_t value) {
   _internal_set_tiebreak_coinflip(value);
   // @@protoc_insertion_point(field_set:CMsgDOTALeagueNodeGroup.TeamStanding.tiebreak_coinflip)
+}
+
+// optional uint32 tiebereak_average_game_length = 19;
+inline bool CMsgDOTALeagueNodeGroup_TeamStanding::_internal_has_tiebereak_average_game_length() const {
+  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
+  return value;
+}
+inline bool CMsgDOTALeagueNodeGroup_TeamStanding::has_tiebereak_average_game_length() const {
+  return _internal_has_tiebereak_average_game_length();
+}
+inline void CMsgDOTALeagueNodeGroup_TeamStanding::clear_tiebereak_average_game_length() {
+  _impl_.tiebereak_average_game_length_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00008000u;
+}
+inline uint32_t CMsgDOTALeagueNodeGroup_TeamStanding::_internal_tiebereak_average_game_length() const {
+  return _impl_.tiebereak_average_game_length_;
+}
+inline uint32_t CMsgDOTALeagueNodeGroup_TeamStanding::tiebereak_average_game_length() const {
+  // @@protoc_insertion_point(field_get:CMsgDOTALeagueNodeGroup.TeamStanding.tiebereak_average_game_length)
+  return _internal_tiebereak_average_game_length();
+}
+inline void CMsgDOTALeagueNodeGroup_TeamStanding::_internal_set_tiebereak_average_game_length(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00008000u;
+  _impl_.tiebereak_average_game_length_ = value;
+}
+inline void CMsgDOTALeagueNodeGroup_TeamStanding::set_tiebereak_average_game_length(uint32_t value) {
+  _internal_set_tiebereak_average_game_length(value);
+  // @@protoc_insertion_point(field_set:CMsgDOTALeagueNodeGroup.TeamStanding.tiebereak_average_game_length)
 }
 
 // -------------------------------------------------------------------

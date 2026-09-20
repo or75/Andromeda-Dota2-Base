@@ -94156,6 +94156,7 @@ class CMsgClientToGCGetEventRankingResponse final :
     kScoreFieldNumber = 3,
     kPercentileFieldNumber = 4,
     kFinalRankBucketFieldNumber = 5,
+    kUpdateInProgressFieldNumber = 6,
   };
   // optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
   bool has_event_id() const;
@@ -94222,6 +94223,19 @@ class CMsgClientToGCGetEventRankingResponse final :
   void _internal_set_final_rank_bucket(uint32_t value);
   public:
 
+  // optional bool update_in_progress = 6;
+  bool has_update_in_progress() const;
+  private:
+  bool _internal_has_update_in_progress() const;
+  public:
+  void clear_update_in_progress();
+  bool update_in_progress() const;
+  void set_update_in_progress(bool value);
+  private:
+  bool _internal_update_in_progress() const;
+  void _internal_set_update_in_progress(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:CMsgClientToGCGetEventRankingResponse)
  private:
   class _Internal;
@@ -94237,6 +94251,7 @@ class CMsgClientToGCGetEventRankingResponse final :
     float score_;
     float percentile_;
     uint32_t final_rank_bucket_;
+    bool update_in_progress_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fgcmessages_5fclient_2eproto;
@@ -141524,6 +141539,34 @@ inline void CMsgClientToGCGetEventRankingResponse::_internal_set_final_rank_buck
 inline void CMsgClientToGCGetEventRankingResponse::set_final_rank_bucket(uint32_t value) {
   _internal_set_final_rank_bucket(value);
   // @@protoc_insertion_point(field_set:CMsgClientToGCGetEventRankingResponse.final_rank_bucket)
+}
+
+// optional bool update_in_progress = 6;
+inline bool CMsgClientToGCGetEventRankingResponse::_internal_has_update_in_progress() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline bool CMsgClientToGCGetEventRankingResponse::has_update_in_progress() const {
+  return _internal_has_update_in_progress();
+}
+inline void CMsgClientToGCGetEventRankingResponse::clear_update_in_progress() {
+  _impl_.update_in_progress_ = false;
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline bool CMsgClientToGCGetEventRankingResponse::_internal_update_in_progress() const {
+  return _impl_.update_in_progress_;
+}
+inline bool CMsgClientToGCGetEventRankingResponse::update_in_progress() const {
+  // @@protoc_insertion_point(field_get:CMsgClientToGCGetEventRankingResponse.update_in_progress)
+  return _internal_update_in_progress();
+}
+inline void CMsgClientToGCGetEventRankingResponse::_internal_set_update_in_progress(bool value) {
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.update_in_progress_ = value;
+}
+inline void CMsgClientToGCGetEventRankingResponse::set_update_in_progress(bool value) {
+  _internal_set_update_in_progress(value);
+  // @@protoc_insertion_point(field_set:CMsgClientToGCGetEventRankingResponse.update_in_progress)
 }
 
 // -------------------------------------------------------------------

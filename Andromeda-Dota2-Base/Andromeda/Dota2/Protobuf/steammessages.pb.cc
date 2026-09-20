@@ -347,28 +347,27 @@ const char descriptor_table_protodef_steammessages_2eproto[] PROTOBUF_SECTION_VA
   "gitude\030\003 \001(\002\022\017\n\007country\030\004 \001(\t\022\r\n\005state\030\005"
   " \001(\t\022\014\n\004city\030\006 \001(\t\">\n\033CGCMsgGetIPLocatio"
   "nResponse\022\037\n\005infos\030\001 \003(\0132\020.CIPLocationIn"
-  "fo*\235\001\n\013EGCPlatform\022\026\n\022k_eGCPlatform_None"
-  "\020\000\022\024\n\020k_eGCPlatform_PC\020\001\022\025\n\021k_eGCPlatfor"
-  "m_Mac\020\002\022\027\n\023k_eGCPlatform_Linux\020\003\022\031\n\025k_eG"
-  "CPlatform_Android\020\004\022\025\n\021k_eGCPlatform_iOS"
-  "\020\005*\333\001\n\020GCProtoBufMsgSrc\022 \n\034GCProtoBufMsg"
-  "Src_Unspecified\020\000\022\037\n\033GCProtoBufMsgSrc_Fr"
-  "omSystem\020\001\022 \n\034GCProtoBufMsgSrc_FromSteam"
-  "ID\020\002\022\033\n\027GCProtoBufMsgSrc_FromGC\020\003\022 \n\034GCP"
-  "rotoBufMsgSrc_ReplySystem\020\004\022#\n\037GCProtoBu"
-  "fMsgSrc_SpoofedSteamID\020\005:9\n\tkey_field\022\035."
-  "google.protobuf.FieldOptions\030\340\324\003 \001(\010:\005fa"
-  "lse:A\n\022msgpool_soft_limit\022\037.google.proto"
-  "buf.MessageOptions\030\340\324\003 \001(\005:\00232:B\n\022msgpoo"
-  "l_hard_limit\022\037.google.protobuf.MessageOp"
-  "tions\030\341\324\003 \001(\005:\003384"
+  "fo*k\n\013EGCPlatform\022\026\n\022k_eGCPlatform_None\020"
+  "\000\022\024\n\020k_eGCPlatform_PC\020\001\022\025\n\021k_eGCPlatform"
+  "_Mac\020\002\022\027\n\023k_eGCPlatform_Linux\020\003*\333\001\n\020GCPr"
+  "otoBufMsgSrc\022 \n\034GCProtoBufMsgSrc_Unspeci"
+  "fied\020\000\022\037\n\033GCProtoBufMsgSrc_FromSystem\020\001\022"
+  " \n\034GCProtoBufMsgSrc_FromSteamID\020\002\022\033\n\027GCP"
+  "rotoBufMsgSrc_FromGC\020\003\022 \n\034GCProtoBufMsgS"
+  "rc_ReplySystem\020\004\022#\n\037GCProtoBufMsgSrc_Spo"
+  "ofedSteamID\020\005:9\n\tkey_field\022\035.google.prot"
+  "obuf.FieldOptions\030\340\324\003 \001(\010:\005false:A\n\022msgp"
+  "ool_soft_limit\022\037.google.protobuf.Message"
+  "Options\030\340\324\003 \001(\005:\00232:B\n\022msgpool_hard_limi"
+  "t\022\037.google.protobuf.MessageOptions\030\341\324\003 \001"
+  "(\005:\003384"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_steammessages_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fdescriptor_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_steammessages_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_steammessages_2eproto = {
-    false, false, 2298, descriptor_table_protodef_steammessages_2eproto,
+    false, false, 2247, descriptor_table_protodef_steammessages_2eproto,
     "steammessages.proto",
     &descriptor_table_steammessages_2eproto_once, descriptor_table_steammessages_2eproto_deps, 1, 5,
     schemas, file_default_instances, TableStruct_steammessages_2eproto::offsets,
@@ -391,8 +390,6 @@ bool EGCPlatform_IsValid(int value) {
     case 1:
     case 2:
     case 3:
-    case 4:
-    case 5:
       return true;
     default:
       return false;

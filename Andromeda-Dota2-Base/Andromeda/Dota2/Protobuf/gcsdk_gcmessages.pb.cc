@@ -553,7 +553,6 @@ PROTOBUF_CONSTEXPR CMsgClientHello::CMsgClientHello(
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.socache_have_versions_)*/{}
-  , /*decltype(_impl_.secret_key_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.steamdatagram_login_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.game_msg_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.platform_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
@@ -1610,7 +1609,6 @@ const uint32_t TableStruct_gcsdk_5fgcmessages_2eproto::offsets[] PROTOBUF_SECTIO
   PROTOBUF_FIELD_OFFSET(::CMsgClientHello, _impl_.socache_have_versions_),
   PROTOBUF_FIELD_OFFSET(::CMsgClientHello, _impl_.client_session_need_),
   PROTOBUF_FIELD_OFFSET(::CMsgClientHello, _impl_.client_launcher_),
-  PROTOBUF_FIELD_OFFSET(::CMsgClientHello, _impl_.secret_key_),
   PROTOBUF_FIELD_OFFSET(::CMsgClientHello, _impl_.client_language_),
   PROTOBUF_FIELD_OFFSET(::CMsgClientHello, _impl_.engine_),
   PROTOBUF_FIELD_OFFSET(::CMsgClientHello, _impl_.steamdatagram_login_),
@@ -1629,16 +1627,16 @@ const uint32_t TableStruct_gcsdk_5fgcmessages_2eproto::offsets[] PROTOBUF_SECTIO
   PROTOBUF_FIELD_OFFSET(::CMsgClientHello, _impl_.is_steam_china_),
   PROTOBUF_FIELD_OFFSET(::CMsgClientHello, _impl_.is_steam_china_client_),
   PROTOBUF_FIELD_OFFSET(::CMsgClientHello, _impl_.platform_name_),
-  4,
+  3,
   ~0u,
+  4,
   5,
   6,
-  0,
   7,
+  0,
   8,
   1,
   9,
-  2,
   10,
   11,
   12,
@@ -1650,8 +1648,7 @@ const uint32_t TableStruct_gcsdk_5fgcmessages_2eproto::offsets[] PROTOBUF_SECTIO
   18,
   19,
   20,
-  21,
-  3,
+  2,
   PROTOBUF_FIELD_OFFSET(::CMsgClientWelcome_Location, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CMsgClientWelcome_Location, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2192,46 +2189,46 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 342, 349, -1, sizeof(::CMsgGCRequestSubGCSessionInfo)},
   { 350, 360, -1, sizeof(::CMsgGCRequestSubGCSessionInfoResponse)},
   { 364, 374, -1, sizeof(::CMsgSOCacheHaveVersion)},
-  { 378, 407, -1, sizeof(::CMsgClientHello)},
-  { 430, 439, -1, sizeof(::CMsgClientWelcome_Location)},
-  { 442, 464, -1, sizeof(::CMsgClientWelcome)},
-  { 480, 492, -1, sizeof(::CMsgConnectionStatus)},
-  { 498, 506, -1, sizeof(::CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions)},
-  { 508, 519, -1, sizeof(::CMsgGCToGCSOCacheSubscribe)},
-  { 524, 533, -1, sizeof(::CMsgGCToGCSOCacheUnsubscribe)},
-  { 536, -1, -1, sizeof(::CMsgGCClientPing)},
-  { 542, 551, -1, sizeof(::CMsgGCToGCForwardAccountDetails)},
-  { 554, 562, -1, sizeof(::CMsgGCToGCLoadSessionSOCache)},
-  { 564, -1, -1, sizeof(::CMsgGCToGCLoadSessionSOCacheResponse)},
-  { 570, 579, -1, sizeof(::CMsgGCToGCUpdateSessionStats)},
-  { 582, -1, -1, sizeof(::CMsgGCToClientRequestDropped)},
-  { 588, 596, -1, sizeof(::CWorkshop_PopulateItemDescriptions_Request_SingleItemDescription)},
-  { 598, 606, -1, sizeof(::CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlock)},
-  { 608, 616, -1, sizeof(::CWorkshop_PopulateItemDescriptions_Request)},
-  { 618, 626, -1, sizeof(::CWorkshop_GetContributors_Request)},
-  { 628, -1, -1, sizeof(::CWorkshop_GetContributors_Response)},
-  { 635, 645, -1, sizeof(::CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRule)},
-  { 649, 657, -1, sizeof(::CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRule)},
-  { 659, 668, -1, sizeof(::CWorkshop_SetItemPaymentRules_Request_PartnerItemPaymentRule)},
-  { 671, 684, -1, sizeof(::CWorkshop_SetItemPaymentRules_Request)},
-  { 691, -1, -1, sizeof(::CWorkshop_SetItemPaymentRules_Response)},
-  { 698, 716, -1, sizeof(::CCommunity_ClanAnnouncementInfo)},
-  { 728, 747, -1, sizeof(::CCommunity_GetClanAnnouncements_Request)},
-  { 760, 769, -1, sizeof(::CCommunity_GetClanAnnouncements_Response)},
-  { 772, 782, -1, sizeof(::CBroadcast_PostGameDataFrame_Request)},
-  { 786, 795, -1, sizeof(::CMsgSerializedSOCache_TypeCache)},
-  { 798, 806, -1, sizeof(::CMsgSerializedSOCache_Cache_Version)},
-  { 808, 818, -1, sizeof(::CMsgSerializedSOCache_Cache)},
-  { 822, 831, -1, sizeof(::CMsgSerializedSOCache)},
-  { 834, 842, -1, sizeof(::CMsgGCToClientPollConvarRequest)},
-  { 844, 852, -1, sizeof(::CMsgGCToClientPollConvarResponse)},
-  { 854, 862, -1, sizeof(::CGCMsgCompressedMsgToClient)},
-  { 864, 876, -1, sizeof(::CMsgGCToGCMasterBroadcastMessage)},
-  { 882, 892, -1, sizeof(::CMsgGCToGCMasterSubscribeToCache)},
-  { 896, -1, -1, sizeof(::CMsgGCToGCMasterSubscribeToCacheResponse)},
-  { 902, 909, -1, sizeof(::CMsgGCToGCMasterSubscribeToCacheAsync)},
-  { 910, 920, -1, sizeof(::CMsgGCToGCMasterUnsubscribeFromCache)},
-  { 924, 932, -1, sizeof(::CMsgGCToGCMasterDestroyCache)},
+  { 378, 406, -1, sizeof(::CMsgClientHello)},
+  { 428, 437, -1, sizeof(::CMsgClientWelcome_Location)},
+  { 440, 462, -1, sizeof(::CMsgClientWelcome)},
+  { 478, 490, -1, sizeof(::CMsgConnectionStatus)},
+  { 496, 504, -1, sizeof(::CMsgGCToGCSOCacheSubscribe_CMsgHaveVersions)},
+  { 506, 517, -1, sizeof(::CMsgGCToGCSOCacheSubscribe)},
+  { 522, 531, -1, sizeof(::CMsgGCToGCSOCacheUnsubscribe)},
+  { 534, -1, -1, sizeof(::CMsgGCClientPing)},
+  { 540, 549, -1, sizeof(::CMsgGCToGCForwardAccountDetails)},
+  { 552, 560, -1, sizeof(::CMsgGCToGCLoadSessionSOCache)},
+  { 562, -1, -1, sizeof(::CMsgGCToGCLoadSessionSOCacheResponse)},
+  { 568, 577, -1, sizeof(::CMsgGCToGCUpdateSessionStats)},
+  { 580, -1, -1, sizeof(::CMsgGCToClientRequestDropped)},
+  { 586, 594, -1, sizeof(::CWorkshop_PopulateItemDescriptions_Request_SingleItemDescription)},
+  { 596, 604, -1, sizeof(::CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlock)},
+  { 606, 614, -1, sizeof(::CWorkshop_PopulateItemDescriptions_Request)},
+  { 616, 624, -1, sizeof(::CWorkshop_GetContributors_Request)},
+  { 626, -1, -1, sizeof(::CWorkshop_GetContributors_Response)},
+  { 633, 643, -1, sizeof(::CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRule)},
+  { 647, 655, -1, sizeof(::CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRule)},
+  { 657, 666, -1, sizeof(::CWorkshop_SetItemPaymentRules_Request_PartnerItemPaymentRule)},
+  { 669, 682, -1, sizeof(::CWorkshop_SetItemPaymentRules_Request)},
+  { 689, -1, -1, sizeof(::CWorkshop_SetItemPaymentRules_Response)},
+  { 696, 714, -1, sizeof(::CCommunity_ClanAnnouncementInfo)},
+  { 726, 745, -1, sizeof(::CCommunity_GetClanAnnouncements_Request)},
+  { 758, 767, -1, sizeof(::CCommunity_GetClanAnnouncements_Response)},
+  { 770, 780, -1, sizeof(::CBroadcast_PostGameDataFrame_Request)},
+  { 784, 793, -1, sizeof(::CMsgSerializedSOCache_TypeCache)},
+  { 796, 804, -1, sizeof(::CMsgSerializedSOCache_Cache_Version)},
+  { 806, 816, -1, sizeof(::CMsgSerializedSOCache_Cache)},
+  { 820, 829, -1, sizeof(::CMsgSerializedSOCache)},
+  { 832, 840, -1, sizeof(::CMsgGCToClientPollConvarRequest)},
+  { 842, 850, -1, sizeof(::CMsgGCToClientPollConvarResponse)},
+  { 852, 860, -1, sizeof(::CGCMsgCompressedMsgToClient)},
+  { 862, 874, -1, sizeof(::CMsgGCToGCMasterBroadcastMessage)},
+  { 880, 890, -1, sizeof(::CMsgGCToGCMasterSubscribeToCache)},
+  { 894, -1, -1, sizeof(::CMsgGCToGCMasterSubscribeToCacheResponse)},
+  { 900, 907, -1, sizeof(::CMsgGCToGCMasterSubscribeToCacheAsync)},
+  { 908, 918, -1, sizeof(::CMsgGCToGCMasterUnsubscribeFromCache)},
+  { 922, 930, -1, sizeof(::CMsgGCToGCMasterDestroyCache)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -2392,160 +2389,160 @@ const char descriptor_table_protodef_gcsdk_5fgcmessages_2eproto[] PROTOBUF_SECTI
   "ss\030\004 \001(\010\"x\n\026CMsgSOCacheHaveVersion\022\034\n\004so"
   "id\030\001 \001(\0132\016.CMsgSOIDOwner\022\017\n\007version\030\002 \001("
   "\006\022\022\n\nservice_id\030\003 \001(\r\022\033\n\023cached_file_ver"
-  "sion\030\004 \001(\r\"\377\004\n\017CMsgClientHello\022\017\n\007versio"
+  "sion\030\004 \001(\r\"\353\004\n\017CMsgClientHello\022\017\n\007versio"
   "n\030\001 \001(\r\0226\n\025socache_have_versions\030\002 \003(\0132\027"
   ".CMsgSOCacheHaveVersion\022\033\n\023client_sessio"
   "n_need\030\003 \001(\r\022:\n\017client_launcher\030\004 \001(\0162\023."
-  "PartnerAccountType:\014PARTNER_NONE\022\022\n\nsecr"
-  "et_key\030\005 \001(\t\022\027\n\017client_language\030\006 \001(\r\022-\n"
-  "\006engine\030\007 \001(\0162\016.ESourceEngine:\rk_ESE_Sou"
-  "rce1\022\033\n\023steamdatagram_login\030\010 \001(\014\022\023\n\013pla"
-  "tform_id\030\t \001(\r\022\020\n\010game_msg\030\n \001(\014\022\017\n\007os_t"
-  "ype\030\013 \001(\005\022\025\n\rrender_system\030\014 \001(\r\022\031\n\021rend"
-  "er_system_req\030\r \001(\r\022\024\n\014screen_width\030\016 \001("
-  "\r\022\025\n\rscreen_height\030\017 \001(\r\022\026\n\016screen_refre"
-  "sh\030\020 \001(\r\022\024\n\014render_width\030\021 \001(\r\022\025\n\rrender"
-  "_height\030\022 \001(\r\022\022\n\nswap_width\030\023 \001(\r\022\023\n\013swa"
-  "p_height\030\024 \001(\r\022\026\n\016is_steam_china\030\026 \001(\010\022\035"
-  "\n\025is_steam_china_client\030\030 \001(\010\022\025\n\rplatfor"
-  "m_name\030\027 \001(\t\"\202\005\n\021CMsgClientWelcome\022\017\n\007ve"
-  "rsion\030\001 \001(\r\022\021\n\tgame_data\030\002 \001(\014\022;\n\033outofd"
-  "ate_subscribed_caches\030\003 \003(\0132\026.CMsgSOCach"
-  "eSubscribed\022A\n\032uptodate_subscribed_cache"
-  "s\030\004 \003(\0132\035.CMsgSOCacheSubscriptionCheck\022-"
-  "\n\010location\030\005 \001(\0132\033.CMsgClientWelcome.Loc"
-  "ation\022\037\n\027gc_socache_file_version\030\t \001(\r\022\030"
-  "\n\020txn_country_code\030\n \001(\t\022\022\n\ngame_data2\030\013"
-  " \001(\014\022$\n\034rtime32_gc_welcome_timestamp\030\014 \001"
-  "(\r\022\020\n\010currency\030\r \001(\r\022\017\n\007balance\030\016 \001(\r\022\023\n"
-  "\013balance_url\030\017 \001(\t\022\036\n\026has_accepted_china"
-  "_ssa\030\020 \001(\010\022\035\n\025is_banned_steam_china\030\021 \001("
-  "\010\0220\n\027additional_welcome_msgs\030\022 \001(\0132\017.CEx"
-  "traMsgBlock\022:\n\027steam_learn_server_info\030\024"
-  " \001(\0132\031.CMsgSteamLearnServerInfo\032@\n\010Locat"
-  "ion\022\020\n\010latitude\030\001 \001(\002\022\021\n\tlongitude\030\002 \001(\002"
-  "\022\017\n\007country\030\003 \001(\t\"\345\001\n\024CMsgConnectionStat"
-  "us\022D\n\006status\030\001 \001(\0162\023.GCConnectionStatus:"
-  "\037GCConnectionStatus_HAVE_SESSION\022\033\n\023clie"
-  "nt_session_need\030\002 \001(\r\022\026\n\016queue_position\030"
-  "\003 \001(\005\022\022\n\nqueue_size\030\004 \001(\005\022\024\n\014wait_second"
-  "s\030\005 \001(\005\022(\n estimated_wait_seconds_remain"
-  "ing\030\006 \001(\005\"\370\001\n\032CMsgGCToGCSOCacheSubscribe"
-  "\022\022\n\nsubscriber\030\001 \001(\006\022\027\n\017subscribe_to_id\030"
-  "\002 \001(\006\022\024\n\014sync_version\030\003 \001(\006\022C\n\rhave_vers"
-  "ions\030\004 \003(\0132,.CMsgGCToGCSOCacheSubscribe."
-  "CMsgHaveVersions\022\031\n\021subscribe_to_type\030\005 "
-  "\001(\r\0327\n\020CMsgHaveVersions\022\022\n\nservice_id\030\001 "
-  "\001(\r\022\017\n\007version\030\002 \001(\004\"n\n\034CMsgGCToGCSOCach"
-  "eUnsubscribe\022\022\n\nsubscriber\030\001 \001(\006\022\033\n\023unsu"
-  "bscribe_from_id\030\002 \001(\006\022\035\n\025unsubscribe_fro"
-  "m_type\030\003 \001(\r\"\022\n\020CMsgGCClientPing\"\212\001\n\037CMs"
-  "gGCToGCForwardAccountDetails\022\017\n\007steamid\030"
-  "\001 \001(\006\022A\n\017account_details\030\002 \001(\0132(.CGCSyst"
-  "emMsg_GetAccountDetails_Response\022\023\n\013age_"
-  "seconds\030\003 \001(\r\"u\n\034CMsgGCToGCLoadSessionSO"
-  "Cache\022\022\n\naccount_id\030\001 \001(\r\022A\n\027forward_acc"
-  "ount_details\030\002 \001(\0132 .CMsgGCToGCForwardAc"
-  "countDetails\"&\n$CMsgGCToGCLoadSessionSOC"
-  "acheResponse\"f\n\034CMsgGCToGCUpdateSessionS"
-  "tats\022\025\n\ruser_sessions\030\001 \001(\r\022\027\n\017server_se"
-  "ssions\030\002 \001(\r\022\026\n\016in_logon_surge\030\003 \001(\010\"\036\n\034"
-  "CMsgGCToClientRequestDropped\"\355\002\n*CWorksh"
-  "op_PopulateItemDescriptions_Request\022\r\n\005a"
-  "ppid\030\001 \001(\r\022\\\n\tlanguages\030\002 \003(\0132I.CWorksho"
-  "p_PopulateItemDescriptions_Request.ItemD"
-  "escriptionsLanguageBlock\032E\n\025SingleItemDe"
-  "scription\022\022\n\ngameitemid\030\001 \001(\r\022\030\n\020item_de"
-  "scription\030\002 \001(\t\032\212\001\n\035ItemDescriptionsLang"
-  "uageBlock\022\020\n\010language\030\001 \001(\t\022W\n\014descripti"
-  "ons\030\002 \003(\0132A.CWorkshop_PopulateItemDescri"
-  "ptions_Request.SingleItemDescription\"F\n!"
-  "CWorkshop_GetContributors_Request\022\r\n\005app"
-  "id\030\001 \001(\r\022\022\n\ngameitemid\030\002 \001(\r\":\n\"CWorksho"
-  "p_GetContributors_Response\022\024\n\014contributo"
-  "rs\030\001 \003(\006\"\365\005\n%CWorkshop_SetItemPaymentRul"
-  "es_Request\022\r\n\005appid\030\001 \001(\r\022\022\n\ngameitemid\030"
-  "\002 \001(\r\022a\n\031associated_workshop_files\030\003 \003(\013"
-  "2>.CWorkshop_SetItemPaymentRules_Request"
-  ".WorkshopItemPaymentRule\022W\n\020partner_acco"
-  "unts\030\004 \003(\0132=.CWorkshop_SetItemPaymentRul"
-  "es_Request.PartnerItemPaymentRule\022\025\n\rval"
-  "idate_only\030\005 \001(\010\022(\n make_workshop_files_"
-  "subscribable\030\006 \001(\010\022v\n,associated_worksho"
-  "p_file_for_direct_payments\030\007 \001(\0132@.CWork"
-  "shop_SetItemPaymentRules_Request.Worksho"
-  "pDirectPaymentRule\032\177\n\027WorkshopItemPaymen"
-  "tRule\022\030\n\020workshop_file_id\030\001 \001(\004\022\032\n\022reven"
-  "ue_percentage\030\002 \001(\002\022\030\n\020rule_description\030"
-  "\003 \001(\t\022\024\n\trule_type\030\004 \001(\r:\0011\032O\n\031WorkshopD"
-  "irectPaymentRule\022\030\n\020workshop_file_id\030\001 \001"
-  "(\004\022\030\n\020rule_description\030\002 \001(\t\032b\n\026PartnerI"
-  "temPaymentRule\022\022\n\naccount_id\030\001 \001(\r\022\032\n\022re"
-  "venue_percentage\030\002 \001(\002\022\030\n\020rule_descripti"
-  "on\030\003 \001(\t\"C\n&CWorkshop_SetItemPaymentRule"
-  "s_Response\022\031\n\021validation_errors\030\001 \003(\t\"\364\001"
-  "\n\037CCommunity_ClanAnnouncementInfo\022\013\n\003gid"
-  "\030\001 \001(\004\022\016\n\006clanid\030\002 \001(\004\022\020\n\010posterid\030\003 \001(\004"
-  "\022\020\n\010headline\030\004 \001(\t\022\020\n\010posttime\030\005 \001(\r\022\022\n\n"
-  "updatetime\030\006 \001(\r\022\014\n\004body\030\007 \001(\t\022\024\n\014commen"
-  "tcount\030\010 \001(\005\022\014\n\004tags\030\t \003(\t\022\020\n\010language\030\n"
-  " \001(\005\022\016\n\006hidden\030\013 \001(\010\022\026\n\016forum_topic_id\030\014"
-  " \001(\006\"\306\002\n\'CCommunity_GetClanAnnouncements"
-  "_Request\022\017\n\007steamid\030\001 \001(\004\022\016\n\006offset\030\002 \001("
-  "\r\022\r\n\005count\030\003 \001(\r\022\020\n\010maxchars\030\004 \001(\r\022\022\n\nst"
-  "rip_html\030\005 \001(\010\022\025\n\rrequired_tags\030\006 \003(\t\022\027\n"
-  "\017require_no_tags\030\007 \001(\010\022\033\n\023language_prefe"
-  "rence\030\010 \003(\r\022\023\n\013hidden_only\030\t \001(\010\022\020\n\010only"
-  "_gid\030\n \001(\010\022\031\n\021rtime_oldest_date\030\013 \001(\r\022\026\n"
-  "\016include_hidden\030\014 \001(\010\022\036\n\026include_partner"
-  "_events\030\r \001(\010\"\211\001\n(CCommunity_GetClanAnno"
-  "uncements_Response\022\020\n\010maxchars\030\001 \001(\r\022\022\n\n"
-  "strip_html\030\002 \001(\010\0227\n\rannouncements\030\003 \003(\0132"
-  " .CCommunity_ClanAnnouncementInfo\"p\n$CBr"
-  "oadcast_PostGameDataFrame_Request\022\r\n\005app"
-  "id\030\001 \001(\r\022\017\n\007steamid\030\002 \001(\006\022\024\n\014broadcast_i"
-  "d\030\003 \001(\006\022\022\n\nframe_data\030\004 \001(\014\"\374\002\n\025CMsgSeri"
-  "alizedSOCache\022\024\n\014file_version\030\001 \001(\r\022,\n\006c"
-  "aches\030\002 \003(\0132\034.CMsgSerializedSOCache.Cach"
-  "e\022\037\n\027gc_socache_file_version\030\003 \001(\r\032>\n\tTy"
-  "peCache\022\014\n\004type\030\001 \001(\r\022\017\n\007objects\030\002 \003(\014\022\022"
-  "\n\nservice_id\030\003 \001(\r\032\275\001\n\005Cache\022\014\n\004type\030\001 \001"
-  "(\r\022\n\n\002id\030\002 \001(\004\0226\n\010versions\030\003 \003(\0132$.CMsgS"
-  "erializedSOCache.Cache.Version\0225\n\013type_c"
-  "aches\030\004 \003(\0132 .CMsgSerializedSOCache.Type"
-  "Cache\032+\n\007Version\022\017\n\007service\030\001 \001(\r\022\017\n\007ver"
-  "sion\030\002 \001(\004\"G\n\037CMsgGCToClientPollConvarRe"
-  "quest\022\023\n\013convar_name\030\001 \001(\t\022\017\n\007poll_id\030\002 "
-  "\001(\r\"I\n CMsgGCToClientPollConvarResponse\022"
-  "\017\n\007poll_id\030\001 \001(\r\022\024\n\014convar_value\030\002 \001(\t\"E"
-  "\n\033CGCMsgCompressedMsgToClient\022\016\n\006msg_id\030"
-  "\001 \001(\r\022\026\n\016compressed_msg\030\002 \001(\014\"\254\001\n CMsgGC"
-  "ToGCMasterBroadcastMessage\022\030\n\020users_per_"
-  "second\030\001 \001(\r\022\025\n\rsend_to_users\030\002 \001(\010\022\027\n\017s"
-  "end_to_servers\030\003 \001(\010\022\016\n\006msg_id\030\004 \001(\r\022\020\n\010"
-  "msg_data\030\005 \001(\014\022\034\n\024trusted_servers_only\030\006"
-  " \001(\010\"n\n CMsgGCToGCMasterSubscribeToCache"
-  "\022\021\n\tsoid_type\030\001 \001(\r\022\017\n\007soid_id\030\002 \001(\006\022\023\n\013"
-  "account_ids\030\003 \003(\r\022\021\n\tsteam_ids\030\004 \003(\006\"*\n("
-  "CMsgGCToGCMasterSubscribeToCacheResponse"
-  "\"a\n%CMsgGCToGCMasterSubscribeToCacheAsyn"
-  "c\0228\n\rsubscribe_msg\030\001 \001(\0132!.CMsgGCToGCMas"
-  "terSubscribeToCache\"r\n$CMsgGCToGCMasterU"
-  "nsubscribeFromCache\022\021\n\tsoid_type\030\001 \001(\r\022\017"
-  "\n\007soid_id\030\002 \001(\006\022\023\n\013account_ids\030\003 \003(\r\022\021\n\t"
-  "steam_ids\030\004 \003(\006\"B\n\034CMsgGCToGCMasterDestr"
-  "oyCache\022\021\n\tsoid_type\030\001 \001(\r\022\017\n\007soid_id\030\002 "
-  "\001(\006*5\n\rESourceEngine\022\021\n\rk_ESE_Source1\020\000\022"
-  "\021\n\rk_ESE_Source2\020\001*V\n\022PartnerAccountType"
-  "\022\020\n\014PARTNER_NONE\020\000\022\031\n\025PARTNER_PERFECT_WO"
-  "RLD\020\001\022\023\n\017PARTNER_INVALID\020\003*\240\002\n\022GCConnect"
-  "ionStatus\022#\n\037GCConnectionStatus_HAVE_SES"
-  "SION\020\000\022$\n GCConnectionStatus_GC_GOING_DO"
-  "WN\020\001\022!\n\035GCConnectionStatus_NO_SESSION\020\002\022"
-  "0\n,GCConnectionStatus_NO_SESSION_IN_LOGO"
-  "N_QUEUE\020\003\022\037\n\033GCConnectionStatus_NO_STEAM"
-  "\020\004\022 \n\034GCConnectionStatus_SUSPENDED\020\005\022\'\n#"
-  "GCConnectionStatus_STEAM_GOING_DOWN\020\006"
+  "PartnerAccountType:\014PARTNER_NONE\022\027\n\017clie"
+  "nt_language\030\006 \001(\r\022-\n\006engine\030\007 \001(\0162\016.ESou"
+  "rceEngine:\rk_ESE_Source1\022\033\n\023steamdatagra"
+  "m_login\030\010 \001(\014\022\023\n\013platform_id\030\t \001(\r\022\020\n\010ga"
+  "me_msg\030\n \001(\014\022\017\n\007os_type\030\013 \001(\005\022\025\n\rrender_"
+  "system\030\014 \001(\r\022\031\n\021render_system_req\030\r \001(\r\022"
+  "\024\n\014screen_width\030\016 \001(\r\022\025\n\rscreen_height\030\017"
+  " \001(\r\022\026\n\016screen_refresh\030\020 \001(\r\022\024\n\014render_w"
+  "idth\030\021 \001(\r\022\025\n\rrender_height\030\022 \001(\r\022\022\n\nswa"
+  "p_width\030\023 \001(\r\022\023\n\013swap_height\030\024 \001(\r\022\026\n\016is"
+  "_steam_china\030\026 \001(\010\022\035\n\025is_steam_china_cli"
+  "ent\030\030 \001(\010\022\025\n\rplatform_name\030\027 \001(\t\"\202\005\n\021CMs"
+  "gClientWelcome\022\017\n\007version\030\001 \001(\r\022\021\n\tgame_"
+  "data\030\002 \001(\014\022;\n\033outofdate_subscribed_cache"
+  "s\030\003 \003(\0132\026.CMsgSOCacheSubscribed\022A\n\032uptod"
+  "ate_subscribed_caches\030\004 \003(\0132\035.CMsgSOCach"
+  "eSubscriptionCheck\022-\n\010location\030\005 \001(\0132\033.C"
+  "MsgClientWelcome.Location\022\037\n\027gc_socache_"
+  "file_version\030\t \001(\r\022\030\n\020txn_country_code\030\n"
+  " \001(\t\022\022\n\ngame_data2\030\013 \001(\014\022$\n\034rtime32_gc_w"
+  "elcome_timestamp\030\014 \001(\r\022\020\n\010currency\030\r \001(\r"
+  "\022\017\n\007balance\030\016 \001(\r\022\023\n\013balance_url\030\017 \001(\t\022\036"
+  "\n\026has_accepted_china_ssa\030\020 \001(\010\022\035\n\025is_ban"
+  "ned_steam_china\030\021 \001(\010\0220\n\027additional_welc"
+  "ome_msgs\030\022 \001(\0132\017.CExtraMsgBlock\022:\n\027steam"
+  "_learn_server_info\030\024 \001(\0132\031.CMsgSteamLear"
+  "nServerInfo\032@\n\010Location\022\020\n\010latitude\030\001 \001("
+  "\002\022\021\n\tlongitude\030\002 \001(\002\022\017\n\007country\030\003 \001(\t\"\345\001"
+  "\n\024CMsgConnectionStatus\022D\n\006status\030\001 \001(\0162\023"
+  ".GCConnectionStatus:\037GCConnectionStatus_"
+  "HAVE_SESSION\022\033\n\023client_session_need\030\002 \001("
+  "\r\022\026\n\016queue_position\030\003 \001(\005\022\022\n\nqueue_size\030"
+  "\004 \001(\005\022\024\n\014wait_seconds\030\005 \001(\005\022(\n estimated"
+  "_wait_seconds_remaining\030\006 \001(\005\"\370\001\n\032CMsgGC"
+  "ToGCSOCacheSubscribe\022\022\n\nsubscriber\030\001 \001(\006"
+  "\022\027\n\017subscribe_to_id\030\002 \001(\006\022\024\n\014sync_versio"
+  "n\030\003 \001(\006\022C\n\rhave_versions\030\004 \003(\0132,.CMsgGCT"
+  "oGCSOCacheSubscribe.CMsgHaveVersions\022\031\n\021"
+  "subscribe_to_type\030\005 \001(\r\0327\n\020CMsgHaveVersi"
+  "ons\022\022\n\nservice_id\030\001 \001(\r\022\017\n\007version\030\002 \001(\004"
+  "\"n\n\034CMsgGCToGCSOCacheUnsubscribe\022\022\n\nsubs"
+  "criber\030\001 \001(\006\022\033\n\023unsubscribe_from_id\030\002 \001("
+  "\006\022\035\n\025unsubscribe_from_type\030\003 \001(\r\"\022\n\020CMsg"
+  "GCClientPing\"\212\001\n\037CMsgGCToGCForwardAccoun"
+  "tDetails\022\017\n\007steamid\030\001 \001(\006\022A\n\017account_det"
+  "ails\030\002 \001(\0132(.CGCSystemMsg_GetAccountDeta"
+  "ils_Response\022\023\n\013age_seconds\030\003 \001(\r\"u\n\034CMs"
+  "gGCToGCLoadSessionSOCache\022\022\n\naccount_id\030"
+  "\001 \001(\r\022A\n\027forward_account_details\030\002 \001(\0132 "
+  ".CMsgGCToGCForwardAccountDetails\"&\n$CMsg"
+  "GCToGCLoadSessionSOCacheResponse\"f\n\034CMsg"
+  "GCToGCUpdateSessionStats\022\025\n\ruser_session"
+  "s\030\001 \001(\r\022\027\n\017server_sessions\030\002 \001(\r\022\026\n\016in_l"
+  "ogon_surge\030\003 \001(\010\"\036\n\034CMsgGCToClientReques"
+  "tDropped\"\355\002\n*CWorkshop_PopulateItemDescr"
+  "iptions_Request\022\r\n\005appid\030\001 \001(\r\022\\\n\tlangua"
+  "ges\030\002 \003(\0132I.CWorkshop_PopulateItemDescri"
+  "ptions_Request.ItemDescriptionsLanguageB"
+  "lock\032E\n\025SingleItemDescription\022\022\n\ngameite"
+  "mid\030\001 \001(\r\022\030\n\020item_description\030\002 \001(\t\032\212\001\n\035"
+  "ItemDescriptionsLanguageBlock\022\020\n\010languag"
+  "e\030\001 \001(\t\022W\n\014descriptions\030\002 \003(\0132A.CWorksho"
+  "p_PopulateItemDescriptions_Request.Singl"
+  "eItemDescription\"F\n!CWorkshop_GetContrib"
+  "utors_Request\022\r\n\005appid\030\001 \001(\r\022\022\n\ngameitem"
+  "id\030\002 \001(\r\":\n\"CWorkshop_GetContributors_Re"
+  "sponse\022\024\n\014contributors\030\001 \003(\006\"\365\005\n%CWorksh"
+  "op_SetItemPaymentRules_Request\022\r\n\005appid\030"
+  "\001 \001(\r\022\022\n\ngameitemid\030\002 \001(\r\022a\n\031associated_"
+  "workshop_files\030\003 \003(\0132>.CWorkshop_SetItem"
+  "PaymentRules_Request.WorkshopItemPayment"
+  "Rule\022W\n\020partner_accounts\030\004 \003(\0132=.CWorksh"
+  "op_SetItemPaymentRules_Request.PartnerIt"
+  "emPaymentRule\022\025\n\rvalidate_only\030\005 \001(\010\022(\n "
+  "make_workshop_files_subscribable\030\006 \001(\010\022v"
+  "\n,associated_workshop_file_for_direct_pa"
+  "yments\030\007 \001(\0132@.CWorkshop_SetItemPaymentR"
+  "ules_Request.WorkshopDirectPaymentRule\032\177"
+  "\n\027WorkshopItemPaymentRule\022\030\n\020workshop_fi"
+  "le_id\030\001 \001(\004\022\032\n\022revenue_percentage\030\002 \001(\002\022"
+  "\030\n\020rule_description\030\003 \001(\t\022\024\n\trule_type\030\004"
+  " \001(\r:\0011\032O\n\031WorkshopDirectPaymentRule\022\030\n\020"
+  "workshop_file_id\030\001 \001(\004\022\030\n\020rule_descripti"
+  "on\030\002 \001(\t\032b\n\026PartnerItemPaymentRule\022\022\n\nac"
+  "count_id\030\001 \001(\r\022\032\n\022revenue_percentage\030\002 \001"
+  "(\002\022\030\n\020rule_description\030\003 \001(\t\"C\n&CWorksho"
+  "p_SetItemPaymentRules_Response\022\031\n\021valida"
+  "tion_errors\030\001 \003(\t\"\364\001\n\037CCommunity_ClanAnn"
+  "ouncementInfo\022\013\n\003gid\030\001 \001(\004\022\016\n\006clanid\030\002 \001"
+  "(\004\022\020\n\010posterid\030\003 \001(\004\022\020\n\010headline\030\004 \001(\t\022\020"
+  "\n\010posttime\030\005 \001(\r\022\022\n\nupdatetime\030\006 \001(\r\022\014\n\004"
+  "body\030\007 \001(\t\022\024\n\014commentcount\030\010 \001(\005\022\014\n\004tags"
+  "\030\t \003(\t\022\020\n\010language\030\n \001(\005\022\016\n\006hidden\030\013 \001(\010"
+  "\022\026\n\016forum_topic_id\030\014 \001(\006\"\306\002\n\'CCommunity_"
+  "GetClanAnnouncements_Request\022\017\n\007steamid\030"
+  "\001 \001(\004\022\016\n\006offset\030\002 \001(\r\022\r\n\005count\030\003 \001(\r\022\020\n\010"
+  "maxchars\030\004 \001(\r\022\022\n\nstrip_html\030\005 \001(\010\022\025\n\rre"
+  "quired_tags\030\006 \003(\t\022\027\n\017require_no_tags\030\007 \001"
+  "(\010\022\033\n\023language_preference\030\010 \003(\r\022\023\n\013hidde"
+  "n_only\030\t \001(\010\022\020\n\010only_gid\030\n \001(\010\022\031\n\021rtime_"
+  "oldest_date\030\013 \001(\r\022\026\n\016include_hidden\030\014 \001("
+  "\010\022\036\n\026include_partner_events\030\r \001(\010\"\211\001\n(CC"
+  "ommunity_GetClanAnnouncements_Response\022\020"
+  "\n\010maxchars\030\001 \001(\r\022\022\n\nstrip_html\030\002 \001(\010\0227\n\r"
+  "announcements\030\003 \003(\0132 .CCommunity_ClanAnn"
+  "ouncementInfo\"p\n$CBroadcast_PostGameData"
+  "Frame_Request\022\r\n\005appid\030\001 \001(\r\022\017\n\007steamid\030"
+  "\002 \001(\006\022\024\n\014broadcast_id\030\003 \001(\006\022\022\n\nframe_dat"
+  "a\030\004 \001(\014\"\374\002\n\025CMsgSerializedSOCache\022\024\n\014fil"
+  "e_version\030\001 \001(\r\022,\n\006caches\030\002 \003(\0132\034.CMsgSe"
+  "rializedSOCache.Cache\022\037\n\027gc_socache_file"
+  "_version\030\003 \001(\r\032>\n\tTypeCache\022\014\n\004type\030\001 \001("
+  "\r\022\017\n\007objects\030\002 \003(\014\022\022\n\nservice_id\030\003 \001(\r\032\275"
+  "\001\n\005Cache\022\014\n\004type\030\001 \001(\r\022\n\n\002id\030\002 \001(\004\0226\n\010ve"
+  "rsions\030\003 \003(\0132$.CMsgSerializedSOCache.Cac"
+  "he.Version\0225\n\013type_caches\030\004 \003(\0132 .CMsgSe"
+  "rializedSOCache.TypeCache\032+\n\007Version\022\017\n\007"
+  "service\030\001 \001(\r\022\017\n\007version\030\002 \001(\004\"G\n\037CMsgGC"
+  "ToClientPollConvarRequest\022\023\n\013convar_name"
+  "\030\001 \001(\t\022\017\n\007poll_id\030\002 \001(\r\"I\n CMsgGCToClien"
+  "tPollConvarResponse\022\017\n\007poll_id\030\001 \001(\r\022\024\n\014"
+  "convar_value\030\002 \001(\t\"E\n\033CGCMsgCompressedMs"
+  "gToClient\022\016\n\006msg_id\030\001 \001(\r\022\026\n\016compressed_"
+  "msg\030\002 \001(\014\"\254\001\n CMsgGCToGCMasterBroadcastM"
+  "essage\022\030\n\020users_per_second\030\001 \001(\r\022\025\n\rsend"
+  "_to_users\030\002 \001(\010\022\027\n\017send_to_servers\030\003 \001(\010"
+  "\022\016\n\006msg_id\030\004 \001(\r\022\020\n\010msg_data\030\005 \001(\014\022\034\n\024tr"
+  "usted_servers_only\030\006 \001(\010\"n\n CMsgGCToGCMa"
+  "sterSubscribeToCache\022\021\n\tsoid_type\030\001 \001(\r\022"
+  "\017\n\007soid_id\030\002 \001(\006\022\023\n\013account_ids\030\003 \003(\r\022\021\n"
+  "\tsteam_ids\030\004 \003(\006\"*\n(CMsgGCToGCMasterSubs"
+  "cribeToCacheResponse\"a\n%CMsgGCToGCMaster"
+  "SubscribeToCacheAsync\0228\n\rsubscribe_msg\030\001"
+  " \001(\0132!.CMsgGCToGCMasterSubscribeToCache\""
+  "r\n$CMsgGCToGCMasterUnsubscribeFromCache\022"
+  "\021\n\tsoid_type\030\001 \001(\r\022\017\n\007soid_id\030\002 \001(\006\022\023\n\013a"
+  "ccount_ids\030\003 \003(\r\022\021\n\tsteam_ids\030\004 \003(\006\"B\n\034C"
+  "MsgGCToGCMasterDestroyCache\022\021\n\tsoid_type"
+  "\030\001 \001(\r\022\017\n\007soid_id\030\002 \001(\006*5\n\rESourceEngine"
+  "\022\021\n\rk_ESE_Source1\020\000\022\021\n\rk_ESE_Source2\020\001*V"
+  "\n\022PartnerAccountType\022\020\n\014PARTNER_NONE\020\000\022\031"
+  "\n\025PARTNER_PERFECT_WORLD\020\001\022\023\n\017PARTNER_INV"
+  "ALID\020\003*\240\002\n\022GCConnectionStatus\022#\n\037GCConne"
+  "ctionStatus_HAVE_SESSION\020\000\022$\n GCConnecti"
+  "onStatus_GC_GOING_DOWN\020\001\022!\n\035GCConnection"
+  "Status_NO_SESSION\020\002\0220\n,GCConnectionStatu"
+  "s_NO_SESSION_IN_LOGON_QUEUE\020\003\022\037\n\033GCConne"
+  "ctionStatus_NO_STEAM\020\004\022 \n\034GCConnectionSt"
+  "atus_SUSPENDED\020\005\022\'\n#GCConnectionStatus_S"
+  "TEAM_GOING_DOWN\020\006"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_gcsdk_5fgcmessages_2eproto_deps[3] = {
   &::descriptor_table_steammessages_2eproto,
@@ -2554,7 +2551,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_gcsdk_5fgcmessages_
 };
 static ::_pbi::once_flag descriptor_table_gcsdk_5fgcmessages_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_gcsdk_5fgcmessages_2eproto = {
-    false, false, 9357, descriptor_table_protodef_gcsdk_5fgcmessages_2eproto,
+    false, false, 9337, descriptor_table_protodef_gcsdk_5fgcmessages_2eproto,
     "gcsdk_gcmessages.proto",
     &descriptor_table_gcsdk_5fgcmessages_2eproto_once, descriptor_table_gcsdk_5fgcmessages_2eproto_deps, 3, 74,
     schemas, file_default_instances, TableStruct_gcsdk_5fgcmessages_2eproto::offsets,
@@ -11471,70 +11468,67 @@ class CMsgClientHello::_Internal {
  public:
   using HasBits = decltype(std::declval<CMsgClientHello>()._impl_._has_bits_);
   static void set_has_version(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
+    (*has_bits)[0] |= 8u;
   }
   static void set_has_client_session_need(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
+    (*has_bits)[0] |= 16u;
   }
   static void set_has_client_launcher(HasBits* has_bits) {
-    (*has_bits)[0] |= 64u;
-  }
-  static void set_has_secret_key(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
+    (*has_bits)[0] |= 32u;
   }
   static void set_has_client_language(HasBits* has_bits) {
-    (*has_bits)[0] |= 128u;
+    (*has_bits)[0] |= 64u;
   }
   static void set_has_engine(HasBits* has_bits) {
-    (*has_bits)[0] |= 256u;
+    (*has_bits)[0] |= 128u;
   }
   static void set_has_steamdatagram_login(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
+    (*has_bits)[0] |= 1u;
   }
   static void set_has_platform_id(HasBits* has_bits) {
-    (*has_bits)[0] |= 512u;
+    (*has_bits)[0] |= 256u;
   }
   static void set_has_game_msg(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
+    (*has_bits)[0] |= 2u;
   }
   static void set_has_os_type(HasBits* has_bits) {
-    (*has_bits)[0] |= 1024u;
+    (*has_bits)[0] |= 512u;
   }
   static void set_has_render_system(HasBits* has_bits) {
-    (*has_bits)[0] |= 2048u;
+    (*has_bits)[0] |= 1024u;
   }
   static void set_has_render_system_req(HasBits* has_bits) {
-    (*has_bits)[0] |= 4096u;
+    (*has_bits)[0] |= 2048u;
   }
   static void set_has_screen_width(HasBits* has_bits) {
-    (*has_bits)[0] |= 8192u;
+    (*has_bits)[0] |= 4096u;
   }
   static void set_has_screen_height(HasBits* has_bits) {
-    (*has_bits)[0] |= 16384u;
+    (*has_bits)[0] |= 8192u;
   }
   static void set_has_screen_refresh(HasBits* has_bits) {
-    (*has_bits)[0] |= 32768u;
+    (*has_bits)[0] |= 16384u;
   }
   static void set_has_render_width(HasBits* has_bits) {
-    (*has_bits)[0] |= 65536u;
+    (*has_bits)[0] |= 32768u;
   }
   static void set_has_render_height(HasBits* has_bits) {
-    (*has_bits)[0] |= 131072u;
+    (*has_bits)[0] |= 65536u;
   }
   static void set_has_swap_width(HasBits* has_bits) {
-    (*has_bits)[0] |= 262144u;
+    (*has_bits)[0] |= 131072u;
   }
   static void set_has_swap_height(HasBits* has_bits) {
-    (*has_bits)[0] |= 524288u;
+    (*has_bits)[0] |= 262144u;
   }
   static void set_has_is_steam_china(HasBits* has_bits) {
-    (*has_bits)[0] |= 1048576u;
+    (*has_bits)[0] |= 524288u;
   }
   static void set_has_is_steam_china_client(HasBits* has_bits) {
-    (*has_bits)[0] |= 2097152u;
+    (*has_bits)[0] |= 1048576u;
   }
   static void set_has_platform_name(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
+    (*has_bits)[0] |= 4u;
   }
 };
 
@@ -11551,7 +11545,6 @@ CMsgClientHello::CMsgClientHello(const CMsgClientHello& from)
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.socache_have_versions_){from._impl_.socache_have_versions_}
-    , decltype(_impl_.secret_key_){}
     , decltype(_impl_.steamdatagram_login_){}
     , decltype(_impl_.game_msg_){}
     , decltype(_impl_.platform_name_){}
@@ -11575,14 +11568,6 @@ CMsgClientHello::CMsgClientHello(const CMsgClientHello& from)
     , decltype(_impl_.is_steam_china_client_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.secret_key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.secret_key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_secret_key()) {
-    _this->_impl_.secret_key_.Set(from._internal_secret_key(), 
-      _this->GetArenaForAllocation());
-  }
   _impl_.steamdatagram_login_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.steamdatagram_login_.Set("", GetArenaForAllocation());
@@ -11621,7 +11606,6 @@ inline void CMsgClientHello::SharedCtor(
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.socache_have_versions_){arena}
-    , decltype(_impl_.secret_key_){}
     , decltype(_impl_.steamdatagram_login_){}
     , decltype(_impl_.game_msg_){}
     , decltype(_impl_.platform_name_){}
@@ -11644,10 +11628,6 @@ inline void CMsgClientHello::SharedCtor(
     , decltype(_impl_.is_steam_china_){false}
     , decltype(_impl_.is_steam_china_client_){false}
   };
-  _impl_.secret_key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.secret_key_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.steamdatagram_login_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.steamdatagram_login_.Set("", GetArenaForAllocation());
@@ -11674,7 +11654,6 @@ CMsgClientHello::~CMsgClientHello() {
 inline void CMsgClientHello::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.socache_have_versions_.~RepeatedPtrField();
-  _impl_.secret_key_.Destroy();
   _impl_.steamdatagram_login_.Destroy();
   _impl_.game_msg_.Destroy();
   _impl_.platform_name_.Destroy();
@@ -11692,34 +11671,31 @@ void CMsgClientHello::Clear() {
 
   _impl_.socache_have_versions_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _impl_.secret_key_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000002u) {
       _impl_.steamdatagram_login_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000002u) {
       _impl_.game_msg_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000004u) {
       _impl_.platform_name_.ClearNonDefaultToEmpty();
     }
   }
-  if (cached_has_bits & 0x000000f0u) {
+  if (cached_has_bits & 0x000000f8u) {
     ::memset(&_impl_.version_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.client_language_) -
-        reinterpret_cast<char*>(&_impl_.version_)) + sizeof(_impl_.client_language_));
+        reinterpret_cast<char*>(&_impl_.engine_) -
+        reinterpret_cast<char*>(&_impl_.version_)) + sizeof(_impl_.engine_));
   }
   if (cached_has_bits & 0x0000ff00u) {
-    ::memset(&_impl_.engine_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.screen_refresh_) -
-        reinterpret_cast<char*>(&_impl_.engine_)) + sizeof(_impl_.screen_refresh_));
+    ::memset(&_impl_.platform_id_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.render_width_) -
+        reinterpret_cast<char*>(&_impl_.platform_id_)) + sizeof(_impl_.render_width_));
   }
-  if (cached_has_bits & 0x003f0000u) {
-    ::memset(&_impl_.render_width_, 0, static_cast<size_t>(
+  if (cached_has_bits & 0x001f0000u) {
+    ::memset(&_impl_.render_height_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.is_steam_china_client_) -
-        reinterpret_cast<char*>(&_impl_.render_width_)) + sizeof(_impl_.is_steam_china_client_));
+        reinterpret_cast<char*>(&_impl_.render_height_)) + sizeof(_impl_.is_steam_china_client_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -11773,18 +11749,6 @@ const char* CMsgClientHello::_InternalParse(const char* ptr, ::_pbi::ParseContex
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(4, val, mutable_unknown_fields());
           }
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string secret_key = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          auto str = _internal_mutable_secret_key();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          #ifndef NDEBUG
-          ::_pbi::VerifyUTF8(str, "CMsgClientHello.secret_key");
-          #endif  // !NDEBUG
         } else
           goto handle_unusual;
         continue;
@@ -11989,7 +11953,7 @@ uint8_t* CMsgClientHello::_InternalSerialize(
 
   cached_has_bits = _impl_._has_bits_[0];
   // optional uint32 version = 1;
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_version(), target);
   }
@@ -12003,127 +11967,117 @@ uint8_t* CMsgClientHello::_InternalSerialize(
   }
 
   // optional uint32 client_session_need = 3;
-  if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_client_session_need(), target);
   }
 
   // optional .PartnerAccountType client_launcher = 4 [default = PARTNER_NONE];
-  if (cached_has_bits & 0x00000040u) {
+  if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
       4, this->_internal_client_launcher(), target);
   }
 
-  // optional string secret_key = 5;
-  if (cached_has_bits & 0x00000001u) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_secret_key().data(), static_cast<int>(this->_internal_secret_key().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "CMsgClientHello.secret_key");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_secret_key(), target);
-  }
-
   // optional uint32 client_language = 6;
-  if (cached_has_bits & 0x00000080u) {
+  if (cached_has_bits & 0x00000040u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(6, this->_internal_client_language(), target);
   }
 
   // optional .ESourceEngine engine = 7 [default = k_ESE_Source1];
-  if (cached_has_bits & 0x00000100u) {
+  if (cached_has_bits & 0x00000080u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
       7, this->_internal_engine(), target);
   }
 
   // optional bytes steamdatagram_login = 8;
-  if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x00000001u) {
     target = stream->WriteBytesMaybeAliased(
         8, this->_internal_steamdatagram_login(), target);
   }
 
   // optional uint32 platform_id = 9;
-  if (cached_has_bits & 0x00000200u) {
+  if (cached_has_bits & 0x00000100u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(9, this->_internal_platform_id(), target);
   }
 
   // optional bytes game_msg = 10;
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000002u) {
     target = stream->WriteBytesMaybeAliased(
         10, this->_internal_game_msg(), target);
   }
 
   // optional int32 os_type = 11;
-  if (cached_has_bits & 0x00000400u) {
+  if (cached_has_bits & 0x00000200u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_os_type(), target);
   }
 
   // optional uint32 render_system = 12;
-  if (cached_has_bits & 0x00000800u) {
+  if (cached_has_bits & 0x00000400u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(12, this->_internal_render_system(), target);
   }
 
   // optional uint32 render_system_req = 13;
-  if (cached_has_bits & 0x00001000u) {
+  if (cached_has_bits & 0x00000800u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(13, this->_internal_render_system_req(), target);
   }
 
   // optional uint32 screen_width = 14;
-  if (cached_has_bits & 0x00002000u) {
+  if (cached_has_bits & 0x00001000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(14, this->_internal_screen_width(), target);
   }
 
   // optional uint32 screen_height = 15;
-  if (cached_has_bits & 0x00004000u) {
+  if (cached_has_bits & 0x00002000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(15, this->_internal_screen_height(), target);
   }
 
   // optional uint32 screen_refresh = 16;
-  if (cached_has_bits & 0x00008000u) {
+  if (cached_has_bits & 0x00004000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(16, this->_internal_screen_refresh(), target);
   }
 
   // optional uint32 render_width = 17;
-  if (cached_has_bits & 0x00010000u) {
+  if (cached_has_bits & 0x00008000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(17, this->_internal_render_width(), target);
   }
 
   // optional uint32 render_height = 18;
-  if (cached_has_bits & 0x00020000u) {
+  if (cached_has_bits & 0x00010000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(18, this->_internal_render_height(), target);
   }
 
   // optional uint32 swap_width = 19;
-  if (cached_has_bits & 0x00040000u) {
+  if (cached_has_bits & 0x00020000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(19, this->_internal_swap_width(), target);
   }
 
   // optional uint32 swap_height = 20;
-  if (cached_has_bits & 0x00080000u) {
+  if (cached_has_bits & 0x00040000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(20, this->_internal_swap_height(), target);
   }
 
   // optional bool is_steam_china = 22;
-  if (cached_has_bits & 0x00100000u) {
+  if (cached_has_bits & 0x00080000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(22, this->_internal_is_steam_china(), target);
   }
 
   // optional string platform_name = 23;
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000004u) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_platform_name().data(), static_cast<int>(this->_internal_platform_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
@@ -12133,7 +12087,7 @@ uint8_t* CMsgClientHello::_InternalSerialize(
   }
 
   // optional bool is_steam_china_client = 24;
-  if (cached_has_bits & 0x00200000u) {
+  if (cached_has_bits & 0x00100000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(24, this->_internal_is_steam_china_client(), target);
   }
@@ -12163,137 +12117,130 @@ size_t CMsgClientHello::ByteSizeLong() const {
 
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
-    // optional string secret_key = 5;
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_secret_key());
-    }
-
     // optional bytes steamdatagram_login = 8;
-    if (cached_has_bits & 0x00000002u) {
+    if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
           this->_internal_steamdatagram_login());
     }
 
     // optional bytes game_msg = 10;
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
           this->_internal_game_msg());
     }
 
     // optional string platform_name = 23;
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_platform_name());
     }
 
     // optional uint32 version = 1;
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_version());
     }
 
     // optional uint32 client_session_need = 3;
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_client_session_need());
     }
 
     // optional .PartnerAccountType client_launcher = 4 [default = PARTNER_NONE];
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000020u) {
       total_size += 1 +
         ::_pbi::WireFormatLite::EnumSize(this->_internal_client_launcher());
     }
 
     // optional uint32 client_language = 6;
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000040u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_client_language());
     }
 
-  }
-  if (cached_has_bits & 0x0000ff00u) {
     // optional .ESourceEngine engine = 7 [default = k_ESE_Source1];
-    if (cached_has_bits & 0x00000100u) {
+    if (cached_has_bits & 0x00000080u) {
       total_size += 1 +
         ::_pbi::WireFormatLite::EnumSize(this->_internal_engine());
     }
 
+  }
+  if (cached_has_bits & 0x0000ff00u) {
     // optional uint32 platform_id = 9;
-    if (cached_has_bits & 0x00000200u) {
+    if (cached_has_bits & 0x00000100u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_platform_id());
     }
 
     // optional int32 os_type = 11;
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00000200u) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_os_type());
     }
 
     // optional uint32 render_system = 12;
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00000400u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_render_system());
     }
 
     // optional uint32 render_system_req = 13;
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00000800u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_render_system_req());
     }
 
     // optional uint32 screen_width = 14;
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00001000u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_screen_width());
     }
 
     // optional uint32 screen_height = 15;
-    if (cached_has_bits & 0x00004000u) {
+    if (cached_has_bits & 0x00002000u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_screen_height());
     }
 
     // optional uint32 screen_refresh = 16;
-    if (cached_has_bits & 0x00008000u) {
+    if (cached_has_bits & 0x00004000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_screen_refresh());
     }
 
-  }
-  if (cached_has_bits & 0x003f0000u) {
     // optional uint32 render_width = 17;
-    if (cached_has_bits & 0x00010000u) {
+    if (cached_has_bits & 0x00008000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_render_width());
     }
 
+  }
+  if (cached_has_bits & 0x001f0000u) {
     // optional uint32 render_height = 18;
-    if (cached_has_bits & 0x00020000u) {
+    if (cached_has_bits & 0x00010000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_render_height());
     }
 
     // optional uint32 swap_width = 19;
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x00020000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_swap_width());
     }
 
     // optional uint32 swap_height = 20;
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x00040000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_swap_height());
     }
 
     // optional bool is_steam_china = 22;
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x00080000u) {
       total_size += 2 + 1;
     }
 
     // optional bool is_steam_china_client = 24;
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x00100000u) {
       total_size += 2 + 1;
     }
 
@@ -12320,75 +12267,72 @@ void CMsgClientHello::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const 
   cached_has_bits = from._impl_._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      _this->_internal_set_secret_key(from._internal_secret_key());
-    }
-    if (cached_has_bits & 0x00000002u) {
       _this->_internal_set_steamdatagram_login(from._internal_steamdatagram_login());
     }
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000002u) {
       _this->_internal_set_game_msg(from._internal_game_msg());
     }
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000004u) {
       _this->_internal_set_platform_name(from._internal_platform_name());
     }
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000008u) {
       _this->_impl_.version_ = from._impl_.version_;
     }
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000010u) {
       _this->_impl_.client_session_need_ = from._impl_.client_session_need_;
     }
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000020u) {
       _this->_impl_.client_launcher_ = from._impl_.client_launcher_;
     }
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000040u) {
       _this->_impl_.client_language_ = from._impl_.client_language_;
+    }
+    if (cached_has_bits & 0x00000080u) {
+      _this->_impl_.engine_ = from._impl_.engine_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   if (cached_has_bits & 0x0000ff00u) {
     if (cached_has_bits & 0x00000100u) {
-      _this->_impl_.engine_ = from._impl_.engine_;
-    }
-    if (cached_has_bits & 0x00000200u) {
       _this->_impl_.platform_id_ = from._impl_.platform_id_;
     }
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00000200u) {
       _this->_impl_.os_type_ = from._impl_.os_type_;
     }
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00000400u) {
       _this->_impl_.render_system_ = from._impl_.render_system_;
     }
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00000800u) {
       _this->_impl_.render_system_req_ = from._impl_.render_system_req_;
     }
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00001000u) {
       _this->_impl_.screen_width_ = from._impl_.screen_width_;
     }
-    if (cached_has_bits & 0x00004000u) {
+    if (cached_has_bits & 0x00002000u) {
       _this->_impl_.screen_height_ = from._impl_.screen_height_;
     }
-    if (cached_has_bits & 0x00008000u) {
+    if (cached_has_bits & 0x00004000u) {
       _this->_impl_.screen_refresh_ = from._impl_.screen_refresh_;
+    }
+    if (cached_has_bits & 0x00008000u) {
+      _this->_impl_.render_width_ = from._impl_.render_width_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x003f0000u) {
+  if (cached_has_bits & 0x001f0000u) {
     if (cached_has_bits & 0x00010000u) {
-      _this->_impl_.render_width_ = from._impl_.render_width_;
-    }
-    if (cached_has_bits & 0x00020000u) {
       _this->_impl_.render_height_ = from._impl_.render_height_;
     }
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x00020000u) {
       _this->_impl_.swap_width_ = from._impl_.swap_width_;
     }
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x00040000u) {
       _this->_impl_.swap_height_ = from._impl_.swap_height_;
     }
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x00080000u) {
       _this->_impl_.is_steam_china_ = from._impl_.is_steam_china_;
     }
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x00100000u) {
       _this->_impl_.is_steam_china_client_ = from._impl_.is_steam_china_client_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -12414,10 +12358,6 @@ void CMsgClientHello::InternalSwap(CMsgClientHello* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.socache_have_versions_.InternalSwap(&other->_impl_.socache_have_versions_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.secret_key_, lhs_arena,
-      &other->_impl_.secret_key_, rhs_arena
-  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.steamdatagram_login_, lhs_arena,
       &other->_impl_.steamdatagram_login_, rhs_arena
