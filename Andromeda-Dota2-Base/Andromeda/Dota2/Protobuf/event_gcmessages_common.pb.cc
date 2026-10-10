@@ -57,8 +57,39 @@ struct CMsgUserEventPointsDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgUserEventPointsDefaultTypeInternal _CMsgUserEventPoints_default_instance_;
-static ::_pb::Metadata file_level_metadata_event_5fgcmessages_5fcommon_2eproto[2];
-static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_event_5fgcmessages_5fcommon_2eproto = nullptr;
+PROTOBUF_CONSTEXPR CMsgPeriodicResourceKey::CMsgPeriodicResourceKey(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.account_id_)*/0u
+  , /*decltype(_impl_.periodic_resource_id_)*/0u
+  , /*decltype(_impl_.timestamp_)*/0u} {}
+struct CMsgPeriodicResourceKeyDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgPeriodicResourceKeyDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgPeriodicResourceKeyDefaultTypeInternal() {}
+  union {
+    CMsgPeriodicResourceKey _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgPeriodicResourceKeyDefaultTypeInternal _CMsgPeriodicResourceKey_default_instance_;
+PROTOBUF_CONSTEXPR CMsgPeriodicResourceValue::CMsgPeriodicResourceValue(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.periodic_resource_max_)*/0u
+  , /*decltype(_impl_.periodic_resource_used_)*/0u} {}
+struct CMsgPeriodicResourceValueDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgPeriodicResourceValueDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgPeriodicResourceValueDefaultTypeInternal() {}
+  union {
+    CMsgPeriodicResourceValue _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgPeriodicResourceValueDefaultTypeInternal _CMsgPeriodicResourceValue_default_instance_;
+static ::_pb::Metadata file_level_metadata_event_5fgcmessages_5fcommon_2eproto[4];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_event_5fgcmessages_5fcommon_2eproto[1];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_event_5fgcmessages_5fcommon_2eproto = nullptr;
 
 const uint32_t TableStruct_event_5fgcmessages_5fcommon_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -96,15 +127,41 @@ const uint32_t TableStruct_event_5fgcmessages_5fcommon_2eproto::offsets[] PROTOB
   ~0u,
   6,
   7,
+  PROTOBUF_FIELD_OFFSET(::CMsgPeriodicResourceKey, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgPeriodicResourceKey, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgPeriodicResourceKey, _impl_.account_id_),
+  PROTOBUF_FIELD_OFFSET(::CMsgPeriodicResourceKey, _impl_.periodic_resource_id_),
+  PROTOBUF_FIELD_OFFSET(::CMsgPeriodicResourceKey, _impl_.timestamp_),
+  0,
+  1,
+  2,
+  PROTOBUF_FIELD_OFFSET(::CMsgPeriodicResourceValue, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgPeriodicResourceValue, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgPeriodicResourceValue, _impl_.periodic_resource_max_),
+  PROTOBUF_FIELD_OFFSET(::CMsgPeriodicResourceValue, _impl_.periodic_resource_used_),
+  0,
+  1,
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 8, -1, sizeof(::CMsgEventAction)},
   { 10, 25, -1, sizeof(::CMsgUserEventPoints)},
+  { 34, 43, -1, sizeof(::CMsgPeriodicResourceKey)},
+  { 46, 54, -1, sizeof(::CMsgPeriodicResourceValue)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::_CMsgEventAction_default_instance_._instance,
   &::_CMsgUserEventPoints_default_instance_._instance,
+  &::_CMsgPeriodicResourceKey_default_instance_._instance,
+  &::_CMsgPeriodicResourceValue_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_event_5fgcmessages_5fcommon_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -116,13 +173,20 @@ const char descriptor_table_protodef_event_5fgcmessages_5fcommon_2eproto[] PROTO
   "oints\030\004 \001(\r\022\016\n\006points\030\005 \001(\r\022\026\n\016premium_p"
   "oints\030\006 \001(\r\022+\n\021completed_actions\030\007 \003(\0132\020"
   ".CMsgEventAction\022\r\n\005owned\030\010 \001(\010\022\030\n\020activ"
-  "e_season_id\030\t \001(\r"
+  "e_season_id\030\t \001(\r\"^\n\027CMsgPeriodicResourc"
+  "eKey\022\022\n\naccount_id\030\001 \001(\r\022\034\n\024periodic_res"
+  "ource_id\030\002 \001(\r\022\021\n\ttimestamp\030\003 \001(\r\"Z\n\031CMs"
+  "gPeriodicResourceValue\022\035\n\025periodic_resou"
+  "rce_max\030\001 \001(\r\022\036\n\026periodic_resource_used\030"
+  "\002 \001(\r*Y\n\025EEventActionScoreMode\022\037\n\033k_eEve"
+  "ntActionScoreMode_Add\020\000\022\037\n\033k_eEventActio"
+  "nScoreMode_Min\020\001"
   ;
 static ::_pbi::once_flag descriptor_table_event_5fgcmessages_5fcommon_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_event_5fgcmessages_5fcommon_2eproto = {
-    false, false, 337, descriptor_table_protodef_event_5fgcmessages_5fcommon_2eproto,
+    false, false, 616, descriptor_table_protodef_event_5fgcmessages_5fcommon_2eproto,
     "event_gcmessages_common.proto",
-    &descriptor_table_event_5fgcmessages_5fcommon_2eproto_once, nullptr, 0, 2,
+    &descriptor_table_event_5fgcmessages_5fcommon_2eproto_once, nullptr, 0, 4,
     schemas, file_default_instances, TableStruct_event_5fgcmessages_5fcommon_2eproto::offsets,
     file_level_metadata_event_5fgcmessages_5fcommon_2eproto, file_level_enum_descriptors_event_5fgcmessages_5fcommon_2eproto,
     file_level_service_descriptors_event_5fgcmessages_5fcommon_2eproto,
@@ -133,6 +197,20 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_event_5f
 
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_event_5fgcmessages_5fcommon_2eproto(&descriptor_table_event_5fgcmessages_5fcommon_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EEventActionScoreMode_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_event_5fgcmessages_5fcommon_2eproto);
+  return file_level_enum_descriptors_event_5fgcmessages_5fcommon_2eproto[0];
+}
+bool EEventActionScoreMode_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
@@ -805,6 +883,508 @@ void CMsgUserEventPoints::InternalSwap(CMsgUserEventPoints* other) {
       file_level_metadata_event_5fgcmessages_5fcommon_2eproto[1]);
 }
 
+// ===================================================================
+
+class CMsgPeriodicResourceKey::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgPeriodicResourceKey>()._impl_._has_bits_);
+  static void set_has_account_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_periodic_resource_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_timestamp(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+};
+
+CMsgPeriodicResourceKey::CMsgPeriodicResourceKey(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgPeriodicResourceKey)
+}
+CMsgPeriodicResourceKey::CMsgPeriodicResourceKey(const CMsgPeriodicResourceKey& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgPeriodicResourceKey* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.account_id_){}
+    , decltype(_impl_.periodic_resource_id_){}
+    , decltype(_impl_.timestamp_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.account_id_, &from._impl_.account_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.timestamp_) -
+    reinterpret_cast<char*>(&_impl_.account_id_)) + sizeof(_impl_.timestamp_));
+  // @@protoc_insertion_point(copy_constructor:CMsgPeriodicResourceKey)
+}
+
+inline void CMsgPeriodicResourceKey::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.account_id_){0u}
+    , decltype(_impl_.periodic_resource_id_){0u}
+    , decltype(_impl_.timestamp_){0u}
+  };
+}
+
+CMsgPeriodicResourceKey::~CMsgPeriodicResourceKey() {
+  // @@protoc_insertion_point(destructor:CMsgPeriodicResourceKey)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgPeriodicResourceKey::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CMsgPeriodicResourceKey::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgPeriodicResourceKey::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgPeriodicResourceKey)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    ::memset(&_impl_.account_id_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.timestamp_) -
+        reinterpret_cast<char*>(&_impl_.account_id_)) + sizeof(_impl_.timestamp_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgPeriodicResourceKey::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional uint32 account_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_account_id(&has_bits);
+          _impl_.account_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 periodic_resource_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_periodic_resource_id(&has_bits);
+          _impl_.periodic_resource_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 timestamp = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _Internal::set_has_timestamp(&has_bits);
+          _impl_.timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgPeriodicResourceKey::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgPeriodicResourceKey)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional uint32 account_id = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_account_id(), target);
+  }
+
+  // optional uint32 periodic_resource_id = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_periodic_resource_id(), target);
+  }
+
+  // optional uint32 timestamp = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgPeriodicResourceKey)
+  return target;
+}
+
+size_t CMsgPeriodicResourceKey::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgPeriodicResourceKey)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    // optional uint32 account_id = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_account_id());
+    }
+
+    // optional uint32 periodic_resource_id = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_periodic_resource_id());
+    }
+
+    // optional uint32 timestamp = 3;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgPeriodicResourceKey::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgPeriodicResourceKey::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgPeriodicResourceKey::GetClassData() const { return &_class_data_; }
+
+
+void CMsgPeriodicResourceKey::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgPeriodicResourceKey*>(&to_msg);
+  auto& from = static_cast<const CMsgPeriodicResourceKey&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgPeriodicResourceKey)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.account_id_ = from._impl_.account_id_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.periodic_resource_id_ = from._impl_.periodic_resource_id_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.timestamp_ = from._impl_.timestamp_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgPeriodicResourceKey::CopyFrom(const CMsgPeriodicResourceKey& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgPeriodicResourceKey)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgPeriodicResourceKey::IsInitialized() const {
+  return true;
+}
+
+void CMsgPeriodicResourceKey::InternalSwap(CMsgPeriodicResourceKey* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CMsgPeriodicResourceKey, _impl_.timestamp_)
+      + sizeof(CMsgPeriodicResourceKey::_impl_.timestamp_)
+      - PROTOBUF_FIELD_OFFSET(CMsgPeriodicResourceKey, _impl_.account_id_)>(
+          reinterpret_cast<char*>(&_impl_.account_id_),
+          reinterpret_cast<char*>(&other->_impl_.account_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgPeriodicResourceKey::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_event_5fgcmessages_5fcommon_2eproto_getter, &descriptor_table_event_5fgcmessages_5fcommon_2eproto_once,
+      file_level_metadata_event_5fgcmessages_5fcommon_2eproto[2]);
+}
+
+// ===================================================================
+
+class CMsgPeriodicResourceValue::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgPeriodicResourceValue>()._impl_._has_bits_);
+  static void set_has_periodic_resource_max(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_periodic_resource_used(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+};
+
+CMsgPeriodicResourceValue::CMsgPeriodicResourceValue(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgPeriodicResourceValue)
+}
+CMsgPeriodicResourceValue::CMsgPeriodicResourceValue(const CMsgPeriodicResourceValue& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgPeriodicResourceValue* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.periodic_resource_max_){}
+    , decltype(_impl_.periodic_resource_used_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.periodic_resource_max_, &from._impl_.periodic_resource_max_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.periodic_resource_used_) -
+    reinterpret_cast<char*>(&_impl_.periodic_resource_max_)) + sizeof(_impl_.periodic_resource_used_));
+  // @@protoc_insertion_point(copy_constructor:CMsgPeriodicResourceValue)
+}
+
+inline void CMsgPeriodicResourceValue::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.periodic_resource_max_){0u}
+    , decltype(_impl_.periodic_resource_used_){0u}
+  };
+}
+
+CMsgPeriodicResourceValue::~CMsgPeriodicResourceValue() {
+  // @@protoc_insertion_point(destructor:CMsgPeriodicResourceValue)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgPeriodicResourceValue::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CMsgPeriodicResourceValue::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgPeriodicResourceValue::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgPeriodicResourceValue)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    ::memset(&_impl_.periodic_resource_max_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.periodic_resource_used_) -
+        reinterpret_cast<char*>(&_impl_.periodic_resource_max_)) + sizeof(_impl_.periodic_resource_used_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgPeriodicResourceValue::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional uint32 periodic_resource_max = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_periodic_resource_max(&has_bits);
+          _impl_.periodic_resource_max_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 periodic_resource_used = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_periodic_resource_used(&has_bits);
+          _impl_.periodic_resource_used_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgPeriodicResourceValue::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgPeriodicResourceValue)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional uint32 periodic_resource_max = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_periodic_resource_max(), target);
+  }
+
+  // optional uint32 periodic_resource_used = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_periodic_resource_used(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgPeriodicResourceValue)
+  return target;
+}
+
+size_t CMsgPeriodicResourceValue::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgPeriodicResourceValue)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // optional uint32 periodic_resource_max = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_periodic_resource_max());
+    }
+
+    // optional uint32 periodic_resource_used = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_periodic_resource_used());
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgPeriodicResourceValue::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgPeriodicResourceValue::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgPeriodicResourceValue::GetClassData() const { return &_class_data_; }
+
+
+void CMsgPeriodicResourceValue::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgPeriodicResourceValue*>(&to_msg);
+  auto& from = static_cast<const CMsgPeriodicResourceValue&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgPeriodicResourceValue)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.periodic_resource_max_ = from._impl_.periodic_resource_max_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.periodic_resource_used_ = from._impl_.periodic_resource_used_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgPeriodicResourceValue::CopyFrom(const CMsgPeriodicResourceValue& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgPeriodicResourceValue)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgPeriodicResourceValue::IsInitialized() const {
+  return true;
+}
+
+void CMsgPeriodicResourceValue::InternalSwap(CMsgPeriodicResourceValue* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CMsgPeriodicResourceValue, _impl_.periodic_resource_used_)
+      + sizeof(CMsgPeriodicResourceValue::_impl_.periodic_resource_used_)
+      - PROTOBUF_FIELD_OFFSET(CMsgPeriodicResourceValue, _impl_.periodic_resource_max_)>(
+          reinterpret_cast<char*>(&_impl_.periodic_resource_max_),
+          reinterpret_cast<char*>(&other->_impl_.periodic_resource_max_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgPeriodicResourceValue::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_event_5fgcmessages_5fcommon_2eproto_getter, &descriptor_table_event_5fgcmessages_5fcommon_2eproto_once,
+      file_level_metadata_event_5fgcmessages_5fcommon_2eproto[3]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::CMsgEventAction*
@@ -814,6 +1394,14 @@ Arena::CreateMaybeMessage< ::CMsgEventAction >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::CMsgUserEventPoints*
 Arena::CreateMaybeMessage< ::CMsgUserEventPoints >(Arena* arena) {
   return Arena::CreateMessageInternal< ::CMsgUserEventPoints >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgPeriodicResourceKey*
+Arena::CreateMaybeMessage< ::CMsgPeriodicResourceKey >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgPeriodicResourceKey >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgPeriodicResourceValue*
+Arena::CreateMaybeMessage< ::CMsgPeriodicResourceValue >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgPeriodicResourceValue >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

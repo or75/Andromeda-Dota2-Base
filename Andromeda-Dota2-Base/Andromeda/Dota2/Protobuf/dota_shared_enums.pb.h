@@ -32,6 +32,7 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "events.pb.h"
+#include "event_gcmessages_common.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_dota_5fshared_5fenums_2eproto
@@ -1593,29 +1594,6 @@ inline bool EDPCPushNotification_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, EDPCPushNotification* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<EDPCPushNotification>(
     EDPCPushNotification_descriptor(), name, value);
-}
-enum EEventActionScoreMode : int {
-  k_eEventActionScoreMode_Add = 0,
-  k_eEventActionScoreMode_Min = 1
-};
-bool EEventActionScoreMode_IsValid(int value);
-constexpr EEventActionScoreMode EEventActionScoreMode_MIN = k_eEventActionScoreMode_Add;
-constexpr EEventActionScoreMode EEventActionScoreMode_MAX = k_eEventActionScoreMode_Min;
-constexpr int EEventActionScoreMode_ARRAYSIZE = EEventActionScoreMode_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EEventActionScoreMode_descriptor();
-template<typename T>
-inline const std::string& EEventActionScoreMode_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, EEventActionScoreMode>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function EEventActionScoreMode_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    EEventActionScoreMode_descriptor(), enum_t_value);
-}
-inline bool EEventActionScoreMode_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, EEventActionScoreMode* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<EEventActionScoreMode>(
-    EEventActionScoreMode_descriptor(), name, value);
 }
 enum EPlayerChallengeHistoryType : int {
   k_EPlayerChallengeHistoryType_Invalid = 0,
@@ -10284,11 +10262,6 @@ template <> struct is_proto_enum< ::EDPCPushNotification> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::EDPCPushNotification>() {
   return ::EDPCPushNotification_descriptor();
-}
-template <> struct is_proto_enum< ::EEventActionScoreMode> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::EEventActionScoreMode>() {
-  return ::EEventActionScoreMode_descriptor();
 }
 template <> struct is_proto_enum< ::EPlayerChallengeHistoryType> : ::std::true_type {};
 template <>

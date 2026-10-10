@@ -33,6 +33,7 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "steammessages.pb.h"
+#include "event_gcmessages_common.pb.h"
 #include "dota_shared_enums.pb.h"
 #include "dota_gcmessages_common.pb.h"
 #include "dota_gcmessages_webapi.pb.h"
@@ -68,6 +69,12 @@ extern CMsgActivatePlusFreeTrialResponseDefaultTypeInternal _CMsgActivatePlusFre
 class CMsgBalancedShuffleLobby;
 struct CMsgBalancedShuffleLobbyDefaultTypeInternal;
 extern CMsgBalancedShuffleLobbyDefaultTypeInternal _CMsgBalancedShuffleLobby_default_instance_;
+class CMsgClaimEventActionData_ItemChoice;
+struct CMsgClaimEventActionData_ItemChoiceDefaultTypeInternal;
+extern CMsgClaimEventActionData_ItemChoiceDefaultTypeInternal _CMsgClaimEventActionData_ItemChoice_default_instance_;
+class CMsgClaimEventActionData_ItemGift;
+struct CMsgClaimEventActionData_ItemGiftDefaultTypeInternal;
+extern CMsgClaimEventActionData_ItemGiftDefaultTypeInternal _CMsgClaimEventActionData_ItemGift_default_instance_;
 class CMsgClientSuspended;
 struct CMsgClientSuspendedDefaultTypeInternal;
 extern CMsgClientSuspendedDefaultTypeInternal _CMsgClientSuspended_default_instance_;
@@ -800,9 +807,6 @@ extern CMsgDOTAPeriodicResourceUpdatedDefaultTypeInternal _CMsgDOTAPeriodicResou
 class CMsgDOTAPopup;
 struct CMsgDOTAPopupDefaultTypeInternal;
 extern CMsgDOTAPopupDefaultTypeInternal _CMsgDOTAPopup_default_instance_;
-class CMsgDOTAPostGameItemAwardNotification;
-struct CMsgDOTAPostGameItemAwardNotificationDefaultTypeInternal;
-extern CMsgDOTAPostGameItemAwardNotificationDefaultTypeInternal _CMsgDOTAPostGameItemAwardNotification_default_instance_;
 class CMsgDOTAProfileTickets;
 struct CMsgDOTAProfileTicketsDefaultTypeInternal;
 extern CMsgDOTAProfileTicketsDefaultTypeInternal _CMsgDOTAProfileTickets_default_instance_;
@@ -917,24 +921,6 @@ extern CMsgDevGrantEventActionDefaultTypeInternal _CMsgDevGrantEventAction_defau
 class CMsgDevGrantEventActionResponse;
 struct CMsgDevGrantEventActionResponseDefaultTypeInternal;
 extern CMsgDevGrantEventActionResponseDefaultTypeInternal _CMsgDevGrantEventActionResponse_default_instance_;
-class CMsgDevGrantEventPoints;
-struct CMsgDevGrantEventPointsDefaultTypeInternal;
-extern CMsgDevGrantEventPointsDefaultTypeInternal _CMsgDevGrantEventPoints_default_instance_;
-class CMsgDevGrantEventPointsResponse;
-struct CMsgDevGrantEventPointsResponseDefaultTypeInternal;
-extern CMsgDevGrantEventPointsResponseDefaultTypeInternal _CMsgDevGrantEventPointsResponse_default_instance_;
-class CMsgDevReloadAllEvents;
-struct CMsgDevReloadAllEventsDefaultTypeInternal;
-extern CMsgDevReloadAllEventsDefaultTypeInternal _CMsgDevReloadAllEvents_default_instance_;
-class CMsgDevReloadAllEventsResponse;
-struct CMsgDevReloadAllEventsResponseDefaultTypeInternal;
-extern CMsgDevReloadAllEventsResponseDefaultTypeInternal _CMsgDevReloadAllEventsResponse_default_instance_;
-class CMsgDevResetEventState;
-struct CMsgDevResetEventStateDefaultTypeInternal;
-extern CMsgDevResetEventStateDefaultTypeInternal _CMsgDevResetEventState_default_instance_;
-class CMsgDevResetEventStateResponse;
-struct CMsgDevResetEventStateResponseDefaultTypeInternal;
-extern CMsgDevResetEventStateResponseDefaultTypeInternal _CMsgDevResetEventStateResponse_default_instance_;
 class CMsgDraftTriviaVoteCount;
 struct CMsgDraftTriviaVoteCountDefaultTypeInternal;
 extern CMsgDraftTriviaVoteCountDefaultTypeInternal _CMsgDraftTriviaVoteCount_default_instance_;
@@ -1486,6 +1472,8 @@ template<> ::CMatchPlayerTimedStatAverages* Arena::CreateMaybeMessage<::CMatchPl
 template<> ::CMatchPlayerTimedStatStdDeviations* Arena::CreateMaybeMessage<::CMatchPlayerTimedStatStdDeviations>(Arena*);
 template<> ::CMsgActivatePlusFreeTrialResponse* Arena::CreateMaybeMessage<::CMsgActivatePlusFreeTrialResponse>(Arena*);
 template<> ::CMsgBalancedShuffleLobby* Arena::CreateMaybeMessage<::CMsgBalancedShuffleLobby>(Arena*);
+template<> ::CMsgClaimEventActionData_ItemChoice* Arena::CreateMaybeMessage<::CMsgClaimEventActionData_ItemChoice>(Arena*);
+template<> ::CMsgClaimEventActionData_ItemGift* Arena::CreateMaybeMessage<::CMsgClaimEventActionData_ItemGift>(Arena*);
 template<> ::CMsgClientSuspended* Arena::CreateMaybeMessage<::CMsgClientSuspended>(Arena*);
 template<> ::CMsgClientToGCAcknowledgeReporterUpdates* Arena::CreateMaybeMessage<::CMsgClientToGCAcknowledgeReporterUpdates>(Arena*);
 template<> ::CMsgClientToGCApplyGemCombiner* Arena::CreateMaybeMessage<::CMsgClientToGCApplyGemCombiner>(Arena*);
@@ -1730,7 +1718,6 @@ template<> ::CMsgDOTAPartyRichPresence_Member* Arena::CreateMaybeMessage<::CMsgD
 template<> ::CMsgDOTAPartyRichPresence_WeekendTourney* Arena::CreateMaybeMessage<::CMsgDOTAPartyRichPresence_WeekendTourney>(Arena*);
 template<> ::CMsgDOTAPeriodicResourceUpdated* Arena::CreateMaybeMessage<::CMsgDOTAPeriodicResourceUpdated>(Arena*);
 template<> ::CMsgDOTAPopup* Arena::CreateMaybeMessage<::CMsgDOTAPopup>(Arena*);
-template<> ::CMsgDOTAPostGameItemAwardNotification* Arena::CreateMaybeMessage<::CMsgDOTAPostGameItemAwardNotification>(Arena*);
 template<> ::CMsgDOTAProfileTickets* Arena::CreateMaybeMessage<::CMsgDOTAProfileTickets>(Arena*);
 template<> ::CMsgDOTAProfileTickets_LeaguePass* Arena::CreateMaybeMessage<::CMsgDOTAProfileTickets_LeaguePass>(Arena*);
 template<> ::CMsgDOTARedeemItem* Arena::CreateMaybeMessage<::CMsgDOTARedeemItem>(Arena*);
@@ -1769,12 +1756,6 @@ template<> ::CMsgDevDeleteEventActions* Arena::CreateMaybeMessage<::CMsgDevDelet
 template<> ::CMsgDevDeleteEventActionsResponse* Arena::CreateMaybeMessage<::CMsgDevDeleteEventActionsResponse>(Arena*);
 template<> ::CMsgDevGrantEventAction* Arena::CreateMaybeMessage<::CMsgDevGrantEventAction>(Arena*);
 template<> ::CMsgDevGrantEventActionResponse* Arena::CreateMaybeMessage<::CMsgDevGrantEventActionResponse>(Arena*);
-template<> ::CMsgDevGrantEventPoints* Arena::CreateMaybeMessage<::CMsgDevGrantEventPoints>(Arena*);
-template<> ::CMsgDevGrantEventPointsResponse* Arena::CreateMaybeMessage<::CMsgDevGrantEventPointsResponse>(Arena*);
-template<> ::CMsgDevReloadAllEvents* Arena::CreateMaybeMessage<::CMsgDevReloadAllEvents>(Arena*);
-template<> ::CMsgDevReloadAllEventsResponse* Arena::CreateMaybeMessage<::CMsgDevReloadAllEventsResponse>(Arena*);
-template<> ::CMsgDevResetEventState* Arena::CreateMaybeMessage<::CMsgDevResetEventState>(Arena*);
-template<> ::CMsgDevResetEventStateResponse* Arena::CreateMaybeMessage<::CMsgDevResetEventStateResponse>(Arena*);
 template<> ::CMsgDraftTriviaVoteCount* Arena::CreateMaybeMessage<::CMsgDraftTriviaVoteCount>(Arena*);
 template<> ::CMsgEventGoals* Arena::CreateMaybeMessage<::CMsgEventGoals>(Arena*);
 template<> ::CMsgEventGoals_EventGoal* Arena::CreateMaybeMessage<::CMsgEventGoals_EventGoal>(Arena*);
@@ -16393,6 +16374,346 @@ class CMsgGCLobbyUpdateBroadcastChannelInfo final :
 };
 // -------------------------------------------------------------------
 
+class CMsgClaimEventActionData_ItemGift final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgClaimEventActionData_ItemGift) */ {
+ public:
+  inline CMsgClaimEventActionData_ItemGift() : CMsgClaimEventActionData_ItemGift(nullptr) {}
+  ~CMsgClaimEventActionData_ItemGift() override;
+  explicit PROTOBUF_CONSTEXPR CMsgClaimEventActionData_ItemGift(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgClaimEventActionData_ItemGift(const CMsgClaimEventActionData_ItemGift& from);
+  CMsgClaimEventActionData_ItemGift(CMsgClaimEventActionData_ItemGift&& from) noexcept
+    : CMsgClaimEventActionData_ItemGift() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgClaimEventActionData_ItemGift& operator=(const CMsgClaimEventActionData_ItemGift& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgClaimEventActionData_ItemGift& operator=(CMsgClaimEventActionData_ItemGift&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgClaimEventActionData_ItemGift& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgClaimEventActionData_ItemGift* internal_default_instance() {
+    return reinterpret_cast<const CMsgClaimEventActionData_ItemGift*>(
+               &_CMsgClaimEventActionData_ItemGift_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    61;
+
+  friend void swap(CMsgClaimEventActionData_ItemGift& a, CMsgClaimEventActionData_ItemGift& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgClaimEventActionData_ItemGift* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgClaimEventActionData_ItemGift* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgClaimEventActionData_ItemGift* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgClaimEventActionData_ItemGift>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgClaimEventActionData_ItemGift& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgClaimEventActionData_ItemGift& from) {
+    CMsgClaimEventActionData_ItemGift::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgClaimEventActionData_ItemGift* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgClaimEventActionData_ItemGift";
+  }
+  protected:
+  explicit CMsgClaimEventActionData_ItemGift(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGiftMessageFieldNumber = 2,
+    kGiveToAccountIdFieldNumber = 1,
+  };
+  // optional string gift_message = 2;
+  bool has_gift_message() const;
+  private:
+  bool _internal_has_gift_message() const;
+  public:
+  void clear_gift_message();
+  const std::string& gift_message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_gift_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_gift_message();
+  PROTOBUF_NODISCARD std::string* release_gift_message();
+  void set_allocated_gift_message(std::string* gift_message);
+  private:
+  const std::string& _internal_gift_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_gift_message(const std::string& value);
+  std::string* _internal_mutable_gift_message();
+  public:
+
+  // optional uint32 give_to_account_id = 1;
+  bool has_give_to_account_id() const;
+  private:
+  bool _internal_has_give_to_account_id() const;
+  public:
+  void clear_give_to_account_id();
+  uint32_t give_to_account_id() const;
+  void set_give_to_account_id(uint32_t value);
+  private:
+  uint32_t _internal_give_to_account_id() const;
+  void _internal_set_give_to_account_id(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgClaimEventActionData_ItemGift)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr gift_message_;
+    uint32_t give_to_account_id_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fgcmessages_5fclient_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CMsgClaimEventActionData_ItemChoice final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgClaimEventActionData_ItemChoice) */ {
+ public:
+  inline CMsgClaimEventActionData_ItemChoice() : CMsgClaimEventActionData_ItemChoice(nullptr) {}
+  ~CMsgClaimEventActionData_ItemChoice() override;
+  explicit PROTOBUF_CONSTEXPR CMsgClaimEventActionData_ItemChoice(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgClaimEventActionData_ItemChoice(const CMsgClaimEventActionData_ItemChoice& from);
+  CMsgClaimEventActionData_ItemChoice(CMsgClaimEventActionData_ItemChoice&& from) noexcept
+    : CMsgClaimEventActionData_ItemChoice() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgClaimEventActionData_ItemChoice& operator=(const CMsgClaimEventActionData_ItemChoice& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgClaimEventActionData_ItemChoice& operator=(CMsgClaimEventActionData_ItemChoice&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgClaimEventActionData_ItemChoice& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgClaimEventActionData_ItemChoice* internal_default_instance() {
+    return reinterpret_cast<const CMsgClaimEventActionData_ItemChoice*>(
+               &_CMsgClaimEventActionData_ItemChoice_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    62;
+
+  friend void swap(CMsgClaimEventActionData_ItemChoice& a, CMsgClaimEventActionData_ItemChoice& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgClaimEventActionData_ItemChoice* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgClaimEventActionData_ItemChoice* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgClaimEventActionData_ItemChoice* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgClaimEventActionData_ItemChoice>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgClaimEventActionData_ItemChoice& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgClaimEventActionData_ItemChoice& from) {
+    CMsgClaimEventActionData_ItemChoice::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgClaimEventActionData_ItemChoice* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgClaimEventActionData_ItemChoice";
+  }
+  protected:
+  explicit CMsgClaimEventActionData_ItemChoice(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGrantItemChoiceItemDefFieldNumber = 1,
+  };
+  // optional uint32 grant_item_choice_item_def = 1;
+  bool has_grant_item_choice_item_def() const;
+  private:
+  bool _internal_has_grant_item_choice_item_def() const;
+  public:
+  void clear_grant_item_choice_item_def();
+  uint32_t grant_item_choice_item_def() const;
+  void set_grant_item_choice_item_def(uint32_t value);
+  private:
+  uint32_t _internal_grant_item_choice_item_def() const;
+  void _internal_set_grant_item_choice_item_def(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgClaimEventActionData_ItemChoice)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint32_t grant_item_choice_item_def_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fgcmessages_5fclient_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CMsgDOTAClaimEventActionData_GrantItemGiftData final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgDOTAClaimEventActionData.GrantItemGiftData) */ {
  public:
@@ -16448,7 +16769,7 @@ class CMsgDOTAClaimEventActionData_GrantItemGiftData final :
                &_CMsgDOTAClaimEventActionData_GrantItemGiftData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    63;
 
   friend void swap(CMsgDOTAClaimEventActionData_GrantItemGiftData& a, CMsgDOTAClaimEventActionData_GrantItemGiftData& b) {
     a.Swap(&b);
@@ -16628,7 +16949,7 @@ class CMsgDOTAClaimEventActionData final :
                &_CMsgDOTAClaimEventActionData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    64;
 
   friend void swap(CMsgDOTAClaimEventActionData& a, CMsgDOTAClaimEventActionData& b) {
     a.Swap(&b);
@@ -16810,7 +17131,7 @@ class CMsgDOTAClaimEventAction final :
                &_CMsgDOTAClaimEventAction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    65;
 
   friend void swap(CMsgDOTAClaimEventAction& a, CMsgDOTAClaimEventAction& b) {
     a.Swap(&b);
@@ -17050,7 +17371,7 @@ class CMsgClientToGCClaimEventActionUsingItem final :
                &_CMsgClientToGCClaimEventActionUsingItem_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    66;
 
   friend void swap(CMsgClientToGCClaimEventActionUsingItem& a, CMsgClientToGCClaimEventActionUsingItem& b) {
     a.Swap(&b);
@@ -17270,7 +17591,7 @@ class CMsgClientToGCClaimEventActionUsingItemResponse final :
                &_CMsgClientToGCClaimEventActionUsingItemResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    67;
 
   friend void swap(CMsgClientToGCClaimEventActionUsingItemResponse& a, CMsgClientToGCClaimEventActionUsingItemResponse& b) {
     a.Swap(&b);
@@ -17435,7 +17756,7 @@ class CMsgGCToClientClaimEventActionUsingItemCompleted final :
                &_CMsgGCToClientClaimEventActionUsingItemCompleted_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    68;
 
   friend void swap(CMsgGCToClientClaimEventActionUsingItemCompleted& a, CMsgGCToClientClaimEventActionUsingItemCompleted& b) {
     a.Swap(&b);
@@ -17615,7 +17936,7 @@ class CMsgDOTAGetEventPoints final :
                &_CMsgDOTAGetEventPoints_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    69;
 
   friend void swap(CMsgDOTAGetEventPoints& a, CMsgDOTAGetEventPoints& b) {
     a.Swap(&b);
@@ -17790,7 +18111,7 @@ class CMsgDOTAGetEventPointsResponse_Action final :
                &_CMsgDOTAGetEventPointsResponse_Action_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    70;
 
   friend void swap(CMsgDOTAGetEventPointsResponse_Action& a, CMsgDOTAGetEventPointsResponse_Action& b) {
     a.Swap(&b);
@@ -17965,7 +18286,7 @@ class CMsgDOTAGetEventPointsResponse final :
                &_CMsgDOTAGetEventPointsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    71;
 
   friend void swap(CMsgDOTAGetEventPointsResponse& a, CMsgDOTAGetEventPointsResponse& b) {
     a.Swap(&b);
@@ -18267,7 +18588,7 @@ class CMsgDOTAGetPeriodicResource final :
                &_CMsgDOTAGetPeriodicResource_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    72;
 
   friend void swap(CMsgDOTAGetPeriodicResource& a, CMsgDOTAGetPeriodicResource& b) {
     a.Swap(&b);
@@ -18457,7 +18778,7 @@ class CMsgDOTAGetPeriodicResourceResponse final :
                &_CMsgDOTAGetPeriodicResourceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    73;
 
   friend void swap(CMsgDOTAGetPeriodicResourceResponse& a, CMsgDOTAGetPeriodicResourceResponse& b) {
     a.Swap(&b);
@@ -18632,7 +18953,7 @@ class CMsgDOTAPeriodicResourceUpdated final :
                &_CMsgDOTAPeriodicResourceUpdated_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    74;
 
   friend void swap(CMsgDOTAPeriodicResourceUpdated& a, CMsgDOTAPeriodicResourceUpdated& b) {
     a.Swap(&b);
@@ -18817,7 +19138,7 @@ class CMsgDOTACompendiumSelection final :
                &_CMsgDOTACompendiumSelection_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    75;
 
   friend void swap(CMsgDOTACompendiumSelection& a, CMsgDOTACompendiumSelection& b) {
     a.Swap(&b);
@@ -19007,7 +19328,7 @@ class CMsgDOTACompendiumSelectionResponse final :
                &_CMsgDOTACompendiumSelectionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    76;
 
   friend void swap(CMsgDOTACompendiumSelectionResponse& a, CMsgDOTACompendiumSelectionResponse& b) {
     a.Swap(&b);
@@ -19167,7 +19488,7 @@ class CMsgDOTACompendiumRemoveAllSelections final :
                &_CMsgDOTACompendiumRemoveAllSelections_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    77;
 
   friend void swap(CMsgDOTACompendiumRemoveAllSelections& a, CMsgDOTACompendiumRemoveAllSelections& b) {
     a.Swap(&b);
@@ -19327,7 +19648,7 @@ class CMsgDOTACompendiumRemoveAllSelectionsResponse final :
                &_CMsgDOTACompendiumRemoveAllSelectionsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    78;
 
   friend void swap(CMsgDOTACompendiumRemoveAllSelectionsResponse& a, CMsgDOTACompendiumRemoveAllSelectionsResponse& b) {
     a.Swap(&b);
@@ -19487,7 +19808,7 @@ class CMsgDOTACompendiumData final :
                &_CMsgDOTACompendiumData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    79;
 
   friend void swap(CMsgDOTACompendiumData& a, CMsgDOTACompendiumData& b) {
     a.Swap(&b);
@@ -19651,7 +19972,7 @@ class CMsgDOTACompendiumDataRequest final :
                &_CMsgDOTACompendiumDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    80;
 
   friend void swap(CMsgDOTACompendiumDataRequest& a, CMsgDOTACompendiumDataRequest& b) {
     a.Swap(&b);
@@ -19826,7 +20147,7 @@ class CMsgDOTACompendiumDataResponse final :
                &_CMsgDOTACompendiumDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    81;
 
   friend void swap(CMsgDOTACompendiumDataResponse& a, CMsgDOTACompendiumDataResponse& b) {
     a.Swap(&b);
@@ -20036,7 +20357,7 @@ class CMsgDOTAGetPlayerMatchHistory final :
                &_CMsgDOTAGetPlayerMatchHistory_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    82;
 
   friend void swap(CMsgDOTAGetPlayerMatchHistory& a, CMsgDOTAGetPlayerMatchHistory& b) {
     a.Swap(&b);
@@ -20301,7 +20622,7 @@ class CMsgDOTAGetPlayerMatchHistoryResponse_Match final :
                &_CMsgDOTAGetPlayerMatchHistoryResponse_Match_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    83;
 
   friend void swap(CMsgDOTAGetPlayerMatchHistoryResponse_Match& a, CMsgDOTAGetPlayerMatchHistoryResponse_Match& b) {
     a.Swap(&b);
@@ -20781,7 +21102,7 @@ class CMsgDOTAGetPlayerMatchHistoryResponse final :
                &_CMsgDOTAGetPlayerMatchHistoryResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    84;
 
   friend void swap(CMsgDOTAGetPlayerMatchHistoryResponse& a, CMsgDOTAGetPlayerMatchHistoryResponse& b) {
     a.Swap(&b);
@@ -20962,7 +21283,7 @@ class CMsgGCNotificationsRequest final :
                &_CMsgGCNotificationsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    85;
 
   friend void swap(CMsgGCNotificationsRequest& a, CMsgGCNotificationsRequest& b) {
     a.Swap(&b);
@@ -21088,7 +21409,7 @@ class CMsgGCNotifications_Notification final :
                &_CMsgGCNotifications_Notification_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    86;
 
   friend void swap(CMsgGCNotifications_Notification& a, CMsgGCNotifications_Notification& b) {
     a.Swap(&b);
@@ -21358,7 +21679,7 @@ class CMsgGCNotificationsUpdate final :
                &_CMsgGCNotificationsUpdate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    87;
 
   friend void swap(CMsgGCNotificationsUpdate& a, CMsgGCNotificationsUpdate& b) {
     a.Swap(&b);
@@ -21568,7 +21889,7 @@ class CMsgGCNotificationsResponse final :
                &_CMsgGCNotificationsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    88;
 
   friend void swap(CMsgGCNotificationsResponse& a, CMsgGCNotificationsResponse& b) {
     a.Swap(&b);
@@ -21732,7 +22053,7 @@ class CMsgGCNotificationsMarkReadRequest final :
                &_CMsgGCNotificationsMarkReadRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    89;
 
   friend void swap(CMsgGCNotificationsMarkReadRequest& a, CMsgGCNotificationsMarkReadRequest& b) {
     a.Swap(&b);
@@ -21858,7 +22179,7 @@ class CMsgGCPlayerInfoSubmit final :
                &_CMsgGCPlayerInfoSubmit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    90;
 
   friend void swap(CMsgGCPlayerInfoSubmit& a, CMsgGCPlayerInfoSubmit& b) {
     a.Swap(&b);
@@ -22143,7 +22464,7 @@ class CMsgGCPlayerInfoSubmitResponse final :
                &_CMsgGCPlayerInfoSubmitResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    89;
+    91;
 
   friend void swap(CMsgGCPlayerInfoSubmitResponse& a, CMsgGCPlayerInfoSubmitResponse& b) {
     a.Swap(&b);
@@ -22337,7 +22658,7 @@ class CMsgDOTAEmoticonAccessSDO final :
                &_CMsgDOTAEmoticonAccessSDO_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    90;
+    92;
 
   friend void swap(CMsgDOTAEmoticonAccessSDO& a, CMsgDOTAEmoticonAccessSDO& b) {
     a.Swap(&b);
@@ -22516,7 +22837,7 @@ class CMsgClientToGCEmoticonDataRequest final :
                &_CMsgClientToGCEmoticonDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    91;
+    93;
 
   friend void swap(CMsgClientToGCEmoticonDataRequest& a, CMsgClientToGCEmoticonDataRequest& b) {
     a.Swap(&b);
@@ -22642,7 +22963,7 @@ class CMsgGCToClientEmoticonData final :
                &_CMsgGCToClientEmoticonData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    92;
+    94;
 
   friend void swap(CMsgGCToClientEmoticonData& a, CMsgGCToClientEmoticonData& b) {
     a.Swap(&b);
@@ -22807,7 +23128,7 @@ class CMsgGCToClientTournamentItemDrop final :
                &_CMsgGCToClientTournamentItemDrop_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    93;
+    95;
 
   friend void swap(CMsgGCToClientTournamentItemDrop& a, CMsgGCToClientTournamentItemDrop& b) {
     a.Swap(&b);
@@ -22981,7 +23302,7 @@ class CMsgClientToGCGetAllHeroOrder final :
                &_CMsgClientToGCGetAllHeroOrder_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    94;
+    96;
 
   friend void swap(CMsgClientToGCGetAllHeroOrder& a, CMsgClientToGCGetAllHeroOrder& b) {
     a.Swap(&b);
@@ -23107,7 +23428,7 @@ class CMsgClientToGCGetAllHeroOrderResponse final :
                &_CMsgClientToGCGetAllHeroOrderResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    95;
+    97;
 
   friend void swap(CMsgClientToGCGetAllHeroOrderResponse& a, CMsgClientToGCGetAllHeroOrderResponse& b) {
     a.Swap(&b);
@@ -23275,7 +23596,7 @@ class CMsgClientToGCGetAllHeroProgress final :
                &_CMsgClientToGCGetAllHeroProgress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    96;
+    98;
 
   friend void swap(CMsgClientToGCGetAllHeroProgress& a, CMsgClientToGCGetAllHeroProgress& b) {
     a.Swap(&b);
@@ -23435,7 +23756,7 @@ class CMsgClientToGCGetAllHeroProgressResponse final :
                &_CMsgClientToGCGetAllHeroProgressResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    97;
+    99;
 
   friend void swap(CMsgClientToGCGetAllHeroProgressResponse& a, CMsgClientToGCGetAllHeroProgressResponse& b) {
     a.Swap(&b);
@@ -23885,7 +24206,7 @@ class CMsgClientToGCGetTrophyList final :
                &_CMsgClientToGCGetTrophyList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    98;
+    100;
 
   friend void swap(CMsgClientToGCGetTrophyList& a, CMsgClientToGCGetTrophyList& b) {
     a.Swap(&b);
@@ -24045,7 +24366,7 @@ class CMsgClientToGCGetTrophyListResponse_Trophy final :
                &_CMsgClientToGCGetTrophyListResponse_Trophy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    99;
+    101;
 
   friend void swap(CMsgClientToGCGetTrophyListResponse_Trophy& a, CMsgClientToGCGetTrophyListResponse_Trophy& b) {
     a.Swap(&b);
@@ -24235,7 +24556,7 @@ class CMsgClientToGCGetTrophyListResponse final :
                &_CMsgClientToGCGetTrophyListResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    100;
+    102;
 
   friend void swap(CMsgClientToGCGetTrophyListResponse& a, CMsgClientToGCGetTrophyListResponse& b) {
     a.Swap(&b);
@@ -24401,7 +24722,7 @@ class CMsgGCToClientTrophyAwarded final :
                &_CMsgGCToClientTrophyAwarded_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    101;
+    103;
 
   friend void swap(CMsgGCToClientTrophyAwarded& a, CMsgGCToClientTrophyAwarded& b) {
     a.Swap(&b);
@@ -24606,7 +24927,7 @@ class CMsgClientToGCRankRequest final :
                &_CMsgClientToGCRankRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    102;
+    104;
 
   friend void swap(CMsgClientToGCRankRequest& a, CMsgClientToGCRankRequest& b) {
     a.Swap(&b);
@@ -24766,7 +25087,7 @@ class CMsgGCToClientRankResponse final :
                &_CMsgGCToClientRankResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    103;
+    105;
 
   friend void swap(CMsgGCToClientRankResponse& a, CMsgGCToClientRankResponse& b) {
     a.Swap(&b);
@@ -25018,7 +25339,7 @@ class CMsgGCToClientRankUpdate final :
                &_CMsgGCToClientRankUpdate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    104;
+    106;
 
   friend void swap(CMsgGCToClientRankUpdate& a, CMsgGCToClientRankUpdate& b) {
     a.Swap(&b);
@@ -25198,7 +25519,7 @@ class CMsgClientToGCGetProfileCard final :
                &_CMsgClientToGCGetProfileCard_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    105;
+    107;
 
   friend void swap(CMsgClientToGCGetProfileCard& a, CMsgClientToGCGetProfileCard& b) {
     a.Swap(&b);
@@ -25358,7 +25679,7 @@ class CMsgClientToGCSetProfileCardSlots_CardSlot final :
                &_CMsgClientToGCSetProfileCardSlots_CardSlot_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    106;
+    108;
 
   friend void swap(CMsgClientToGCSetProfileCardSlots_CardSlot& a, CMsgClientToGCSetProfileCardSlots_CardSlot& b) {
     a.Swap(&b);
@@ -25548,7 +25869,7 @@ class CMsgClientToGCSetProfileCardSlots final :
                &_CMsgClientToGCSetProfileCardSlots_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    107;
+    109;
 
   friend void swap(CMsgClientToGCSetProfileCardSlots& a, CMsgClientToGCSetProfileCardSlots& b) {
     a.Swap(&b);
@@ -25713,7 +26034,7 @@ class CMsgClientToGCGetProfileCardStats final :
                &_CMsgClientToGCGetProfileCardStats_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    108;
+    110;
 
   friend void swap(CMsgClientToGCGetProfileCardStats& a, CMsgClientToGCGetProfileCardStats& b) {
     a.Swap(&b);
@@ -25839,7 +26160,7 @@ class CMsgClientToGCCreateHeroStatue final :
                &_CMsgClientToGCCreateHeroStatue_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    109;
+    111;
 
   friend void swap(CMsgClientToGCCreateHeroStatue& a, CMsgClientToGCCreateHeroStatue& b) {
     a.Swap(&b);
@@ -26147,7 +26468,7 @@ class CMsgGCToClientHeroStatueCreateResult final :
                &_CMsgGCToClientHeroStatueCreateResult_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    110;
+    112;
 
   friend void swap(CMsgGCToClientHeroStatueCreateResult& a, CMsgGCToClientHeroStatueCreateResult& b) {
     a.Swap(&b);
@@ -26307,7 +26628,7 @@ class CMsgClientToGCPlayerStatsRequest final :
                &_CMsgClientToGCPlayerStatsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    111;
+    113;
 
   friend void swap(CMsgClientToGCPlayerStatsRequest& a, CMsgClientToGCPlayerStatsRequest& b) {
     a.Swap(&b);
@@ -26467,7 +26788,7 @@ class CMsgGCToClientPlayerStatsResponse final :
                &_CMsgGCToClientPlayerStatsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    112;
+    114;
 
   friend void swap(CMsgGCToClientPlayerStatsResponse& a, CMsgGCToClientPlayerStatsResponse& b) {
     a.Swap(&b);
@@ -26965,7 +27286,7 @@ class CMsgClientToGCCustomGamesFriendsPlayedRequest final :
                &_CMsgClientToGCCustomGamesFriendsPlayedRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    113;
+    115;
 
   friend void swap(CMsgClientToGCCustomGamesFriendsPlayedRequest& a, CMsgClientToGCCustomGamesFriendsPlayedRequest& b) {
     a.Swap(&b);
@@ -27091,7 +27412,7 @@ class CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame final :
                &_CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    114;
+    116;
 
   friend void swap(CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame& a, CMsgGCToClientCustomGamesFriendsPlayedResponse_CustomGame& b) {
     a.Swap(&b);
@@ -27275,7 +27596,7 @@ class CMsgGCToClientCustomGamesFriendsPlayedResponse final :
                &_CMsgGCToClientCustomGamesFriendsPlayedResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    115;
+    117;
 
   friend void swap(CMsgGCToClientCustomGamesFriendsPlayedResponse& a, CMsgGCToClientCustomGamesFriendsPlayedResponse& b) {
     a.Swap(&b);
@@ -27457,7 +27778,7 @@ class CMsgClientToGCSocialFeedPostCommentRequest final :
                &_CMsgClientToGCSocialFeedPostCommentRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    116;
+    118;
 
   friend void swap(CMsgClientToGCSocialFeedPostCommentRequest& a, CMsgClientToGCSocialFeedPostCommentRequest& b) {
     a.Swap(&b);
@@ -27637,7 +27958,7 @@ class CMsgGCToClientSocialFeedPostCommentResponse final :
                &_CMsgGCToClientSocialFeedPostCommentResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    117;
+    119;
 
   friend void swap(CMsgGCToClientSocialFeedPostCommentResponse& a, CMsgGCToClientSocialFeedPostCommentResponse& b) {
     a.Swap(&b);
@@ -27797,7 +28118,7 @@ class CMsgClientToGCSocialFeedPostMessageRequest final :
                &_CMsgClientToGCSocialFeedPostMessageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    118;
+    120;
 
   friend void swap(CMsgClientToGCSocialFeedPostMessageRequest& a, CMsgClientToGCSocialFeedPostMessageRequest& b) {
     a.Swap(&b);
@@ -27992,7 +28313,7 @@ class CMsgGCToClientSocialFeedPostMessageResponse final :
                &_CMsgGCToClientSocialFeedPostMessageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    119;
+    121;
 
   friend void swap(CMsgGCToClientSocialFeedPostMessageResponse& a, CMsgGCToClientSocialFeedPostMessageResponse& b) {
     a.Swap(&b);
@@ -28152,7 +28473,7 @@ class CMsgClientToGCFriendsPlayedCustomGameRequest final :
                &_CMsgClientToGCFriendsPlayedCustomGameRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    120;
+    122;
 
   friend void swap(CMsgClientToGCFriendsPlayedCustomGameRequest& a, CMsgClientToGCFriendsPlayedCustomGameRequest& b) {
     a.Swap(&b);
@@ -28312,7 +28633,7 @@ class CMsgGCToClientFriendsPlayedCustomGameResponse final :
                &_CMsgGCToClientFriendsPlayedCustomGameResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    121;
+    123;
 
   friend void swap(CMsgGCToClientFriendsPlayedCustomGameResponse& a, CMsgGCToClientFriendsPlayedCustomGameResponse& b) {
     a.Swap(&b);
@@ -28496,7 +28817,7 @@ class CMsgDOTAPartyRichPresence_Member final :
                &_CMsgDOTAPartyRichPresence_Member_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    122;
+    124;
 
   friend void swap(CMsgDOTAPartyRichPresence_Member& a, CMsgDOTAPartyRichPresence_Member& b) {
     a.Swap(&b);
@@ -28671,7 +28992,7 @@ class CMsgDOTAPartyRichPresence_WeekendTourney final :
                &_CMsgDOTAPartyRichPresence_WeekendTourney_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    123;
+    125;
 
   friend void swap(CMsgDOTAPartyRichPresence_WeekendTourney& a, CMsgDOTAPartyRichPresence_WeekendTourney& b) {
     a.Swap(&b);
@@ -28921,7 +29242,7 @@ class CMsgDOTAPartyRichPresence final :
                &_CMsgDOTAPartyRichPresence_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    124;
+    126;
 
   friend void swap(CMsgDOTAPartyRichPresence& a, CMsgDOTAPartyRichPresence& b) {
     a.Swap(&b);
@@ -29219,7 +29540,7 @@ class CMsgDOTALobbyRichPresence final :
                &_CMsgDOTALobbyRichPresence_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    125;
+    127;
 
   friend void swap(CMsgDOTALobbyRichPresence& a, CMsgDOTALobbyRichPresence& b) {
     a.Swap(&b);
@@ -29504,7 +29825,7 @@ class CMsgDOTACustomGameListenServerStartedLoading final :
                &_CMsgDOTACustomGameListenServerStartedLoading_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    126;
+    128;
 
   friend void swap(CMsgDOTACustomGameListenServerStartedLoading& a, CMsgDOTACustomGameListenServerStartedLoading& b) {
     a.Swap(&b);
@@ -29718,7 +30039,7 @@ class CMsgDOTACustomGameClientFinishedLoading final :
                &_CMsgDOTACustomGameClientFinishedLoading_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    127;
+    129;
 
   friend void swap(CMsgDOTACustomGameClientFinishedLoading& a, CMsgDOTACustomGameClientFinishedLoading& b) {
     a.Swap(&b);
@@ -29963,7 +30284,7 @@ class CMsgClientToGCApplyGemCombiner final :
                &_CMsgClientToGCApplyGemCombiner_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    128;
+    130;
 
   friend void swap(CMsgClientToGCApplyGemCombiner& a, CMsgClientToGCApplyGemCombiner& b) {
     a.Swap(&b);
@@ -30137,7 +30458,7 @@ class CMsgClientToGCH264Unsupported final :
                &_CMsgClientToGCH264Unsupported_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    129;
+    131;
 
   friend void swap(CMsgClientToGCH264Unsupported& a, CMsgClientToGCH264Unsupported& b) {
     a.Swap(&b);
@@ -30263,7 +30584,7 @@ class CMsgClientToGCGetQuestProgress final :
                &_CMsgClientToGCGetQuestProgress_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    130;
+    132;
 
   friend void swap(CMsgClientToGCGetQuestProgress& a, CMsgClientToGCGetQuestProgress& b) {
     a.Swap(&b);
@@ -30431,7 +30752,7 @@ class CMsgClientToGCGetQuestProgressResponse_Challenge final :
                &_CMsgClientToGCGetQuestProgressResponse_Challenge_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    131;
+    133;
 
   friend void swap(CMsgClientToGCGetQuestProgressResponse_Challenge& a, CMsgClientToGCGetQuestProgressResponse_Challenge& b) {
     a.Swap(&b);
@@ -30666,7 +30987,7 @@ class CMsgClientToGCGetQuestProgressResponse_Quest final :
                &_CMsgClientToGCGetQuestProgressResponse_Quest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    132;
+    134;
 
   friend void swap(CMsgClientToGCGetQuestProgressResponse_Quest& a, CMsgClientToGCGetQuestProgressResponse_Quest& b) {
     a.Swap(&b);
@@ -30846,7 +31167,7 @@ class CMsgClientToGCGetQuestProgressResponse final :
                &_CMsgClientToGCGetQuestProgressResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    133;
+    135;
 
   friend void swap(CMsgClientToGCGetQuestProgressResponse& a, CMsgClientToGCGetQuestProgressResponse& b) {
     a.Swap(&b);
@@ -31029,7 +31350,7 @@ class CMsgGCToClientMatchSignedOut final :
                &_CMsgGCToClientMatchSignedOut_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    134;
+    136;
 
   friend void swap(CMsgGCToClientMatchSignedOut& a, CMsgGCToClientMatchSignedOut& b) {
     a.Swap(&b);
@@ -31189,7 +31510,7 @@ class CMsgGCGetHeroStatsHistory final :
                &_CMsgGCGetHeroStatsHistory_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    135;
+    137;
 
   friend void swap(CMsgGCGetHeroStatsHistory& a, CMsgGCGetHeroStatsHistory& b) {
     a.Swap(&b);
@@ -31349,7 +31670,7 @@ class CMsgGCGetHeroStatsHistoryResponse final :
                &_CMsgGCGetHeroStatsHistoryResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    136;
+    138;
 
   friend void swap(CMsgGCGetHeroStatsHistoryResponse& a, CMsgGCGetHeroStatsHistoryResponse& b) {
     a.Swap(&b);
@@ -31577,7 +31898,7 @@ class CMsgPlayerConductScorecardRequest final :
                &_CMsgPlayerConductScorecardRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    137;
+    139;
 
   friend void swap(CMsgPlayerConductScorecardRequest& a, CMsgPlayerConductScorecardRequest& b) {
     a.Swap(&b);
@@ -31703,7 +32024,7 @@ class CMsgPlayerConductScorecard final :
                &_CMsgPlayerConductScorecard_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    138;
+    140;
 
   friend void swap(CMsgPlayerConductScorecard& a, CMsgPlayerConductScorecard& b) {
     a.Swap(&b);
@@ -32135,7 +32456,7 @@ class CMsgClientToGCWageringRequest final :
                &_CMsgClientToGCWageringRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    139;
+    141;
 
   friend void swap(CMsgClientToGCWageringRequest& a, CMsgClientToGCWageringRequest& b) {
     a.Swap(&b);
@@ -32295,7 +32616,7 @@ class CMsgGCToClientWageringResponse final :
                &_CMsgGCToClientWageringResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    140;
+    142;
 
   friend void swap(CMsgGCToClientWageringResponse& a, CMsgGCToClientWageringResponse& b) {
     a.Swap(&b);
@@ -32635,7 +32956,7 @@ class CMsgGCToClientWageringUpdate final :
                &_CMsgGCToClientWageringUpdate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    141;
+    143;
 
   friend void swap(CMsgGCToClientWageringUpdate& a, CMsgGCToClientWageringUpdate& b) {
     a.Swap(&b);
@@ -32815,7 +33136,7 @@ class CMsgGCToClientArcanaVotesUpdate final :
                &_CMsgGCToClientArcanaVotesUpdate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    142;
+    144;
 
   friend void swap(CMsgGCToClientArcanaVotesUpdate& a, CMsgGCToClientArcanaVotesUpdate& b) {
     a.Swap(&b);
@@ -32995,7 +33316,7 @@ class CMsgClientToGCGetEventGoals final :
                &_CMsgClientToGCGetEventGoals_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    143;
+    145;
 
   friend void swap(CMsgClientToGCGetEventGoals& a, CMsgClientToGCGetEventGoals& b) {
     a.Swap(&b);
@@ -33158,7 +33479,7 @@ class CMsgEventGoals_EventGoal final :
                &_CMsgEventGoals_EventGoal_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    144;
+    146;
 
   friend void swap(CMsgEventGoals_EventGoal& a, CMsgEventGoals_EventGoal& b) {
     a.Swap(&b);
@@ -33348,7 +33669,7 @@ class CMsgEventGoals final :
                &_CMsgEventGoals_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    145;
+    147;
 
   friend void swap(CMsgEventGoals& a, CMsgEventGoals& b) {
     a.Swap(&b);
@@ -33514,7 +33835,7 @@ class CMsgGCToGCLeaguePredictions final :
                &_CMsgGCToGCLeaguePredictions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    146;
+    148;
 
   friend void swap(CMsgGCToGCLeaguePredictions& a, CMsgGCToGCLeaguePredictions& b) {
     a.Swap(&b);
@@ -33674,7 +33995,7 @@ class CMsgPredictionRankings_PredictionLine final :
                &_CMsgPredictionRankings_PredictionLine_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    147;
+    149;
 
   friend void swap(CMsgPredictionRankings_PredictionLine& a, CMsgPredictionRankings_PredictionLine& b) {
     a.Swap(&b);
@@ -33884,7 +34205,7 @@ class CMsgPredictionRankings_Prediction final :
                &_CMsgPredictionRankings_Prediction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    148;
+    150;
 
   friend void swap(CMsgPredictionRankings_Prediction& a, CMsgPredictionRankings_Prediction& b) {
     a.Swap(&b);
@@ -34064,7 +34385,7 @@ class CMsgPredictionRankings final :
                &_CMsgPredictionRankings_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    149;
+    151;
 
   friend void swap(CMsgPredictionRankings& a, CMsgPredictionRankings& b) {
     a.Swap(&b);
@@ -34231,7 +34552,7 @@ class CMsgPredictionResults_ResultBreakdown final :
                &_CMsgPredictionResults_ResultBreakdown_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    150;
+    152;
 
   friend void swap(CMsgPredictionResults_ResultBreakdown& a, CMsgPredictionResults_ResultBreakdown& b) {
     a.Swap(&b);
@@ -34406,7 +34727,7 @@ class CMsgPredictionResults_Result final :
                &_CMsgPredictionResults_Result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    151;
+    153;
 
   friend void swap(CMsgPredictionResults_Result& a, CMsgPredictionResults_Result& b) {
     a.Swap(&b);
@@ -34586,7 +34907,7 @@ class CMsgPredictionResults final :
                &_CMsgPredictionResults_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    152;
+    154;
 
   friend void swap(CMsgPredictionResults& a, CMsgPredictionResults& b) {
     a.Swap(&b);
@@ -34753,7 +35074,7 @@ class CMsgClientToGCHasPlayerVotedForMVP final :
                &_CMsgClientToGCHasPlayerVotedForMVP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    153;
+    155;
 
   friend void swap(CMsgClientToGCHasPlayerVotedForMVP& a, CMsgClientToGCHasPlayerVotedForMVP& b) {
     a.Swap(&b);
@@ -34913,7 +35234,7 @@ class CMsgClientToGCHasPlayerVotedForMVPResponse final :
                &_CMsgClientToGCHasPlayerVotedForMVPResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    154;
+    156;
 
   friend void swap(CMsgClientToGCHasPlayerVotedForMVPResponse& a, CMsgClientToGCHasPlayerVotedForMVPResponse& b) {
     a.Swap(&b);
@@ -35073,7 +35394,7 @@ class CMsgClientToGCVoteForMVP final :
                &_CMsgClientToGCVoteForMVP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    155;
+    157;
 
   friend void swap(CMsgClientToGCVoteForMVP& a, CMsgClientToGCVoteForMVP& b) {
     a.Swap(&b);
@@ -35248,7 +35569,7 @@ class CMsgClientToGCVoteForMVPResponse final :
                &_CMsgClientToGCVoteForMVPResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    156;
+    158;
 
   friend void swap(CMsgClientToGCVoteForMVPResponse& a, CMsgClientToGCVoteForMVPResponse& b) {
     a.Swap(&b);
@@ -35408,7 +35729,7 @@ class CMsgClientToGCMVPVoteTimeout final :
                &_CMsgClientToGCMVPVoteTimeout_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    157;
+    159;
 
   friend void swap(CMsgClientToGCMVPVoteTimeout& a, CMsgClientToGCMVPVoteTimeout& b) {
     a.Swap(&b);
@@ -35568,7 +35889,7 @@ class CMsgClientToGCMVPVoteTimeoutResponse final :
                &_CMsgClientToGCMVPVoteTimeoutResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    158;
+    160;
 
   friend void swap(CMsgClientToGCMVPVoteTimeoutResponse& a, CMsgClientToGCMVPVoteTimeoutResponse& b) {
     a.Swap(&b);
@@ -35727,7 +36048,7 @@ class CMsgClientToGCTeammateStatsRequest final :
                &_CMsgClientToGCTeammateStatsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    159;
+    161;
 
   friend void swap(CMsgClientToGCTeammateStatsRequest& a, CMsgClientToGCTeammateStatsRequest& b) {
     a.Swap(&b);
@@ -35853,7 +36174,7 @@ class CMsgClientToGCTeammateStatsResponse_TeammateStat final :
                &_CMsgClientToGCTeammateStatsResponse_TeammateStat_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    160;
+    162;
 
   friend void swap(CMsgClientToGCTeammateStatsResponse_TeammateStat& a, CMsgClientToGCTeammateStatsResponse_TeammateStat& b) {
     a.Swap(&b);
@@ -36088,7 +36409,7 @@ class CMsgClientToGCTeammateStatsResponse final :
                &_CMsgClientToGCTeammateStatsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    161;
+    163;
 
   friend void swap(CMsgClientToGCTeammateStatsResponse& a, CMsgClientToGCTeammateStatsResponse& b) {
     a.Swap(&b);
@@ -36270,7 +36591,7 @@ class CMsgClientToGCVoteForArcana final :
                &_CMsgClientToGCVoteForArcana_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    162;
+    164;
 
   friend void swap(CMsgClientToGCVoteForArcana& a, CMsgClientToGCVoteForArcana& b) {
     a.Swap(&b);
@@ -36434,7 +36755,7 @@ class CMsgClientToGCVoteForArcanaResponse final :
                &_CMsgClientToGCVoteForArcanaResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    163;
+    165;
 
   friend void swap(CMsgClientToGCVoteForArcanaResponse& a, CMsgClientToGCVoteForArcanaResponse& b) {
     a.Swap(&b);
@@ -36625,7 +36946,7 @@ class CMsgClientToGCRequestArcanaVotesRemaining final :
                &_CMsgClientToGCRequestArcanaVotesRemaining_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    164;
+    166;
 
   friend void swap(CMsgClientToGCRequestArcanaVotesRemaining& a, CMsgClientToGCRequestArcanaVotesRemaining& b) {
     a.Swap(&b);
@@ -36751,7 +37072,7 @@ class CMsgClientToGCRequestArcanaVotesRemainingResponse final :
                &_CMsgClientToGCRequestArcanaVotesRemainingResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    165;
+    167;
 
   friend void swap(CMsgClientToGCRequestArcanaVotesRemainingResponse& a, CMsgClientToGCRequestArcanaVotesRemainingResponse& b) {
     a.Swap(&b);
@@ -36961,7 +37282,7 @@ class CMsgClientToGCRequestEventPointLogV2 final :
                &_CMsgClientToGCRequestEventPointLogV2_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    166;
+    168;
 
   friend void swap(CMsgClientToGCRequestEventPointLogV2& a, CMsgClientToGCRequestEventPointLogV2& b) {
     a.Swap(&b);
@@ -37121,7 +37442,7 @@ class CMsgClientToGCRequestEventPointLogResponseV2_LogEntry final :
                &_CMsgClientToGCRequestEventPointLogResponseV2_LogEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    167;
+    169;
 
   friend void swap(CMsgClientToGCRequestEventPointLogResponseV2_LogEntry& a, CMsgClientToGCRequestEventPointLogResponseV2_LogEntry& b) {
     a.Swap(&b);
@@ -37326,7 +37647,7 @@ class CMsgClientToGCRequestEventPointLogResponseV2 final :
                &_CMsgClientToGCRequestEventPointLogResponseV2_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    168;
+    170;
 
   friend void swap(CMsgClientToGCRequestEventPointLogResponseV2& a, CMsgClientToGCRequestEventPointLogResponseV2& b) {
     a.Swap(&b);
@@ -37523,7 +37844,7 @@ class CMsgClientToGCPublishUserStat final :
                &_CMsgClientToGCPublishUserStat_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    169;
+    171;
 
   friend void swap(CMsgClientToGCPublishUserStat& a, CMsgClientToGCPublishUserStat& b) {
     a.Swap(&b);
@@ -37698,7 +38019,7 @@ class CMsgClientToGCRequestSlarkGameResult final :
                &_CMsgClientToGCRequestSlarkGameResult_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    170;
+    172;
 
   friend void swap(CMsgClientToGCRequestSlarkGameResult& a, CMsgClientToGCRequestSlarkGameResult& b) {
     a.Swap(&b);
@@ -37888,7 +38209,7 @@ class CMsgClientToGCRequestSlarkGameResultResponse final :
                &_CMsgClientToGCRequestSlarkGameResultResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    171;
+    173;
 
   friend void swap(CMsgClientToGCRequestSlarkGameResultResponse& a, CMsgClientToGCRequestSlarkGameResultResponse& b) {
     a.Swap(&b);
@@ -38063,7 +38384,7 @@ class CMsgGCToClientQuestProgressUpdated_Challenge final :
                &_CMsgGCToClientQuestProgressUpdated_Challenge_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    172;
+    174;
 
   friend void swap(CMsgGCToClientQuestProgressUpdated_Challenge& a, CMsgGCToClientQuestProgressUpdated_Challenge& b) {
     a.Swap(&b);
@@ -38313,7 +38634,7 @@ class CMsgGCToClientQuestProgressUpdated final :
                &_CMsgGCToClientQuestProgressUpdated_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    173;
+    175;
 
   friend void swap(CMsgGCToClientQuestProgressUpdated& a, CMsgGCToClientQuestProgressUpdated& b) {
     a.Swap(&b);
@@ -38495,7 +38816,7 @@ class CMsgDOTARedeemItem final :
                &_CMsgDOTARedeemItem_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    174;
+    176;
 
   friend void swap(CMsgDOTARedeemItem& a, CMsgDOTARedeemItem& b) {
     a.Swap(&b);
@@ -38685,7 +39006,7 @@ class CMsgDOTARedeemItemResponse final :
                &_CMsgDOTARedeemItemResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    175;
+    177;
 
   friend void swap(CMsgDOTARedeemItemResponse& a, CMsgDOTARedeemItemResponse& b) {
     a.Swap(&b);
@@ -38875,7 +39196,7 @@ class CMsgClientToGCSelectCompendiumInGamePrediction_Prediction final :
                &_CMsgClientToGCSelectCompendiumInGamePrediction_Prediction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    176;
+    178;
 
   friend void swap(CMsgClientToGCSelectCompendiumInGamePrediction_Prediction& a, CMsgClientToGCSelectCompendiumInGamePrediction_Prediction& b) {
     a.Swap(&b);
@@ -39050,7 +39371,7 @@ class CMsgClientToGCSelectCompendiumInGamePrediction final :
                &_CMsgClientToGCSelectCompendiumInGamePrediction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    177;
+    179;
 
   friend void swap(CMsgClientToGCSelectCompendiumInGamePrediction& a, CMsgClientToGCSelectCompendiumInGamePrediction& b) {
     a.Swap(&b);
@@ -39247,7 +39568,7 @@ class CMsgClientToGCSelectCompendiumInGamePredictionResponse final :
                &_CMsgClientToGCSelectCompendiumInGamePredictionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    178;
+    180;
 
   friend void swap(CMsgClientToGCSelectCompendiumInGamePredictionResponse& a, CMsgClientToGCSelectCompendiumInGamePredictionResponse& b) {
     a.Swap(&b);
@@ -39441,7 +39762,7 @@ class CMsgClientToGCOpenPlayerCardPack final :
                &_CMsgClientToGCOpenPlayerCardPack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    179;
+    181;
 
   friend void swap(CMsgClientToGCOpenPlayerCardPack& a, CMsgClientToGCOpenPlayerCardPack& b) {
     a.Swap(&b);
@@ -39646,7 +39967,7 @@ class CMsgClientToGCOpenPlayerCardPackResponse final :
                &_CMsgClientToGCOpenPlayerCardPackResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    180;
+    182;
 
   friend void swap(CMsgClientToGCOpenPlayerCardPackResponse& a, CMsgClientToGCOpenPlayerCardPackResponse& b) {
     a.Swap(&b);
@@ -39870,7 +40191,7 @@ class CMsgClientToGCRecyclePlayerCard final :
                &_CMsgClientToGCRecyclePlayerCard_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    181;
+    183;
 
   friend void swap(CMsgClientToGCRecyclePlayerCard& a, CMsgClientToGCRecyclePlayerCard& b) {
     a.Swap(&b);
@@ -40054,7 +40375,7 @@ class CMsgClientToGCRecyclePlayerCardResponse final :
                &_CMsgClientToGCRecyclePlayerCardResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    182;
+    184;
 
   friend void swap(CMsgClientToGCRecyclePlayerCardResponse& a, CMsgClientToGCRecyclePlayerCardResponse& b) {
     a.Swap(&b);
@@ -40269,7 +40590,7 @@ class CMsgClientToGCCreatePlayerCardPack final :
                &_CMsgClientToGCCreatePlayerCardPack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    183;
+    185;
 
   friend void swap(CMsgClientToGCCreatePlayerCardPack& a, CMsgClientToGCCreatePlayerCardPack& b) {
     a.Swap(&b);
@@ -40459,7 +40780,7 @@ class CMsgClientToGCCreatePlayerCardPackResponse final :
                &_CMsgClientToGCCreatePlayerCardPackResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    184;
+    186;
 
   friend void swap(CMsgClientToGCCreatePlayerCardPackResponse& a, CMsgClientToGCCreatePlayerCardPackResponse& b) {
     a.Swap(&b);
@@ -40659,7 +40980,7 @@ class CMsgClientToGCCreateTeamPlayerCardPack final :
                &_CMsgClientToGCCreateTeamPlayerCardPack_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    185;
+    187;
 
   friend void swap(CMsgClientToGCCreateTeamPlayerCardPack& a, CMsgClientToGCCreateTeamPlayerCardPack& b) {
     a.Swap(&b);
@@ -40864,7 +41185,7 @@ class CMsgClientToGCCreateTeamPlayerCardPackResponse final :
                &_CMsgClientToGCCreateTeamPlayerCardPackResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    186;
+    188;
 
   friend void swap(CMsgClientToGCCreateTeamPlayerCardPackResponse& a, CMsgClientToGCCreateTeamPlayerCardPackResponse& b) {
     a.Swap(&b);
@@ -41064,7 +41385,7 @@ class CMsgGCToClientBattlePassRollup_International2016_Questlines final :
                &_CMsgGCToClientBattlePassRollup_International2016_Questlines_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    187;
+    189;
 
   friend void swap(CMsgGCToClientBattlePassRollup_International2016_Questlines& a, CMsgGCToClientBattlePassRollup_International2016_Questlines& b) {
     a.Swap(&b);
@@ -41289,7 +41610,7 @@ class CMsgGCToClientBattlePassRollup_International2016_Wagering final :
                &_CMsgGCToClientBattlePassRollup_International2016_Wagering_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    188;
+    190;
 
   friend void swap(CMsgGCToClientBattlePassRollup_International2016_Wagering& a, CMsgGCToClientBattlePassRollup_International2016_Wagering& b) {
     a.Swap(&b);
@@ -41509,7 +41830,7 @@ class CMsgGCToClientBattlePassRollup_International2016_Achievements final :
                &_CMsgGCToClientBattlePassRollup_International2016_Achievements_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    189;
+    191;
 
   friend void swap(CMsgGCToClientBattlePassRollup_International2016_Achievements& a, CMsgGCToClientBattlePassRollup_International2016_Achievements& b) {
     a.Swap(&b);
@@ -41699,7 +42020,7 @@ class CMsgGCToClientBattlePassRollup_International2016_BattleCup final :
                &_CMsgGCToClientBattlePassRollup_International2016_BattleCup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    190;
+    192;
 
   friend void swap(CMsgGCToClientBattlePassRollup_International2016_BattleCup& a, CMsgGCToClientBattlePassRollup_International2016_BattleCup& b) {
     a.Swap(&b);
@@ -41874,7 +42195,7 @@ class CMsgGCToClientBattlePassRollup_International2016_Predictions final :
                &_CMsgGCToClientBattlePassRollup_International2016_Predictions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    191;
+    193;
 
   friend void swap(CMsgGCToClientBattlePassRollup_International2016_Predictions& a, CMsgGCToClientBattlePassRollup_International2016_Predictions& b) {
     a.Swap(&b);
@@ -42064,7 +42385,7 @@ class CMsgGCToClientBattlePassRollup_International2016_Bracket final :
                &_CMsgGCToClientBattlePassRollup_International2016_Bracket_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    192;
+    194;
 
   friend void swap(CMsgGCToClientBattlePassRollup_International2016_Bracket& a, CMsgGCToClientBattlePassRollup_International2016_Bracket& b) {
     a.Swap(&b);
@@ -42239,7 +42560,7 @@ class CMsgGCToClientBattlePassRollup_International2016_PlayerCard final :
                &_CMsgGCToClientBattlePassRollup_International2016_PlayerCard_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    193;
+    195;
 
   friend void swap(CMsgGCToClientBattlePassRollup_International2016_PlayerCard& a, CMsgGCToClientBattlePassRollup_International2016_PlayerCard& b) {
     a.Swap(&b);
@@ -42414,7 +42735,7 @@ class CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge final :
                &_CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    194;
+    196;
 
   friend void swap(CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge& a, CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge& b) {
     a.Swap(&b);
@@ -42589,7 +42910,7 @@ class CMsgGCToClientBattlePassRollup_International2016 final :
                &_CMsgGCToClientBattlePassRollup_International2016_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    195;
+    197;
 
   friend void swap(CMsgGCToClientBattlePassRollup_International2016& a, CMsgGCToClientBattlePassRollup_International2016& b) {
     a.Swap(&b);
@@ -42918,7 +43239,7 @@ class CMsgGCToClientBattlePassRollup_Fall2016_Questlines final :
                &_CMsgGCToClientBattlePassRollup_Fall2016_Questlines_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    196;
+    198;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Fall2016_Questlines& a, CMsgGCToClientBattlePassRollup_Fall2016_Questlines& b) {
     a.Swap(&b);
@@ -43143,7 +43464,7 @@ class CMsgGCToClientBattlePassRollup_Fall2016_Wagering final :
                &_CMsgGCToClientBattlePassRollup_Fall2016_Wagering_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    197;
+    199;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Fall2016_Wagering& a, CMsgGCToClientBattlePassRollup_Fall2016_Wagering& b) {
     a.Swap(&b);
@@ -43363,7 +43684,7 @@ class CMsgGCToClientBattlePassRollup_Fall2016_Achievements final :
                &_CMsgGCToClientBattlePassRollup_Fall2016_Achievements_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    198;
+    200;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Fall2016_Achievements& a, CMsgGCToClientBattlePassRollup_Fall2016_Achievements& b) {
     a.Swap(&b);
@@ -43553,7 +43874,7 @@ class CMsgGCToClientBattlePassRollup_Fall2016_BattleCup final :
                &_CMsgGCToClientBattlePassRollup_Fall2016_BattleCup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    199;
+    201;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Fall2016_BattleCup& a, CMsgGCToClientBattlePassRollup_Fall2016_BattleCup& b) {
     a.Swap(&b);
@@ -43728,7 +44049,7 @@ class CMsgGCToClientBattlePassRollup_Fall2016_Predictions final :
                &_CMsgGCToClientBattlePassRollup_Fall2016_Predictions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    200;
+    202;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Fall2016_Predictions& a, CMsgGCToClientBattlePassRollup_Fall2016_Predictions& b) {
     a.Swap(&b);
@@ -43918,7 +44239,7 @@ class CMsgGCToClientBattlePassRollup_Fall2016_Bracket final :
                &_CMsgGCToClientBattlePassRollup_Fall2016_Bracket_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    201;
+    203;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Fall2016_Bracket& a, CMsgGCToClientBattlePassRollup_Fall2016_Bracket& b) {
     a.Swap(&b);
@@ -44093,7 +44414,7 @@ class CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard final :
                &_CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    202;
+    204;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard& a, CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard& b) {
     a.Swap(&b);
@@ -44268,7 +44589,7 @@ class CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge final :
                &_CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    203;
+    205;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge& a, CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge& b) {
     a.Swap(&b);
@@ -44443,7 +44764,7 @@ class CMsgGCToClientBattlePassRollup_Fall2016 final :
                &_CMsgGCToClientBattlePassRollup_Fall2016_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    204;
+    206;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Fall2016& a, CMsgGCToClientBattlePassRollup_Fall2016& b) {
     a.Swap(&b);
@@ -44772,7 +45093,7 @@ class CMsgGCToClientBattlePassRollup_Winter2017_Questlines final :
                &_CMsgGCToClientBattlePassRollup_Winter2017_Questlines_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    205;
+    207;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Winter2017_Questlines& a, CMsgGCToClientBattlePassRollup_Winter2017_Questlines& b) {
     a.Swap(&b);
@@ -44997,7 +45318,7 @@ class CMsgGCToClientBattlePassRollup_Winter2017_Wagering final :
                &_CMsgGCToClientBattlePassRollup_Winter2017_Wagering_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    206;
+    208;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Winter2017_Wagering& a, CMsgGCToClientBattlePassRollup_Winter2017_Wagering& b) {
     a.Swap(&b);
@@ -45217,7 +45538,7 @@ class CMsgGCToClientBattlePassRollup_Winter2017_Achievements final :
                &_CMsgGCToClientBattlePassRollup_Winter2017_Achievements_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    207;
+    209;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Winter2017_Achievements& a, CMsgGCToClientBattlePassRollup_Winter2017_Achievements& b) {
     a.Swap(&b);
@@ -45407,7 +45728,7 @@ class CMsgGCToClientBattlePassRollup_Winter2017_BattleCup final :
                &_CMsgGCToClientBattlePassRollup_Winter2017_BattleCup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    208;
+    210;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Winter2017_BattleCup& a, CMsgGCToClientBattlePassRollup_Winter2017_BattleCup& b) {
     a.Swap(&b);
@@ -45582,7 +45903,7 @@ class CMsgGCToClientBattlePassRollup_Winter2017_Predictions final :
                &_CMsgGCToClientBattlePassRollup_Winter2017_Predictions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    209;
+    211;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Winter2017_Predictions& a, CMsgGCToClientBattlePassRollup_Winter2017_Predictions& b) {
     a.Swap(&b);
@@ -45772,7 +46093,7 @@ class CMsgGCToClientBattlePassRollup_Winter2017_Bracket final :
                &_CMsgGCToClientBattlePassRollup_Winter2017_Bracket_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    210;
+    212;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Winter2017_Bracket& a, CMsgGCToClientBattlePassRollup_Winter2017_Bracket& b) {
     a.Swap(&b);
@@ -45947,7 +46268,7 @@ class CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard final :
                &_CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    211;
+    213;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard& a, CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard& b) {
     a.Swap(&b);
@@ -46122,7 +46443,7 @@ class CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge final :
                &_CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    212;
+    214;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge& a, CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge& b) {
     a.Swap(&b);
@@ -46297,7 +46618,7 @@ class CMsgGCToClientBattlePassRollup_Winter2017 final :
                &_CMsgGCToClientBattlePassRollup_Winter2017_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    213;
+    215;
 
   friend void swap(CMsgGCToClientBattlePassRollup_Winter2017& a, CMsgGCToClientBattlePassRollup_Winter2017& b) {
     a.Swap(&b);
@@ -46626,7 +46947,7 @@ class CMsgGCToClientBattlePassRollup_TI7_Questlines final :
                &_CMsgGCToClientBattlePassRollup_TI7_Questlines_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    214;
+    216;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI7_Questlines& a, CMsgGCToClientBattlePassRollup_TI7_Questlines& b) {
     a.Swap(&b);
@@ -46851,7 +47172,7 @@ class CMsgGCToClientBattlePassRollup_TI7_Wagering final :
                &_CMsgGCToClientBattlePassRollup_TI7_Wagering_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    215;
+    217;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI7_Wagering& a, CMsgGCToClientBattlePassRollup_TI7_Wagering& b) {
     a.Swap(&b);
@@ -47071,7 +47392,7 @@ class CMsgGCToClientBattlePassRollup_TI7_Achievements final :
                &_CMsgGCToClientBattlePassRollup_TI7_Achievements_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    216;
+    218;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI7_Achievements& a, CMsgGCToClientBattlePassRollup_TI7_Achievements& b) {
     a.Swap(&b);
@@ -47261,7 +47582,7 @@ class CMsgGCToClientBattlePassRollup_TI7_BattleCup final :
                &_CMsgGCToClientBattlePassRollup_TI7_BattleCup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    217;
+    219;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI7_BattleCup& a, CMsgGCToClientBattlePassRollup_TI7_BattleCup& b) {
     a.Swap(&b);
@@ -47436,7 +47757,7 @@ class CMsgGCToClientBattlePassRollup_TI7_Predictions final :
                &_CMsgGCToClientBattlePassRollup_TI7_Predictions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    218;
+    220;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI7_Predictions& a, CMsgGCToClientBattlePassRollup_TI7_Predictions& b) {
     a.Swap(&b);
@@ -47626,7 +47947,7 @@ class CMsgGCToClientBattlePassRollup_TI7_Bracket final :
                &_CMsgGCToClientBattlePassRollup_TI7_Bracket_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    219;
+    221;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI7_Bracket& a, CMsgGCToClientBattlePassRollup_TI7_Bracket& b) {
     a.Swap(&b);
@@ -47801,7 +48122,7 @@ class CMsgGCToClientBattlePassRollup_TI7_PlayerCard final :
                &_CMsgGCToClientBattlePassRollup_TI7_PlayerCard_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    220;
+    222;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI7_PlayerCard& a, CMsgGCToClientBattlePassRollup_TI7_PlayerCard& b) {
     a.Swap(&b);
@@ -47976,7 +48297,7 @@ class CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge final :
                &_CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    221;
+    223;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge& a, CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge& b) {
     a.Swap(&b);
@@ -48151,7 +48472,7 @@ class CMsgGCToClientBattlePassRollup_TI7 final :
                &_CMsgGCToClientBattlePassRollup_TI7_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    222;
+    224;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI7& a, CMsgGCToClientBattlePassRollup_TI7& b) {
     a.Swap(&b);
@@ -48480,7 +48801,7 @@ class CMsgGCToClientBattlePassRollup_TI8_CavernCrawl final :
                &_CMsgGCToClientBattlePassRollup_TI8_CavernCrawl_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    223;
+    225;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI8_CavernCrawl& a, CMsgGCToClientBattlePassRollup_TI8_CavernCrawl& b) {
     a.Swap(&b);
@@ -48685,7 +49006,7 @@ class CMsgGCToClientBattlePassRollup_TI8_Wagering final :
                &_CMsgGCToClientBattlePassRollup_TI8_Wagering_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    224;
+    226;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI8_Wagering& a, CMsgGCToClientBattlePassRollup_TI8_Wagering& b) {
     a.Swap(&b);
@@ -48905,7 +49226,7 @@ class CMsgGCToClientBattlePassRollup_TI8_Achievements final :
                &_CMsgGCToClientBattlePassRollup_TI8_Achievements_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    225;
+    227;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI8_Achievements& a, CMsgGCToClientBattlePassRollup_TI8_Achievements& b) {
     a.Swap(&b);
@@ -49095,7 +49416,7 @@ class CMsgGCToClientBattlePassRollup_TI8_Predictions final :
                &_CMsgGCToClientBattlePassRollup_TI8_Predictions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    226;
+    228;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI8_Predictions& a, CMsgGCToClientBattlePassRollup_TI8_Predictions& b) {
     a.Swap(&b);
@@ -49285,7 +49606,7 @@ class CMsgGCToClientBattlePassRollup_TI8_Bracket final :
                &_CMsgGCToClientBattlePassRollup_TI8_Bracket_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    227;
+    229;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI8_Bracket& a, CMsgGCToClientBattlePassRollup_TI8_Bracket& b) {
     a.Swap(&b);
@@ -49460,7 +49781,7 @@ class CMsgGCToClientBattlePassRollup_TI8_PlayerCard final :
                &_CMsgGCToClientBattlePassRollup_TI8_PlayerCard_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    228;
+    230;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI8_PlayerCard& a, CMsgGCToClientBattlePassRollup_TI8_PlayerCard& b) {
     a.Swap(&b);
@@ -49635,7 +49956,7 @@ class CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge final :
                &_CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    229;
+    231;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge& a, CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge& b) {
     a.Swap(&b);
@@ -49810,7 +50131,7 @@ class CMsgGCToClientBattlePassRollup_TI8 final :
                &_CMsgGCToClientBattlePassRollup_TI8_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    230;
+    232;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI8& a, CMsgGCToClientBattlePassRollup_TI8& b) {
     a.Swap(&b);
@@ -50118,7 +50439,7 @@ class CMsgGCToClientBattlePassRollup_TI9 final :
                &_CMsgGCToClientBattlePassRollup_TI9_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    231;
+    233;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI9& a, CMsgGCToClientBattlePassRollup_TI9& b) {
     a.Swap(&b);
@@ -50278,7 +50599,7 @@ class CMsgGCToClientBattlePassRollup_TI10 final :
                &_CMsgGCToClientBattlePassRollup_TI10_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    232;
+    234;
 
   friend void swap(CMsgGCToClientBattlePassRollup_TI10& a, CMsgGCToClientBattlePassRollup_TI10& b) {
     a.Swap(&b);
@@ -50438,7 +50759,7 @@ class CMsgGCToClientBattlePassRollupRequest final :
                &_CMsgGCToClientBattlePassRollupRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    233;
+    235;
 
   friend void swap(CMsgGCToClientBattlePassRollupRequest& a, CMsgGCToClientBattlePassRollupRequest& b) {
     a.Swap(&b);
@@ -50613,7 +50934,7 @@ class CMsgGCToClientBattlePassRollupResponse final :
                &_CMsgGCToClientBattlePassRollupResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    234;
+    236;
 
   friend void swap(CMsgGCToClientBattlePassRollupResponse& a, CMsgGCToClientBattlePassRollupResponse& b) {
     a.Swap(&b);
@@ -50898,7 +51219,7 @@ class CMsgGCToClientBattlePassRollupListRequest final :
                &_CMsgGCToClientBattlePassRollupListRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    235;
+    237;
 
   friend void swap(CMsgGCToClientBattlePassRollupListRequest& a, CMsgGCToClientBattlePassRollupListRequest& b) {
     a.Swap(&b);
@@ -51058,7 +51379,7 @@ class CMsgGCToClientBattlePassRollupListResponse_EventInfo final :
                &_CMsgGCToClientBattlePassRollupListResponse_EventInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    236;
+    238;
 
   friend void swap(CMsgGCToClientBattlePassRollupListResponse_EventInfo& a, CMsgGCToClientBattlePassRollupListResponse_EventInfo& b) {
     a.Swap(&b);
@@ -51233,7 +51554,7 @@ class CMsgGCToClientBattlePassRollupListResponse final :
                &_CMsgGCToClientBattlePassRollupListResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    237;
+    239;
 
   friend void swap(CMsgGCToClientBattlePassRollupListResponse& a, CMsgGCToClientBattlePassRollupListResponse& b) {
     a.Swap(&b);
@@ -51399,7 +51720,7 @@ class CMsgClientToGCTransferSeasonalMMRRequest final :
                &_CMsgClientToGCTransferSeasonalMMRRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    238;
+    240;
 
   friend void swap(CMsgClientToGCTransferSeasonalMMRRequest& a, CMsgClientToGCTransferSeasonalMMRRequest& b) {
     a.Swap(&b);
@@ -51559,7 +51880,7 @@ class CMsgClientToGCTransferSeasonalMMRResponse final :
                &_CMsgClientToGCTransferSeasonalMMRResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    239;
+    241;
 
   friend void swap(CMsgClientToGCTransferSeasonalMMRResponse& a, CMsgClientToGCTransferSeasonalMMRResponse& b) {
     a.Swap(&b);
@@ -51719,7 +52040,7 @@ class CMsgGCToClientPlaytestStatus final :
                &_CMsgGCToClientPlaytestStatus_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    240;
+    242;
 
   friend void swap(CMsgGCToClientPlaytestStatus& a, CMsgGCToClientPlaytestStatus& b) {
     a.Swap(&b);
@@ -51879,7 +52200,7 @@ class CMsgClientToGCJoinPlaytest final :
                &_CMsgClientToGCJoinPlaytest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    241;
+    243;
 
   friend void swap(CMsgClientToGCJoinPlaytest& a, CMsgClientToGCJoinPlaytest& b) {
     a.Swap(&b);
@@ -52039,7 +52360,7 @@ class CMsgClientToGCJoinPlaytestResponse final :
                &_CMsgClientToGCJoinPlaytestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    242;
+    244;
 
   friend void swap(CMsgClientToGCJoinPlaytestResponse& a, CMsgClientToGCJoinPlaytestResponse& b) {
     a.Swap(&b);
@@ -52204,7 +52525,7 @@ class CMsgDOTASetFavoriteTeam final :
                &_CMsgDOTASetFavoriteTeam_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    243;
+    245;
 
   friend void swap(CMsgDOTASetFavoriteTeam& a, CMsgDOTASetFavoriteTeam& b) {
     a.Swap(&b);
@@ -52379,7 +52700,7 @@ class CMsgDOTATriviaCurrentQuestions final :
                &_CMsgDOTATriviaCurrentQuestions_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    244;
+    246;
 
   friend void swap(CMsgDOTATriviaCurrentQuestions& a, CMsgDOTATriviaCurrentQuestions& b) {
     a.Swap(&b);
@@ -52559,7 +52880,7 @@ class CMsgDOTASubmitTriviaQuestionAnswer final :
                &_CMsgDOTASubmitTriviaQuestionAnswer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    245;
+    247;
 
   friend void swap(CMsgDOTASubmitTriviaQuestionAnswer& a, CMsgDOTASubmitTriviaQuestionAnswer& b) {
     a.Swap(&b);
@@ -52734,7 +53055,7 @@ class CMsgDOTASubmitTriviaQuestionAnswerResponse final :
                &_CMsgDOTASubmitTriviaQuestionAnswerResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    246;
+    248;
 
   friend void swap(CMsgDOTASubmitTriviaQuestionAnswerResponse& a, CMsgDOTASubmitTriviaQuestionAnswerResponse& b) {
     a.Swap(&b);
@@ -52893,7 +53214,7 @@ class CMsgDOTAStartTriviaSession final :
                &_CMsgDOTAStartTriviaSession_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    247;
+    249;
 
   friend void swap(CMsgDOTAStartTriviaSession& a, CMsgDOTAStartTriviaSession& b) {
     a.Swap(&b);
@@ -53019,7 +53340,7 @@ class CMsgDOTAStartTriviaSessionResponse final :
                &_CMsgDOTAStartTriviaSessionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    248;
+    250;
 
   friend void swap(CMsgDOTAStartTriviaSessionResponse& a, CMsgDOTAStartTriviaSessionResponse& b) {
     a.Swap(&b);
@@ -53193,7 +53514,7 @@ class CMsgDOTAAnchorPhoneNumberRequest final :
                &_CMsgDOTAAnchorPhoneNumberRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    249;
+    251;
 
   friend void swap(CMsgDOTAAnchorPhoneNumberRequest& a, CMsgDOTAAnchorPhoneNumberRequest& b) {
     a.Swap(&b);
@@ -53319,7 +53640,7 @@ class CMsgDOTAAnchorPhoneNumberResponse final :
                &_CMsgDOTAAnchorPhoneNumberResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    250;
+    252;
 
   friend void swap(CMsgDOTAAnchorPhoneNumberResponse& a, CMsgDOTAAnchorPhoneNumberResponse& b) {
     a.Swap(&b);
@@ -53516,7 +53837,7 @@ class CMsgDOTAUnanchorPhoneNumberRequest final :
                &_CMsgDOTAUnanchorPhoneNumberRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    251;
+    253;
 
   friend void swap(CMsgDOTAUnanchorPhoneNumberRequest& a, CMsgDOTAUnanchorPhoneNumberRequest& b) {
     a.Swap(&b);
@@ -53642,7 +53963,7 @@ class CMsgDOTAUnanchorPhoneNumberResponse final :
                &_CMsgDOTAUnanchorPhoneNumberResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    252;
+    254;
 
   friend void swap(CMsgDOTAUnanchorPhoneNumberResponse& a, CMsgDOTAUnanchorPhoneNumberResponse& b) {
     a.Swap(&b);
@@ -53832,7 +54153,7 @@ class CMsgGCToClientCommendNotification final :
                &_CMsgGCToClientCommendNotification_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    253;
+    255;
 
   friend void swap(CMsgGCToClientCommendNotification& a, CMsgGCToClientCommendNotification& b) {
     a.Swap(&b);
@@ -54042,7 +54363,7 @@ class CMsgDOTAClientToGCQuickStatsRequest final :
                &_CMsgDOTAClientToGCQuickStatsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    254;
+    256;
 
   friend void swap(CMsgDOTAClientToGCQuickStatsRequest& a, CMsgDOTAClientToGCQuickStatsRequest& b) {
     a.Swap(&b);
@@ -54247,7 +54568,7 @@ class CMsgDOTAClientToGCQuickStatsResponse_SimpleStats final :
                &_CMsgDOTAClientToGCQuickStatsResponse_SimpleStats_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    255;
+    257;
 
   friend void swap(CMsgDOTAClientToGCQuickStatsResponse_SimpleStats& a, CMsgDOTAClientToGCQuickStatsResponse_SimpleStats& b) {
     a.Swap(&b);
@@ -54452,7 +54773,7 @@ class CMsgDOTAClientToGCQuickStatsResponse final :
                &_CMsgDOTAClientToGCQuickStatsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    256;
+    258;
 
   friend void swap(CMsgDOTAClientToGCQuickStatsResponse& a, CMsgDOTAClientToGCQuickStatsResponse& b) {
     a.Swap(&b);
@@ -54739,7 +55060,7 @@ class CMsgDOTASelectionPriorityChoiceRequest final :
                &_CMsgDOTASelectionPriorityChoiceRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    257;
+    259;
 
   friend void swap(CMsgDOTASelectionPriorityChoiceRequest& a, CMsgDOTASelectionPriorityChoiceRequest& b) {
     a.Swap(&b);
@@ -54899,7 +55220,7 @@ class CMsgDOTASelectionPriorityChoiceResponse final :
                &_CMsgDOTASelectionPriorityChoiceResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    258;
+    260;
 
   friend void swap(CMsgDOTASelectionPriorityChoiceResponse& a, CMsgDOTASelectionPriorityChoiceResponse& b) {
     a.Swap(&b);
@@ -55089,7 +55410,7 @@ class CMsgDOTAGameAutographReward final :
                &_CMsgDOTAGameAutographReward_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    259;
+    261;
 
   friend void swap(CMsgDOTAGameAutographReward& a, CMsgDOTAGameAutographReward& b) {
     a.Swap(&b);
@@ -55254,7 +55575,7 @@ class CMsgDOTAGameAutographRewardResponse final :
                &_CMsgDOTAGameAutographRewardResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    260;
+    262;
 
   friend void swap(CMsgDOTAGameAutographRewardResponse& a, CMsgDOTAGameAutographRewardResponse& b) {
     a.Swap(&b);
@@ -55443,7 +55764,7 @@ class CMsgDOTADestroyLobbyRequest final :
                &_CMsgDOTADestroyLobbyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    261;
+    263;
 
   friend void swap(CMsgDOTADestroyLobbyRequest& a, CMsgDOTADestroyLobbyRequest& b) {
     a.Swap(&b);
@@ -55569,7 +55890,7 @@ class CMsgDOTADestroyLobbyResponse final :
                &_CMsgDOTADestroyLobbyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    262;
+    264;
 
   friend void swap(CMsgDOTADestroyLobbyResponse& a, CMsgDOTADestroyLobbyResponse& b) {
     a.Swap(&b);
@@ -55758,7 +56079,7 @@ class CMsgDOTAGetRecentPlayTimeFriendsRequest final :
                &_CMsgDOTAGetRecentPlayTimeFriendsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    263;
+    265;
 
   friend void swap(CMsgDOTAGetRecentPlayTimeFriendsRequest& a, CMsgDOTAGetRecentPlayTimeFriendsRequest& b) {
     a.Swap(&b);
@@ -55884,7 +56205,7 @@ class CMsgDOTAGetRecentPlayTimeFriendsResponse final :
                &_CMsgDOTAGetRecentPlayTimeFriendsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    264;
+    266;
 
   friend void swap(CMsgDOTAGetRecentPlayTimeFriendsResponse& a, CMsgDOTAGetRecentPlayTimeFriendsResponse& b) {
     a.Swap(&b);
@@ -56052,7 +56373,7 @@ class CMsgPurchaseItemWithEventPoints final :
                &_CMsgPurchaseItemWithEventPoints_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    265;
+    267;
 
   friend void swap(CMsgPurchaseItemWithEventPoints& a, CMsgPurchaseItemWithEventPoints& b) {
     a.Swap(&b);
@@ -56257,7 +56578,7 @@ class CMsgPurchaseItemWithEventPointsResponse final :
                &_CMsgPurchaseItemWithEventPointsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    266;
+    268;
 
   friend void swap(CMsgPurchaseItemWithEventPointsResponse& a, CMsgPurchaseItemWithEventPointsResponse& b) {
     a.Swap(&b);
@@ -56471,7 +56792,7 @@ class CMsgPurchaseHeroRandomRelic final :
                &_CMsgPurchaseHeroRandomRelic_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    267;
+    269;
 
   friend void swap(CMsgPurchaseHeroRandomRelic& a, CMsgPurchaseHeroRandomRelic& b) {
     a.Swap(&b);
@@ -56646,7 +56967,7 @@ class CMsgPurchaseHeroRandomRelicResponse final :
                &_CMsgPurchaseHeroRandomRelicResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    268;
+    270;
 
   friend void swap(CMsgPurchaseHeroRandomRelicResponse& a, CMsgPurchaseHeroRandomRelicResponse& b) {
     a.Swap(&b);
@@ -56821,7 +57142,7 @@ class CMsgClientToGCRequestPlusWeeklyChallengeResult final :
                &_CMsgClientToGCRequestPlusWeeklyChallengeResult_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    269;
+    271;
 
   friend void swap(CMsgClientToGCRequestPlusWeeklyChallengeResult& a, CMsgClientToGCRequestPlusWeeklyChallengeResult& b) {
     a.Swap(&b);
@@ -56995,7 +57316,7 @@ class CMsgClientToGCRequestPlusWeeklyChallengeResultResponse final :
                &_CMsgClientToGCRequestPlusWeeklyChallengeResultResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    270;
+    272;
 
   friend void swap(CMsgClientToGCRequestPlusWeeklyChallengeResultResponse& a, CMsgClientToGCRequestPlusWeeklyChallengeResultResponse& b) {
     a.Swap(&b);
@@ -57121,7 +57442,7 @@ class CMsgProfileRequest final :
                &_CMsgProfileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    271;
+    273;
 
   friend void swap(CMsgProfileRequest& a, CMsgProfileRequest& b) {
     a.Swap(&b);
@@ -57281,7 +57602,7 @@ class CMsgProfileResponse_FeaturedHero final :
                &_CMsgProfileResponse_FeaturedHero_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    272;
+    274;
 
   friend void swap(CMsgProfileResponse_FeaturedHero& a, CMsgProfileResponse_FeaturedHero& b) {
     a.Swap(&b);
@@ -57511,7 +57832,7 @@ class CMsgProfileResponse_MatchInfo final :
                &_CMsgProfileResponse_MatchInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    273;
+    275;
 
   friend void swap(CMsgProfileResponse_MatchInfo& a, CMsgProfileResponse_MatchInfo& b) {
     a.Swap(&b);
@@ -57731,7 +58052,7 @@ class CMsgProfileResponse final :
                &_CMsgProfileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    274;
+    276;
 
   friend void swap(CMsgProfileResponse& a, CMsgProfileResponse& b) {
     a.Swap(&b);
@@ -58048,7 +58369,7 @@ class CMsgProfileUpdate final :
                &_CMsgProfileUpdate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    275;
+    277;
 
   friend void swap(CMsgProfileUpdate& a, CMsgProfileUpdate& b) {
     a.Swap(&b);
@@ -58232,7 +58553,7 @@ class CMsgProfileUpdateResponse final :
                &_CMsgProfileUpdateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    276;
+    278;
 
   friend void swap(CMsgProfileUpdateResponse& a, CMsgProfileUpdateResponse& b) {
     a.Swap(&b);
@@ -58428,7 +58749,7 @@ class CMsgTalentWinRates final :
                &_CMsgTalentWinRates_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    277;
+    279;
 
   friend void swap(CMsgTalentWinRates& a, CMsgTalentWinRates& b) {
     a.Swap(&b);
@@ -58633,7 +58954,7 @@ class CMsgGlobalHeroAverages final :
                &_CMsgGlobalHeroAverages_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    278;
+    280;
 
   friend void swap(CMsgGlobalHeroAverages& a, CMsgGlobalHeroAverages& b) {
     a.Swap(&b);
@@ -58913,7 +59234,7 @@ class CMsgHeroGlobalDataRequest final :
                &_CMsgHeroGlobalDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    279;
+    281;
 
   friend void swap(CMsgHeroGlobalDataRequest& a, CMsgHeroGlobalDataRequest& b) {
     a.Swap(&b);
@@ -59073,7 +59394,7 @@ class CMsgHeroGlobalDataResponse_GraphData final :
                &_CMsgHeroGlobalDataResponse_GraphData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    280;
+    282;
 
   friend void swap(CMsgHeroGlobalDataResponse_GraphData& a, CMsgHeroGlobalDataResponse_GraphData& b) {
     a.Swap(&b);
@@ -59278,7 +59599,7 @@ class CMsgHeroGlobalDataResponse_WeekData final :
                &_CMsgHeroGlobalDataResponse_WeekData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    281;
+    283;
 
   friend void swap(CMsgHeroGlobalDataResponse_WeekData& a, CMsgHeroGlobalDataResponse_WeekData& b) {
     a.Swap(&b);
@@ -59483,7 +59804,7 @@ class CMsgHeroGlobalDataResponse_HeroDataPerRankChunk final :
                &_CMsgHeroGlobalDataResponse_HeroDataPerRankChunk_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    282;
+    284;
 
   friend void swap(CMsgHeroGlobalDataResponse_HeroDataPerRankChunk& a, CMsgHeroGlobalDataResponse_HeroDataPerRankChunk& b) {
     a.Swap(&b);
@@ -59723,7 +60044,7 @@ class CMsgHeroGlobalDataResponse final :
                &_CMsgHeroGlobalDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    283;
+    285;
 
   friend void swap(CMsgHeroGlobalDataResponse& a, CMsgHeroGlobalDataResponse& b) {
     a.Swap(&b);
@@ -59907,7 +60228,7 @@ class CMsgHeroGlobalDataAllHeroes final :
                &_CMsgHeroGlobalDataAllHeroes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    284;
+    286;
 
   friend void swap(CMsgHeroGlobalDataAllHeroes& a, CMsgHeroGlobalDataAllHeroes& b) {
     a.Swap(&b);
@@ -60071,7 +60392,7 @@ class CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData final :
                &_CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    285;
+    287;
 
   friend void swap(CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData& a, CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData& b) {
     a.Swap(&b);
@@ -60309,7 +60630,7 @@ class CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData final :
                &_CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    286;
+    288;
 
   friend void swap(CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData& a, CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData& b) {
     a.Swap(&b);
@@ -60489,7 +60810,7 @@ class CMsgHeroGlobalDataHeroesAlliesAndEnemies final :
                &_CMsgHeroGlobalDataHeroesAlliesAndEnemies_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    287;
+    289;
 
   friend void swap(CMsgHeroGlobalDataHeroesAlliesAndEnemies& a, CMsgHeroGlobalDataHeroesAlliesAndEnemies& b) {
     a.Swap(&b);
@@ -60656,7 +60977,7 @@ class CMsgPrivateMetadataKeyRequest final :
                &_CMsgPrivateMetadataKeyRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    288;
+    290;
 
   friend void swap(CMsgPrivateMetadataKeyRequest& a, CMsgPrivateMetadataKeyRequest& b) {
     a.Swap(&b);
@@ -60816,7 +61137,7 @@ class CMsgPrivateMetadataKeyResponse final :
                &_CMsgPrivateMetadataKeyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    289;
+    291;
 
   friend void swap(CMsgPrivateMetadataKeyResponse& a, CMsgPrivateMetadataKeyResponse& b) {
     a.Swap(&b);
@@ -60976,7 +61297,7 @@ class CMsgActivatePlusFreeTrialResponse final :
                &_CMsgActivatePlusFreeTrialResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    290;
+    292;
 
   friend void swap(CMsgActivatePlusFreeTrialResponse& a, CMsgActivatePlusFreeTrialResponse& b) {
     a.Swap(&b);
@@ -61172,7 +61493,7 @@ class CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo final :
                &_CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    291;
+    293;
 
   friend void swap(CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo& a, CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo& b) {
     a.Swap(&b);
@@ -61362,7 +61683,7 @@ class CMsgGCToClientCavernCrawlMapPathCompleted final :
                &_CMsgGCToClientCavernCrawlMapPathCompleted_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    292;
+    294;
 
   friend void swap(CMsgGCToClientCavernCrawlMapPathCompleted& a, CMsgGCToClientCavernCrawlMapPathCompleted& b) {
     a.Swap(&b);
@@ -61574,7 +61895,7 @@ class CMsgGCToClientCavernCrawlMapUpdated final :
                &_CMsgGCToClientCavernCrawlMapUpdated_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    293;
+    295;
 
   friend void swap(CMsgGCToClientCavernCrawlMapUpdated& a, CMsgGCToClientCavernCrawlMapUpdated& b) {
     a.Swap(&b);
@@ -61734,7 +62055,7 @@ class CMsgClientToGCCavernCrawlClaimRoom final :
                &_CMsgClientToGCCavernCrawlClaimRoom_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    294;
+    296;
 
   friend void swap(CMsgClientToGCCavernCrawlClaimRoom& a, CMsgClientToGCCavernCrawlClaimRoom& b) {
     a.Swap(&b);
@@ -61924,7 +62245,7 @@ class CMsgClientToGCCavernCrawlClaimRoomResponse final :
                &_CMsgClientToGCCavernCrawlClaimRoomResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    295;
+    297;
 
   friend void swap(CMsgClientToGCCavernCrawlClaimRoomResponse& a, CMsgClientToGCCavernCrawlClaimRoomResponse& b) {
     a.Swap(&b);
@@ -62116,7 +62437,7 @@ class CMsgClientToGCCavernCrawlUseItemOnRoom final :
                &_CMsgClientToGCCavernCrawlUseItemOnRoom_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    296;
+    298;
 
   friend void swap(CMsgClientToGCCavernCrawlUseItemOnRoom& a, CMsgClientToGCCavernCrawlUseItemOnRoom& b) {
     a.Swap(&b);
@@ -62321,7 +62642,7 @@ class CMsgClientToGCCavernCrawlUseItemOnRoomResponse final :
                &_CMsgClientToGCCavernCrawlUseItemOnRoomResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    297;
+    299;
 
   friend void swap(CMsgClientToGCCavernCrawlUseItemOnRoomResponse& a, CMsgClientToGCCavernCrawlUseItemOnRoomResponse& b) {
     a.Swap(&b);
@@ -62513,7 +62834,7 @@ class CMsgClientToGCCavernCrawlUseItemOnPath final :
                &_CMsgClientToGCCavernCrawlUseItemOnPath_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    298;
+    300;
 
   friend void swap(CMsgClientToGCCavernCrawlUseItemOnPath& a, CMsgClientToGCCavernCrawlUseItemOnPath& b) {
     a.Swap(&b);
@@ -62718,7 +63039,7 @@ class CMsgClientToGCCavernCrawlUseItemOnPathResponse final :
                &_CMsgClientToGCCavernCrawlUseItemOnPathResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    299;
+    301;
 
   friend void swap(CMsgClientToGCCavernCrawlUseItemOnPathResponse& a, CMsgClientToGCCavernCrawlUseItemOnPathResponse& b) {
     a.Swap(&b);
@@ -62910,7 +63231,7 @@ class CMsgClientToGCCavernCrawlRequestMapState final :
                &_CMsgClientToGCCavernCrawlRequestMapState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    300;
+    302;
 
   friend void swap(CMsgClientToGCCavernCrawlRequestMapState& a, CMsgClientToGCCavernCrawlRequestMapState& b) {
     a.Swap(&b);
@@ -63070,7 +63391,7 @@ class CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge final :
                &_CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    301;
+    303;
 
   friend void swap(CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge& a, CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge& b) {
     a.Swap(&b);
@@ -63245,7 +63566,7 @@ class CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem final :
                &_CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    302;
+    304;
 
   friend void swap(CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem& a, CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem& b) {
     a.Swap(&b);
@@ -63420,7 +63741,7 @@ class CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap final :
                &_CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    303;
+    305;
 
   friend void swap(CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap& a, CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap& b) {
     a.Swap(&b);
@@ -63595,7 +63916,7 @@ class CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant final :
                &_CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    304;
+    306;
 
   friend void swap(CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant& a, CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant& b) {
     a.Swap(&b);
@@ -63990,7 +64311,7 @@ class CMsgClientToGCCavernCrawlRequestMapStateResponse final :
                &_CMsgClientToGCCavernCrawlRequestMapStateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    305;
+    307;
 
   friend void swap(CMsgClientToGCCavernCrawlRequestMapStateResponse& a, CMsgClientToGCCavernCrawlRequestMapStateResponse& b) {
     a.Swap(&b);
@@ -64242,7 +64563,7 @@ class CMsgClientToGCCavernCrawlGetClaimedRoomCount final :
                &_CMsgClientToGCCavernCrawlGetClaimedRoomCount_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    306;
+    308;
 
   friend void swap(CMsgClientToGCCavernCrawlGetClaimedRoomCount& a, CMsgClientToGCCavernCrawlGetClaimedRoomCount& b) {
     a.Swap(&b);
@@ -64402,7 +64723,7 @@ class CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant final :
                &_CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    307;
+    309;
 
   friend void swap(CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant& a, CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant& b) {
     a.Swap(&b);
@@ -64577,7 +64898,7 @@ class CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse final :
                &_CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    308;
+    310;
 
   friend void swap(CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse& a, CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse& b) {
     a.Swap(&b);
@@ -64806,7 +65127,7 @@ class CMsgDOTAMutationList_Mutation final :
                &_CMsgDOTAMutationList_Mutation_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    309;
+    311;
 
   friend void swap(CMsgDOTAMutationList_Mutation& a, CMsgDOTAMutationList_Mutation& b) {
     a.Swap(&b);
@@ -65006,7 +65327,7 @@ class CMsgDOTAMutationList final :
                &_CMsgDOTAMutationList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    310;
+    312;
 
   friend void swap(CMsgDOTAMutationList& a, CMsgDOTAMutationList& b) {
     a.Swap(&b);
@@ -65172,7 +65493,7 @@ class CMsgEventTipsSummaryRequest final :
                &_CMsgEventTipsSummaryRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    311;
+    313;
 
   friend void swap(CMsgEventTipsSummaryRequest& a, CMsgEventTipsSummaryRequest& b) {
     a.Swap(&b);
@@ -65347,7 +65668,7 @@ class CMsgEventTipsSummaryResponse_Tipper final :
                &_CMsgEventTipsSummaryResponse_Tipper_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    312;
+    314;
 
   friend void swap(CMsgEventTipsSummaryResponse_Tipper& a, CMsgEventTipsSummaryResponse_Tipper& b) {
     a.Swap(&b);
@@ -65522,7 +65843,7 @@ class CMsgEventTipsSummaryResponse final :
                &_CMsgEventTipsSummaryResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    313;
+    315;
 
   friend void swap(CMsgEventTipsSummaryResponse& a, CMsgEventTipsSummaryResponse& b) {
     a.Swap(&b);
@@ -65704,7 +66025,7 @@ class CMsgSocialFeedRequest final :
                &_CMsgSocialFeedRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    314;
+    316;
 
   friend void swap(CMsgSocialFeedRequest& a, CMsgSocialFeedRequest& b) {
     a.Swap(&b);
@@ -65879,7 +66200,7 @@ class CMsgSocialFeedResponse_FeedEvent final :
                &_CMsgSocialFeedResponse_FeedEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    315;
+    317;
 
   friend void swap(CMsgSocialFeedResponse_FeedEvent& a, CMsgSocialFeedResponse_FeedEvent& b) {
     a.Swap(&b);
@@ -66194,7 +66515,7 @@ class CMsgSocialFeedResponse final :
                &_CMsgSocialFeedResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    316;
+    318;
 
   friend void swap(CMsgSocialFeedResponse& a, CMsgSocialFeedResponse& b) {
     a.Swap(&b);
@@ -66414,7 +66735,7 @@ class CMsgSocialFeedCommentsRequest final :
                &_CMsgSocialFeedCommentsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    317;
+    319;
 
   friend void swap(CMsgSocialFeedCommentsRequest& a, CMsgSocialFeedCommentsRequest& b) {
     a.Swap(&b);
@@ -66574,7 +66895,7 @@ class CMsgSocialFeedCommentsResponse_FeedComment final :
                &_CMsgSocialFeedCommentsResponse_FeedComment_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    318;
+    320;
 
   friend void swap(CMsgSocialFeedCommentsResponse_FeedComment& a, CMsgSocialFeedCommentsResponse_FeedComment& b) {
     a.Swap(&b);
@@ -66769,7 +67090,7 @@ class CMsgSocialFeedCommentsResponse final :
                &_CMsgSocialFeedCommentsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    319;
+    321;
 
   friend void swap(CMsgSocialFeedCommentsResponse& a, CMsgSocialFeedCommentsResponse& b) {
     a.Swap(&b);
@@ -66983,7 +67304,7 @@ class CMsgClientToGCPlayerCardSpecificPurchaseRequest final :
                &_CMsgClientToGCPlayerCardSpecificPurchaseRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    320;
+    322;
 
   friend void swap(CMsgClientToGCPlayerCardSpecificPurchaseRequest& a, CMsgClientToGCPlayerCardSpecificPurchaseRequest& b) {
     a.Swap(&b);
@@ -67173,7 +67494,7 @@ class CMsgClientToGCPlayerCardSpecificPurchaseResponse final :
                &_CMsgClientToGCPlayerCardSpecificPurchaseResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    321;
+    323;
 
   friend void swap(CMsgClientToGCPlayerCardSpecificPurchaseResponse& a, CMsgClientToGCPlayerCardSpecificPurchaseResponse& b) {
     a.Swap(&b);
@@ -67386,7 +67707,7 @@ class CMsgClientToGCRequestContestVotes final :
                &_CMsgClientToGCRequestContestVotes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    322;
+    324;
 
   friend void swap(CMsgClientToGCRequestContestVotes& a, CMsgClientToGCRequestContestVotes& b) {
     a.Swap(&b);
@@ -67546,7 +67867,7 @@ class CMsgClientToGCRequestContestVotesResponse_ItemVote final :
                &_CMsgClientToGCRequestContestVotesResponse_ItemVote_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    323;
+    325;
 
   friend void swap(CMsgClientToGCRequestContestVotesResponse_ItemVote& a, CMsgClientToGCRequestContestVotesResponse_ItemVote& b) {
     a.Swap(&b);
@@ -67721,7 +68042,7 @@ class CMsgClientToGCRequestContestVotesResponse final :
                &_CMsgClientToGCRequestContestVotesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    324;
+    326;
 
   friend void swap(CMsgClientToGCRequestContestVotesResponse& a, CMsgClientToGCRequestContestVotesResponse& b) {
     a.Swap(&b);
@@ -67937,7 +68258,7 @@ class CMsgClientToGCRecordContestVote final :
                &_CMsgClientToGCRecordContestVote_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    325;
+    327;
 
   friend void swap(CMsgClientToGCRecordContestVote& a, CMsgClientToGCRecordContestVote& b) {
     a.Swap(&b);
@@ -68127,7 +68448,7 @@ class CMsgGCToClientRecordContestVoteResponse final :
                &_CMsgGCToClientRecordContestVoteResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    326;
+    328;
 
   friend void swap(CMsgGCToClientRecordContestVoteResponse& a, CMsgGCToClientRecordContestVoteResponse& b) {
     a.Swap(&b);
@@ -68264,356 +68585,6 @@ class CMsgGCToClientRecordContestVoteResponse final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     int eresult_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_dota_5fgcmessages_5fclient_2eproto;
-};
-// -------------------------------------------------------------------
-
-class CMsgDevGrantEventPoints final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgDevGrantEventPoints) */ {
- public:
-  inline CMsgDevGrantEventPoints() : CMsgDevGrantEventPoints(nullptr) {}
-  ~CMsgDevGrantEventPoints() override;
-  explicit PROTOBUF_CONSTEXPR CMsgDevGrantEventPoints(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CMsgDevGrantEventPoints(const CMsgDevGrantEventPoints& from);
-  CMsgDevGrantEventPoints(CMsgDevGrantEventPoints&& from) noexcept
-    : CMsgDevGrantEventPoints() {
-    *this = ::std::move(from);
-  }
-
-  inline CMsgDevGrantEventPoints& operator=(const CMsgDevGrantEventPoints& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CMsgDevGrantEventPoints& operator=(CMsgDevGrantEventPoints&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CMsgDevGrantEventPoints& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CMsgDevGrantEventPoints* internal_default_instance() {
-    return reinterpret_cast<const CMsgDevGrantEventPoints*>(
-               &_CMsgDevGrantEventPoints_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    327;
-
-  friend void swap(CMsgDevGrantEventPoints& a, CMsgDevGrantEventPoints& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CMsgDevGrantEventPoints* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CMsgDevGrantEventPoints* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CMsgDevGrantEventPoints* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<CMsgDevGrantEventPoints>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CMsgDevGrantEventPoints& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const CMsgDevGrantEventPoints& from) {
-    CMsgDevGrantEventPoints::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(CMsgDevGrantEventPoints* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "CMsgDevGrantEventPoints";
-  }
-  protected:
-  explicit CMsgDevGrantEventPoints(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kEventIdFieldNumber = 1,
-    kEventPointsFieldNumber = 2,
-    kPremiumPointsFieldNumber = 3,
-  };
-  // optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
-  bool has_event_id() const;
-  private:
-  bool _internal_has_event_id() const;
-  public:
-  void clear_event_id();
-  ::EEvent event_id() const;
-  void set_event_id(::EEvent value);
-  private:
-  ::EEvent _internal_event_id() const;
-  void _internal_set_event_id(::EEvent value);
-  public:
-
-  // optional uint32 event_points = 2;
-  bool has_event_points() const;
-  private:
-  bool _internal_has_event_points() const;
-  public:
-  void clear_event_points();
-  uint32_t event_points() const;
-  void set_event_points(uint32_t value);
-  private:
-  uint32_t _internal_event_points() const;
-  void _internal_set_event_points(uint32_t value);
-  public:
-
-  // optional uint32 premium_points = 3;
-  bool has_premium_points() const;
-  private:
-  bool _internal_has_premium_points() const;
-  public:
-  void clear_premium_points();
-  uint32_t premium_points() const;
-  void set_premium_points(uint32_t value);
-  private:
-  uint32_t _internal_premium_points() const;
-  void _internal_set_premium_points(uint32_t value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:CMsgDevGrantEventPoints)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    int event_id_;
-    uint32_t event_points_;
-    uint32_t premium_points_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_dota_5fgcmessages_5fclient_2eproto;
-};
-// -------------------------------------------------------------------
-
-class CMsgDevGrantEventPointsResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgDevGrantEventPointsResponse) */ {
- public:
-  inline CMsgDevGrantEventPointsResponse() : CMsgDevGrantEventPointsResponse(nullptr) {}
-  ~CMsgDevGrantEventPointsResponse() override;
-  explicit PROTOBUF_CONSTEXPR CMsgDevGrantEventPointsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CMsgDevGrantEventPointsResponse(const CMsgDevGrantEventPointsResponse& from);
-  CMsgDevGrantEventPointsResponse(CMsgDevGrantEventPointsResponse&& from) noexcept
-    : CMsgDevGrantEventPointsResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline CMsgDevGrantEventPointsResponse& operator=(const CMsgDevGrantEventPointsResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CMsgDevGrantEventPointsResponse& operator=(CMsgDevGrantEventPointsResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CMsgDevGrantEventPointsResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CMsgDevGrantEventPointsResponse* internal_default_instance() {
-    return reinterpret_cast<const CMsgDevGrantEventPointsResponse*>(
-               &_CMsgDevGrantEventPointsResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    328;
-
-  friend void swap(CMsgDevGrantEventPointsResponse& a, CMsgDevGrantEventPointsResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CMsgDevGrantEventPointsResponse* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CMsgDevGrantEventPointsResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CMsgDevGrantEventPointsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<CMsgDevGrantEventPointsResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CMsgDevGrantEventPointsResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const CMsgDevGrantEventPointsResponse& from) {
-    CMsgDevGrantEventPointsResponse::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(CMsgDevGrantEventPointsResponse* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "CMsgDevGrantEventPointsResponse";
-  }
-  protected:
-  explicit CMsgDevGrantEventPointsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kResultFieldNumber = 1,
-  };
-  // optional .EDevEventRequestResult result = 1 [default = k_EDevEventRequestResult_Success];
-  bool has_result() const;
-  private:
-  bool _internal_has_result() const;
-  public:
-  void clear_result();
-  ::EDevEventRequestResult result() const;
-  void set_result(::EDevEventRequestResult value);
-  private:
-  ::EDevEventRequestResult _internal_result() const;
-  void _internal_set_result(::EDevEventRequestResult value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:CMsgDevGrantEventPointsResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    int result_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fgcmessages_5fclient_2eproto;
@@ -69335,626 +69306,6 @@ class CMsgDevDeleteEventActionsResponse final :
 };
 // -------------------------------------------------------------------
 
-class CMsgDevResetEventState final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgDevResetEventState) */ {
- public:
-  inline CMsgDevResetEventState() : CMsgDevResetEventState(nullptr) {}
-  ~CMsgDevResetEventState() override;
-  explicit PROTOBUF_CONSTEXPR CMsgDevResetEventState(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CMsgDevResetEventState(const CMsgDevResetEventState& from);
-  CMsgDevResetEventState(CMsgDevResetEventState&& from) noexcept
-    : CMsgDevResetEventState() {
-    *this = ::std::move(from);
-  }
-
-  inline CMsgDevResetEventState& operator=(const CMsgDevResetEventState& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CMsgDevResetEventState& operator=(CMsgDevResetEventState&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CMsgDevResetEventState& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CMsgDevResetEventState* internal_default_instance() {
-    return reinterpret_cast<const CMsgDevResetEventState*>(
-               &_CMsgDevResetEventState_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    333;
-
-  friend void swap(CMsgDevResetEventState& a, CMsgDevResetEventState& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CMsgDevResetEventState* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CMsgDevResetEventState* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CMsgDevResetEventState* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<CMsgDevResetEventState>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CMsgDevResetEventState& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const CMsgDevResetEventState& from) {
-    CMsgDevResetEventState::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(CMsgDevResetEventState* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "CMsgDevResetEventState";
-  }
-  protected:
-  explicit CMsgDevResetEventState(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kEventIdFieldNumber = 1,
-    kRemoveAuditFieldNumber = 2,
-  };
-  // optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
-  bool has_event_id() const;
-  private:
-  bool _internal_has_event_id() const;
-  public:
-  void clear_event_id();
-  ::EEvent event_id() const;
-  void set_event_id(::EEvent value);
-  private:
-  ::EEvent _internal_event_id() const;
-  void _internal_set_event_id(::EEvent value);
-  public:
-
-  // optional bool remove_audit = 2;
-  bool has_remove_audit() const;
-  private:
-  bool _internal_has_remove_audit() const;
-  public:
-  void clear_remove_audit();
-  bool remove_audit() const;
-  void set_remove_audit(bool value);
-  private:
-  bool _internal_remove_audit() const;
-  void _internal_set_remove_audit(bool value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:CMsgDevResetEventState)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    int event_id_;
-    bool remove_audit_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_dota_5fgcmessages_5fclient_2eproto;
-};
-// -------------------------------------------------------------------
-
-class CMsgDevResetEventStateResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgDevResetEventStateResponse) */ {
- public:
-  inline CMsgDevResetEventStateResponse() : CMsgDevResetEventStateResponse(nullptr) {}
-  ~CMsgDevResetEventStateResponse() override;
-  explicit PROTOBUF_CONSTEXPR CMsgDevResetEventStateResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CMsgDevResetEventStateResponse(const CMsgDevResetEventStateResponse& from);
-  CMsgDevResetEventStateResponse(CMsgDevResetEventStateResponse&& from) noexcept
-    : CMsgDevResetEventStateResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline CMsgDevResetEventStateResponse& operator=(const CMsgDevResetEventStateResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CMsgDevResetEventStateResponse& operator=(CMsgDevResetEventStateResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CMsgDevResetEventStateResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CMsgDevResetEventStateResponse* internal_default_instance() {
-    return reinterpret_cast<const CMsgDevResetEventStateResponse*>(
-               &_CMsgDevResetEventStateResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    334;
-
-  friend void swap(CMsgDevResetEventStateResponse& a, CMsgDevResetEventStateResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CMsgDevResetEventStateResponse* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CMsgDevResetEventStateResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CMsgDevResetEventStateResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<CMsgDevResetEventStateResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CMsgDevResetEventStateResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const CMsgDevResetEventStateResponse& from) {
-    CMsgDevResetEventStateResponse::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(CMsgDevResetEventStateResponse* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "CMsgDevResetEventStateResponse";
-  }
-  protected:
-  explicit CMsgDevResetEventStateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kResultFieldNumber = 1,
-  };
-  // optional .EDevEventRequestResult result = 1 [default = k_EDevEventRequestResult_Success];
-  bool has_result() const;
-  private:
-  bool _internal_has_result() const;
-  public:
-  void clear_result();
-  ::EDevEventRequestResult result() const;
-  void set_result(::EDevEventRequestResult value);
-  private:
-  ::EDevEventRequestResult _internal_result() const;
-  void _internal_set_result(::EDevEventRequestResult value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:CMsgDevResetEventStateResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    int result_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_dota_5fgcmessages_5fclient_2eproto;
-};
-// -------------------------------------------------------------------
-
-class CMsgDevReloadAllEvents final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:CMsgDevReloadAllEvents) */ {
- public:
-  inline CMsgDevReloadAllEvents() : CMsgDevReloadAllEvents(nullptr) {}
-  explicit PROTOBUF_CONSTEXPR CMsgDevReloadAllEvents(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CMsgDevReloadAllEvents(const CMsgDevReloadAllEvents& from);
-  CMsgDevReloadAllEvents(CMsgDevReloadAllEvents&& from) noexcept
-    : CMsgDevReloadAllEvents() {
-    *this = ::std::move(from);
-  }
-
-  inline CMsgDevReloadAllEvents& operator=(const CMsgDevReloadAllEvents& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CMsgDevReloadAllEvents& operator=(CMsgDevReloadAllEvents&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CMsgDevReloadAllEvents& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CMsgDevReloadAllEvents* internal_default_instance() {
-    return reinterpret_cast<const CMsgDevReloadAllEvents*>(
-               &_CMsgDevReloadAllEvents_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    335;
-
-  friend void swap(CMsgDevReloadAllEvents& a, CMsgDevReloadAllEvents& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CMsgDevReloadAllEvents* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CMsgDevReloadAllEvents* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CMsgDevReloadAllEvents* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<CMsgDevReloadAllEvents>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const CMsgDevReloadAllEvents& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const CMsgDevReloadAllEvents& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
-  }
-  public:
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "CMsgDevReloadAllEvents";
-  }
-  protected:
-  explicit CMsgDevReloadAllEvents(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:CMsgDevReloadAllEvents)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-  };
-  friend struct ::TableStruct_dota_5fgcmessages_5fclient_2eproto;
-};
-// -------------------------------------------------------------------
-
-class CMsgDevReloadAllEventsResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgDevReloadAllEventsResponse) */ {
- public:
-  inline CMsgDevReloadAllEventsResponse() : CMsgDevReloadAllEventsResponse(nullptr) {}
-  ~CMsgDevReloadAllEventsResponse() override;
-  explicit PROTOBUF_CONSTEXPR CMsgDevReloadAllEventsResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CMsgDevReloadAllEventsResponse(const CMsgDevReloadAllEventsResponse& from);
-  CMsgDevReloadAllEventsResponse(CMsgDevReloadAllEventsResponse&& from) noexcept
-    : CMsgDevReloadAllEventsResponse() {
-    *this = ::std::move(from);
-  }
-
-  inline CMsgDevReloadAllEventsResponse& operator=(const CMsgDevReloadAllEventsResponse& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CMsgDevReloadAllEventsResponse& operator=(CMsgDevReloadAllEventsResponse&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CMsgDevReloadAllEventsResponse& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CMsgDevReloadAllEventsResponse* internal_default_instance() {
-    return reinterpret_cast<const CMsgDevReloadAllEventsResponse*>(
-               &_CMsgDevReloadAllEventsResponse_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    336;
-
-  friend void swap(CMsgDevReloadAllEventsResponse& a, CMsgDevReloadAllEventsResponse& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CMsgDevReloadAllEventsResponse* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CMsgDevReloadAllEventsResponse* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CMsgDevReloadAllEventsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<CMsgDevReloadAllEventsResponse>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CMsgDevReloadAllEventsResponse& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const CMsgDevReloadAllEventsResponse& from) {
-    CMsgDevReloadAllEventsResponse::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(CMsgDevReloadAllEventsResponse* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "CMsgDevReloadAllEventsResponse";
-  }
-  protected:
-  explicit CMsgDevReloadAllEventsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kResultFieldNumber = 1,
-  };
-  // optional .EDevEventRequestResult result = 1 [default = k_EDevEventRequestResult_Success];
-  bool has_result() const;
-  private:
-  bool _internal_has_result() const;
-  public:
-  void clear_result();
-  ::EDevEventRequestResult result() const;
-  void set_result(::EDevEventRequestResult value);
-  private:
-  ::EDevEventRequestResult _internal_result() const;
-  void _internal_set_result(::EDevEventRequestResult value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:CMsgDevReloadAllEventsResponse)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    int result_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_dota_5fgcmessages_5fclient_2eproto;
-};
-// -------------------------------------------------------------------
-
 class CMsgConsumeEventSupportGrantItem final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgConsumeEventSupportGrantItem) */ {
  public:
@@ -70010,7 +69361,7 @@ class CMsgConsumeEventSupportGrantItem final :
                &_CMsgConsumeEventSupportGrantItem_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    337;
+    333;
 
   friend void swap(CMsgConsumeEventSupportGrantItem& a, CMsgConsumeEventSupportGrantItem& b) {
     a.Swap(&b);
@@ -70170,7 +69521,7 @@ class CMsgConsumeEventSupportGrantItemResponse final :
                &_CMsgConsumeEventSupportGrantItemResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    338;
+    334;
 
   friend void swap(CMsgConsumeEventSupportGrantItemResponse& a, CMsgConsumeEventSupportGrantItemResponse& b) {
     a.Swap(&b);
@@ -70329,7 +69680,7 @@ class CMsgClientToGCGetFilteredPlayers final :
                &_CMsgClientToGCGetFilteredPlayers_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    339;
+    335;
 
   friend void swap(CMsgClientToGCGetFilteredPlayers& a, CMsgClientToGCGetFilteredPlayers& b) {
     a.Swap(&b);
@@ -70455,7 +69806,7 @@ class CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry final :
                &_CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    340;
+    336;
 
   friend void swap(CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry& a, CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry& b) {
     a.Swap(&b);
@@ -70665,7 +70016,7 @@ class CMsgGCToClientGetFilteredPlayersResponse final :
                &_CMsgGCToClientGetFilteredPlayersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    341;
+    337;
 
   friend void swap(CMsgGCToClientGetFilteredPlayersResponse& a, CMsgGCToClientGetFilteredPlayersResponse& b) {
     a.Swap(&b);
@@ -70922,7 +70273,7 @@ class CMsgClientToGCRemoveFilteredPlayer final :
                &_CMsgClientToGCRemoveFilteredPlayer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    342;
+    338;
 
   friend void swap(CMsgClientToGCRemoveFilteredPlayer& a, CMsgClientToGCRemoveFilteredPlayer& b) {
     a.Swap(&b);
@@ -71082,7 +70433,7 @@ class CMsgGCToClientRemoveFilteredPlayerResponse final :
                &_CMsgGCToClientRemoveFilteredPlayerResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    343;
+    339;
 
   friend void swap(CMsgGCToClientRemoveFilteredPlayerResponse& a, CMsgGCToClientRemoveFilteredPlayerResponse& b) {
     a.Swap(&b);
@@ -71272,7 +70623,7 @@ class CMsgClientToGCPurchaseFilteredPlayerSlot final :
                &_CMsgClientToGCPurchaseFilteredPlayerSlot_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    344;
+    340;
 
   friend void swap(CMsgClientToGCPurchaseFilteredPlayerSlot& a, CMsgClientToGCPurchaseFilteredPlayerSlot& b) {
     a.Swap(&b);
@@ -71432,7 +70783,7 @@ class CMsgGCToClientPurchaseFilteredPlayerSlotResponse final :
                &_CMsgGCToClientPurchaseFilteredPlayerSlotResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    345;
+    341;
 
   friend void swap(CMsgGCToClientPurchaseFilteredPlayerSlotResponse& a, CMsgGCToClientPurchaseFilteredPlayerSlotResponse& b) {
     a.Swap(&b);
@@ -71656,7 +71007,7 @@ class CMsgClientToGCUpdateFilteredPlayerNote final :
                &_CMsgClientToGCUpdateFilteredPlayerNote_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    346;
+    342;
 
   friend void swap(CMsgClientToGCUpdateFilteredPlayerNote& a, CMsgClientToGCUpdateFilteredPlayerNote& b) {
     a.Swap(&b);
@@ -71836,7 +71187,7 @@ class CMsgGCToClientUpdateFilteredPlayerNoteResponse final :
                &_CMsgGCToClientUpdateFilteredPlayerNoteResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    347;
+    343;
 
   friend void swap(CMsgGCToClientUpdateFilteredPlayerNoteResponse& a, CMsgGCToClientUpdateFilteredPlayerNoteResponse& b) {
     a.Swap(&b);
@@ -72028,7 +71379,7 @@ class CMsgPartySearchPlayer final :
                &_CMsgPartySearchPlayer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    348;
+    344;
 
   friend void swap(CMsgPartySearchPlayer& a, CMsgPartySearchPlayer& b) {
     a.Swap(&b);
@@ -72218,7 +71569,7 @@ class CMsgGCToClientPlayerBeaconState final :
                &_CMsgGCToClientPlayerBeaconState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    349;
+    345;
 
   friend void swap(CMsgGCToClientPlayerBeaconState& a, CMsgGCToClientPlayerBeaconState& b) {
     a.Swap(&b);
@@ -72386,7 +71737,7 @@ class CMsgGCToClientPartyBeaconUpdate final :
                &_CMsgGCToClientPartyBeaconUpdate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    350;
+    346;
 
   friend void swap(CMsgGCToClientPartyBeaconUpdate& a, CMsgGCToClientPartyBeaconUpdate& b) {
     a.Swap(&b);
@@ -72576,7 +71927,7 @@ class CMsgClientToGCUpdatePartyBeacon final :
                &_CMsgClientToGCUpdatePartyBeacon_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    351;
+    347;
 
   friend void swap(CMsgClientToGCUpdatePartyBeacon& a, CMsgClientToGCUpdatePartyBeacon& b) {
     a.Swap(&b);
@@ -72765,7 +72116,7 @@ class CMsgClientToGCRequestActiveBeaconParties final :
                &_CMsgClientToGCRequestActiveBeaconParties_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    352;
+    348;
 
   friend void swap(CMsgClientToGCRequestActiveBeaconParties& a, CMsgClientToGCRequestActiveBeaconParties& b) {
     a.Swap(&b);
@@ -72891,7 +72242,7 @@ class CMsgGCToClientRequestActiveBeaconPartiesResponse final :
                &_CMsgGCToClientRequestActiveBeaconPartiesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    353;
+    349;
 
   friend void swap(CMsgGCToClientRequestActiveBeaconPartiesResponse& a, CMsgGCToClientRequestActiveBeaconPartiesResponse& b) {
     a.Swap(&b);
@@ -73103,7 +72454,7 @@ class CMsgClientToGCJoinPartyFromBeacon final :
                &_CMsgClientToGCJoinPartyFromBeacon_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    354;
+    350;
 
   friend void swap(CMsgClientToGCJoinPartyFromBeacon& a, CMsgClientToGCJoinPartyFromBeacon& b) {
     a.Swap(&b);
@@ -73293,7 +72644,7 @@ class CMsgGCToClientJoinPartyFromBeaconResponse final :
                &_CMsgGCToClientJoinPartyFromBeaconResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    355;
+    351;
 
   friend void swap(CMsgGCToClientJoinPartyFromBeaconResponse& a, CMsgGCToClientJoinPartyFromBeaconResponse& b) {
     a.Swap(&b);
@@ -73487,7 +72838,7 @@ class CMsgClientToGCManageFavorites final :
                &_CMsgClientToGCManageFavorites_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    356;
+    352;
 
   friend void swap(CMsgClientToGCManageFavorites& a, CMsgClientToGCManageFavorites& b) {
     a.Swap(&b);
@@ -73757,7 +73108,7 @@ class CMsgGCToClientManageFavoritesResponse final :
                &_CMsgGCToClientManageFavoritesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    357;
+    353;
 
   friend void swap(CMsgGCToClientManageFavoritesResponse& a, CMsgGCToClientManageFavoritesResponse& b) {
     a.Swap(&b);
@@ -73995,7 +73346,7 @@ class CMsgClientToGCGetFavoritePlayers final :
                &_CMsgClientToGCGetFavoritePlayers_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    358;
+    354;
 
   friend void swap(CMsgClientToGCGetFavoritePlayers& a, CMsgClientToGCGetFavoritePlayers& b) {
     a.Swap(&b);
@@ -74170,7 +73521,7 @@ class CMsgGCToClientGetFavoritePlayersResponse final :
                &_CMsgGCToClientGetFavoritePlayersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    359;
+    355;
 
   friend void swap(CMsgGCToClientGetFavoritePlayersResponse& a, CMsgGCToClientGetFavoritePlayersResponse& b) {
     a.Swap(&b);
@@ -74395,7 +73746,7 @@ class CMsgGCToClientPartySearchInvite final :
                &_CMsgGCToClientPartySearchInvite_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    360;
+    356;
 
   friend void swap(CMsgGCToClientPartySearchInvite& a, CMsgGCToClientPartySearchInvite& b) {
     a.Swap(&b);
@@ -74555,7 +73906,7 @@ class CMsgClientToGCVerifyFavoritePlayers final :
                &_CMsgClientToGCVerifyFavoritePlayers_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    361;
+    357;
 
   friend void swap(CMsgClientToGCVerifyFavoritePlayers& a, CMsgClientToGCVerifyFavoritePlayers& b) {
     a.Swap(&b);
@@ -74723,7 +74074,7 @@ class CMsgGCToClientVerifyFavoritePlayersResponse_Result final :
                &_CMsgGCToClientVerifyFavoritePlayersResponse_Result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    362;
+    358;
 
   friend void swap(CMsgGCToClientVerifyFavoritePlayersResponse_Result& a, CMsgGCToClientVerifyFavoritePlayersResponse_Result& b) {
     a.Swap(&b);
@@ -74903,7 +74254,7 @@ class CMsgGCToClientVerifyFavoritePlayersResponse final :
                &_CMsgGCToClientVerifyFavoritePlayersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    363;
+    359;
 
   friend void swap(CMsgGCToClientVerifyFavoritePlayersResponse& a, CMsgGCToClientVerifyFavoritePlayersResponse& b) {
     a.Swap(&b);
@@ -75069,7 +74420,7 @@ class CMsgClientToGCRequestPlayerRecentAccomplishments final :
                &_CMsgClientToGCRequestPlayerRecentAccomplishments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    364;
+    360;
 
   friend void swap(CMsgClientToGCRequestPlayerRecentAccomplishments& a, CMsgClientToGCRequestPlayerRecentAccomplishments& b) {
     a.Swap(&b);
@@ -75229,7 +74580,7 @@ class CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse final :
                &_CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    365;
+    361;
 
   friend void swap(CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse& a, CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse& b) {
     a.Swap(&b);
@@ -75443,7 +74794,7 @@ class CMsgClientToGCRequestPlayerHeroRecentAccomplishments final :
                &_CMsgClientToGCRequestPlayerHeroRecentAccomplishments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    366;
+    362;
 
   friend void swap(CMsgClientToGCRequestPlayerHeroRecentAccomplishments& a, CMsgClientToGCRequestPlayerHeroRecentAccomplishments& b) {
     a.Swap(&b);
@@ -75618,7 +74969,7 @@ class CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse final :
                &_CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    367;
+    363;
 
   friend void swap(CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse& a, CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse& b) {
     a.Swap(&b);
@@ -75832,7 +75183,7 @@ class CMsgClientToGCSubmitPlayerMatchSurvey final :
                &_CMsgClientToGCSubmitPlayerMatchSurvey_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    368;
+    364;
 
   friend void swap(CMsgClientToGCSubmitPlayerMatchSurvey& a, CMsgClientToGCSubmitPlayerMatchSurvey& b) {
     a.Swap(&b);
@@ -76022,7 +75373,7 @@ class CMsgClientToGCSubmitPlayerMatchSurveyResponse final :
                &_CMsgClientToGCSubmitPlayerMatchSurveyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    369;
+    365;
 
   friend void swap(CMsgClientToGCSubmitPlayerMatchSurveyResponse& a, CMsgClientToGCSubmitPlayerMatchSurveyResponse& b) {
     a.Swap(&b);
@@ -76234,7 +75585,7 @@ class CMsgGCToClientVACReminder final :
                &_CMsgGCToClientVACReminder_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    370;
+    366;
 
   friend void swap(CMsgGCToClientVACReminder& a, CMsgGCToClientVACReminder& b) {
     a.Swap(&b);
@@ -76360,7 +75711,7 @@ class CMsgClientToGCUnderDraftRequest final :
                &_CMsgClientToGCUnderDraftRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    371;
+    367;
 
   friend void swap(CMsgClientToGCUnderDraftRequest& a, CMsgClientToGCUnderDraftRequest& b) {
     a.Swap(&b);
@@ -76535,7 +75886,7 @@ class CMsgClientToGCUnderDraftResponse final :
                &_CMsgClientToGCUnderDraftResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    372;
+    368;
 
   friend void swap(CMsgClientToGCUnderDraftResponse& a, CMsgClientToGCUnderDraftResponse& b) {
     a.Swap(&b);
@@ -76745,7 +76096,7 @@ class CMsgClientToGCUnderDraftReroll final :
                &_CMsgClientToGCUnderDraftReroll_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    373;
+    369;
 
   friend void swap(CMsgClientToGCUnderDraftReroll& a, CMsgClientToGCUnderDraftReroll& b) {
     a.Swap(&b);
@@ -76905,7 +76256,7 @@ class CMsgClientToGCUnderDraftRerollResponse final :
                &_CMsgClientToGCUnderDraftRerollResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    374;
+    370;
 
   friend void swap(CMsgClientToGCUnderDraftRerollResponse& a, CMsgClientToGCUnderDraftRerollResponse& b) {
     a.Swap(&b);
@@ -77100,7 +76451,7 @@ class CMsgClientToGCUnderDraftBuy final :
                &_CMsgClientToGCUnderDraftBuy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    375;
+    371;
 
   friend void swap(CMsgClientToGCUnderDraftBuy& a, CMsgClientToGCUnderDraftBuy& b) {
     a.Swap(&b);
@@ -77275,7 +76626,7 @@ class CMsgGCToClientGuildUnderDraftGoldUpdated final :
                &_CMsgGCToClientGuildUnderDraftGoldUpdated_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    376;
+    372;
 
   friend void swap(CMsgGCToClientGuildUnderDraftGoldUpdated& a, CMsgGCToClientGuildUnderDraftGoldUpdated& b) {
     a.Swap(&b);
@@ -77435,7 +76786,7 @@ class CMsgClientToGCUnderDraftBuyResponse final :
                &_CMsgClientToGCUnderDraftBuyResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    377;
+    373;
 
   friend void swap(CMsgClientToGCUnderDraftBuyResponse& a, CMsgClientToGCUnderDraftBuyResponse& b) {
     a.Swap(&b);
@@ -77645,7 +76996,7 @@ class CMsgClientToGCUnderDraftRollBackBench final :
                &_CMsgClientToGCUnderDraftRollBackBench_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    378;
+    374;
 
   friend void swap(CMsgClientToGCUnderDraftRollBackBench& a, CMsgClientToGCUnderDraftRollBackBench& b) {
     a.Swap(&b);
@@ -77805,7 +77156,7 @@ class CMsgClientToGCUnderDraftRollBackBenchResponse final :
                &_CMsgClientToGCUnderDraftRollBackBenchResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    379;
+    375;
 
   friend void swap(CMsgClientToGCUnderDraftRollBackBenchResponse& a, CMsgClientToGCUnderDraftRollBackBenchResponse& b) {
     a.Swap(&b);
@@ -78000,7 +77351,7 @@ class CMsgClientToGCUnderDraftSell final :
                &_CMsgClientToGCUnderDraftSell_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    380;
+    376;
 
   friend void swap(CMsgClientToGCUnderDraftSell& a, CMsgClientToGCUnderDraftSell& b) {
     a.Swap(&b);
@@ -78175,7 +77526,7 @@ class CMsgClientToGCUnderDraftSellResponse final :
                &_CMsgClientToGCUnderDraftSellResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    381;
+    377;
 
   friend void swap(CMsgClientToGCUnderDraftSellResponse& a, CMsgClientToGCUnderDraftSellResponse& b) {
     a.Swap(&b);
@@ -78385,7 +77736,7 @@ class CMsgClientToGCUnderDraftRedeemReward final :
                &_CMsgClientToGCUnderDraftRedeemReward_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    382;
+    378;
 
   friend void swap(CMsgClientToGCUnderDraftRedeemReward& a, CMsgClientToGCUnderDraftRedeemReward& b) {
     a.Swap(&b);
@@ -78560,7 +77911,7 @@ class CMsgClientToGCUnderDraftRedeemRewardResponse final :
                &_CMsgClientToGCUnderDraftRedeemRewardResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    383;
+    379;
 
   friend void swap(CMsgClientToGCUnderDraftRedeemRewardResponse& a, CMsgClientToGCUnderDraftRedeemRewardResponse& b) {
     a.Swap(&b);
@@ -78720,7 +78071,7 @@ class CMsgClientToGCSubmitDraftTriviaMatchAnswer final :
                &_CMsgClientToGCSubmitDraftTriviaMatchAnswer_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    384;
+    380;
 
   friend void swap(CMsgClientToGCSubmitDraftTriviaMatchAnswer& a, CMsgClientToGCSubmitDraftTriviaMatchAnswer& b) {
     a.Swap(&b);
@@ -78910,7 +78261,7 @@ class CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse final :
                &_CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    385;
+    381;
 
   friend void swap(CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse& a, CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse& b) {
     a.Swap(&b);
@@ -79070,7 +78421,7 @@ class CMsgDraftTriviaVoteCount final :
                &_CMsgDraftTriviaVoteCount_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    386;
+    382;
 
   friend void swap(CMsgDraftTriviaVoteCount& a, CMsgDraftTriviaVoteCount& b) {
     a.Swap(&b);
@@ -79259,7 +78610,7 @@ class CMsgClientToGCRequestReporterUpdates final :
                &_CMsgClientToGCRequestReporterUpdates_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    387;
+    383;
 
   friend void swap(CMsgClientToGCRequestReporterUpdates& a, CMsgClientToGCRequestReporterUpdates& b) {
     a.Swap(&b);
@@ -79385,7 +78736,7 @@ class CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate final :
                &_CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    388;
+    384;
 
   friend void swap(CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate& a, CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate& b) {
     a.Swap(&b);
@@ -79590,7 +78941,7 @@ class CMsgClientToGCRequestReporterUpdatesResponse final :
                &_CMsgClientToGCRequestReporterUpdatesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    389;
+    385;
 
   friend void swap(CMsgClientToGCRequestReporterUpdatesResponse& a, CMsgClientToGCRequestReporterUpdatesResponse& b) {
     a.Swap(&b);
@@ -79842,7 +79193,7 @@ class CMsgClientToGCAcknowledgeReporterUpdates final :
                &_CMsgClientToGCAcknowledgeReporterUpdates_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    390;
+    386;
 
   friend void swap(CMsgClientToGCAcknowledgeReporterUpdates& a, CMsgClientToGCAcknowledgeReporterUpdates& b) {
     a.Swap(&b);
@@ -80009,7 +79360,7 @@ class CMsgClientToGCRecalibrateMMR final :
                &_CMsgClientToGCRecalibrateMMR_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    391;
+    387;
 
   friend void swap(CMsgClientToGCRecalibrateMMR& a, CMsgClientToGCRecalibrateMMR& b) {
     a.Swap(&b);
@@ -80135,7 +79486,7 @@ class CMsgClientToGCRecalibrateMMRResponse final :
                &_CMsgClientToGCRecalibrateMMRResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    392;
+    388;
 
   friend void swap(CMsgClientToGCRecalibrateMMRResponse& a, CMsgClientToGCRecalibrateMMRResponse& b) {
     a.Swap(&b);
@@ -80280,205 +79631,6 @@ class CMsgClientToGCRecalibrateMMRResponse final :
 };
 // -------------------------------------------------------------------
 
-class CMsgDOTAPostGameItemAwardNotification final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgDOTAPostGameItemAwardNotification) */ {
- public:
-  inline CMsgDOTAPostGameItemAwardNotification() : CMsgDOTAPostGameItemAwardNotification(nullptr) {}
-  ~CMsgDOTAPostGameItemAwardNotification() override;
-  explicit PROTOBUF_CONSTEXPR CMsgDOTAPostGameItemAwardNotification(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  CMsgDOTAPostGameItemAwardNotification(const CMsgDOTAPostGameItemAwardNotification& from);
-  CMsgDOTAPostGameItemAwardNotification(CMsgDOTAPostGameItemAwardNotification&& from) noexcept
-    : CMsgDOTAPostGameItemAwardNotification() {
-    *this = ::std::move(from);
-  }
-
-  inline CMsgDOTAPostGameItemAwardNotification& operator=(const CMsgDOTAPostGameItemAwardNotification& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CMsgDOTAPostGameItemAwardNotification& operator=(CMsgDOTAPostGameItemAwardNotification&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
-  }
-  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CMsgDOTAPostGameItemAwardNotification& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const CMsgDOTAPostGameItemAwardNotification* internal_default_instance() {
-    return reinterpret_cast<const CMsgDOTAPostGameItemAwardNotification*>(
-               &_CMsgDOTAPostGameItemAwardNotification_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    393;
-
-  friend void swap(CMsgDOTAPostGameItemAwardNotification& a, CMsgDOTAPostGameItemAwardNotification& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(CMsgDOTAPostGameItemAwardNotification* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CMsgDOTAPostGameItemAwardNotification* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CMsgDOTAPostGameItemAwardNotification* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<CMsgDOTAPostGameItemAwardNotification>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const CMsgDOTAPostGameItemAwardNotification& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom( const CMsgDOTAPostGameItemAwardNotification& from) {
-    CMsgDOTAPostGameItemAwardNotification::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(CMsgDOTAPostGameItemAwardNotification* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "CMsgDOTAPostGameItemAwardNotification";
-  }
-  protected:
-  explicit CMsgDOTAPostGameItemAwardNotification(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kItemDefIndexFieldNumber = 2,
-    kReceiverAccountIdFieldNumber = 1,
-    kActionIdFieldNumber = 3,
-  };
-  // repeated uint32 item_def_index = 2;
-  int item_def_index_size() const;
-  private:
-  int _internal_item_def_index_size() const;
-  public:
-  void clear_item_def_index();
-  private:
-  uint32_t _internal_item_def_index(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
-      _internal_item_def_index() const;
-  void _internal_add_item_def_index(uint32_t value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
-      _internal_mutable_item_def_index();
-  public:
-  uint32_t item_def_index(int index) const;
-  void set_item_def_index(int index, uint32_t value);
-  void add_item_def_index(uint32_t value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
-      item_def_index() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
-      mutable_item_def_index();
-
-  // optional uint32 receiver_account_id = 1;
-  bool has_receiver_account_id() const;
-  private:
-  bool _internal_has_receiver_account_id() const;
-  public:
-  void clear_receiver_account_id();
-  uint32_t receiver_account_id() const;
-  void set_receiver_account_id(uint32_t value);
-  private:
-  uint32_t _internal_receiver_account_id() const;
-  void _internal_set_receiver_account_id(uint32_t value);
-  public:
-
-  // optional uint32 action_id = 3;
-  bool has_action_id() const;
-  private:
-  bool _internal_has_action_id() const;
-  public:
-  void clear_action_id();
-  uint32_t action_id() const;
-  void set_action_id(uint32_t value);
-  private:
-  uint32_t _internal_action_id() const;
-  void _internal_set_action_id(uint32_t value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:CMsgDOTAPostGameItemAwardNotification)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t > item_def_index_;
-    uint32_t receiver_account_id_;
-    uint32_t action_id_;
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_dota_5fgcmessages_5fclient_2eproto;
-};
-// -------------------------------------------------------------------
-
 class CMsgClientToGCGetOWMatchDetails final :
     public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:CMsgClientToGCGetOWMatchDetails) */ {
  public:
@@ -80533,7 +79685,7 @@ class CMsgClientToGCGetOWMatchDetails final :
                &_CMsgClientToGCGetOWMatchDetails_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    394;
+    389;
 
   friend void swap(CMsgClientToGCGetOWMatchDetails& a, CMsgClientToGCGetOWMatchDetails& b) {
     a.Swap(&b);
@@ -80659,7 +79811,7 @@ class CMsgClientToGCGetOWMatchDetailsResponse_Marker final :
                &_CMsgClientToGCGetOWMatchDetailsResponse_Marker_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    395;
+    390;
 
   friend void swap(CMsgClientToGCGetOWMatchDetailsResponse_Marker& a, CMsgClientToGCGetOWMatchDetailsResponse_Marker& b) {
     a.Swap(&b);
@@ -80834,7 +79986,7 @@ class CMsgClientToGCGetOWMatchDetailsResponse final :
                &_CMsgClientToGCGetOWMatchDetailsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    396;
+    391;
 
   friend void swap(CMsgClientToGCGetOWMatchDetailsResponse& a, CMsgClientToGCGetOWMatchDetailsResponse& b) {
     a.Swap(&b);
@@ -81189,7 +80341,7 @@ class CMsgClientToGCSubmitOWConviction final :
                &_CMsgClientToGCSubmitOWConviction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    397;
+    392;
 
   friend void swap(CMsgClientToGCSubmitOWConviction& a, CMsgClientToGCSubmitOWConviction& b) {
     a.Swap(&b);
@@ -81394,7 +80546,7 @@ class CMsgClientToGCSubmitOWConvictionResponse final :
                &_CMsgClientToGCSubmitOWConvictionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    398;
+    393;
 
   friend void swap(CMsgClientToGCSubmitOWConvictionResponse& a, CMsgClientToGCSubmitOWConvictionResponse& b) {
     a.Swap(&b);
@@ -81610,7 +80762,7 @@ class CMsgClientToGCChinaSSAURLRequest final :
                &_CMsgClientToGCChinaSSAURLRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    399;
+    394;
 
   friend void swap(CMsgClientToGCChinaSSAURLRequest& a, CMsgClientToGCChinaSSAURLRequest& b) {
     a.Swap(&b);
@@ -81736,7 +80888,7 @@ class CMsgClientToGCChinaSSAURLResponse final :
                &_CMsgClientToGCChinaSSAURLResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    400;
+    395;
 
   friend void swap(CMsgClientToGCChinaSSAURLResponse& a, CMsgClientToGCChinaSSAURLResponse& b) {
     a.Swap(&b);
@@ -81900,7 +81052,7 @@ class CMsgClientToGCChinaSSAAcceptedRequest final :
                &_CMsgClientToGCChinaSSAAcceptedRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    401;
+    396;
 
   friend void swap(CMsgClientToGCChinaSSAAcceptedRequest& a, CMsgClientToGCChinaSSAAcceptedRequest& b) {
     a.Swap(&b);
@@ -82026,7 +81178,7 @@ class CMsgClientToGCChinaSSAAcceptedResponse final :
                &_CMsgClientToGCChinaSSAAcceptedResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    402;
+    397;
 
   friend void swap(CMsgClientToGCChinaSSAAcceptedResponse& a, CMsgClientToGCChinaSSAAcceptedResponse& b) {
     a.Swap(&b);
@@ -82186,7 +81338,7 @@ class CMsgGCToClientOverwatchCasesAvailable final :
                &_CMsgGCToClientOverwatchCasesAvailable_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    403;
+    398;
 
   friend void swap(CMsgGCToClientOverwatchCasesAvailable& a, CMsgGCToClientOverwatchCasesAvailable& b) {
     a.Swap(&b);
@@ -82346,7 +81498,7 @@ class CMsgClientToGCStartWatchingOverwatch final :
                &_CMsgClientToGCStartWatchingOverwatch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    404;
+    399;
 
   friend void swap(CMsgClientToGCStartWatchingOverwatch& a, CMsgClientToGCStartWatchingOverwatch& b) {
     a.Swap(&b);
@@ -82521,7 +81673,7 @@ class CMsgClientToGCStopWatchingOverwatch final :
                &_CMsgClientToGCStopWatchingOverwatch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    405;
+    400;
 
   friend void swap(CMsgClientToGCStopWatchingOverwatch& a, CMsgClientToGCStopWatchingOverwatch& b) {
     a.Swap(&b);
@@ -82696,7 +81848,7 @@ class CMsgClientToGCOverwatchReplayError final :
                &_CMsgClientToGCOverwatchReplayError_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    406;
+    401;
 
   friend void swap(CMsgClientToGCOverwatchReplayError& a, CMsgClientToGCOverwatchReplayError& b) {
     a.Swap(&b);
@@ -82855,7 +82007,7 @@ class CMsgClientToGCGetDPCFavorites final :
                &_CMsgClientToGCGetDPCFavorites_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    407;
+    402;
 
   friend void swap(CMsgClientToGCGetDPCFavorites& a, CMsgClientToGCGetDPCFavorites& b) {
     a.Swap(&b);
@@ -82981,7 +82133,7 @@ class CMsgClientToGCGetDPCFavoritesResponse_Favorite final :
                &_CMsgClientToGCGetDPCFavoritesResponse_Favorite_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    408;
+    403;
 
   friend void swap(CMsgClientToGCGetDPCFavoritesResponse_Favorite& a, CMsgClientToGCGetDPCFavoritesResponse_Favorite& b) {
     a.Swap(&b);
@@ -83156,7 +82308,7 @@ class CMsgClientToGCGetDPCFavoritesResponse final :
                &_CMsgClientToGCGetDPCFavoritesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    409;
+    404;
 
   friend void swap(CMsgClientToGCGetDPCFavoritesResponse& a, CMsgClientToGCGetDPCFavoritesResponse& b) {
     a.Swap(&b);
@@ -83376,7 +82528,7 @@ class CMsgClientToGCSetDPCFavoriteState final :
                &_CMsgClientToGCSetDPCFavoriteState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    410;
+    405;
 
   friend void swap(CMsgClientToGCSetDPCFavoriteState& a, CMsgClientToGCSetDPCFavoriteState& b) {
     a.Swap(&b);
@@ -83566,7 +82718,7 @@ class CMsgClientToGCSetDPCFavoriteStateResponse final :
                &_CMsgClientToGCSetDPCFavoriteStateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    411;
+    406;
 
   friend void swap(CMsgClientToGCSetDPCFavoriteStateResponse& a, CMsgClientToGCSetDPCFavoriteStateResponse& b) {
     a.Swap(&b);
@@ -83770,7 +82922,7 @@ class CMsgClientToGCSetEventActiveSeasonID final :
                &_CMsgClientToGCSetEventActiveSeasonID_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    412;
+    407;
 
   friend void swap(CMsgClientToGCSetEventActiveSeasonID& a, CMsgClientToGCSetEventActiveSeasonID& b) {
     a.Swap(&b);
@@ -83945,7 +83097,7 @@ class CMsgClientToGCSetEventActiveSeasonIDResponse final :
                &_CMsgClientToGCSetEventActiveSeasonIDResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    413;
+    408;
 
   friend void swap(CMsgClientToGCSetEventActiveSeasonIDResponse& a, CMsgClientToGCSetEventActiveSeasonIDResponse& b) {
     a.Swap(&b);
@@ -84145,7 +83297,7 @@ class CMsgClientToGCPurchaseLabyrinthBlessings final :
                &_CMsgClientToGCPurchaseLabyrinthBlessings_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    414;
+    409;
 
   friend void swap(CMsgClientToGCPurchaseLabyrinthBlessings& a, CMsgClientToGCPurchaseLabyrinthBlessings& b) {
     a.Swap(&b);
@@ -84359,7 +83511,7 @@ class CMsgClientToGCPurchaseLabyrinthBlessingsResponse final :
                &_CMsgClientToGCPurchaseLabyrinthBlessingsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    415;
+    410;
 
   friend void swap(CMsgClientToGCPurchaseLabyrinthBlessingsResponse& a, CMsgClientToGCPurchaseLabyrinthBlessingsResponse& b) {
     a.Swap(&b);
@@ -84557,7 +83709,7 @@ class CMsgClientToGCGetStickerbookRequest final :
                &_CMsgClientToGCGetStickerbookRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    416;
+    411;
 
   friend void swap(CMsgClientToGCGetStickerbookRequest& a, CMsgClientToGCGetStickerbookRequest& b) {
     a.Swap(&b);
@@ -84717,7 +83869,7 @@ class CMsgClientToGCGetStickerbookResponse final :
                &_CMsgClientToGCGetStickerbookResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    417;
+    412;
 
   friend void swap(CMsgClientToGCGetStickerbookResponse& a, CMsgClientToGCGetStickerbookResponse& b) {
     a.Swap(&b);
@@ -84933,7 +84085,7 @@ class CMsgClientToGCCreateStickerbookPageRequest final :
                &_CMsgClientToGCCreateStickerbookPageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    418;
+    413;
 
   friend void swap(CMsgClientToGCCreateStickerbookPageRequest& a, CMsgClientToGCCreateStickerbookPageRequest& b) {
     a.Swap(&b);
@@ -85123,7 +84275,7 @@ class CMsgClientToGCCreateStickerbookPageResponse final :
                &_CMsgClientToGCCreateStickerbookPageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    419;
+    414;
 
   friend void swap(CMsgClientToGCCreateStickerbookPageResponse& a, CMsgClientToGCCreateStickerbookPageResponse& b) {
     a.Swap(&b);
@@ -85334,7 +84486,7 @@ class CMsgClientToGCDeleteStickerbookPageRequest final :
                &_CMsgClientToGCDeleteStickerbookPageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    420;
+    415;
 
   friend void swap(CMsgClientToGCDeleteStickerbookPageRequest& a, CMsgClientToGCDeleteStickerbookPageRequest& b) {
     a.Swap(&b);
@@ -85524,7 +84676,7 @@ class CMsgClientToGCDeleteStickerbookPageResponse final :
                &_CMsgClientToGCDeleteStickerbookPageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    421;
+    416;
 
   friend void swap(CMsgClientToGCDeleteStickerbookPageResponse& a, CMsgClientToGCDeleteStickerbookPageResponse& b) {
     a.Swap(&b);
@@ -85724,7 +84876,7 @@ class CMsgClientToGCPlaceStickersRequest_StickerItem final :
                &_CMsgClientToGCPlaceStickersRequest_StickerItem_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    422;
+    417;
 
   friend void swap(CMsgClientToGCPlaceStickersRequest_StickerItem& a, CMsgClientToGCPlaceStickersRequest_StickerItem& b) {
     a.Swap(&b);
@@ -85904,7 +85056,7 @@ class CMsgClientToGCPlaceStickersRequest final :
                &_CMsgClientToGCPlaceStickersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    423;
+    418;
 
   friend void swap(CMsgClientToGCPlaceStickersRequest& a, CMsgClientToGCPlaceStickersRequest& b) {
     a.Swap(&b);
@@ -86070,7 +85222,7 @@ class CMsgClientToGCPlaceStickersResponse final :
                &_CMsgClientToGCPlaceStickersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    424;
+    419;
 
   friend void swap(CMsgClientToGCPlaceStickersResponse& a, CMsgClientToGCPlaceStickersResponse& b) {
     a.Swap(&b);
@@ -86274,7 +85426,7 @@ class CMsgClientToGCPlaceCollectionStickersRequest_Slot final :
                &_CMsgClientToGCPlaceCollectionStickersRequest_Slot_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    425;
+    420;
 
   friend void swap(CMsgClientToGCPlaceCollectionStickersRequest_Slot& a, CMsgClientToGCPlaceCollectionStickersRequest_Slot& b) {
     a.Swap(&b);
@@ -86494,7 +85646,7 @@ class CMsgClientToGCPlaceCollectionStickersRequest final :
                &_CMsgClientToGCPlaceCollectionStickersRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    426;
+    421;
 
   friend void swap(CMsgClientToGCPlaceCollectionStickersRequest& a, CMsgClientToGCPlaceCollectionStickersRequest& b) {
     a.Swap(&b);
@@ -86660,7 +85812,7 @@ class CMsgClientToGCPlaceCollectionStickersResponse final :
                &_CMsgClientToGCPlaceCollectionStickersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    427;
+    422;
 
   friend void swap(CMsgClientToGCPlaceCollectionStickersResponse& a, CMsgClientToGCPlaceCollectionStickersResponse& b) {
     a.Swap(&b);
@@ -86868,7 +86020,7 @@ class CMsgClientToGCOrderStickerbookTeamPageRequest final :
                &_CMsgClientToGCOrderStickerbookTeamPageRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    428;
+    423;
 
   friend void swap(CMsgClientToGCOrderStickerbookTeamPageRequest& a, CMsgClientToGCOrderStickerbookTeamPageRequest& b) {
     a.Swap(&b);
@@ -87033,7 +86185,7 @@ class CMsgClientToGCOrderStickerbookTeamPageResponse final :
                &_CMsgClientToGCOrderStickerbookTeamPageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    429;
+    424;
 
   friend void swap(CMsgClientToGCOrderStickerbookTeamPageResponse& a, CMsgClientToGCOrderStickerbookTeamPageResponse& b) {
     a.Swap(&b);
@@ -87231,7 +86383,7 @@ class CMsgClientToGCSetHeroSticker final :
                &_CMsgClientToGCSetHeroSticker_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    430;
+    425;
 
   friend void swap(CMsgClientToGCSetHeroSticker& a, CMsgClientToGCSetHeroSticker& b) {
     a.Swap(&b);
@@ -87421,7 +86573,7 @@ class CMsgClientToGCSetHeroStickerResponse final :
                &_CMsgClientToGCSetHeroStickerResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    431;
+    426;
 
   friend void swap(CMsgClientToGCSetHeroStickerResponse& a, CMsgClientToGCSetHeroStickerResponse& b) {
     a.Swap(&b);
@@ -87620,7 +86772,7 @@ class CMsgClientToGCGetHeroStickers final :
                &_CMsgClientToGCGetHeroStickers_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    432;
+    427;
 
   friend void swap(CMsgClientToGCGetHeroStickers& a, CMsgClientToGCGetHeroStickers& b) {
     a.Swap(&b);
@@ -87746,7 +86898,7 @@ class CMsgClientToGCGetHeroStickersResponse final :
                &_CMsgClientToGCGetHeroStickersResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    433;
+    428;
 
   friend void swap(CMsgClientToGCGetHeroStickersResponse& a, CMsgClientToGCGetHeroStickersResponse& b) {
     a.Swap(&b);
@@ -87960,7 +87112,7 @@ class CMsgClientToGCSetFavoritePage final :
                &_CMsgClientToGCSetFavoritePage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    434;
+    429;
 
   friend void swap(CMsgClientToGCSetFavoritePage& a, CMsgClientToGCSetFavoritePage& b) {
     a.Swap(&b);
@@ -88135,7 +87287,7 @@ class CMsgClientToGCSetFavoritePageResponse final :
                &_CMsgClientToGCSetFavoritePageResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    435;
+    430;
 
   friend void swap(CMsgClientToGCSetFavoritePageResponse& a, CMsgClientToGCSetFavoritePageResponse& b) {
     a.Swap(&b);
@@ -88331,7 +87483,7 @@ class CMsgClientToGCClaimSwag final :
                &_CMsgClientToGCClaimSwag_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    436;
+    431;
 
   friend void swap(CMsgClientToGCClaimSwag& a, CMsgClientToGCClaimSwag& b) {
     a.Swap(&b);
@@ -88521,7 +87673,7 @@ class CMsgClientToGCClaimSwagResponse final :
                &_CMsgClientToGCClaimSwagResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    437;
+    432;
 
   friend void swap(CMsgClientToGCClaimSwagResponse& a, CMsgClientToGCClaimSwagResponse& b) {
     a.Swap(&b);
@@ -88727,7 +87879,7 @@ class CMsgClientToGCCollectorsCacheAvailableDataRequest final :
                &_CMsgClientToGCCollectorsCacheAvailableDataRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    438;
+    433;
 
   friend void swap(CMsgClientToGCCollectorsCacheAvailableDataRequest& a, CMsgClientToGCCollectorsCacheAvailableDataRequest& b) {
     a.Swap(&b);
@@ -88887,7 +88039,7 @@ class CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote final :
                &_CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    439;
+    434;
 
   friend void swap(CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote& a, CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote& b) {
     a.Swap(&b);
@@ -89092,7 +88244,7 @@ class CMsgGCToClientCollectorsCacheAvailableDataResponse final :
                &_CMsgGCToClientCollectorsCacheAvailableDataResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    440;
+    435;
 
   friend void swap(CMsgGCToClientCollectorsCacheAvailableDataResponse& a, CMsgGCToClientCollectorsCacheAvailableDataResponse& b) {
     a.Swap(&b);
@@ -89258,7 +88410,7 @@ class CMsgClientToGCUploadMatchClip final :
                &_CMsgClientToGCUploadMatchClip_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    441;
+    436;
 
   friend void swap(CMsgClientToGCUploadMatchClip& a, CMsgClientToGCUploadMatchClip& b) {
     a.Swap(&b);
@@ -89423,7 +88575,7 @@ class CMsgGCToClientUploadMatchClipResponse final :
                &_CMsgGCToClientUploadMatchClipResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    442;
+    437;
 
   friend void swap(CMsgGCToClientUploadMatchClipResponse& a, CMsgGCToClientUploadMatchClipResponse& b) {
     a.Swap(&b);
@@ -89616,7 +88768,7 @@ class CMsgClientToGCMapStatsRequest final :
                &_CMsgClientToGCMapStatsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    443;
+    438;
 
   friend void swap(CMsgClientToGCMapStatsRequest& a, CMsgClientToGCMapStatsRequest& b) {
     a.Swap(&b);
@@ -89742,7 +88894,7 @@ class CMsgGCToClientMapStatsResponse final :
                &_CMsgGCToClientMapStatsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    444;
+    439;
 
   friend void swap(CMsgGCToClientMapStatsResponse& a, CMsgGCToClientMapStatsResponse& b) {
     a.Swap(&b);
@@ -89972,7 +89124,7 @@ class CMsgRoadToTIAssignedQuest final :
                &_CMsgRoadToTIAssignedQuest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    445;
+    440;
 
   friend void swap(CMsgRoadToTIAssignedQuest& a, CMsgRoadToTIAssignedQuest& b) {
     a.Swap(&b);
@@ -90192,7 +89344,7 @@ class CMsgRoadToTIUserData final :
                &_CMsgRoadToTIUserData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    446;
+    441;
 
   friend void swap(CMsgRoadToTIUserData& a, CMsgRoadToTIUserData& b) {
     a.Swap(&b);
@@ -90356,7 +89508,7 @@ class CMsgClientToGCRoadToTIGetQuests final :
                &_CMsgClientToGCRoadToTIGetQuests_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    447;
+    442;
 
   friend void swap(CMsgClientToGCRoadToTIGetQuests& a, CMsgClientToGCRoadToTIGetQuests& b) {
     a.Swap(&b);
@@ -90516,7 +89668,7 @@ class CMsgClientToGCRoadToTIGetQuestsResponse final :
                &_CMsgClientToGCRoadToTIGetQuestsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    448;
+    443;
 
   friend void swap(CMsgClientToGCRoadToTIGetQuestsResponse& a, CMsgClientToGCRoadToTIGetQuestsResponse& b) {
     a.Swap(&b);
@@ -90734,7 +89886,7 @@ class CMsgClientToGCRoadToTIGetActiveQuest final :
                &_CMsgClientToGCRoadToTIGetActiveQuest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    449;
+    444;
 
   friend void swap(CMsgClientToGCRoadToTIGetActiveQuest& a, CMsgClientToGCRoadToTIGetActiveQuest& b) {
     a.Swap(&b);
@@ -90894,7 +90046,7 @@ class CMsgClientToGCRoadToTIGetActiveQuestResponse final :
                &_CMsgClientToGCRoadToTIGetActiveQuestResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    450;
+    445;
 
   friend void swap(CMsgClientToGCRoadToTIGetActiveQuestResponse& a, CMsgClientToGCRoadToTIGetActiveQuestResponse& b) {
     a.Swap(&b);
@@ -91114,7 +90266,7 @@ class CMsgGCToClientRoadToTIQuestDataUpdated final :
                &_CMsgGCToClientRoadToTIQuestDataUpdated_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    451;
+    446;
 
   friend void swap(CMsgGCToClientRoadToTIQuestDataUpdated& a, CMsgGCToClientRoadToTIQuestDataUpdated& b) {
     a.Swap(&b);
@@ -91294,7 +90446,7 @@ class CMsgClientToGCRoadToTIUseItem final :
                &_CMsgClientToGCRoadToTIUseItem_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    452;
+    447;
 
   friend void swap(CMsgClientToGCRoadToTIUseItem& a, CMsgClientToGCRoadToTIUseItem& b) {
     a.Swap(&b);
@@ -91484,7 +90636,7 @@ class CMsgClientToGCRoadToTIUseItemResponse final :
                &_CMsgClientToGCRoadToTIUseItemResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    453;
+    448;
 
   friend void swap(CMsgClientToGCRoadToTIUseItemResponse& a, CMsgClientToGCRoadToTIUseItemResponse& b) {
     a.Swap(&b);
@@ -91684,7 +90836,7 @@ class CMsgClientToGCRoadToTIDevForceQuest final :
                &_CMsgClientToGCRoadToTIDevForceQuest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    454;
+    449;
 
   friend void swap(CMsgClientToGCRoadToTIDevForceQuest& a, CMsgClientToGCRoadToTIDevForceQuest& b) {
     a.Swap(&b);
@@ -91874,7 +91026,7 @@ class CMsgLobbyRoadToTIMatchQuestData final :
                &_CMsgLobbyRoadToTIMatchQuestData_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    455;
+    450;
 
   friend void swap(CMsgLobbyRoadToTIMatchQuestData& a, CMsgLobbyRoadToTIMatchQuestData& b) {
     a.Swap(&b);
@@ -92069,7 +91221,7 @@ class CMsgClientToGCNewBloomGift final :
                &_CMsgClientToGCNewBloomGift_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    456;
+    451;
 
   friend void swap(CMsgClientToGCNewBloomGift& a, CMsgClientToGCNewBloomGift& b) {
     a.Swap(&b);
@@ -92268,7 +91420,7 @@ class CMsgClientToGCNewBloomGiftResponse final :
                &_CMsgClientToGCNewBloomGiftResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    457;
+    452;
 
   friend void swap(CMsgClientToGCNewBloomGiftResponse& a, CMsgClientToGCNewBloomGiftResponse& b) {
     a.Swap(&b);
@@ -92452,7 +91604,7 @@ class CMsgClientToGCSetBannedHeroes final :
                &_CMsgClientToGCSetBannedHeroes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    458;
+    453;
 
   friend void swap(CMsgClientToGCSetBannedHeroes& a, CMsgClientToGCSetBannedHeroes& b) {
     a.Swap(&b);
@@ -92620,7 +91772,7 @@ class CMsgClientToGCUpdateComicBookStats_SingleStat final :
                &_CMsgClientToGCUpdateComicBookStats_SingleStat_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    459;
+    454;
 
   friend void swap(CMsgClientToGCUpdateComicBookStats_SingleStat& a, CMsgClientToGCUpdateComicBookStats_SingleStat& b) {
     a.Swap(&b);
@@ -92795,7 +91947,7 @@ class CMsgClientToGCUpdateComicBookStats_LanguageStats final :
                &_CMsgClientToGCUpdateComicBookStats_LanguageStats_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    460;
+    455;
 
   friend void swap(CMsgClientToGCUpdateComicBookStats_LanguageStats& a, CMsgClientToGCUpdateComicBookStats_LanguageStats& b) {
     a.Swap(&b);
@@ -92985,7 +92137,7 @@ class CMsgClientToGCUpdateComicBookStats final :
                &_CMsgClientToGCUpdateComicBookStats_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    461;
+    456;
 
   friend void swap(CMsgClientToGCUpdateComicBookStats& a, CMsgClientToGCUpdateComicBookStats& b) {
     a.Swap(&b);
@@ -93188,7 +92340,7 @@ class CMsgGCRankedPlayerInfoSubmit final :
                &_CMsgGCRankedPlayerInfoSubmit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    462;
+    457;
 
   friend void swap(CMsgGCRankedPlayerInfoSubmit& a, CMsgGCRankedPlayerInfoSubmit& b) {
     a.Swap(&b);
@@ -93353,7 +92505,7 @@ class CMsgGCRankedPlayerInfoSubmitResponse final :
                &_CMsgGCRankedPlayerInfoSubmitResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    463;
+    458;
 
   friend void swap(CMsgGCRankedPlayerInfoSubmitResponse& a, CMsgGCRankedPlayerInfoSubmitResponse& b) {
     a.Swap(&b);
@@ -93543,7 +92695,7 @@ class CMsgDOTAClaimGatedEvent final :
                &_CMsgDOTAClaimGatedEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    464;
+    459;
 
   friend void swap(CMsgDOTAClaimGatedEvent& a, CMsgDOTAClaimGatedEvent& b) {
     a.Swap(&b);
@@ -93703,7 +92855,7 @@ class CMsgDOTAClaimGatedEventResponse final :
                &_CMsgDOTAClaimGatedEventResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    465;
+    460;
 
   friend void swap(CMsgDOTAClaimGatedEventResponse& a, CMsgDOTAClaimGatedEventResponse& b) {
     a.Swap(&b);
@@ -93903,7 +93055,7 @@ class CMsgClientToGCGetEventRanking final :
                &_CMsgClientToGCGetEventRanking_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    466;
+    461;
 
   friend void swap(CMsgClientToGCGetEventRanking& a, CMsgClientToGCGetEventRanking& b) {
     a.Swap(&b);
@@ -94078,7 +93230,7 @@ class CMsgClientToGCGetEventRankingResponse final :
                &_CMsgClientToGCGetEventRankingResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    467;
+    462;
 
   friend void swap(CMsgClientToGCGetEventRankingResponse& a, CMsgClientToGCGetEventRankingResponse& b) {
     a.Swap(&b);
@@ -94313,7 +93465,7 @@ class CMsgClientToGCGetEventCoupon final :
                &_CMsgClientToGCGetEventCoupon_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    468;
+    463;
 
   friend void swap(CMsgClientToGCGetEventCoupon& a, CMsgClientToGCGetEventCoupon& b) {
     a.Swap(&b);
@@ -94473,7 +93625,7 @@ class CMsgClientToGCGetEventCouponResponse_Coupon final :
                &_CMsgClientToGCGetEventCouponResponse_Coupon_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    469;
+    464;
 
   friend void swap(CMsgClientToGCGetEventCouponResponse_Coupon& a, CMsgClientToGCGetEventCouponResponse_Coupon& b) {
     a.Swap(&b);
@@ -94653,7 +93805,7 @@ class CMsgClientToGCGetEventCouponResponse final :
                &_CMsgClientToGCGetEventCouponResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    470;
+    465;
 
   friend void swap(CMsgClientToGCGetEventCouponResponse& a, CMsgClientToGCGetEventCouponResponse& b) {
     a.Swap(&b);
@@ -94890,7 +94042,7 @@ class CMsgClientToGCConvertEventPoints final :
                &_CMsgClientToGCConvertEventPoints_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    471;
+    466;
 
   friend void swap(CMsgClientToGCConvertEventPoints& a, CMsgClientToGCConvertEventPoints& b) {
     a.Swap(&b);
@@ -95095,7 +94247,7 @@ class CMsgClientToGCConvertEventPointsResponse final :
                &_CMsgClientToGCConvertEventPointsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    472;
+    467;
 
   friend void swap(CMsgClientToGCConvertEventPointsResponse& a, CMsgClientToGCConvertEventPointsResponse& b) {
     a.Swap(&b);
@@ -95293,7 +94445,7 @@ class CMsgClientToGCInviteToDemoMode final :
                &_CMsgClientToGCInviteToDemoMode_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    473;
+    468;
 
   friend void swap(CMsgClientToGCInviteToDemoMode& a, CMsgClientToGCInviteToDemoMode& b) {
     a.Swap(&b);
@@ -95468,7 +94620,7 @@ class CMsgGCToClientInviteToDemoMode final :
                &_CMsgGCToClientInviteToDemoMode_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    474;
+    469;
 
   friend void swap(CMsgGCToClientInviteToDemoMode& a, CMsgGCToClientInviteToDemoMode& b) {
     a.Swap(&b);
@@ -102855,6 +102007,138 @@ inline void CMsgGCLobbyUpdateBroadcastChannelInfo::set_allocated_language_code(s
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:CMsgGCLobbyUpdateBroadcastChannelInfo.language_code)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgClaimEventActionData_ItemGift
+
+// optional uint32 give_to_account_id = 1;
+inline bool CMsgClaimEventActionData_ItemGift::_internal_has_give_to_account_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgClaimEventActionData_ItemGift::has_give_to_account_id() const {
+  return _internal_has_give_to_account_id();
+}
+inline void CMsgClaimEventActionData_ItemGift::clear_give_to_account_id() {
+  _impl_.give_to_account_id_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline uint32_t CMsgClaimEventActionData_ItemGift::_internal_give_to_account_id() const {
+  return _impl_.give_to_account_id_;
+}
+inline uint32_t CMsgClaimEventActionData_ItemGift::give_to_account_id() const {
+  // @@protoc_insertion_point(field_get:CMsgClaimEventActionData_ItemGift.give_to_account_id)
+  return _internal_give_to_account_id();
+}
+inline void CMsgClaimEventActionData_ItemGift::_internal_set_give_to_account_id(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.give_to_account_id_ = value;
+}
+inline void CMsgClaimEventActionData_ItemGift::set_give_to_account_id(uint32_t value) {
+  _internal_set_give_to_account_id(value);
+  // @@protoc_insertion_point(field_set:CMsgClaimEventActionData_ItemGift.give_to_account_id)
+}
+
+// optional string gift_message = 2;
+inline bool CMsgClaimEventActionData_ItemGift::_internal_has_gift_message() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgClaimEventActionData_ItemGift::has_gift_message() const {
+  return _internal_has_gift_message();
+}
+inline void CMsgClaimEventActionData_ItemGift::clear_gift_message() {
+  _impl_.gift_message_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& CMsgClaimEventActionData_ItemGift::gift_message() const {
+  // @@protoc_insertion_point(field_get:CMsgClaimEventActionData_ItemGift.gift_message)
+  return _internal_gift_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CMsgClaimEventActionData_ItemGift::set_gift_message(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000001u;
+ _impl_.gift_message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:CMsgClaimEventActionData_ItemGift.gift_message)
+}
+inline std::string* CMsgClaimEventActionData_ItemGift::mutable_gift_message() {
+  std::string* _s = _internal_mutable_gift_message();
+  // @@protoc_insertion_point(field_mutable:CMsgClaimEventActionData_ItemGift.gift_message)
+  return _s;
+}
+inline const std::string& CMsgClaimEventActionData_ItemGift::_internal_gift_message() const {
+  return _impl_.gift_message_.Get();
+}
+inline void CMsgClaimEventActionData_ItemGift::_internal_set_gift_message(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.gift_message_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CMsgClaimEventActionData_ItemGift::_internal_mutable_gift_message() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.gift_message_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CMsgClaimEventActionData_ItemGift::release_gift_message() {
+  // @@protoc_insertion_point(field_release:CMsgClaimEventActionData_ItemGift.gift_message)
+  if (!_internal_has_gift_message()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* p = _impl_.gift_message_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.gift_message_.IsDefault()) {
+    _impl_.gift_message_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void CMsgClaimEventActionData_ItemGift::set_allocated_gift_message(std::string* gift_message) {
+  if (gift_message != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.gift_message_.SetAllocated(gift_message, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.gift_message_.IsDefault()) {
+    _impl_.gift_message_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:CMsgClaimEventActionData_ItemGift.gift_message)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgClaimEventActionData_ItemChoice
+
+// optional uint32 grant_item_choice_item_def = 1;
+inline bool CMsgClaimEventActionData_ItemChoice::_internal_has_grant_item_choice_item_def() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgClaimEventActionData_ItemChoice::has_grant_item_choice_item_def() const {
+  return _internal_has_grant_item_choice_item_def();
+}
+inline void CMsgClaimEventActionData_ItemChoice::clear_grant_item_choice_item_def() {
+  _impl_.grant_item_choice_item_def_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline uint32_t CMsgClaimEventActionData_ItemChoice::_internal_grant_item_choice_item_def() const {
+  return _impl_.grant_item_choice_item_def_;
+}
+inline uint32_t CMsgClaimEventActionData_ItemChoice::grant_item_choice_item_def() const {
+  // @@protoc_insertion_point(field_get:CMsgClaimEventActionData_ItemChoice.grant_item_choice_item_def)
+  return _internal_grant_item_choice_item_def();
+}
+inline void CMsgClaimEventActionData_ItemChoice::_internal_set_grant_item_choice_item_def(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.grant_item_choice_item_def_ = value;
+}
+inline void CMsgClaimEventActionData_ItemChoice::set_grant_item_choice_item_def(uint32_t value) {
+  _internal_set_grant_item_choice_item_def(value);
+  // @@protoc_insertion_point(field_set:CMsgClaimEventActionData_ItemChoice.grant_item_choice_item_def)
 }
 
 // -------------------------------------------------------------------
@@ -131528,128 +130812,6 @@ inline void CMsgGCToClientRecordContestVoteResponse::set_eresult(::CMsgGCToClien
 
 // -------------------------------------------------------------------
 
-// CMsgDevGrantEventPoints
-
-// optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
-inline bool CMsgDevGrantEventPoints::_internal_has_event_id() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool CMsgDevGrantEventPoints::has_event_id() const {
-  return _internal_has_event_id();
-}
-inline void CMsgDevGrantEventPoints::clear_event_id() {
-  _impl_.event_id_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline ::EEvent CMsgDevGrantEventPoints::_internal_event_id() const {
-  return static_cast< ::EEvent >(_impl_.event_id_);
-}
-inline ::EEvent CMsgDevGrantEventPoints::event_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDevGrantEventPoints.event_id)
-  return _internal_event_id();
-}
-inline void CMsgDevGrantEventPoints::_internal_set_event_id(::EEvent value) {
-  assert(::EEvent_IsValid(value));
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.event_id_ = value;
-}
-inline void CMsgDevGrantEventPoints::set_event_id(::EEvent value) {
-  _internal_set_event_id(value);
-  // @@protoc_insertion_point(field_set:CMsgDevGrantEventPoints.event_id)
-}
-
-// optional uint32 event_points = 2;
-inline bool CMsgDevGrantEventPoints::_internal_has_event_points() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
-  return value;
-}
-inline bool CMsgDevGrantEventPoints::has_event_points() const {
-  return _internal_has_event_points();
-}
-inline void CMsgDevGrantEventPoints::clear_event_points() {
-  _impl_.event_points_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000002u;
-}
-inline uint32_t CMsgDevGrantEventPoints::_internal_event_points() const {
-  return _impl_.event_points_;
-}
-inline uint32_t CMsgDevGrantEventPoints::event_points() const {
-  // @@protoc_insertion_point(field_get:CMsgDevGrantEventPoints.event_points)
-  return _internal_event_points();
-}
-inline void CMsgDevGrantEventPoints::_internal_set_event_points(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.event_points_ = value;
-}
-inline void CMsgDevGrantEventPoints::set_event_points(uint32_t value) {
-  _internal_set_event_points(value);
-  // @@protoc_insertion_point(field_set:CMsgDevGrantEventPoints.event_points)
-}
-
-// optional uint32 premium_points = 3;
-inline bool CMsgDevGrantEventPoints::_internal_has_premium_points() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
-  return value;
-}
-inline bool CMsgDevGrantEventPoints::has_premium_points() const {
-  return _internal_has_premium_points();
-}
-inline void CMsgDevGrantEventPoints::clear_premium_points() {
-  _impl_.premium_points_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000004u;
-}
-inline uint32_t CMsgDevGrantEventPoints::_internal_premium_points() const {
-  return _impl_.premium_points_;
-}
-inline uint32_t CMsgDevGrantEventPoints::premium_points() const {
-  // @@protoc_insertion_point(field_get:CMsgDevGrantEventPoints.premium_points)
-  return _internal_premium_points();
-}
-inline void CMsgDevGrantEventPoints::_internal_set_premium_points(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.premium_points_ = value;
-}
-inline void CMsgDevGrantEventPoints::set_premium_points(uint32_t value) {
-  _internal_set_premium_points(value);
-  // @@protoc_insertion_point(field_set:CMsgDevGrantEventPoints.premium_points)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDevGrantEventPointsResponse
-
-// optional .EDevEventRequestResult result = 1 [default = k_EDevEventRequestResult_Success];
-inline bool CMsgDevGrantEventPointsResponse::_internal_has_result() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool CMsgDevGrantEventPointsResponse::has_result() const {
-  return _internal_has_result();
-}
-inline void CMsgDevGrantEventPointsResponse::clear_result() {
-  _impl_.result_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline ::EDevEventRequestResult CMsgDevGrantEventPointsResponse::_internal_result() const {
-  return static_cast< ::EDevEventRequestResult >(_impl_.result_);
-}
-inline ::EDevEventRequestResult CMsgDevGrantEventPointsResponse::result() const {
-  // @@protoc_insertion_point(field_get:CMsgDevGrantEventPointsResponse.result)
-  return _internal_result();
-}
-inline void CMsgDevGrantEventPointsResponse::_internal_set_result(::EDevEventRequestResult value) {
-  assert(::EDevEventRequestResult_IsValid(value));
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.result_ = value;
-}
-inline void CMsgDevGrantEventPointsResponse::set_result(::EDevEventRequestResult value) {
-  _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:CMsgDevGrantEventPointsResponse.result)
-}
-
-// -------------------------------------------------------------------
-
 // CMsgDevGrantEventAction
 
 // optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
@@ -131918,137 +131080,6 @@ inline void CMsgDevDeleteEventActionsResponse::_internal_set_result(::EDevEventR
 inline void CMsgDevDeleteEventActionsResponse::set_result(::EDevEventRequestResult value) {
   _internal_set_result(value);
   // @@protoc_insertion_point(field_set:CMsgDevDeleteEventActionsResponse.result)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDevResetEventState
-
-// optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
-inline bool CMsgDevResetEventState::_internal_has_event_id() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool CMsgDevResetEventState::has_event_id() const {
-  return _internal_has_event_id();
-}
-inline void CMsgDevResetEventState::clear_event_id() {
-  _impl_.event_id_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline ::EEvent CMsgDevResetEventState::_internal_event_id() const {
-  return static_cast< ::EEvent >(_impl_.event_id_);
-}
-inline ::EEvent CMsgDevResetEventState::event_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDevResetEventState.event_id)
-  return _internal_event_id();
-}
-inline void CMsgDevResetEventState::_internal_set_event_id(::EEvent value) {
-  assert(::EEvent_IsValid(value));
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.event_id_ = value;
-}
-inline void CMsgDevResetEventState::set_event_id(::EEvent value) {
-  _internal_set_event_id(value);
-  // @@protoc_insertion_point(field_set:CMsgDevResetEventState.event_id)
-}
-
-// optional bool remove_audit = 2;
-inline bool CMsgDevResetEventState::_internal_has_remove_audit() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
-  return value;
-}
-inline bool CMsgDevResetEventState::has_remove_audit() const {
-  return _internal_has_remove_audit();
-}
-inline void CMsgDevResetEventState::clear_remove_audit() {
-  _impl_.remove_audit_ = false;
-  _impl_._has_bits_[0] &= ~0x00000002u;
-}
-inline bool CMsgDevResetEventState::_internal_remove_audit() const {
-  return _impl_.remove_audit_;
-}
-inline bool CMsgDevResetEventState::remove_audit() const {
-  // @@protoc_insertion_point(field_get:CMsgDevResetEventState.remove_audit)
-  return _internal_remove_audit();
-}
-inline void CMsgDevResetEventState::_internal_set_remove_audit(bool value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.remove_audit_ = value;
-}
-inline void CMsgDevResetEventState::set_remove_audit(bool value) {
-  _internal_set_remove_audit(value);
-  // @@protoc_insertion_point(field_set:CMsgDevResetEventState.remove_audit)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDevResetEventStateResponse
-
-// optional .EDevEventRequestResult result = 1 [default = k_EDevEventRequestResult_Success];
-inline bool CMsgDevResetEventStateResponse::_internal_has_result() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool CMsgDevResetEventStateResponse::has_result() const {
-  return _internal_has_result();
-}
-inline void CMsgDevResetEventStateResponse::clear_result() {
-  _impl_.result_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline ::EDevEventRequestResult CMsgDevResetEventStateResponse::_internal_result() const {
-  return static_cast< ::EDevEventRequestResult >(_impl_.result_);
-}
-inline ::EDevEventRequestResult CMsgDevResetEventStateResponse::result() const {
-  // @@protoc_insertion_point(field_get:CMsgDevResetEventStateResponse.result)
-  return _internal_result();
-}
-inline void CMsgDevResetEventStateResponse::_internal_set_result(::EDevEventRequestResult value) {
-  assert(::EDevEventRequestResult_IsValid(value));
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.result_ = value;
-}
-inline void CMsgDevResetEventStateResponse::set_result(::EDevEventRequestResult value) {
-  _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:CMsgDevResetEventStateResponse.result)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDevReloadAllEvents
-
-// -------------------------------------------------------------------
-
-// CMsgDevReloadAllEventsResponse
-
-// optional .EDevEventRequestResult result = 1 [default = k_EDevEventRequestResult_Success];
-inline bool CMsgDevReloadAllEventsResponse::_internal_has_result() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool CMsgDevReloadAllEventsResponse::has_result() const {
-  return _internal_has_result();
-}
-inline void CMsgDevReloadAllEventsResponse::clear_result() {
-  _impl_.result_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline ::EDevEventRequestResult CMsgDevReloadAllEventsResponse::_internal_result() const {
-  return static_cast< ::EDevEventRequestResult >(_impl_.result_);
-}
-inline ::EDevEventRequestResult CMsgDevReloadAllEventsResponse::result() const {
-  // @@protoc_insertion_point(field_get:CMsgDevReloadAllEventsResponse.result)
-  return _internal_result();
-}
-inline void CMsgDevReloadAllEventsResponse::_internal_set_result(::EDevEventRequestResult value) {
-  assert(::EDevEventRequestResult_IsValid(value));
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.result_ = value;
-}
-inline void CMsgDevReloadAllEventsResponse::set_result(::EDevEventRequestResult value) {
-  _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:CMsgDevReloadAllEventsResponse.result)
 }
 
 // -------------------------------------------------------------------
@@ -136243,113 +135274,6 @@ inline void CMsgClientToGCRecalibrateMMRResponse::_internal_set_result(::CMsgCli
 inline void CMsgClientToGCRecalibrateMMRResponse::set_result(::CMsgClientToGCRecalibrateMMRResponse_EResponse value) {
   _internal_set_result(value);
   // @@protoc_insertion_point(field_set:CMsgClientToGCRecalibrateMMRResponse.result)
-}
-
-// -------------------------------------------------------------------
-
-// CMsgDOTAPostGameItemAwardNotification
-
-// optional uint32 receiver_account_id = 1;
-inline bool CMsgDOTAPostGameItemAwardNotification::_internal_has_receiver_account_id() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool CMsgDOTAPostGameItemAwardNotification::has_receiver_account_id() const {
-  return _internal_has_receiver_account_id();
-}
-inline void CMsgDOTAPostGameItemAwardNotification::clear_receiver_account_id() {
-  _impl_.receiver_account_id_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline uint32_t CMsgDOTAPostGameItemAwardNotification::_internal_receiver_account_id() const {
-  return _impl_.receiver_account_id_;
-}
-inline uint32_t CMsgDOTAPostGameItemAwardNotification::receiver_account_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAPostGameItemAwardNotification.receiver_account_id)
-  return _internal_receiver_account_id();
-}
-inline void CMsgDOTAPostGameItemAwardNotification::_internal_set_receiver_account_id(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.receiver_account_id_ = value;
-}
-inline void CMsgDOTAPostGameItemAwardNotification::set_receiver_account_id(uint32_t value) {
-  _internal_set_receiver_account_id(value);
-  // @@protoc_insertion_point(field_set:CMsgDOTAPostGameItemAwardNotification.receiver_account_id)
-}
-
-// repeated uint32 item_def_index = 2;
-inline int CMsgDOTAPostGameItemAwardNotification::_internal_item_def_index_size() const {
-  return _impl_.item_def_index_.size();
-}
-inline int CMsgDOTAPostGameItemAwardNotification::item_def_index_size() const {
-  return _internal_item_def_index_size();
-}
-inline void CMsgDOTAPostGameItemAwardNotification::clear_item_def_index() {
-  _impl_.item_def_index_.Clear();
-}
-inline uint32_t CMsgDOTAPostGameItemAwardNotification::_internal_item_def_index(int index) const {
-  return _impl_.item_def_index_.Get(index);
-}
-inline uint32_t CMsgDOTAPostGameItemAwardNotification::item_def_index(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAPostGameItemAwardNotification.item_def_index)
-  return _internal_item_def_index(index);
-}
-inline void CMsgDOTAPostGameItemAwardNotification::set_item_def_index(int index, uint32_t value) {
-  _impl_.item_def_index_.Set(index, value);
-  // @@protoc_insertion_point(field_set:CMsgDOTAPostGameItemAwardNotification.item_def_index)
-}
-inline void CMsgDOTAPostGameItemAwardNotification::_internal_add_item_def_index(uint32_t value) {
-  _impl_.item_def_index_.Add(value);
-}
-inline void CMsgDOTAPostGameItemAwardNotification::add_item_def_index(uint32_t value) {
-  _internal_add_item_def_index(value);
-  // @@protoc_insertion_point(field_add:CMsgDOTAPostGameItemAwardNotification.item_def_index)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
-CMsgDOTAPostGameItemAwardNotification::_internal_item_def_index() const {
-  return _impl_.item_def_index_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
-CMsgDOTAPostGameItemAwardNotification::item_def_index() const {
-  // @@protoc_insertion_point(field_list:CMsgDOTAPostGameItemAwardNotification.item_def_index)
-  return _internal_item_def_index();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
-CMsgDOTAPostGameItemAwardNotification::_internal_mutable_item_def_index() {
-  return &_impl_.item_def_index_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
-CMsgDOTAPostGameItemAwardNotification::mutable_item_def_index() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgDOTAPostGameItemAwardNotification.item_def_index)
-  return _internal_mutable_item_def_index();
-}
-
-// optional uint32 action_id = 3;
-inline bool CMsgDOTAPostGameItemAwardNotification::_internal_has_action_id() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
-  return value;
-}
-inline bool CMsgDOTAPostGameItemAwardNotification::has_action_id() const {
-  return _internal_has_action_id();
-}
-inline void CMsgDOTAPostGameItemAwardNotification::clear_action_id() {
-  _impl_.action_id_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000002u;
-}
-inline uint32_t CMsgDOTAPostGameItemAwardNotification::_internal_action_id() const {
-  return _impl_.action_id_;
-}
-inline uint32_t CMsgDOTAPostGameItemAwardNotification::action_id() const {
-  // @@protoc_insertion_point(field_get:CMsgDOTAPostGameItemAwardNotification.action_id)
-  return _internal_action_id();
-}
-inline void CMsgDOTAPostGameItemAwardNotification::_internal_set_action_id(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.action_id_ = value;
-}
-inline void CMsgDOTAPostGameItemAwardNotification::set_action_id(uint32_t value) {
-  _internal_set_action_id(value);
-  // @@protoc_insertion_point(field_set:CMsgDOTAPostGameItemAwardNotification.action_id)
 }
 
 // -------------------------------------------------------------------
@@ -142106,16 +141030,6 @@ inline void CMsgGCToClientInviteToDemoMode::set_party_invite(bool value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

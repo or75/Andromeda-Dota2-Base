@@ -235,7 +235,8 @@ PROTOBUF_CONSTEXPR CMsgLANServerAvailable::CMsgLANServerAvailable(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.lobby_id_)*/uint64_t{0u}} {}
+  , /*decltype(_impl_.lobby_id_)*/uint64_t{0u}
+  , /*decltype(_impl_.nonce_)*/uint64_t{0u}} {}
 struct CMsgLANServerAvailableDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CMsgLANServerAvailableDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -1138,7 +1139,9 @@ const uint32_t TableStruct_base_5fgcmessages_2eproto::offsets[] PROTOBUF_SECTION
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::CMsgLANServerAvailable, _impl_.lobby_id_),
+  PROTOBUF_FIELD_OFFSET(::CMsgLANServerAvailable, _impl_.nonce_),
   0,
+  1,
   PROTOBUF_FIELD_OFFSET(::CSOEconGameAccountClient, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CSOEconGameAccountClient, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1652,55 +1655,55 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 134, -1, -1, sizeof(::CMsgLeaveParty)},
   { 140, 149, -1, sizeof(::CMsgCustomGameInstallStatus)},
   { 152, 159, -1, sizeof(::CMsgServerAvailable)},
-  { 160, 167, -1, sizeof(::CMsgLANServerAvailable)},
-  { 168, 182, -1, sizeof(::CSOEconGameAccountClient)},
-  { 190, 198, -1, sizeof(::CMsgApplyStrangePart)},
-  { 200, 208, -1, sizeof(::CMsgApplyPennantUpgrade)},
-  { 210, 218, -1, sizeof(::CMsgApplyEggEssence)},
-  { 220, 229, -1, sizeof(::CSOEconItemAttribute)},
-  { 232, 240, -1, sizeof(::CSOEconItemEquipped)},
-  { 242, 262, -1, sizeof(::CSOEconItem)},
-  { 276, 283, -1, sizeof(::CMsgSortItems)},
-  { 284, 296, -1, sizeof(::CMsgItemAcknowledged)},
-  { 302, 310, -1, sizeof(::CMsgSetItemPositions_ItemPosition)},
-  { 312, -1, -1, sizeof(::CMsgSetItemPositions)},
-  { 319, 326, -1, sizeof(::CMsgGCStorePurchaseCancel)},
-  { 327, 334, -1, sizeof(::CMsgGCStorePurchaseCancelResponse)},
-  { 335, 342, -1, sizeof(::CMsgGCStorePurchaseFinalize)},
-  { 343, 351, -1, sizeof(::CMsgGCStorePurchaseFinalizeResponse)},
-  { 353, 360, -1, sizeof(::CMsgGCToGCBannedWordListUpdated)},
-  { 361, 369, -1, sizeof(::CMsgGCToGCDirtySDOCache)},
-  { 371, -1, -1, sizeof(::CMsgSDONoMemcached)},
-  { 377, 384, -1, sizeof(::CMsgGCToGCUpdateSQLKeyValue)},
-  { 385, 392, -1, sizeof(::CMsgGCServerVersionUpdated)},
-  { 393, 400, -1, sizeof(::CMsgGCClientVersionUpdated)},
-  { 401, -1, -1, sizeof(::CMsgGCToGCWebAPIAccountChanged)},
-  { 407, 416, -1, sizeof(::CMsgExtractGems)},
-  { 419, 427, -1, sizeof(::CMsgExtractGemsResponse)},
-  { 429, 438, -1, sizeof(::CMsgAddSocket)},
-  { 441, 450, -1, sizeof(::CMsgAddSocketResponse)},
-  { 453, 461, -1, sizeof(::CMsgAddItemToSocketData)},
-  { 463, 471, -1, sizeof(::CMsgAddItemToSocket)},
-  { 473, 482, -1, sizeof(::CMsgAddItemToSocketResponse)},
-  { 485, 493, -1, sizeof(::CMsgResetStrangeGemCount)},
-  { 495, 502, -1, sizeof(::CMsgResetStrangeGemCountResponse)},
-  { 503, 512, -1, sizeof(::CMsgGCToClientPollFileRequest)},
-  { 515, 524, -1, sizeof(::CMsgGCToClientPollFileResponse)},
-  { 527, 535, -1, sizeof(::CMsgGCToGCPerformManualOp)},
-  { 537, 545, -1, sizeof(::CMsgGCToGCPerformManualOpCompleted)},
-  { 547, -1, -1, sizeof(::CMsgGCToGCReloadServerRegionSettings)},
-  { 553, -1, -1, sizeof(::CMsgGCAdditionalWelcomeMsgList)},
-  { 560, 571, -1, sizeof(::CMsgApplyRemoteConVars_ConVar)},
-  { 576, -1, -1, sizeof(::CMsgApplyRemoteConVars)},
-  { 583, 590, -1, sizeof(::CMsgGCToClientApplyRemoteConVars)},
-  { 591, 598, -1, sizeof(::CMsgGCToServerApplyRemoteConVars)},
-  { 599, 609, -1, sizeof(::CMsgClientToGCIntegrityStatus_keyvalue)},
-  { 613, 622, -1, sizeof(::CMsgClientToGCIntegrityStatus)},
-  { 625, 633, -1, sizeof(::CMsgClientToGCAggregateMetrics_SingleMetric)},
-  { 635, -1, -1, sizeof(::CMsgClientToGCAggregateMetrics)},
-  { 642, 649, -1, sizeof(::CMsgGCToClientAggregateMetricsBackoff)},
-  { 650, 657, -1, sizeof(::CMsgGCToServerSteamLearnAccessTokensChanged)},
-  { 658, 665, -1, sizeof(::CMsgGCToServerSteamLearnUseHTTP)},
+  { 160, 168, -1, sizeof(::CMsgLANServerAvailable)},
+  { 170, 184, -1, sizeof(::CSOEconGameAccountClient)},
+  { 192, 200, -1, sizeof(::CMsgApplyStrangePart)},
+  { 202, 210, -1, sizeof(::CMsgApplyPennantUpgrade)},
+  { 212, 220, -1, sizeof(::CMsgApplyEggEssence)},
+  { 222, 231, -1, sizeof(::CSOEconItemAttribute)},
+  { 234, 242, -1, sizeof(::CSOEconItemEquipped)},
+  { 244, 264, -1, sizeof(::CSOEconItem)},
+  { 278, 285, -1, sizeof(::CMsgSortItems)},
+  { 286, 298, -1, sizeof(::CMsgItemAcknowledged)},
+  { 304, 312, -1, sizeof(::CMsgSetItemPositions_ItemPosition)},
+  { 314, -1, -1, sizeof(::CMsgSetItemPositions)},
+  { 321, 328, -1, sizeof(::CMsgGCStorePurchaseCancel)},
+  { 329, 336, -1, sizeof(::CMsgGCStorePurchaseCancelResponse)},
+  { 337, 344, -1, sizeof(::CMsgGCStorePurchaseFinalize)},
+  { 345, 353, -1, sizeof(::CMsgGCStorePurchaseFinalizeResponse)},
+  { 355, 362, -1, sizeof(::CMsgGCToGCBannedWordListUpdated)},
+  { 363, 371, -1, sizeof(::CMsgGCToGCDirtySDOCache)},
+  { 373, -1, -1, sizeof(::CMsgSDONoMemcached)},
+  { 379, 386, -1, sizeof(::CMsgGCToGCUpdateSQLKeyValue)},
+  { 387, 394, -1, sizeof(::CMsgGCServerVersionUpdated)},
+  { 395, 402, -1, sizeof(::CMsgGCClientVersionUpdated)},
+  { 403, -1, -1, sizeof(::CMsgGCToGCWebAPIAccountChanged)},
+  { 409, 418, -1, sizeof(::CMsgExtractGems)},
+  { 421, 429, -1, sizeof(::CMsgExtractGemsResponse)},
+  { 431, 440, -1, sizeof(::CMsgAddSocket)},
+  { 443, 452, -1, sizeof(::CMsgAddSocketResponse)},
+  { 455, 463, -1, sizeof(::CMsgAddItemToSocketData)},
+  { 465, 473, -1, sizeof(::CMsgAddItemToSocket)},
+  { 475, 484, -1, sizeof(::CMsgAddItemToSocketResponse)},
+  { 487, 495, -1, sizeof(::CMsgResetStrangeGemCount)},
+  { 497, 504, -1, sizeof(::CMsgResetStrangeGemCountResponse)},
+  { 505, 514, -1, sizeof(::CMsgGCToClientPollFileRequest)},
+  { 517, 526, -1, sizeof(::CMsgGCToClientPollFileResponse)},
+  { 529, 537, -1, sizeof(::CMsgGCToGCPerformManualOp)},
+  { 539, 547, -1, sizeof(::CMsgGCToGCPerformManualOpCompleted)},
+  { 549, -1, -1, sizeof(::CMsgGCToGCReloadServerRegionSettings)},
+  { 555, -1, -1, sizeof(::CMsgGCAdditionalWelcomeMsgList)},
+  { 562, 573, -1, sizeof(::CMsgApplyRemoteConVars_ConVar)},
+  { 578, -1, -1, sizeof(::CMsgApplyRemoteConVars)},
+  { 585, 592, -1, sizeof(::CMsgGCToClientApplyRemoteConVars)},
+  { 593, 600, -1, sizeof(::CMsgGCToServerApplyRemoteConVars)},
+  { 601, 611, -1, sizeof(::CMsgClientToGCIntegrityStatus_keyvalue)},
+  { 615, 624, -1, sizeof(::CMsgClientToGCIntegrityStatus)},
+  { 627, 635, -1, sizeof(::CMsgClientToGCAggregateMetrics_SingleMetric)},
+  { 637, -1, -1, sizeof(::CMsgClientToGCAggregateMetrics)},
+  { 644, 651, -1, sizeof(::CMsgGCToClientAggregateMetricsBackoff)},
+  { 652, 659, -1, sizeof(::CMsgGCToServerSteamLearnAccessTokensChanged)},
+  { 660, 667, -1, sizeof(::CMsgGCToServerSteamLearnUseHTTP)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1806,172 +1809,172 @@ const char descriptor_table_protodef_base_5fgcmessages_2eproto[] PROTOBUF_SECTIO
   "tatus_Unknown\022\017\n\007message\030\002 \001(\t\022#\n\033latest"
   "_timestamp_from_steam\030\003 \001(\007\"W\n\023CMsgServe"
   "rAvailable\022@\n\032custom_game_install_status"
-  "\030\001 \001(\0132\034.CMsgCustomGameInstallStatus\"*\n\026"
+  "\030\001 \001(\0132\034.CMsgCustomGameInstallStatus\"9\n\026"
   "CMsgLANServerAvailable\022\020\n\010lobby_id\030\001 \001(\006"
-  "\"\252\002\n\030CSOEconGameAccountClient\022$\n\031additio"
-  "nal_backpack_slots\030\001 \001(\r:\0010\022\034\n\rtrial_acc"
-  "ount\030\002 \001(\010:\005false\022&\n\030eligible_for_online"
-  "_play\030\003 \001(\010:\004true\022*\n\"need_to_choose_most"
-  "_helpful_friend\030\004 \001(\010\022\027\n\017in_coaches_list"
-  "\030\005 \001(\010\022\034\n\024trade_ban_expiration\030\006 \001(\007\022\033\n\023"
-  "duel_ban_expiration\030\007 \001(\007\022\"\n\023made_first_"
-  "purchase\030\t \001(\010:\005false\"J\n\024CMsgApplyStrang"
-  "ePart\022\034\n\024strange_part_item_id\030\001 \001(\004\022\024\n\014i"
-  "tem_item_id\030\002 \001(\004\"K\n\027CMsgApplyPennantUpg"
-  "rade\022\027\n\017upgrade_item_id\030\001 \001(\004\022\027\n\017pennant"
-  "_item_id\030\002 \001(\004\"C\n\023CMsgApplyEggEssence\022\027\n"
-  "\017essence_item_id\030\001 \001(\004\022\023\n\013egg_item_id\030\002 "
-  "\001(\004\"T\n\024CSOEconItemAttribute\022\030\n\tdef_index"
-  "\030\001 \001(\r:\00565535\022\r\n\005value\030\002 \001(\r\022\023\n\013value_by"
-  "tes\030\003 \001(\014\":\n\023CSOEconItemEquipped\022\021\n\tnew_"
-  "class\030\001 \001(\r\022\020\n\010new_slot\030\002 \001(\r\"\327\002\n\013CSOEco"
-  "nItem\022\n\n\002id\030\001 \001(\004\022\022\n\naccount_id\030\002 \001(\r\022\021\n"
-  "\tinventory\030\003 \001(\r\022\021\n\tdef_index\030\004 \001(\r\022\023\n\010q"
-  "uantity\030\005 \001(\r:\0011\022\020\n\005level\030\006 \001(\r:\0011\022\022\n\007qu"
-  "ality\030\007 \001(\r:\0014\022\020\n\005flags\030\010 \001(\r:\0010\022\021\n\006orig"
-  "in\030\t \001(\r:\0010\022(\n\tattribute\030\014 \003(\0132\025.CSOEcon"
-  "ItemAttribute\022#\n\rinterior_item\030\r \001(\0132\014.C"
-  "SOEconItem\022\020\n\005style\030\017 \001(\r:\0010\022\023\n\013original"
-  "_id\030\020 \001(\004\022,\n\016equipped_state\030\022 \003(\0132\024.CSOE"
-  "conItemEquipped\"\"\n\rCMsgSortItems\022\021\n\tsort"
-  "_type\030\001 \001(\r\"\201\001\n\024CMsgItemAcknowledged\022\022\n\n"
-  "account_id\030\001 \001(\r\022\021\n\tinventory\030\002 \001(\r\022\021\n\td"
-  "ef_index\030\003 \001(\r\022\017\n\007quality\030\004 \001(\r\022\016\n\006rarit"
-  "y\030\005 \001(\r\022\016\n\006origin\030\006 \001(\r\"\205\001\n\024CMsgSetItemP"
-  "ositions\022:\n\016item_positions\030\001 \003(\0132\".CMsgS"
-  "etItemPositions.ItemPosition\0321\n\014ItemPosi"
-  "tion\022\017\n\007item_id\030\001 \001(\004\022\020\n\010position\030\002 \001(\r\""
-  "+\n\031CMsgGCStorePurchaseCancel\022\016\n\006txn_id\030\001"
-  " \001(\004\"3\n!CMsgGCStorePurchaseCancelRespons"
-  "e\022\016\n\006result\030\001 \001(\r\"-\n\033CMsgGCStorePurchase"
-  "Finalize\022\016\n\006txn_id\030\001 \001(\004\"G\n#CMsgGCStoreP"
-  "urchaseFinalizeResponse\022\016\n\006result\030\001 \001(\r\022"
-  "\020\n\010item_ids\030\002 \003(\004\"3\n\037CMsgGCToGCBannedWor"
-  "dListUpdated\022\020\n\010group_id\030\001 \001(\r\"\?\n\027CMsgGC"
-  "ToGCDirtySDOCache\022\020\n\010sdo_type\030\001 \001(\r\022\022\n\nk"
-  "ey_uint64\030\002 \001(\004\"\024\n\022CMsgSDONoMemcached\"/\n"
-  "\033CMsgGCToGCUpdateSQLKeyValue\022\020\n\010key_name"
-  "\030\001 \001(\t\"4\n\032CMsgGCServerVersionUpdated\022\026\n\016"
-  "server_version\030\001 \001(\r\"4\n\032CMsgGCClientVers"
-  "ionUpdated\022\026\n\016client_version\030\001 \001(\r\" \n\036CM"
-  "sgGCToGCWebAPIAccountChanged\"\\\n\017CMsgExtr"
-  "actGems\022\024\n\014tool_item_id\030\001 \001(\004\022\024\n\014item_it"
-  "em_id\030\002 \001(\004\022\035\n\016item_socket_id\030\003 \001(\r:\005655"
-  "35\"\324\002\n\027CMsgExtractGemsResponse\022\017\n\007item_i"
-  "d\030\001 \001(\004\022P\n\010response\030\002 \001(\0162%.CMsgExtractG"
-  "emsResponse.EExtractGems:\027k_ExtractGems_"
-  "Succeeded\"\325\001\n\014EExtractGems\022\033\n\027k_ExtractG"
-  "ems_Succeeded\020\000\022&\n\"k_ExtractGems_Failed_"
-  "ToolIsInvalid\020\001\022&\n\"k_ExtractGems_Failed_"
-  "ItemIsInvalid\020\002\022,\n(k_ExtractGems_Failed_"
-  "ToolCannotRemoveGem\020\003\022*\n&k_ExtractGems_F"
-  "ailed_FailedToRemoveGem\020\004\"L\n\rCMsgAddSock"
-  "et\022\024\n\014tool_item_id\030\001 \001(\004\022\024\n\014item_item_id"
-  "\030\002 \001(\004\022\017\n\007unusual\030\003 \001(\010\"\271\002\n\025CMsgAddSocke"
-  "tResponse\022\017\n\007item_id\030\001 \001(\004\022\034\n\024updated_so"
-  "cket_index\030\002 \003(\r\022J\n\010response\030\003 \001(\0162!.CMs"
-  "gAddSocketResponse.EAddSocket:\025k_AddSock"
-  "et_Succeeded\"\244\001\n\nEAddSocket\022\031\n\025k_AddSock"
-  "et_Succeeded\020\000\022$\n k_AddSocket_Failed_Too"
-  "lIsInvalid\020\001\022+\n\'k_AddSocket_Failed_ItemC"
-  "annotBeSocketed\020\002\022(\n$k_AddSocket_Failed_"
-  "FailedToAddSocket\020\003\"K\n\027CMsgAddItemToSock"
-  "etData\022\023\n\013gem_item_id\030\001 \001(\004\022\033\n\014socket_in"
-  "dex\030\002 \001(\r:\00565535\"]\n\023CMsgAddItemToSocket\022"
-  "\024\n\014item_item_id\030\001 \001(\004\0220\n\016gems_to_socket\030"
-  "\002 \003(\0132\030.CMsgAddItemToSocketData\"\337\003\n\033CMsg"
-  "AddItemToSocketResponse\022\024\n\014item_item_id\030"
-  "\001 \001(\004\022\034\n\024updated_socket_index\030\002 \003(\r\022J\n\010r"
-  "esponse\030\003 \001(\0162$.CMsgAddItemToSocketRespo"
-  "nse.EAddGem:\022k_AddGem_Succeeded\"\277\002\n\007EAdd"
-  "Gem\022\026\n\022k_AddGem_Succeeded\020\000\022 \n\034k_AddGem_"
-  "Failed_GemIsInvalid\020\001\022!\n\035k_AddGem_Failed"
-  "_ItemIsInvalid\020\002\022\"\n\036k_AddGem_Failed_Fail"
-  "edToAddGem\020\003\022+\n\'k_AddGem_Failed_InvalidG"
-  "emTypeForSocket\020\004\022)\n%k_AddGem_Failed_Inv"
-  "alidGemTypeForHero\020\005\022)\n%k_AddGem_Failed_"
-  "InvalidGemTypeForSlot\020\006\0220\n,k_AddGem_Fail"
-  "ed_SocketContainsUnremovableGem\020\007\"M\n\030CMs"
-  "gResetStrangeGemCount\022\024\n\014item_item_id\030\001 "
-  "\001(\004\022\033\n\014socket_index\030\002 \001(\r:\00565535\"\276\002\n CMs"
-  "gResetStrangeGemCountResponse\022S\n\010respons"
-  "e\030\001 \001(\0162+.CMsgResetStrangeGemCountRespon"
-  "se.EResetGem:\024k_ResetGem_Succeeded\"\304\001\n\tE"
-  "ResetGem\022\030\n\024k_ResetGem_Succeeded\020\000\022&\n\"k_"
-  "ResetGem_Failed_FailedToResetGem\020\001\022#\n\037k_"
-  "ResetGem_Failed_ItemIsInvalid\020\002\022%\n!k_Res"
-  "etGem_Failed_InvalidSocketId\020\003\022)\n%k_Rese"
-  "tGem_Failed_SocketCannotBeReset\020\004\"[\n\035CMs"
-  "gGCToClientPollFileRequest\022\021\n\tfile_name\030"
-  "\001 \001(\t\022\026\n\016client_version\030\002 \001(\r\022\017\n\007poll_id"
-  "\030\003 \001(\r\"V\n\036CMsgGCToClientPollFileResponse"
-  "\022\017\n\007poll_id\030\001 \001(\r\022\021\n\tfile_size\030\002 \001(\r\022\020\n\010"
-  "file_crc\030\003 \001(\r\">\n\031CMsgGCToGCPerformManua"
-  "lOp\022\r\n\005op_id\030\001 \001(\004\022\022\n\ngroup_code\030\002 \001(\r\"L"
-  "\n\"CMsgGCToGCPerformManualOpCompleted\022\017\n\007"
-  "success\030\001 \001(\010\022\025\n\tsource_gc\030\002 \001(\005:\002-1\"&\n$"
-  "CMsgGCToGCReloadServerRegionSettings\"K\n\036"
-  "CMsgGCAdditionalWelcomeMsgList\022)\n\020welcom"
-  "e_messages\030\001 \003(\0132\017.CExtraMsgBlock\"\320\001\n\026CM"
-  "sgApplyRemoteConVars\0220\n\010con_vars\030\001 \003(\0132\036"
-  ".CMsgApplyRemoteConVars.ConVar\032\203\001\n\006ConVa"
-  "r\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\023\n\013versio"
-  "n_min\030\003 \001(\r\022\023\n\013version_max\030\004 \001(\r\0222\n\010plat"
-  "form\030\005 \001(\0162\014.EGCPlatform:\022k_eGCPlatform_"
-  "None\"H\n CMsgGCToClientApplyRemoteConVars"
-  "\022$\n\003msg\030\001 \001(\0132\027.CMsgApplyRemoteConVars\"H"
-  "\n CMsgGCToServerApplyRemoteConVars\022$\n\003ms"
-  "g\030\001 \001(\0132\027.CMsgApplyRemoteConVars\"\324\001\n\035CMs"
-  "gClientToGCIntegrityStatus\022\016\n\006report\030\001 \001"
-  "(\t\022\026\n\016secure_allowed\030\002 \001(\010\022<\n\013diagnostic"
-  "s\030\003 \003(\0132\'.CMsgClientToGCIntegrityStatus."
-  "keyvalue\032M\n\010keyvalue\022\n\n\002id\030\001 \001(\r\022\020\n\010exte"
-  "nded\030\002 \001(\r\022\r\n\005value\030\003 \001(\004\022\024\n\014string_valu"
-  "e\030\004 \001(\t\"\232\001\n\036CMsgClientToGCAggregateMetri"
-  "cs\022=\n\007metrics\030\001 \003(\0132,.CMsgClientToGCAggr"
-  "egateMetrics.SingleMetric\0329\n\014SingleMetri"
-  "c\022\023\n\013metric_name\030\001 \001(\t\022\024\n\014metric_count\030\002"
-  " \001(\r\"E\n%CMsgGCToClientAggregateMetricsBa"
-  "ckoff\022\034\n\024upload_rate_modifier\030\001 \001(\002\"a\n+C"
-  "MsgGCToServerSteamLearnAccessTokensChang"
-  "ed\0222\n\raccess_tokens\030\001 \001(\0132\033.CMsgSteamLea"
-  "rnAccessTokens\"3\n\037CMsgGCToServerSteamLea"
-  "rnUseHTTP\022\020\n\010use_http\030\001 \001(\010*\364\006\n\nEGCBaseM"
-  "sg\022\032\n\025k_EMsgGCInviteToParty\020\225#\022\036\n\031k_EMsg"
-  "GCInvitationCreated\020\226#\022 \n\033k_EMsgGCPartyI"
-  "nviteResponse\020\227#\022\032\n\025k_EMsgGCKickFromPart"
-  "y\020\230#\022\027\n\022k_EMsgGCLeaveParty\020\231#\022\034\n\027k_EMsgG"
-  "CServerAvailable\020\232#\022\"\n\035k_EMsgGCClientCon"
-  "nectToServer\020\233#\022\033\n\026k_EMsgGCGameServerInf"
-  "o\020\234#\022\037\n\032k_EMsgGCLANServerAvailable\020\237#\022\032\n"
-  "\025k_EMsgGCInviteToLobby\020\240#\022 \n\033k_EMsgGCLob"
-  "byInviteResponse\020\241#\022$\n\037k_EMsgGCToClientP"
-  "ollFileRequest\020\242#\022%\n k_EMsgGCToClientPol"
-  "lFileResponse\020\243#\022 \n\033k_EMsgGCToGCPerformM"
-  "anualOp\020\244#\022)\n$k_EMsgGCToGCPerformManualO"
-  "pCompleted\020\245#\022+\n&k_EMsgGCToGCReloadServe"
-  "rRegionSettings\020\246#\022%\n k_EMsgGCAdditional"
-  "WelcomeMsgList\020\247#\022\'\n\"k_EMsgGCToClientApp"
-  "lyRemoteConVars\020\250#\022\'\n\"k_EMsgGCToServerAp"
-  "plyRemoteConVars\020\251#\022$\n\037k_EMsgClientToGCI"
-  "ntegrityStatus\020\252#\022%\n k_EMsgClientToGCAgg"
-  "regateMetrics\020\253#\022,\n\'k_EMsgGCToClientAggr"
-  "egateMetricsBackoff\020\254#\0222\n-k_EMsgGCToServ"
-  "erSteamLearnAccessTokensChanged\020\255#\022&\n!k_"
-  "EMsgGCToServerSteamLearnUseHTTP\020\256#*\350\003\n\030E"
-  "CustomGameInstallStatus\022&\n\"k_ECustomGame"
-  "InstallStatus_Unknown\020\000\022$\n k_ECustomGame"
-  "InstallStatus_Ready\020\001\022#\n\037k_ECustomGameIn"
-  "stallStatus_Busy\020\002\022,\n(k_ECustomGameInsta"
-  "llStatus_FailedGeneric\020e\0222\n.k_ECustomGam"
-  "eInstallStatus_FailedInternalError\020f\0227\n3"
-  "k_ECustomGameInstallStatus_RequestedTime"
-  "stampTooOld\020g\0227\n3k_ECustomGameInstallSta"
-  "tus_RequestedTimestampTooNew\020h\022*\n&k_ECus"
-  "tomGameInstallStatus_CRCMismatch\020i\022*\n&k_"
-  "ECustomGameInstallStatus_FailedSteam\020j\022-"
-  "\n)k_ECustomGameInstallStatus_FailedCance"
-  "led\020k"
+  "\022\r\n\005nonce\030\002 \001(\006\"\252\002\n\030CSOEconGameAccountCl"
+  "ient\022$\n\031additional_backpack_slots\030\001 \001(\r:"
+  "\0010\022\034\n\rtrial_account\030\002 \001(\010:\005false\022&\n\030elig"
+  "ible_for_online_play\030\003 \001(\010:\004true\022*\n\"need"
+  "_to_choose_most_helpful_friend\030\004 \001(\010\022\027\n\017"
+  "in_coaches_list\030\005 \001(\010\022\034\n\024trade_ban_expir"
+  "ation\030\006 \001(\007\022\033\n\023duel_ban_expiration\030\007 \001(\007"
+  "\022\"\n\023made_first_purchase\030\t \001(\010:\005false\"J\n\024"
+  "CMsgApplyStrangePart\022\034\n\024strange_part_ite"
+  "m_id\030\001 \001(\004\022\024\n\014item_item_id\030\002 \001(\004\"K\n\027CMsg"
+  "ApplyPennantUpgrade\022\027\n\017upgrade_item_id\030\001"
+  " \001(\004\022\027\n\017pennant_item_id\030\002 \001(\004\"C\n\023CMsgApp"
+  "lyEggEssence\022\027\n\017essence_item_id\030\001 \001(\004\022\023\n"
+  "\013egg_item_id\030\002 \001(\004\"T\n\024CSOEconItemAttribu"
+  "te\022\030\n\tdef_index\030\001 \001(\r:\00565535\022\r\n\005value\030\002 "
+  "\001(\r\022\023\n\013value_bytes\030\003 \001(\014\":\n\023CSOEconItemE"
+  "quipped\022\021\n\tnew_class\030\001 \001(\r\022\020\n\010new_slot\030\002"
+  " \001(\r\"\327\002\n\013CSOEconItem\022\n\n\002id\030\001 \001(\004\022\022\n\nacco"
+  "unt_id\030\002 \001(\r\022\021\n\tinventory\030\003 \001(\r\022\021\n\tdef_i"
+  "ndex\030\004 \001(\r\022\023\n\010quantity\030\005 \001(\r:\0011\022\020\n\005level"
+  "\030\006 \001(\r:\0011\022\022\n\007quality\030\007 \001(\r:\0014\022\020\n\005flags\030\010"
+  " \001(\r:\0010\022\021\n\006origin\030\t \001(\r:\0010\022(\n\tattribute\030"
+  "\014 \003(\0132\025.CSOEconItemAttribute\022#\n\rinterior"
+  "_item\030\r \001(\0132\014.CSOEconItem\022\020\n\005style\030\017 \001(\r"
+  ":\0010\022\023\n\013original_id\030\020 \001(\004\022,\n\016equipped_sta"
+  "te\030\022 \003(\0132\024.CSOEconItemEquipped\"\"\n\rCMsgSo"
+  "rtItems\022\021\n\tsort_type\030\001 \001(\r\"\201\001\n\024CMsgItemA"
+  "cknowledged\022\022\n\naccount_id\030\001 \001(\r\022\021\n\tinven"
+  "tory\030\002 \001(\r\022\021\n\tdef_index\030\003 \001(\r\022\017\n\007quality"
+  "\030\004 \001(\r\022\016\n\006rarity\030\005 \001(\r\022\016\n\006origin\030\006 \001(\r\"\205"
+  "\001\n\024CMsgSetItemPositions\022:\n\016item_position"
+  "s\030\001 \003(\0132\".CMsgSetItemPositions.ItemPosit"
+  "ion\0321\n\014ItemPosition\022\017\n\007item_id\030\001 \001(\004\022\020\n\010"
+  "position\030\002 \001(\r\"+\n\031CMsgGCStorePurchaseCan"
+  "cel\022\016\n\006txn_id\030\001 \001(\004\"3\n!CMsgGCStorePurcha"
+  "seCancelResponse\022\016\n\006result\030\001 \001(\r\"-\n\033CMsg"
+  "GCStorePurchaseFinalize\022\016\n\006txn_id\030\001 \001(\004\""
+  "G\n#CMsgGCStorePurchaseFinalizeResponse\022\016"
+  "\n\006result\030\001 \001(\r\022\020\n\010item_ids\030\002 \003(\004\"3\n\037CMsg"
+  "GCToGCBannedWordListUpdated\022\020\n\010group_id\030"
+  "\001 \001(\r\"\?\n\027CMsgGCToGCDirtySDOCache\022\020\n\010sdo_"
+  "type\030\001 \001(\r\022\022\n\nkey_uint64\030\002 \001(\004\"\024\n\022CMsgSD"
+  "ONoMemcached\"/\n\033CMsgGCToGCUpdateSQLKeyVa"
+  "lue\022\020\n\010key_name\030\001 \001(\t\"4\n\032CMsgGCServerVer"
+  "sionUpdated\022\026\n\016server_version\030\001 \001(\r\"4\n\032C"
+  "MsgGCClientVersionUpdated\022\026\n\016client_vers"
+  "ion\030\001 \001(\r\" \n\036CMsgGCToGCWebAPIAccountChan"
+  "ged\"\\\n\017CMsgExtractGems\022\024\n\014tool_item_id\030\001"
+  " \001(\004\022\024\n\014item_item_id\030\002 \001(\004\022\035\n\016item_socke"
+  "t_id\030\003 \001(\r:\00565535\"\324\002\n\027CMsgExtractGemsRes"
+  "ponse\022\017\n\007item_id\030\001 \001(\004\022P\n\010response\030\002 \001(\016"
+  "2%.CMsgExtractGemsResponse.EExtractGems:"
+  "\027k_ExtractGems_Succeeded\"\325\001\n\014EExtractGem"
+  "s\022\033\n\027k_ExtractGems_Succeeded\020\000\022&\n\"k_Extr"
+  "actGems_Failed_ToolIsInvalid\020\001\022&\n\"k_Extr"
+  "actGems_Failed_ItemIsInvalid\020\002\022,\n(k_Extr"
+  "actGems_Failed_ToolCannotRemoveGem\020\003\022*\n&"
+  "k_ExtractGems_Failed_FailedToRemoveGem\020\004"
+  "\"L\n\rCMsgAddSocket\022\024\n\014tool_item_id\030\001 \001(\004\022"
+  "\024\n\014item_item_id\030\002 \001(\004\022\017\n\007unusual\030\003 \001(\010\"\271"
+  "\002\n\025CMsgAddSocketResponse\022\017\n\007item_id\030\001 \001("
+  "\004\022\034\n\024updated_socket_index\030\002 \003(\r\022J\n\010respo"
+  "nse\030\003 \001(\0162!.CMsgAddSocketResponse.EAddSo"
+  "cket:\025k_AddSocket_Succeeded\"\244\001\n\nEAddSock"
+  "et\022\031\n\025k_AddSocket_Succeeded\020\000\022$\n k_AddSo"
+  "cket_Failed_ToolIsInvalid\020\001\022+\n\'k_AddSock"
+  "et_Failed_ItemCannotBeSocketed\020\002\022(\n$k_Ad"
+  "dSocket_Failed_FailedToAddSocket\020\003\"K\n\027CM"
+  "sgAddItemToSocketData\022\023\n\013gem_item_id\030\001 \001"
+  "(\004\022\033\n\014socket_index\030\002 \001(\r:\00565535\"]\n\023CMsgA"
+  "ddItemToSocket\022\024\n\014item_item_id\030\001 \001(\004\0220\n\016"
+  "gems_to_socket\030\002 \003(\0132\030.CMsgAddItemToSock"
+  "etData\"\337\003\n\033CMsgAddItemToSocketResponse\022\024"
+  "\n\014item_item_id\030\001 \001(\004\022\034\n\024updated_socket_i"
+  "ndex\030\002 \003(\r\022J\n\010response\030\003 \001(\0162$.CMsgAddIt"
+  "emToSocketResponse.EAddGem:\022k_AddGem_Suc"
+  "ceeded\"\277\002\n\007EAddGem\022\026\n\022k_AddGem_Succeeded"
+  "\020\000\022 \n\034k_AddGem_Failed_GemIsInvalid\020\001\022!\n\035"
+  "k_AddGem_Failed_ItemIsInvalid\020\002\022\"\n\036k_Add"
+  "Gem_Failed_FailedToAddGem\020\003\022+\n\'k_AddGem_"
+  "Failed_InvalidGemTypeForSocket\020\004\022)\n%k_Ad"
+  "dGem_Failed_InvalidGemTypeForHero\020\005\022)\n%k"
+  "_AddGem_Failed_InvalidGemTypeForSlot\020\006\0220"
+  "\n,k_AddGem_Failed_SocketContainsUnremova"
+  "bleGem\020\007\"M\n\030CMsgResetStrangeGemCount\022\024\n\014"
+  "item_item_id\030\001 \001(\004\022\033\n\014socket_index\030\002 \001(\r"
+  ":\00565535\"\276\002\n CMsgResetStrangeGemCountResp"
+  "onse\022S\n\010response\030\001 \001(\0162+.CMsgResetStrang"
+  "eGemCountResponse.EResetGem:\024k_ResetGem_"
+  "Succeeded\"\304\001\n\tEResetGem\022\030\n\024k_ResetGem_Su"
+  "cceeded\020\000\022&\n\"k_ResetGem_Failed_FailedToR"
+  "esetGem\020\001\022#\n\037k_ResetGem_Failed_ItemIsInv"
+  "alid\020\002\022%\n!k_ResetGem_Failed_InvalidSocke"
+  "tId\020\003\022)\n%k_ResetGem_Failed_SocketCannotB"
+  "eReset\020\004\"[\n\035CMsgGCToClientPollFileReques"
+  "t\022\021\n\tfile_name\030\001 \001(\t\022\026\n\016client_version\030\002"
+  " \001(\r\022\017\n\007poll_id\030\003 \001(\r\"V\n\036CMsgGCToClientP"
+  "ollFileResponse\022\017\n\007poll_id\030\001 \001(\r\022\021\n\tfile"
+  "_size\030\002 \001(\r\022\020\n\010file_crc\030\003 \001(\r\">\n\031CMsgGCT"
+  "oGCPerformManualOp\022\r\n\005op_id\030\001 \001(\004\022\022\n\ngro"
+  "up_code\030\002 \001(\r\"L\n\"CMsgGCToGCPerformManual"
+  "OpCompleted\022\017\n\007success\030\001 \001(\010\022\025\n\tsource_g"
+  "c\030\002 \001(\005:\002-1\"&\n$CMsgGCToGCReloadServerReg"
+  "ionSettings\"K\n\036CMsgGCAdditionalWelcomeMs"
+  "gList\022)\n\020welcome_messages\030\001 \003(\0132\017.CExtra"
+  "MsgBlock\"\320\001\n\026CMsgApplyRemoteConVars\0220\n\010c"
+  "on_vars\030\001 \003(\0132\036.CMsgApplyRemoteConVars.C"
+  "onVar\032\203\001\n\006ConVar\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030"
+  "\002 \001(\t\022\023\n\013version_min\030\003 \001(\r\022\023\n\013version_ma"
+  "x\030\004 \001(\r\0222\n\010platform\030\005 \001(\0162\014.EGCPlatform:"
+  "\022k_eGCPlatform_None\"H\n CMsgGCToClientApp"
+  "lyRemoteConVars\022$\n\003msg\030\001 \001(\0132\027.CMsgApply"
+  "RemoteConVars\"H\n CMsgGCToServerApplyRemo"
+  "teConVars\022$\n\003msg\030\001 \001(\0132\027.CMsgApplyRemote"
+  "ConVars\"\324\001\n\035CMsgClientToGCIntegrityStatu"
+  "s\022\016\n\006report\030\001 \001(\t\022\026\n\016secure_allowed\030\002 \001("
+  "\010\022<\n\013diagnostics\030\003 \003(\0132\'.CMsgClientToGCI"
+  "ntegrityStatus.keyvalue\032M\n\010keyvalue\022\n\n\002i"
+  "d\030\001 \001(\r\022\020\n\010extended\030\002 \001(\r\022\r\n\005value\030\003 \001(\004"
+  "\022\024\n\014string_value\030\004 \001(\t\"\232\001\n\036CMsgClientToG"
+  "CAggregateMetrics\022=\n\007metrics\030\001 \003(\0132,.CMs"
+  "gClientToGCAggregateMetrics.SingleMetric"
+  "\0329\n\014SingleMetric\022\023\n\013metric_name\030\001 \001(\t\022\024\n"
+  "\014metric_count\030\002 \001(\r\"E\n%CMsgGCToClientAgg"
+  "regateMetricsBackoff\022\034\n\024upload_rate_modi"
+  "fier\030\001 \001(\002\"a\n+CMsgGCToServerSteamLearnAc"
+  "cessTokensChanged\0222\n\raccess_tokens\030\001 \001(\013"
+  "2\033.CMsgSteamLearnAccessTokens\"3\n\037CMsgGCT"
+  "oServerSteamLearnUseHTTP\022\020\n\010use_http\030\001 \001"
+  "(\010*\364\006\n\nEGCBaseMsg\022\032\n\025k_EMsgGCInviteToPar"
+  "ty\020\225#\022\036\n\031k_EMsgGCInvitationCreated\020\226#\022 \n"
+  "\033k_EMsgGCPartyInviteResponse\020\227#\022\032\n\025k_EMs"
+  "gGCKickFromParty\020\230#\022\027\n\022k_EMsgGCLeavePart"
+  "y\020\231#\022\034\n\027k_EMsgGCServerAvailable\020\232#\022\"\n\035k_"
+  "EMsgGCClientConnectToServer\020\233#\022\033\n\026k_EMsg"
+  "GCGameServerInfo\020\234#\022\037\n\032k_EMsgGCLANServer"
+  "Available\020\237#\022\032\n\025k_EMsgGCInviteToLobby\020\240#"
+  "\022 \n\033k_EMsgGCLobbyInviteResponse\020\241#\022$\n\037k_"
+  "EMsgGCToClientPollFileRequest\020\242#\022%\n k_EM"
+  "sgGCToClientPollFileResponse\020\243#\022 \n\033k_EMs"
+  "gGCToGCPerformManualOp\020\244#\022)\n$k_EMsgGCToG"
+  "CPerformManualOpCompleted\020\245#\022+\n&k_EMsgGC"
+  "ToGCReloadServerRegionSettings\020\246#\022%\n k_E"
+  "MsgGCAdditionalWelcomeMsgList\020\247#\022\'\n\"k_EM"
+  "sgGCToClientApplyRemoteConVars\020\250#\022\'\n\"k_E"
+  "MsgGCToServerApplyRemoteConVars\020\251#\022$\n\037k_"
+  "EMsgClientToGCIntegrityStatus\020\252#\022%\n k_EM"
+  "sgClientToGCAggregateMetrics\020\253#\022,\n\'k_EMs"
+  "gGCToClientAggregateMetricsBackoff\020\254#\0222\n"
+  "-k_EMsgGCToServerSteamLearnAccessTokensC"
+  "hanged\020\255#\022&\n!k_EMsgGCToServerSteamLearnU"
+  "seHTTP\020\256#*\350\003\n\030ECustomGameInstallStatus\022&"
+  "\n\"k_ECustomGameInstallStatus_Unknown\020\000\022$"
+  "\n k_ECustomGameInstallStatus_Ready\020\001\022#\n\037"
+  "k_ECustomGameInstallStatus_Busy\020\002\022,\n(k_E"
+  "CustomGameInstallStatus_FailedGeneric\020e\022"
+  "2\n.k_ECustomGameInstallStatus_FailedInte"
+  "rnalError\020f\0227\n3k_ECustomGameInstallStatu"
+  "s_RequestedTimestampTooOld\020g\0227\n3k_ECusto"
+  "mGameInstallStatus_RequestedTimestampToo"
+  "New\020h\022*\n&k_ECustomGameInstallStatus_CRCM"
+  "ismatch\020i\022*\n&k_ECustomGameInstallStatus_"
+  "FailedSteam\020j\022-\n)k_ECustomGameInstallSta"
+  "tus_FailedCanceled\020k"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_base_5fgcmessages_2eproto_deps[3] = {
   &::descriptor_table_gcsdk_5fgcmessages_2eproto,
@@ -1980,7 +1983,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_base_5fgcmessages_2
 };
 static ::_pbi::once_flag descriptor_table_base_5fgcmessages_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_base_5fgcmessages_2eproto = {
-    false, false, 8085, descriptor_table_protodef_base_5fgcmessages_2eproto,
+    false, false, 8100, descriptor_table_protodef_base_5fgcmessages_2eproto,
     "base_gcmessages.proto",
     &descriptor_table_base_5fgcmessages_2eproto_once, descriptor_table_base_5fgcmessages_2eproto_deps, 3, 62,
     schemas, file_default_instances, TableStruct_base_5fgcmessages_2eproto::offsets,
@@ -5646,6 +5649,9 @@ class CMsgLANServerAvailable::_Internal {
   static void set_has_lobby_id(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
+  static void set_has_nonce(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
 };
 
 CMsgLANServerAvailable::CMsgLANServerAvailable(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -5660,10 +5666,13 @@ CMsgLANServerAvailable::CMsgLANServerAvailable(const CMsgLANServerAvailable& fro
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.lobby_id_){}};
+    , decltype(_impl_.lobby_id_){}
+    , decltype(_impl_.nonce_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _this->_impl_.lobby_id_ = from._impl_.lobby_id_;
+  ::memcpy(&_impl_.lobby_id_, &from._impl_.lobby_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.nonce_) -
+    reinterpret_cast<char*>(&_impl_.lobby_id_)) + sizeof(_impl_.nonce_));
   // @@protoc_insertion_point(copy_constructor:CMsgLANServerAvailable)
 }
 
@@ -5675,6 +5684,7 @@ inline void CMsgLANServerAvailable::SharedCtor(
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.lobby_id_){uint64_t{0u}}
+    , decltype(_impl_.nonce_){uint64_t{0u}}
   };
 }
 
@@ -5701,7 +5711,12 @@ void CMsgLANServerAvailable::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.lobby_id_ = uint64_t{0u};
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    ::memset(&_impl_.lobby_id_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.nonce_) -
+        reinterpret_cast<char*>(&_impl_.lobby_id_)) + sizeof(_impl_.nonce_));
+  }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -5718,6 +5733,15 @@ const char* CMsgLANServerAvailable::_InternalParse(const char* ptr, ::_pbi::Pars
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
           _Internal::set_has_lobby_id(&has_bits);
           _impl_.lobby_id_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint64_t>(ptr);
+          ptr += sizeof(uint64_t);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional fixed64 nonce = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
+          _Internal::set_has_nonce(&has_bits);
+          _impl_.nonce_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<uint64_t>(ptr);
           ptr += sizeof(uint64_t);
         } else
           goto handle_unusual;
@@ -5759,6 +5783,12 @@ uint8_t* CMsgLANServerAvailable::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteFixed64ToArray(1, this->_internal_lobby_id(), target);
   }
 
+  // optional fixed64 nonce = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFixed64ToArray(2, this->_internal_nonce(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5775,12 +5805,19 @@ size_t CMsgLANServerAvailable::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // optional fixed64 lobby_id = 1;
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    total_size += 1 + 8;
-  }
+  if (cached_has_bits & 0x00000003u) {
+    // optional fixed64 lobby_id = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 + 8;
+    }
 
+    // optional fixed64 nonce = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 + 8;
+    }
+
+  }
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -5799,8 +5836,15 @@ void CMsgLANServerAvailable::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg,
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_lobby_id()) {
-    _this->_internal_set_lobby_id(from._internal_lobby_id());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.lobby_id_ = from._impl_.lobby_id_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.nonce_ = from._impl_.nonce_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -5820,7 +5864,12 @@ void CMsgLANServerAvailable::InternalSwap(CMsgLANServerAvailable* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  swap(_impl_.lobby_id_, other->_impl_.lobby_id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CMsgLANServerAvailable, _impl_.nonce_)
+      + sizeof(CMsgLANServerAvailable::_impl_.nonce_)
+      - PROTOBUF_FIELD_OFFSET(CMsgLANServerAvailable, _impl_.lobby_id_)>(
+          reinterpret_cast<char*>(&_impl_.lobby_id_),
+          reinterpret_cast<char*>(&other->_impl_.lobby_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgLANServerAvailable::GetMetadata() const {

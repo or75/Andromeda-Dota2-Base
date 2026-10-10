@@ -5,7 +5,7 @@ namespace SDK::VMT_Index
 	enum CSchemaSystem : int
 	{
 		GlobalTypeScope = 11 ,
-		SchemaClassInfo = 46 ,
+		SchemaClassInfo = 47 ,
 	};
 	enum IVEngineClient2 : int
 	{

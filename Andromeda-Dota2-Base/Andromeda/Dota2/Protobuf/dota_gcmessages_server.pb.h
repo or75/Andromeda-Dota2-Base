@@ -7080,7 +7080,6 @@ class CMsgGameMatchSignOut_CSocialFeedMatchEvent final :
     kTimestampFieldNumber = 2,
     kEventTypeFieldNumber = 3,
     kGameTimeFieldNumber = 4,
-    kReplayTimeFieldNumber = 5,
   };
   // optional uint32 account_id = 1;
   bool has_account_id() const;
@@ -7134,19 +7133,6 @@ class CMsgGameMatchSignOut_CSocialFeedMatchEvent final :
   void _internal_set_game_time(int32_t value);
   public:
 
-  // optional uint32 replay_time = 5;
-  bool has_replay_time() const;
-  private:
-  bool _internal_has_replay_time() const;
-  public:
-  void clear_replay_time();
-  uint32_t replay_time() const;
-  void set_replay_time(uint32_t value);
-  private:
-  uint32_t _internal_replay_time() const;
-  void _internal_set_replay_time(uint32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:CMsgGameMatchSignOut.CSocialFeedMatchEvent)
  private:
   class _Internal;
@@ -7161,7 +7147,6 @@ class CMsgGameMatchSignOut_CSocialFeedMatchEvent final :
     uint32_t timestamp_;
     uint32_t event_type_;
     int32_t game_time_;
-    uint32_t replay_time_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fgcmessages_5fserver_2eproto;
@@ -15884,7 +15869,6 @@ class CMsgTournamentItemEvent final :
     kEventTypeFieldNumber = 3,
     kTvDelayFieldNumber = 4,
     kDotaTimeFieldNumber = 5,
-    kReplayTimeFieldNumber = 6,
     kEventTeamFieldNumber = 8,
     kMultiKillCountFieldNumber = 9,
     kWinnerScoreFieldNumber = 10,
@@ -15991,19 +15975,6 @@ class CMsgTournamentItemEvent final :
   void _internal_set_dota_time(int32_t value);
   public:
 
-  // optional float replay_time = 6;
-  bool has_replay_time() const;
-  private:
-  bool _internal_has_replay_time() const;
-  public:
-  void clear_replay_time();
-  float replay_time() const;
-  void set_replay_time(float value);
-  private:
-  float _internal_replay_time() const;
-  void _internal_set_replay_time(float value);
-  public:
-
   // optional uint32 event_team = 8;
   bool has_event_team() const;
   private:
@@ -16073,7 +16044,6 @@ class CMsgTournamentItemEvent final :
     int event_type_;
     int32_t tv_delay_;
     int32_t dota_time_;
-    float replay_time_;
     uint32_t event_team_;
     uint32_t multi_kill_count_;
     uint32_t winner_score_;
@@ -45599,34 +45569,6 @@ inline void CMsgGameMatchSignOut_CSocialFeedMatchEvent::set_game_time(int32_t va
   // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CSocialFeedMatchEvent.game_time)
 }
 
-// optional uint32 replay_time = 5;
-inline bool CMsgGameMatchSignOut_CSocialFeedMatchEvent::_internal_has_replay_time() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
-  return value;
-}
-inline bool CMsgGameMatchSignOut_CSocialFeedMatchEvent::has_replay_time() const {
-  return _internal_has_replay_time();
-}
-inline void CMsgGameMatchSignOut_CSocialFeedMatchEvent::clear_replay_time() {
-  _impl_.replay_time_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000010u;
-}
-inline uint32_t CMsgGameMatchSignOut_CSocialFeedMatchEvent::_internal_replay_time() const {
-  return _impl_.replay_time_;
-}
-inline uint32_t CMsgGameMatchSignOut_CSocialFeedMatchEvent::replay_time() const {
-  // @@protoc_insertion_point(field_get:CMsgGameMatchSignOut.CSocialFeedMatchEvent.replay_time)
-  return _internal_replay_time();
-}
-inline void CMsgGameMatchSignOut_CSocialFeedMatchEvent::_internal_set_replay_time(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000010u;
-  _impl_.replay_time_ = value;
-}
-inline void CMsgGameMatchSignOut_CSocialFeedMatchEvent::set_replay_time(uint32_t value) {
-  _internal_set_replay_time(value);
-  // @@protoc_insertion_point(field_set:CMsgGameMatchSignOut.CSocialFeedMatchEvent.replay_time)
-}
-
 // -------------------------------------------------------------------
 
 // CMsgGameMatchSignOut_CCustomGameData
@@ -54530,34 +54472,6 @@ inline void CMsgTournamentItemEvent::set_dota_time(int32_t value) {
   // @@protoc_insertion_point(field_set:CMsgTournamentItemEvent.dota_time)
 }
 
-// optional float replay_time = 6;
-inline bool CMsgTournamentItemEvent::_internal_has_replay_time() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
-  return value;
-}
-inline bool CMsgTournamentItemEvent::has_replay_time() const {
-  return _internal_has_replay_time();
-}
-inline void CMsgTournamentItemEvent::clear_replay_time() {
-  _impl_.replay_time_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000040u;
-}
-inline float CMsgTournamentItemEvent::_internal_replay_time() const {
-  return _impl_.replay_time_;
-}
-inline float CMsgTournamentItemEvent::replay_time() const {
-  // @@protoc_insertion_point(field_get:CMsgTournamentItemEvent.replay_time)
-  return _internal_replay_time();
-}
-inline void CMsgTournamentItemEvent::_internal_set_replay_time(float value) {
-  _impl_._has_bits_[0] |= 0x00000040u;
-  _impl_.replay_time_ = value;
-}
-inline void CMsgTournamentItemEvent::set_replay_time(float value) {
-  _internal_set_replay_time(value);
-  // @@protoc_insertion_point(field_set:CMsgTournamentItemEvent.replay_time)
-}
-
 // optional string loot_list = 7;
 inline bool CMsgTournamentItemEvent::_internal_has_loot_list() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
@@ -54628,7 +54542,7 @@ inline void CMsgTournamentItemEvent::set_allocated_loot_list(std::string* loot_l
 
 // optional uint32 event_team = 8;
 inline bool CMsgTournamentItemEvent::_internal_has_event_team() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline bool CMsgTournamentItemEvent::has_event_team() const {
@@ -54636,7 +54550,7 @@ inline bool CMsgTournamentItemEvent::has_event_team() const {
 }
 inline void CMsgTournamentItemEvent::clear_event_team() {
   _impl_.event_team_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000080u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline uint32_t CMsgTournamentItemEvent::_internal_event_team() const {
   return _impl_.event_team_;
@@ -54646,7 +54560,7 @@ inline uint32_t CMsgTournamentItemEvent::event_team() const {
   return _internal_event_team();
 }
 inline void CMsgTournamentItemEvent::_internal_set_event_team(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   _impl_.event_team_ = value;
 }
 inline void CMsgTournamentItemEvent::set_event_team(uint32_t value) {
@@ -54656,7 +54570,7 @@ inline void CMsgTournamentItemEvent::set_event_team(uint32_t value) {
 
 // optional uint32 multi_kill_count = 9;
 inline bool CMsgTournamentItemEvent::_internal_has_multi_kill_count() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
   return value;
 }
 inline bool CMsgTournamentItemEvent::has_multi_kill_count() const {
@@ -54664,7 +54578,7 @@ inline bool CMsgTournamentItemEvent::has_multi_kill_count() const {
 }
 inline void CMsgTournamentItemEvent::clear_multi_kill_count() {
   _impl_.multi_kill_count_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000100u;
+  _impl_._has_bits_[0] &= ~0x00000080u;
 }
 inline uint32_t CMsgTournamentItemEvent::_internal_multi_kill_count() const {
   return _impl_.multi_kill_count_;
@@ -54674,7 +54588,7 @@ inline uint32_t CMsgTournamentItemEvent::multi_kill_count() const {
   return _internal_multi_kill_count();
 }
 inline void CMsgTournamentItemEvent::_internal_set_multi_kill_count(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_._has_bits_[0] |= 0x00000080u;
   _impl_.multi_kill_count_ = value;
 }
 inline void CMsgTournamentItemEvent::set_multi_kill_count(uint32_t value) {
@@ -54684,7 +54598,7 @@ inline void CMsgTournamentItemEvent::set_multi_kill_count(uint32_t value) {
 
 // optional uint32 winner_score = 10;
 inline bool CMsgTournamentItemEvent::_internal_has_winner_score() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
   return value;
 }
 inline bool CMsgTournamentItemEvent::has_winner_score() const {
@@ -54692,7 +54606,7 @@ inline bool CMsgTournamentItemEvent::has_winner_score() const {
 }
 inline void CMsgTournamentItemEvent::clear_winner_score() {
   _impl_.winner_score_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
 }
 inline uint32_t CMsgTournamentItemEvent::_internal_winner_score() const {
   return _impl_.winner_score_;
@@ -54702,7 +54616,7 @@ inline uint32_t CMsgTournamentItemEvent::winner_score() const {
   return _internal_winner_score();
 }
 inline void CMsgTournamentItemEvent::_internal_set_winner_score(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000100u;
   _impl_.winner_score_ = value;
 }
 inline void CMsgTournamentItemEvent::set_winner_score(uint32_t value) {
@@ -54712,7 +54626,7 @@ inline void CMsgTournamentItemEvent::set_winner_score(uint32_t value) {
 
 // optional uint32 loser_score = 11;
 inline bool CMsgTournamentItemEvent::_internal_has_loser_score() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
   return value;
 }
 inline bool CMsgTournamentItemEvent::has_loser_score() const {
@@ -54720,7 +54634,7 @@ inline bool CMsgTournamentItemEvent::has_loser_score() const {
 }
 inline void CMsgTournamentItemEvent::clear_loser_score() {
   _impl_.loser_score_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000400u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
 }
 inline uint32_t CMsgTournamentItemEvent::_internal_loser_score() const {
   return _impl_.loser_score_;
@@ -54730,7 +54644,7 @@ inline uint32_t CMsgTournamentItemEvent::loser_score() const {
   return _internal_loser_score();
 }
 inline void CMsgTournamentItemEvent::_internal_set_loser_score(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000400u;
+  _impl_._has_bits_[0] |= 0x00000200u;
   _impl_.loser_score_ = value;
 }
 inline void CMsgTournamentItemEvent::set_loser_score(uint32_t value) {

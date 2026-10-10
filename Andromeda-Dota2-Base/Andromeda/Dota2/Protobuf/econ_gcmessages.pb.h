@@ -5056,6 +5056,7 @@ class CMsgRequestCrateEscalationLevelResponse final :
     kEscalationLevel1FieldNumber = 3,
     kEscalationLevel2FieldNumber = 4,
     kEscalationLevel3FieldNumber = 5,
+    kEscalationLevel4FieldNumber = 6,
   };
   // optional uint32 response = 1;
   bool has_response() const;
@@ -5122,6 +5123,19 @@ class CMsgRequestCrateEscalationLevelResponse final :
   void _internal_set_escalation_level3(uint32_t value);
   public:
 
+  // optional uint32 escalation_level4 = 6;
+  bool has_escalation_level4() const;
+  private:
+  bool _internal_has_escalation_level4() const;
+  public:
+  void clear_escalation_level4();
+  uint32_t escalation_level4() const;
+  void set_escalation_level4(uint32_t value);
+  private:
+  uint32_t _internal_escalation_level4() const;
+  void _internal_set_escalation_level4(uint32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:CMsgRequestCrateEscalationLevelResponse)
  private:
   class _Internal;
@@ -5137,6 +5151,7 @@ class CMsgRequestCrateEscalationLevelResponse final :
     uint32_t escalation_level1_;
     uint32_t escalation_level2_;
     uint32_t escalation_level3_;
+    uint32_t escalation_level4_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_econ_5fgcmessages_2eproto;
@@ -21415,7 +21430,6 @@ class CMsgProcessTransactionOrder_Item final :
     kSourceReferenceIdFieldNumber = 6,
     kParentStackIndexFieldNumber = 7,
     kDefaultPriceFieldNumber = 8,
-    kIsUserFacingFieldNumber = 9,
     kPriceIndexFieldNumber = 11,
   };
   // optional string category_desc = 4;
@@ -21527,19 +21541,6 @@ class CMsgProcessTransactionOrder_Item final :
   void _internal_set_default_price(bool value);
   public:
 
-  // optional bool is_user_facing = 9;
-  bool has_is_user_facing() const;
-  private:
-  bool _internal_has_is_user_facing() const;
-  public:
-  void clear_is_user_facing();
-  bool is_user_facing() const;
-  void set_is_user_facing(bool value);
-  private:
-  bool _internal_is_user_facing() const;
-  void _internal_set_is_user_facing(bool value);
-  public:
-
   // optional int32 price_index = 11;
   bool has_price_index() const;
   private:
@@ -21571,7 +21572,6 @@ class CMsgProcessTransactionOrder_Item final :
     uint64_t source_reference_id_;
     int32_t parent_stack_index_;
     bool default_price_;
-    bool is_user_facing_;
     int32_t price_index_;
   };
   union { Impl_ _impl_; };
@@ -21712,7 +21712,6 @@ class CMsgProcessTransactionOrder final :
     kItemsFieldNumber = 9,
     kTxnIdFieldNumber = 1,
     kSteamTxnIdFieldNumber = 2,
-    kPartnerTxnIdFieldNumber = 3,
     kSteamIdFieldNumber = 4,
     kWatermarkFieldNumber = 6,
     kTimeStampFieldNumber = 5,
@@ -21761,19 +21760,6 @@ class CMsgProcessTransactionOrder final :
   private:
   uint64_t _internal_steam_txn_id() const;
   void _internal_set_steam_txn_id(uint64_t value);
-  public:
-
-  // optional uint64 partner_txn_id = 3;
-  bool has_partner_txn_id() const;
-  private:
-  bool _internal_has_partner_txn_id() const;
-  public:
-  void clear_partner_txn_id();
-  uint64_t partner_txn_id() const;
-  void set_partner_txn_id(uint64_t value);
-  private:
-  uint64_t _internal_partner_txn_id() const;
-  void _internal_set_partner_txn_id(uint64_t value);
   public:
 
   // optional fixed64 steam_id = 4;
@@ -21854,7 +21840,6 @@ class CMsgProcessTransactionOrder final :
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgProcessTransactionOrder_Item > items_;
     uint64_t txn_id_;
     uint64_t steam_txn_id_;
-    uint64_t partner_txn_id_;
     uint64_t steam_id_;
     uint64_t watermark_;
     uint32_t time_stamp_;
@@ -30186,6 +30171,34 @@ inline void CMsgRequestCrateEscalationLevelResponse::_internal_set_escalation_le
 inline void CMsgRequestCrateEscalationLevelResponse::set_escalation_level3(uint32_t value) {
   _internal_set_escalation_level3(value);
   // @@protoc_insertion_point(field_set:CMsgRequestCrateEscalationLevelResponse.escalation_level3)
+}
+
+// optional uint32 escalation_level4 = 6;
+inline bool CMsgRequestCrateEscalationLevelResponse::_internal_has_escalation_level4() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline bool CMsgRequestCrateEscalationLevelResponse::has_escalation_level4() const {
+  return _internal_has_escalation_level4();
+}
+inline void CMsgRequestCrateEscalationLevelResponse::clear_escalation_level4() {
+  _impl_.escalation_level4_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline uint32_t CMsgRequestCrateEscalationLevelResponse::_internal_escalation_level4() const {
+  return _impl_.escalation_level4_;
+}
+inline uint32_t CMsgRequestCrateEscalationLevelResponse::escalation_level4() const {
+  // @@protoc_insertion_point(field_get:CMsgRequestCrateEscalationLevelResponse.escalation_level4)
+  return _internal_escalation_level4();
+}
+inline void CMsgRequestCrateEscalationLevelResponse::_internal_set_escalation_level4(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.escalation_level4_ = value;
+}
+inline void CMsgRequestCrateEscalationLevelResponse::set_escalation_level4(uint32_t value) {
+  _internal_set_escalation_level4(value);
+  // @@protoc_insertion_point(field_set:CMsgRequestCrateEscalationLevelResponse.escalation_level4)
 }
 
 // -------------------------------------------------------------------
@@ -39401,37 +39414,9 @@ inline void CMsgProcessTransactionOrder_Item::set_default_price(bool value) {
   // @@protoc_insertion_point(field_set:CMsgProcessTransactionOrder.Item.default_price)
 }
 
-// optional bool is_user_facing = 9;
-inline bool CMsgProcessTransactionOrder_Item::_internal_has_is_user_facing() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
-  return value;
-}
-inline bool CMsgProcessTransactionOrder_Item::has_is_user_facing() const {
-  return _internal_has_is_user_facing();
-}
-inline void CMsgProcessTransactionOrder_Item::clear_is_user_facing() {
-  _impl_.is_user_facing_ = false;
-  _impl_._has_bits_[0] &= ~0x00000100u;
-}
-inline bool CMsgProcessTransactionOrder_Item::_internal_is_user_facing() const {
-  return _impl_.is_user_facing_;
-}
-inline bool CMsgProcessTransactionOrder_Item::is_user_facing() const {
-  // @@protoc_insertion_point(field_get:CMsgProcessTransactionOrder.Item.is_user_facing)
-  return _internal_is_user_facing();
-}
-inline void CMsgProcessTransactionOrder_Item::_internal_set_is_user_facing(bool value) {
-  _impl_._has_bits_[0] |= 0x00000100u;
-  _impl_.is_user_facing_ = value;
-}
-inline void CMsgProcessTransactionOrder_Item::set_is_user_facing(bool value) {
-  _internal_set_is_user_facing(value);
-  // @@protoc_insertion_point(field_set:CMsgProcessTransactionOrder.Item.is_user_facing)
-}
-
 // optional int32 price_index = 11;
 inline bool CMsgProcessTransactionOrder_Item::_internal_has_price_index() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
   return value;
 }
 inline bool CMsgProcessTransactionOrder_Item::has_price_index() const {
@@ -39439,7 +39424,7 @@ inline bool CMsgProcessTransactionOrder_Item::has_price_index() const {
 }
 inline void CMsgProcessTransactionOrder_Item::clear_price_index() {
   _impl_.price_index_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
 }
 inline int32_t CMsgProcessTransactionOrder_Item::_internal_price_index() const {
   return _impl_.price_index_;
@@ -39449,7 +39434,7 @@ inline int32_t CMsgProcessTransactionOrder_Item::price_index() const {
   return _internal_price_index();
 }
 inline void CMsgProcessTransactionOrder_Item::_internal_set_price_index(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000100u;
   _impl_.price_index_ = value;
 }
 inline void CMsgProcessTransactionOrder_Item::set_price_index(int32_t value) {
@@ -39517,37 +39502,9 @@ inline void CMsgProcessTransactionOrder::set_steam_txn_id(uint64_t value) {
   // @@protoc_insertion_point(field_set:CMsgProcessTransactionOrder.steam_txn_id)
 }
 
-// optional uint64 partner_txn_id = 3;
-inline bool CMsgProcessTransactionOrder::_internal_has_partner_txn_id() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
-  return value;
-}
-inline bool CMsgProcessTransactionOrder::has_partner_txn_id() const {
-  return _internal_has_partner_txn_id();
-}
-inline void CMsgProcessTransactionOrder::clear_partner_txn_id() {
-  _impl_.partner_txn_id_ = uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000004u;
-}
-inline uint64_t CMsgProcessTransactionOrder::_internal_partner_txn_id() const {
-  return _impl_.partner_txn_id_;
-}
-inline uint64_t CMsgProcessTransactionOrder::partner_txn_id() const {
-  // @@protoc_insertion_point(field_get:CMsgProcessTransactionOrder.partner_txn_id)
-  return _internal_partner_txn_id();
-}
-inline void CMsgProcessTransactionOrder::_internal_set_partner_txn_id(uint64_t value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.partner_txn_id_ = value;
-}
-inline void CMsgProcessTransactionOrder::set_partner_txn_id(uint64_t value) {
-  _internal_set_partner_txn_id(value);
-  // @@protoc_insertion_point(field_set:CMsgProcessTransactionOrder.partner_txn_id)
-}
-
 // optional fixed64 steam_id = 4;
 inline bool CMsgProcessTransactionOrder::_internal_has_steam_id() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool CMsgProcessTransactionOrder::has_steam_id() const {
@@ -39555,7 +39512,7 @@ inline bool CMsgProcessTransactionOrder::has_steam_id() const {
 }
 inline void CMsgProcessTransactionOrder::clear_steam_id() {
   _impl_.steam_id_ = uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline uint64_t CMsgProcessTransactionOrder::_internal_steam_id() const {
   return _impl_.steam_id_;
@@ -39565,7 +39522,7 @@ inline uint64_t CMsgProcessTransactionOrder::steam_id() const {
   return _internal_steam_id();
 }
 inline void CMsgProcessTransactionOrder::_internal_set_steam_id(uint64_t value) {
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.steam_id_ = value;
 }
 inline void CMsgProcessTransactionOrder::set_steam_id(uint64_t value) {
@@ -39575,7 +39532,7 @@ inline void CMsgProcessTransactionOrder::set_steam_id(uint64_t value) {
 
 // optional uint32 time_stamp = 5;
 inline bool CMsgProcessTransactionOrder::_internal_has_time_stamp() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool CMsgProcessTransactionOrder::has_time_stamp() const {
@@ -39583,7 +39540,7 @@ inline bool CMsgProcessTransactionOrder::has_time_stamp() const {
 }
 inline void CMsgProcessTransactionOrder::clear_time_stamp() {
   _impl_.time_stamp_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline uint32_t CMsgProcessTransactionOrder::_internal_time_stamp() const {
   return _impl_.time_stamp_;
@@ -39593,7 +39550,7 @@ inline uint32_t CMsgProcessTransactionOrder::time_stamp() const {
   return _internal_time_stamp();
 }
 inline void CMsgProcessTransactionOrder::_internal_set_time_stamp(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.time_stamp_ = value;
 }
 inline void CMsgProcessTransactionOrder::set_time_stamp(uint32_t value) {
@@ -39603,7 +39560,7 @@ inline void CMsgProcessTransactionOrder::set_time_stamp(uint32_t value) {
 
 // optional uint64 watermark = 6;
 inline bool CMsgProcessTransactionOrder::_internal_has_watermark() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool CMsgProcessTransactionOrder::has_watermark() const {
@@ -39611,7 +39568,7 @@ inline bool CMsgProcessTransactionOrder::has_watermark() const {
 }
 inline void CMsgProcessTransactionOrder::clear_watermark() {
   _impl_.watermark_ = uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline uint64_t CMsgProcessTransactionOrder::_internal_watermark() const {
   return _impl_.watermark_;
@@ -39621,7 +39578,7 @@ inline uint64_t CMsgProcessTransactionOrder::watermark() const {
   return _internal_watermark();
 }
 inline void CMsgProcessTransactionOrder::_internal_set_watermark(uint64_t value) {
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.watermark_ = value;
 }
 inline void CMsgProcessTransactionOrder::set_watermark(uint64_t value) {
@@ -39631,7 +39588,7 @@ inline void CMsgProcessTransactionOrder::set_watermark(uint64_t value) {
 
 // optional int32 purchase_report_status = 7;
 inline bool CMsgProcessTransactionOrder::_internal_has_purchase_report_status() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool CMsgProcessTransactionOrder::has_purchase_report_status() const {
@@ -39639,7 +39596,7 @@ inline bool CMsgProcessTransactionOrder::has_purchase_report_status() const {
 }
 inline void CMsgProcessTransactionOrder::clear_purchase_report_status() {
   _impl_.purchase_report_status_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000040u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline int32_t CMsgProcessTransactionOrder::_internal_purchase_report_status() const {
   return _impl_.purchase_report_status_;
@@ -39649,7 +39606,7 @@ inline int32_t CMsgProcessTransactionOrder::purchase_report_status() const {
   return _internal_purchase_report_status();
 }
 inline void CMsgProcessTransactionOrder::_internal_set_purchase_report_status(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   _impl_.purchase_report_status_ = value;
 }
 inline void CMsgProcessTransactionOrder::set_purchase_report_status(int32_t value) {
@@ -39659,7 +39616,7 @@ inline void CMsgProcessTransactionOrder::set_purchase_report_status(int32_t valu
 
 // optional uint32 currency = 8;
 inline bool CMsgProcessTransactionOrder::_internal_has_currency() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline bool CMsgProcessTransactionOrder::has_currency() const {
@@ -39667,7 +39624,7 @@ inline bool CMsgProcessTransactionOrder::has_currency() const {
 }
 inline void CMsgProcessTransactionOrder::clear_currency() {
   _impl_.currency_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000080u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline uint32_t CMsgProcessTransactionOrder::_internal_currency() const {
   return _impl_.currency_;
@@ -39677,7 +39634,7 @@ inline uint32_t CMsgProcessTransactionOrder::currency() const {
   return _internal_currency();
 }
 inline void CMsgProcessTransactionOrder::_internal_set_currency(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   _impl_.currency_ = value;
 }
 inline void CMsgProcessTransactionOrder::set_currency(uint32_t value) {

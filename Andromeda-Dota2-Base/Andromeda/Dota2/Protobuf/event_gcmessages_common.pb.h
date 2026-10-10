@@ -29,6 +29,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -47,14 +48,45 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 class CMsgEventAction;
 struct CMsgEventActionDefaultTypeInternal;
 extern CMsgEventActionDefaultTypeInternal _CMsgEventAction_default_instance_;
+class CMsgPeriodicResourceKey;
+struct CMsgPeriodicResourceKeyDefaultTypeInternal;
+extern CMsgPeriodicResourceKeyDefaultTypeInternal _CMsgPeriodicResourceKey_default_instance_;
+class CMsgPeriodicResourceValue;
+struct CMsgPeriodicResourceValueDefaultTypeInternal;
+extern CMsgPeriodicResourceValueDefaultTypeInternal _CMsgPeriodicResourceValue_default_instance_;
 class CMsgUserEventPoints;
 struct CMsgUserEventPointsDefaultTypeInternal;
 extern CMsgUserEventPointsDefaultTypeInternal _CMsgUserEventPoints_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::CMsgEventAction* Arena::CreateMaybeMessage<::CMsgEventAction>(Arena*);
+template<> ::CMsgPeriodicResourceKey* Arena::CreateMaybeMessage<::CMsgPeriodicResourceKey>(Arena*);
+template<> ::CMsgPeriodicResourceValue* Arena::CreateMaybeMessage<::CMsgPeriodicResourceValue>(Arena*);
 template<> ::CMsgUserEventPoints* Arena::CreateMaybeMessage<::CMsgUserEventPoints>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 
+enum EEventActionScoreMode : int {
+  k_eEventActionScoreMode_Add = 0,
+  k_eEventActionScoreMode_Min = 1
+};
+bool EEventActionScoreMode_IsValid(int value);
+constexpr EEventActionScoreMode EEventActionScoreMode_MIN = k_eEventActionScoreMode_Add;
+constexpr EEventActionScoreMode EEventActionScoreMode_MAX = k_eEventActionScoreMode_Min;
+constexpr int EEventActionScoreMode_ARRAYSIZE = EEventActionScoreMode_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EEventActionScoreMode_descriptor();
+template<typename T>
+inline const std::string& EEventActionScoreMode_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, EEventActionScoreMode>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function EEventActionScoreMode_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    EEventActionScoreMode_descriptor(), enum_t_value);
+}
+inline bool EEventActionScoreMode_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, EEventActionScoreMode* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<EEventActionScoreMode>(
+    EEventActionScoreMode_descriptor(), name, value);
+}
 // ===================================================================
 
 class CMsgEventAction final :
@@ -515,6 +547,371 @@ class CMsgUserEventPoints final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_event_5fgcmessages_5fcommon_2eproto;
 };
+// -------------------------------------------------------------------
+
+class CMsgPeriodicResourceKey final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgPeriodicResourceKey) */ {
+ public:
+  inline CMsgPeriodicResourceKey() : CMsgPeriodicResourceKey(nullptr) {}
+  ~CMsgPeriodicResourceKey() override;
+  explicit PROTOBUF_CONSTEXPR CMsgPeriodicResourceKey(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgPeriodicResourceKey(const CMsgPeriodicResourceKey& from);
+  CMsgPeriodicResourceKey(CMsgPeriodicResourceKey&& from) noexcept
+    : CMsgPeriodicResourceKey() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgPeriodicResourceKey& operator=(const CMsgPeriodicResourceKey& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgPeriodicResourceKey& operator=(CMsgPeriodicResourceKey&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgPeriodicResourceKey& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgPeriodicResourceKey* internal_default_instance() {
+    return reinterpret_cast<const CMsgPeriodicResourceKey*>(
+               &_CMsgPeriodicResourceKey_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(CMsgPeriodicResourceKey& a, CMsgPeriodicResourceKey& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgPeriodicResourceKey* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgPeriodicResourceKey* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgPeriodicResourceKey* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgPeriodicResourceKey>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgPeriodicResourceKey& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgPeriodicResourceKey& from) {
+    CMsgPeriodicResourceKey::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgPeriodicResourceKey* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgPeriodicResourceKey";
+  }
+  protected:
+  explicit CMsgPeriodicResourceKey(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAccountIdFieldNumber = 1,
+    kPeriodicResourceIdFieldNumber = 2,
+    kTimestampFieldNumber = 3,
+  };
+  // optional uint32 account_id = 1;
+  bool has_account_id() const;
+  private:
+  bool _internal_has_account_id() const;
+  public:
+  void clear_account_id();
+  uint32_t account_id() const;
+  void set_account_id(uint32_t value);
+  private:
+  uint32_t _internal_account_id() const;
+  void _internal_set_account_id(uint32_t value);
+  public:
+
+  // optional uint32 periodic_resource_id = 2;
+  bool has_periodic_resource_id() const;
+  private:
+  bool _internal_has_periodic_resource_id() const;
+  public:
+  void clear_periodic_resource_id();
+  uint32_t periodic_resource_id() const;
+  void set_periodic_resource_id(uint32_t value);
+  private:
+  uint32_t _internal_periodic_resource_id() const;
+  void _internal_set_periodic_resource_id(uint32_t value);
+  public:
+
+  // optional uint32 timestamp = 3;
+  bool has_timestamp() const;
+  private:
+  bool _internal_has_timestamp() const;
+  public:
+  void clear_timestamp();
+  uint32_t timestamp() const;
+  void set_timestamp(uint32_t value);
+  private:
+  uint32_t _internal_timestamp() const;
+  void _internal_set_timestamp(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgPeriodicResourceKey)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint32_t account_id_;
+    uint32_t periodic_resource_id_;
+    uint32_t timestamp_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_event_5fgcmessages_5fcommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CMsgPeriodicResourceValue final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgPeriodicResourceValue) */ {
+ public:
+  inline CMsgPeriodicResourceValue() : CMsgPeriodicResourceValue(nullptr) {}
+  ~CMsgPeriodicResourceValue() override;
+  explicit PROTOBUF_CONSTEXPR CMsgPeriodicResourceValue(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgPeriodicResourceValue(const CMsgPeriodicResourceValue& from);
+  CMsgPeriodicResourceValue(CMsgPeriodicResourceValue&& from) noexcept
+    : CMsgPeriodicResourceValue() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgPeriodicResourceValue& operator=(const CMsgPeriodicResourceValue& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgPeriodicResourceValue& operator=(CMsgPeriodicResourceValue&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgPeriodicResourceValue& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgPeriodicResourceValue* internal_default_instance() {
+    return reinterpret_cast<const CMsgPeriodicResourceValue*>(
+               &_CMsgPeriodicResourceValue_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(CMsgPeriodicResourceValue& a, CMsgPeriodicResourceValue& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgPeriodicResourceValue* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgPeriodicResourceValue* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgPeriodicResourceValue* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgPeriodicResourceValue>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgPeriodicResourceValue& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgPeriodicResourceValue& from) {
+    CMsgPeriodicResourceValue::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgPeriodicResourceValue* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgPeriodicResourceValue";
+  }
+  protected:
+  explicit CMsgPeriodicResourceValue(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPeriodicResourceMaxFieldNumber = 1,
+    kPeriodicResourceUsedFieldNumber = 2,
+  };
+  // optional uint32 periodic_resource_max = 1;
+  bool has_periodic_resource_max() const;
+  private:
+  bool _internal_has_periodic_resource_max() const;
+  public:
+  void clear_periodic_resource_max();
+  uint32_t periodic_resource_max() const;
+  void set_periodic_resource_max(uint32_t value);
+  private:
+  uint32_t _internal_periodic_resource_max() const;
+  void _internal_set_periodic_resource_max(uint32_t value);
+  public:
+
+  // optional uint32 periodic_resource_used = 2;
+  bool has_periodic_resource_used() const;
+  private:
+  bool _internal_has_periodic_resource_used() const;
+  public:
+  void clear_periodic_resource_used();
+  uint32_t periodic_resource_used() const;
+  void set_periodic_resource_used(uint32_t value);
+  private:
+  uint32_t _internal_periodic_resource_used() const;
+  void _internal_set_periodic_resource_used(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgPeriodicResourceValue)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint32_t periodic_resource_max_;
+    uint32_t periodic_resource_used_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_event_5fgcmessages_5fcommon_2eproto;
+};
 // ===================================================================
 
 
@@ -850,14 +1247,176 @@ inline void CMsgUserEventPoints::set_active_season_id(uint32_t value) {
   // @@protoc_insertion_point(field_set:CMsgUserEventPoints.active_season_id)
 }
 
+// -------------------------------------------------------------------
+
+// CMsgPeriodicResourceKey
+
+// optional uint32 account_id = 1;
+inline bool CMsgPeriodicResourceKey::_internal_has_account_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgPeriodicResourceKey::has_account_id() const {
+  return _internal_has_account_id();
+}
+inline void CMsgPeriodicResourceKey::clear_account_id() {
+  _impl_.account_id_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline uint32_t CMsgPeriodicResourceKey::_internal_account_id() const {
+  return _impl_.account_id_;
+}
+inline uint32_t CMsgPeriodicResourceKey::account_id() const {
+  // @@protoc_insertion_point(field_get:CMsgPeriodicResourceKey.account_id)
+  return _internal_account_id();
+}
+inline void CMsgPeriodicResourceKey::_internal_set_account_id(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.account_id_ = value;
+}
+inline void CMsgPeriodicResourceKey::set_account_id(uint32_t value) {
+  _internal_set_account_id(value);
+  // @@protoc_insertion_point(field_set:CMsgPeriodicResourceKey.account_id)
+}
+
+// optional uint32 periodic_resource_id = 2;
+inline bool CMsgPeriodicResourceKey::_internal_has_periodic_resource_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgPeriodicResourceKey::has_periodic_resource_id() const {
+  return _internal_has_periodic_resource_id();
+}
+inline void CMsgPeriodicResourceKey::clear_periodic_resource_id() {
+  _impl_.periodic_resource_id_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline uint32_t CMsgPeriodicResourceKey::_internal_periodic_resource_id() const {
+  return _impl_.periodic_resource_id_;
+}
+inline uint32_t CMsgPeriodicResourceKey::periodic_resource_id() const {
+  // @@protoc_insertion_point(field_get:CMsgPeriodicResourceKey.periodic_resource_id)
+  return _internal_periodic_resource_id();
+}
+inline void CMsgPeriodicResourceKey::_internal_set_periodic_resource_id(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.periodic_resource_id_ = value;
+}
+inline void CMsgPeriodicResourceKey::set_periodic_resource_id(uint32_t value) {
+  _internal_set_periodic_resource_id(value);
+  // @@protoc_insertion_point(field_set:CMsgPeriodicResourceKey.periodic_resource_id)
+}
+
+// optional uint32 timestamp = 3;
+inline bool CMsgPeriodicResourceKey::_internal_has_timestamp() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CMsgPeriodicResourceKey::has_timestamp() const {
+  return _internal_has_timestamp();
+}
+inline void CMsgPeriodicResourceKey::clear_timestamp() {
+  _impl_.timestamp_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline uint32_t CMsgPeriodicResourceKey::_internal_timestamp() const {
+  return _impl_.timestamp_;
+}
+inline uint32_t CMsgPeriodicResourceKey::timestamp() const {
+  // @@protoc_insertion_point(field_get:CMsgPeriodicResourceKey.timestamp)
+  return _internal_timestamp();
+}
+inline void CMsgPeriodicResourceKey::_internal_set_timestamp(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.timestamp_ = value;
+}
+inline void CMsgPeriodicResourceKey::set_timestamp(uint32_t value) {
+  _internal_set_timestamp(value);
+  // @@protoc_insertion_point(field_set:CMsgPeriodicResourceKey.timestamp)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgPeriodicResourceValue
+
+// optional uint32 periodic_resource_max = 1;
+inline bool CMsgPeriodicResourceValue::_internal_has_periodic_resource_max() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgPeriodicResourceValue::has_periodic_resource_max() const {
+  return _internal_has_periodic_resource_max();
+}
+inline void CMsgPeriodicResourceValue::clear_periodic_resource_max() {
+  _impl_.periodic_resource_max_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline uint32_t CMsgPeriodicResourceValue::_internal_periodic_resource_max() const {
+  return _impl_.periodic_resource_max_;
+}
+inline uint32_t CMsgPeriodicResourceValue::periodic_resource_max() const {
+  // @@protoc_insertion_point(field_get:CMsgPeriodicResourceValue.periodic_resource_max)
+  return _internal_periodic_resource_max();
+}
+inline void CMsgPeriodicResourceValue::_internal_set_periodic_resource_max(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.periodic_resource_max_ = value;
+}
+inline void CMsgPeriodicResourceValue::set_periodic_resource_max(uint32_t value) {
+  _internal_set_periodic_resource_max(value);
+  // @@protoc_insertion_point(field_set:CMsgPeriodicResourceValue.periodic_resource_max)
+}
+
+// optional uint32 periodic_resource_used = 2;
+inline bool CMsgPeriodicResourceValue::_internal_has_periodic_resource_used() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgPeriodicResourceValue::has_periodic_resource_used() const {
+  return _internal_has_periodic_resource_used();
+}
+inline void CMsgPeriodicResourceValue::clear_periodic_resource_used() {
+  _impl_.periodic_resource_used_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline uint32_t CMsgPeriodicResourceValue::_internal_periodic_resource_used() const {
+  return _impl_.periodic_resource_used_;
+}
+inline uint32_t CMsgPeriodicResourceValue::periodic_resource_used() const {
+  // @@protoc_insertion_point(field_get:CMsgPeriodicResourceValue.periodic_resource_used)
+  return _internal_periodic_resource_used();
+}
+inline void CMsgPeriodicResourceValue::_internal_set_periodic_resource_used(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.periodic_resource_used_ = value;
+}
+inline void CMsgPeriodicResourceValue::set_periodic_resource_used(uint32_t value) {
+  _internal_set_periodic_resource_used(value);
+  // @@protoc_insertion_point(field_set:CMsgPeriodicResourceValue.periodic_resource_used)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::EEventActionScoreMode> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::EEventActionScoreMode>() {
+  return ::EEventActionScoreMode_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

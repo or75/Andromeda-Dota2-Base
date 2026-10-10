@@ -523,6 +523,12 @@ extern CDOTAUserMsg_TE_UnitAnimationEndDefaultTypeInternal _CDOTAUserMsg_TE_Unit
 class CDOTAUserMsg_TalentTreeAlert;
 struct CDOTAUserMsg_TalentTreeAlertDefaultTypeInternal;
 extern CDOTAUserMsg_TalentTreeAlertDefaultTypeInternal _CDOTAUserMsg_TalentTreeAlert_default_instance_;
+class CDOTAUserMsg_TidehunterArcanaProgress_Fish;
+struct CDOTAUserMsg_TidehunterArcanaProgress_FishDefaultTypeInternal;
+extern CDOTAUserMsg_TidehunterArcanaProgress_FishDefaultTypeInternal _CDOTAUserMsg_TidehunterArcanaProgress_Fish_default_instance_;
+class CDOTAUserMsg_TidehunterArcanaProgress_Ravages;
+struct CDOTAUserMsg_TidehunterArcanaProgress_RavagesDefaultTypeInternal;
+extern CDOTAUserMsg_TidehunterArcanaProgress_RavagesDefaultTypeInternal _CDOTAUserMsg_TidehunterArcanaProgress_Ravages_default_instance_;
 class CDOTAUserMsg_TimerAlert;
 struct CDOTAUserMsg_TimerAlertDefaultTypeInternal;
 extern CDOTAUserMsg_TimerAlertDefaultTypeInternal _CDOTAUserMsg_TimerAlert_default_instance_;
@@ -781,6 +787,8 @@ template<> ::CDOTAUserMsg_TE_ProjectileLoc* Arena::CreateMaybeMessage<::CDOTAUse
 template<> ::CDOTAUserMsg_TE_UnitAnimation* Arena::CreateMaybeMessage<::CDOTAUserMsg_TE_UnitAnimation>(Arena*);
 template<> ::CDOTAUserMsg_TE_UnitAnimationEnd* Arena::CreateMaybeMessage<::CDOTAUserMsg_TE_UnitAnimationEnd>(Arena*);
 template<> ::CDOTAUserMsg_TalentTreeAlert* Arena::CreateMaybeMessage<::CDOTAUserMsg_TalentTreeAlert>(Arena*);
+template<> ::CDOTAUserMsg_TidehunterArcanaProgress_Fish* Arena::CreateMaybeMessage<::CDOTAUserMsg_TidehunterArcanaProgress_Fish>(Arena*);
+template<> ::CDOTAUserMsg_TidehunterArcanaProgress_Ravages* Arena::CreateMaybeMessage<::CDOTAUserMsg_TidehunterArcanaProgress_Ravages>(Arena*);
 template<> ::CDOTAUserMsg_TimerAlert* Arena::CreateMaybeMessage<::CDOTAUserMsg_TimerAlert>(Arena*);
 template<> ::CDOTAUserMsg_TipAlert* Arena::CreateMaybeMessage<::CDOTAUserMsg_TipAlert>(Arena*);
 template<> ::CDOTAUserMsg_TormentorTimer* Arena::CreateMaybeMessage<::CDOTAUserMsg_TormentorTimer>(Arena*);
@@ -1133,11 +1141,13 @@ enum EDotaUserMessages : int {
   DOTA_UM_MonsterHunter_HuntAlert = 633,
   DOTA_UM_TormentorTimer = 634,
   DOTA_UM_KillEffect = 635,
-  DOTA_UM_GiveItem = 636
+  DOTA_UM_GiveItem = 636,
+  DOTA_UM_TidehunterArcanaProgress_Ravages = 637,
+  DOTA_UM_TidehunterArcanaProgress_Fish = 638
 };
 bool EDotaUserMessages_IsValid(int value);
 constexpr EDotaUserMessages EDotaUserMessages_MIN = DOTA_UM_AddUnitToSelection;
-constexpr EDotaUserMessages EDotaUserMessages_MAX = DOTA_UM_GiveItem;
+constexpr EDotaUserMessages EDotaUserMessages_MAX = DOTA_UM_TidehunterArcanaProgress_Fish;
 constexpr int EDotaUserMessages_ARRAYSIZE = EDotaUserMessages_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EDotaUserMessages_descriptor();
@@ -12142,6 +12152,7 @@ class CDOTAUserMsg_UnitEvent_Speech final :
     kMuteableFieldNumber = 5,
     kFlagsFieldNumber = 7,
     kResponseTypeFieldNumber = 8,
+    kSpeechTargetEntityIndexFieldNumber = 9,
   };
   // optional string response = 2;
   bool has_response() const;
@@ -12244,6 +12255,19 @@ class CDOTAUserMsg_UnitEvent_Speech final :
   void _internal_set_response_type(int32_t value);
   public:
 
+  // optional int32 speech_target_entity_index = 9;
+  bool has_speech_target_entity_index() const;
+  private:
+  bool _internal_has_speech_target_entity_index() const;
+  public:
+  void clear_speech_target_entity_index();
+  int32_t speech_target_entity_index() const;
+  void set_speech_target_entity_index(int32_t value);
+  private:
+  int32_t _internal_speech_target_entity_index() const;
+  void _internal_set_speech_target_entity_index(int32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:CDOTAUserMsg_UnitEvent.Speech)
  private:
   class _Internal;
@@ -12261,6 +12285,7 @@ class CDOTAUserMsg_UnitEvent_Speech final :
     bool muteable_;
     uint32_t flags_;
     int32_t response_type_;
+    int32_t speech_target_entity_index_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fusermessages_2eproto;
@@ -40646,6 +40671,256 @@ class CDOTAUserMsg_GiveItem final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fusermessages_2eproto;
 };
+// -------------------------------------------------------------------
+
+class CDOTAUserMsg_TidehunterArcanaProgress_Ravages final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:CDOTAUserMsg_TidehunterArcanaProgress_Ravages) */ {
+ public:
+  inline CDOTAUserMsg_TidehunterArcanaProgress_Ravages() : CDOTAUserMsg_TidehunterArcanaProgress_Ravages(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR CDOTAUserMsg_TidehunterArcanaProgress_Ravages(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDOTAUserMsg_TidehunterArcanaProgress_Ravages(const CDOTAUserMsg_TidehunterArcanaProgress_Ravages& from);
+  CDOTAUserMsg_TidehunterArcanaProgress_Ravages(CDOTAUserMsg_TidehunterArcanaProgress_Ravages&& from) noexcept
+    : CDOTAUserMsg_TidehunterArcanaProgress_Ravages() {
+    *this = ::std::move(from);
+  }
+
+  inline CDOTAUserMsg_TidehunterArcanaProgress_Ravages& operator=(const CDOTAUserMsg_TidehunterArcanaProgress_Ravages& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDOTAUserMsg_TidehunterArcanaProgress_Ravages& operator=(CDOTAUserMsg_TidehunterArcanaProgress_Ravages&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDOTAUserMsg_TidehunterArcanaProgress_Ravages& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDOTAUserMsg_TidehunterArcanaProgress_Ravages* internal_default_instance() {
+    return reinterpret_cast<const CDOTAUserMsg_TidehunterArcanaProgress_Ravages*>(
+               &_CDOTAUserMsg_TidehunterArcanaProgress_Ravages_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    191;
+
+  friend void swap(CDOTAUserMsg_TidehunterArcanaProgress_Ravages& a, CDOTAUserMsg_TidehunterArcanaProgress_Ravages& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDOTAUserMsg_TidehunterArcanaProgress_Ravages* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDOTAUserMsg_TidehunterArcanaProgress_Ravages* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDOTAUserMsg_TidehunterArcanaProgress_Ravages* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDOTAUserMsg_TidehunterArcanaProgress_Ravages>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const CDOTAUserMsg_TidehunterArcanaProgress_Ravages& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const CDOTAUserMsg_TidehunterArcanaProgress_Ravages& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDOTAUserMsg_TidehunterArcanaProgress_Ravages";
+  }
+  protected:
+  explicit CDOTAUserMsg_TidehunterArcanaProgress_Ravages(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:CDOTAUserMsg_TidehunterArcanaProgress_Ravages)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_dota_5fusermessages_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CDOTAUserMsg_TidehunterArcanaProgress_Fish final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:CDOTAUserMsg_TidehunterArcanaProgress_Fish) */ {
+ public:
+  inline CDOTAUserMsg_TidehunterArcanaProgress_Fish() : CDOTAUserMsg_TidehunterArcanaProgress_Fish(nullptr) {}
+  explicit PROTOBUF_CONSTEXPR CDOTAUserMsg_TidehunterArcanaProgress_Fish(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDOTAUserMsg_TidehunterArcanaProgress_Fish(const CDOTAUserMsg_TidehunterArcanaProgress_Fish& from);
+  CDOTAUserMsg_TidehunterArcanaProgress_Fish(CDOTAUserMsg_TidehunterArcanaProgress_Fish&& from) noexcept
+    : CDOTAUserMsg_TidehunterArcanaProgress_Fish() {
+    *this = ::std::move(from);
+  }
+
+  inline CDOTAUserMsg_TidehunterArcanaProgress_Fish& operator=(const CDOTAUserMsg_TidehunterArcanaProgress_Fish& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDOTAUserMsg_TidehunterArcanaProgress_Fish& operator=(CDOTAUserMsg_TidehunterArcanaProgress_Fish&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDOTAUserMsg_TidehunterArcanaProgress_Fish& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDOTAUserMsg_TidehunterArcanaProgress_Fish* internal_default_instance() {
+    return reinterpret_cast<const CDOTAUserMsg_TidehunterArcanaProgress_Fish*>(
+               &_CDOTAUserMsg_TidehunterArcanaProgress_Fish_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    192;
+
+  friend void swap(CDOTAUserMsg_TidehunterArcanaProgress_Fish& a, CDOTAUserMsg_TidehunterArcanaProgress_Fish& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDOTAUserMsg_TidehunterArcanaProgress_Fish* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDOTAUserMsg_TidehunterArcanaProgress_Fish* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDOTAUserMsg_TidehunterArcanaProgress_Fish* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDOTAUserMsg_TidehunterArcanaProgress_Fish>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const CDOTAUserMsg_TidehunterArcanaProgress_Fish& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const CDOTAUserMsg_TidehunterArcanaProgress_Fish& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDOTAUserMsg_TidehunterArcanaProgress_Fish";
+  }
+  protected:
+  explicit CDOTAUserMsg_TidehunterArcanaProgress_Fish(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:CDOTAUserMsg_TidehunterArcanaProgress_Fish)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+  };
+  friend struct ::TableStruct_dota_5fusermessages_2eproto;
+};
 // ===================================================================
 
 
@@ -47601,6 +47876,34 @@ inline void CDOTAUserMsg_UnitEvent_Speech::_internal_set_response_type(int32_t v
 inline void CDOTAUserMsg_UnitEvent_Speech::set_response_type(int32_t value) {
   _internal_set_response_type(value);
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_UnitEvent.Speech.response_type)
+}
+
+// optional int32 speech_target_entity_index = 9;
+inline bool CDOTAUserMsg_UnitEvent_Speech::_internal_has_speech_target_entity_index() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  return value;
+}
+inline bool CDOTAUserMsg_UnitEvent_Speech::has_speech_target_entity_index() const {
+  return _internal_has_speech_target_entity_index();
+}
+inline void CDOTAUserMsg_UnitEvent_Speech::clear_speech_target_entity_index() {
+  _impl_.speech_target_entity_index_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000080u;
+}
+inline int32_t CDOTAUserMsg_UnitEvent_Speech::_internal_speech_target_entity_index() const {
+  return _impl_.speech_target_entity_index_;
+}
+inline int32_t CDOTAUserMsg_UnitEvent_Speech::speech_target_entity_index() const {
+  // @@protoc_insertion_point(field_get:CDOTAUserMsg_UnitEvent.Speech.speech_target_entity_index)
+  return _internal_speech_target_entity_index();
+}
+inline void CDOTAUserMsg_UnitEvent_Speech::_internal_set_speech_target_entity_index(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_.speech_target_entity_index_ = value;
+}
+inline void CDOTAUserMsg_UnitEvent_Speech::set_speech_target_entity_index(int32_t value) {
+  _internal_set_speech_target_entity_index(value);
+  // @@protoc_insertion_point(field_set:CDOTAUserMsg_UnitEvent.Speech.speech_target_entity_index)
 }
 
 // -------------------------------------------------------------------
@@ -65943,9 +66246,21 @@ inline void CDOTAUserMsg_GiveItem::set_id(uint32_t value) {
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_GiveItem.id)
 }
 
+// -------------------------------------------------------------------
+
+// CDOTAUserMsg_TidehunterArcanaProgress_Ravages
+
+// -------------------------------------------------------------------
+
+// CDOTAUserMsg_TidehunterArcanaProgress_Fish
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

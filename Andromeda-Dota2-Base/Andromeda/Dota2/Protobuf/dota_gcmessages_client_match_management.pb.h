@@ -4889,8 +4889,22 @@ class CMsgPracticeLobbyLaunch final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kNonceFieldNumber = 6,
     kClientVersionFieldNumber = 5,
   };
+  // optional fixed64 nonce = 6;
+  bool has_nonce() const;
+  private:
+  bool _internal_has_nonce() const;
+  public:
+  void clear_nonce();
+  uint64_t nonce() const;
+  void set_nonce(uint64_t value);
+  private:
+  uint64_t _internal_nonce() const;
+  void _internal_set_nonce(uint64_t value);
+  public:
+
   // optional uint32 client_version = 5;
   bool has_client_version() const;
   private:
@@ -4914,6 +4928,7 @@ class CMsgPracticeLobbyLaunch final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint64_t nonce_;
     uint32_t client_version_;
   };
   union { Impl_ _impl_; };
@@ -17070,7 +17085,7 @@ inline void CMsgPracticeLobbyKickFromTeam::set_account_id(uint32_t value) {
 
 // optional uint32 client_version = 5;
 inline bool CMsgPracticeLobbyLaunch::_internal_has_client_version() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
 inline bool CMsgPracticeLobbyLaunch::has_client_version() const {
@@ -17078,7 +17093,7 @@ inline bool CMsgPracticeLobbyLaunch::has_client_version() const {
 }
 inline void CMsgPracticeLobbyLaunch::clear_client_version() {
   _impl_.client_version_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline uint32_t CMsgPracticeLobbyLaunch::_internal_client_version() const {
   return _impl_.client_version_;
@@ -17088,12 +17103,40 @@ inline uint32_t CMsgPracticeLobbyLaunch::client_version() const {
   return _internal_client_version();
 }
 inline void CMsgPracticeLobbyLaunch::_internal_set_client_version(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.client_version_ = value;
 }
 inline void CMsgPracticeLobbyLaunch::set_client_version(uint32_t value) {
   _internal_set_client_version(value);
   // @@protoc_insertion_point(field_set:CMsgPracticeLobbyLaunch.client_version)
+}
+
+// optional fixed64 nonce = 6;
+inline bool CMsgPracticeLobbyLaunch::_internal_has_nonce() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgPracticeLobbyLaunch::has_nonce() const {
+  return _internal_has_nonce();
+}
+inline void CMsgPracticeLobbyLaunch::clear_nonce() {
+  _impl_.nonce_ = uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline uint64_t CMsgPracticeLobbyLaunch::_internal_nonce() const {
+  return _impl_.nonce_;
+}
+inline uint64_t CMsgPracticeLobbyLaunch::nonce() const {
+  // @@protoc_insertion_point(field_get:CMsgPracticeLobbyLaunch.nonce)
+  return _internal_nonce();
+}
+inline void CMsgPracticeLobbyLaunch::_internal_set_nonce(uint64_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.nonce_ = value;
+}
+inline void CMsgPracticeLobbyLaunch::set_nonce(uint64_t value) {
+  _internal_set_nonce(value);
+  // @@protoc_insertion_point(field_set:CMsgPracticeLobbyLaunch.nonce)
 }
 
 // -------------------------------------------------------------------

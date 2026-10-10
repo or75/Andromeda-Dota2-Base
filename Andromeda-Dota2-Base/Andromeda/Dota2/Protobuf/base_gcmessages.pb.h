@@ -3162,6 +3162,7 @@ class CMsgLANServerAvailable final :
 
   enum : int {
     kLobbyIdFieldNumber = 1,
+    kNonceFieldNumber = 2,
   };
   // optional fixed64 lobby_id = 1;
   bool has_lobby_id() const;
@@ -3176,6 +3177,19 @@ class CMsgLANServerAvailable final :
   void _internal_set_lobby_id(uint64_t value);
   public:
 
+  // optional fixed64 nonce = 2;
+  bool has_nonce() const;
+  private:
+  bool _internal_has_nonce() const;
+  public:
+  void clear_nonce();
+  uint64_t nonce() const;
+  void set_nonce(uint64_t value);
+  private:
+  uint64_t _internal_nonce() const;
+  void _internal_set_nonce(uint64_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:CMsgLANServerAvailable)
  private:
   class _Internal;
@@ -3187,6 +3201,7 @@ class CMsgLANServerAvailable final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     uint64_t lobby_id_;
+    uint64_t nonce_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_base_5fgcmessages_2eproto;
@@ -13567,6 +13582,34 @@ inline void CMsgLANServerAvailable::_internal_set_lobby_id(uint64_t value) {
 inline void CMsgLANServerAvailable::set_lobby_id(uint64_t value) {
   _internal_set_lobby_id(value);
   // @@protoc_insertion_point(field_set:CMsgLANServerAvailable.lobby_id)
+}
+
+// optional fixed64 nonce = 2;
+inline bool CMsgLANServerAvailable::_internal_has_nonce() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgLANServerAvailable::has_nonce() const {
+  return _internal_has_nonce();
+}
+inline void CMsgLANServerAvailable::clear_nonce() {
+  _impl_.nonce_ = uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline uint64_t CMsgLANServerAvailable::_internal_nonce() const {
+  return _impl_.nonce_;
+}
+inline uint64_t CMsgLANServerAvailable::nonce() const {
+  // @@protoc_insertion_point(field_get:CMsgLANServerAvailable.nonce)
+  return _internal_nonce();
+}
+inline void CMsgLANServerAvailable::_internal_set_nonce(uint64_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.nonce_ = value;
+}
+inline void CMsgLANServerAvailable::set_nonce(uint64_t value) {
+  _internal_set_nonce(value);
+  // @@protoc_insertion_point(field_set:CMsgLANServerAvailable.nonce)
 }
 
 // -------------------------------------------------------------------

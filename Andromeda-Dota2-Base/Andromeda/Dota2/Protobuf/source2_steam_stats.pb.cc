@@ -104,6 +104,14 @@ PROTOBUF_CONSTEXPR CMsgSource2NetworkFlowQuality::CMsgSource2NetworkFlowQuality(
   , /*decltype(_impl_.bytes_total_reliable_)*/uint64_t{0u}
   , /*decltype(_impl_.bytes_total_voice_)*/uint64_t{0u}
   , /*decltype(_impl_.bytes_sec_p99_)*/0u
+  , /*decltype(_impl_.netframes_size_uncompressed_p50_)*/0u
+  , /*decltype(_impl_.netframes_size_uncompressed_p95_)*/0u
+  , /*decltype(_impl_.netframes_size_uncompressed_p99_)*/0u
+  , /*decltype(_impl_.netframes_size_uncompressed_max_)*/0u
+  , /*decltype(_impl_.netframes_msgs_p50_)*/0u
+  , /*decltype(_impl_.netframes_msgs_p95_)*/0u
+  , /*decltype(_impl_.netframes_msgs_p99_)*/0u
+  , /*decltype(_impl_.netframes_msgs_max_)*/0u
   , /*decltype(_impl_.enginemsgs_total_)*/0u
   , /*decltype(_impl_.enginemsgs_sec_p95_)*/0u
   , /*decltype(_impl_.enginemsgs_sec_p99_)*/0u
@@ -141,7 +149,19 @@ PROTOBUF_CONSTEXPR CMsgSource2NetworkFlowQuality::CMsgSource2NetworkFlowQuality(
   , /*decltype(_impl_.packet_misdelivery_rate_p95_x4_)*/0u
   , /*decltype(_impl_.net_ping_p5_)*/0u
   , /*decltype(_impl_.net_ping_p50_)*/0u
-  , /*decltype(_impl_.net_ping_p95_)*/0u} {}
+  , /*decltype(_impl_.net_ping_p95_)*/0u
+  , /*decltype(_impl_.msgproc_usec_p50_)*/0u
+  , /*decltype(_impl_.msgproc_usec_p95_)*/0u
+  , /*decltype(_impl_.msgproc_usec_p99_)*/0u
+  , /*decltype(_impl_.msgproc_usec_max_)*/0u
+  , /*decltype(_impl_.msgproc_usec_avg_p50_)*/0u
+  , /*decltype(_impl_.msgproc_usec_avg_p95_)*/0u
+  , /*decltype(_impl_.msgproc_usec_avg_p99_)*/0u
+  , /*decltype(_impl_.msgproc_usec_avg_max_)*/0u
+  , /*decltype(_impl_.queuedmsgs_p50_)*/0u
+  , /*decltype(_impl_.queuedmsgs_p95_)*/0u
+  , /*decltype(_impl_.queuedmsgs_p99_)*/0u
+  , /*decltype(_impl_.queuedmsgs_max_)*/0u} {}
 struct CMsgSource2NetworkFlowQualityDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CMsgSource2NetworkFlowQualityDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -151,40 +171,38 @@ struct CMsgSource2NetworkFlowQualityDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgSource2NetworkFlowQualityDefaultTypeInternal _CMsgSource2NetworkFlowQuality_default_instance_;
-PROTOBUF_CONSTEXPR CMsgSource2PerfIntervalSample_Tag::CMsgSource2PerfIntervalSample_Tag(
+PROTOBUF_CONSTEXPR CMsgSource2FramePerfSample_Tag::CMsgSource2FramePerfSample_Tag(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.tag_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.max_value_)*/0u} {}
-struct CMsgSource2PerfIntervalSample_TagDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CMsgSource2PerfIntervalSample_TagDefaultTypeInternal()
+  , /*decltype(_impl_.value_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
+struct CMsgSource2FramePerfSample_TagDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgSource2FramePerfSample_TagDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CMsgSource2PerfIntervalSample_TagDefaultTypeInternal() {}
+  ~CMsgSource2FramePerfSample_TagDefaultTypeInternal() {}
   union {
-    CMsgSource2PerfIntervalSample_Tag _instance;
+    CMsgSource2FramePerfSample_Tag _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgSource2PerfIntervalSample_TagDefaultTypeInternal _CMsgSource2PerfIntervalSample_Tag_default_instance_;
-PROTOBUF_CONSTEXPR CMsgSource2PerfIntervalSample::CMsgSource2PerfIntervalSample(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgSource2FramePerfSample_TagDefaultTypeInternal _CMsgSource2FramePerfSample_Tag_default_instance_;
+PROTOBUF_CONSTEXPR CMsgSource2FramePerfSample::CMsgSource2FramePerfSample(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.tags_)*/{}
-  , /*decltype(_impl_.frame_time_max_ms_)*/0
-  , /*decltype(_impl_.frame_time_avg_ms_)*/0
-  , /*decltype(_impl_.frame_time_min_ms_)*/0
-  , /*decltype(_impl_.frame_count_)*/0
-  , /*decltype(_impl_.frame_time_total_ms_)*/0} {}
-struct CMsgSource2PerfIntervalSampleDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CMsgSource2PerfIntervalSampleDefaultTypeInternal()
+  , /*decltype(_impl_.frame_time_ms_)*/0
+  , /*decltype(_impl_.gpu_time_ms_)*/0} {}
+struct CMsgSource2FramePerfSampleDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgSource2FramePerfSampleDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CMsgSource2PerfIntervalSampleDefaultTypeInternal() {}
+  ~CMsgSource2FramePerfSampleDefaultTypeInternal() {}
   union {
-    CMsgSource2PerfIntervalSample _instance;
+    CMsgSource2FramePerfSample _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgSource2PerfIntervalSampleDefaultTypeInternal _CMsgSource2PerfIntervalSample_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgSource2FramePerfSampleDefaultTypeInternal _CMsgSource2FramePerfSample_default_instance_;
 PROTOBUF_CONSTEXPR CSource2Metrics_MatchPerfSummary_Notification_Client::CSource2Metrics_MatchPerfSummary_Notification_Client(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
@@ -492,6 +510,14 @@ const uint32_t TableStruct_source2_5fsteam_5fstats_2eproto::offsets[] PROTOBUF_S
   PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.netframes_size_exceeds_mtu_),
   PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.netframes_size_p95_),
   PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.netframes_size_p99_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.netframes_size_uncompressed_p50_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.netframes_size_uncompressed_p95_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.netframes_size_uncompressed_p99_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.netframes_size_uncompressed_max_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.netframes_msgs_p50_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.netframes_msgs_p95_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.netframes_msgs_p99_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.netframes_msgs_max_),
   PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.ticks_total_),
   PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.ticks_good_),
   PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.ticks_good_almost_late_),
@@ -521,20 +547,24 @@ const uint32_t TableStruct_source2_5fsteam_5fstats_2eproto::offsets[] PROTOBUF_S
   PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.net_ping_p5_),
   PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.net_ping_p50_),
   PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.net_ping_p95_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.msgproc_usec_p50_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.msgproc_usec_p95_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.msgproc_usec_p99_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.msgproc_usec_max_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.msgproc_usec_avg_p50_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.msgproc_usec_avg_p95_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.msgproc_usec_avg_p99_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.msgproc_usec_avg_max_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.queuedmsgs_p50_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.queuedmsgs_p95_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.queuedmsgs_p99_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2NetworkFlowQuality, _impl_.queuedmsgs_max_),
   1,
   0,
   3,
   4,
   2,
   5,
-  6,
-  7,
-  8,
-  9,
-  10,
-  11,
-  12,
-  13,
   14,
   15,
   16,
@@ -544,6 +574,14 @@ const uint32_t TableStruct_source2_5fsteam_5fstats_2eproto::offsets[] PROTOBUF_S
   20,
   21,
   22,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
   23,
   24,
   25,
@@ -565,33 +603,48 @@ const uint32_t TableStruct_source2_5fsteam_5fstats_2eproto::offsets[] PROTOBUF_S
   41,
   42,
   43,
-  PROTOBUF_FIELD_OFFSET(::CMsgSource2PerfIntervalSample_Tag, _impl_._has_bits_),
-  PROTOBUF_FIELD_OFFSET(::CMsgSource2PerfIntervalSample_Tag, _internal_metadata_),
+  44,
+  45,
+  46,
+  47,
+  48,
+  49,
+  50,
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  59,
+  60,
+  61,
+  62,
+  63,
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2FramePerfSample_Tag, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2FramePerfSample_Tag, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2FramePerfSample_Tag, _impl_._oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2FramePerfSample_Tag, _impl_.tag_),
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2FramePerfSample_Tag, _impl_.value_),
+  0,
+  ~0u,
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2FramePerfSample, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2FramePerfSample, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::CMsgSource2PerfIntervalSample_Tag, _impl_.tag_),
-  PROTOBUF_FIELD_OFFSET(::CMsgSource2PerfIntervalSample_Tag, _impl_.max_value_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2FramePerfSample, _impl_.frame_time_ms_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2FramePerfSample, _impl_.gpu_time_ms_),
+  PROTOBUF_FIELD_OFFSET(::CMsgSource2FramePerfSample, _impl_.tags_),
   0,
   1,
-  PROTOBUF_FIELD_OFFSET(::CMsgSource2PerfIntervalSample, _impl_._has_bits_),
-  PROTOBUF_FIELD_OFFSET(::CMsgSource2PerfIntervalSample, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::CMsgSource2PerfIntervalSample, _impl_.frame_time_max_ms_),
-  PROTOBUF_FIELD_OFFSET(::CMsgSource2PerfIntervalSample, _impl_.frame_time_avg_ms_),
-  PROTOBUF_FIELD_OFFSET(::CMsgSource2PerfIntervalSample, _impl_.frame_time_min_ms_),
-  PROTOBUF_FIELD_OFFSET(::CMsgSource2PerfIntervalSample, _impl_.frame_count_),
-  PROTOBUF_FIELD_OFFSET(::CMsgSource2PerfIntervalSample, _impl_.frame_time_total_ms_),
-  PROTOBUF_FIELD_OFFSET(::CMsgSource2PerfIntervalSample, _impl_.tags_),
-  0,
-  1,
-  2,
-  3,
-  4,
   ~0u,
   PROTOBUF_FIELD_OFFSET(::CSource2Metrics_MatchPerfSummary_Notification_Client, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CSource2Metrics_MatchPerfSummary_Notification_Client, _internal_metadata_),
@@ -768,19 +821,19 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 0, 20, -1, sizeof(::CMsgSource2SystemSpecs)},
   { 34, 58, -1, sizeof(::CMsgSource2VProfLiteReportItem)},
   { 76, 85, -1, sizeof(::CMsgSource2VProfLiteReport)},
-  { 88, 138, -1, sizeof(::CMsgSource2NetworkFlowQuality)},
-  { 182, 190, -1, sizeof(::CMsgSource2PerfIntervalSample_Tag)},
-  { 192, 204, -1, sizeof(::CMsgSource2PerfIntervalSample)},
-  { 210, 223, -1, sizeof(::CSource2Metrics_MatchPerfSummary_Notification_Client)},
-  { 230, 243, -1, sizeof(::CSource2Metrics_MatchPerfSummary_Notification)},
-  { 250, 258, -1, sizeof(::CMsgSource2PlayStatsPackedRecordList_FieldDef)},
-  { 260, -1, -1, sizeof(::CMsgSource2PlayStatsPackedRecordList_SteamIDList)},
-  { 267, 293, -1, sizeof(::CMsgSource2PlayStatsPackedRecordList)},
-  { 313, 321, -1, sizeof(::CSource2Metrics_RecordPlayStats_Notification)},
-  { 323, 335, -1, sizeof(::CSource2Metrics_FetchMapData_Request)},
-  { 341, 350, -1, sizeof(::CSource2Metrics_FetchMapData_Response_MapData)},
-  { 353, -1, -1, sizeof(::CSource2Metrics_FetchMapData_Response)},
-  { 360, 373, -1, sizeof(::CUserMessage_UserSentBugBug)},
+  { 88, 158, -1, sizeof(::CMsgSource2NetworkFlowQuality)},
+  { 222, 231, -1, sizeof(::CMsgSource2FramePerfSample_Tag)},
+  { 233, 242, -1, sizeof(::CMsgSource2FramePerfSample)},
+  { 245, 258, -1, sizeof(::CSource2Metrics_MatchPerfSummary_Notification_Client)},
+  { 265, 278, -1, sizeof(::CSource2Metrics_MatchPerfSummary_Notification)},
+  { 285, 293, -1, sizeof(::CMsgSource2PlayStatsPackedRecordList_FieldDef)},
+  { 295, -1, -1, sizeof(::CMsgSource2PlayStatsPackedRecordList_SteamIDList)},
+  { 302, 328, -1, sizeof(::CMsgSource2PlayStatsPackedRecordList)},
+  { 348, 356, -1, sizeof(::CSource2Metrics_RecordPlayStats_Notification)},
+  { 358, 370, -1, sizeof(::CSource2Metrics_FetchMapData_Request)},
+  { 376, 385, -1, sizeof(::CSource2Metrics_FetchMapData_Response_MapData)},
+  { 388, -1, -1, sizeof(::CSource2Metrics_FetchMapData_Response)},
+  { 395, 408, -1, sizeof(::CUserMessage_UserSentBugBug)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -788,8 +841,8 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::_CMsgSource2VProfLiteReportItem_default_instance_._instance,
   &::_CMsgSource2VProfLiteReport_default_instance_._instance,
   &::_CMsgSource2NetworkFlowQuality_default_instance_._instance,
-  &::_CMsgSource2PerfIntervalSample_Tag_default_instance_._instance,
-  &::_CMsgSource2PerfIntervalSample_default_instance_._instance,
+  &::_CMsgSource2FramePerfSample_Tag_default_instance_._instance,
+  &::_CMsgSource2FramePerfSample_default_instance_._instance,
   &::_CSource2Metrics_MatchPerfSummary_Notification_Client_default_instance_._instance,
   &::_CSource2Metrics_MatchPerfSummary_Notification_default_instance_._instance,
   &::_CMsgSource2PlayStatsPackedRecordList_FieldDef_default_instance_._instance,
@@ -830,7 +883,7 @@ const char descriptor_table_protodef_source2_5fsteam_5fstats_2eproto[] PROTOBUF_
   "rce2VProfLiteReport\022.\n\005total\030\001 \001(\0132\037.CMs"
   "gSource2VProfLiteReportItem\022.\n\005items\030\002 \003"
   "(\0132\037.CMsgSource2VProfLiteReportItem\022\030\n\020d"
-  "iscarded_frames\030\003 \001(\r\"\360\t\n\035CMsgSource2Net"
+  "iscarded_frames\030\003 \001(\r\"\304\016\n\035CMsgSource2Net"
   "workFlowQuality\022\020\n\010duration\030\001 \001(\r\022\023\n\013byt"
   "es_total\030\005 \001(\004\022\034\n\024bytes_total_reliable\030\006"
   " \001(\004\022\031\n\021bytes_total_voice\030\007 \001(\004\022\025\n\rbytes"
@@ -841,103 +894,116 @@ const char descriptor_table_protodef_source2_5fsteam_5fstats_2eproto[] PROTOBUF_
   "opped\030\037 \001(\r\022\034\n\024netframes_outoforder\030  \001("
   "\r\022\"\n\032netframes_size_exceeds_mtu\030\" \001(\r\022\032\n"
   "\022netframes_size_p95\030# \001(\r\022\032\n\022netframes_s"
-  "ize_p99\030$ \001(\r\022\023\n\013ticks_total\030( \001(\r\022\022\n\nti"
-  "cks_good\030) \001(\r\022\036\n\026ticks_good_almost_late"
-  "\030* \001(\r\022\033\n\023ticks_fixed_dropped\030+ \001(\r\022\030\n\020t"
-  "icks_fixed_late\030, \001(\r\022\031\n\021ticks_bad_dropp"
-  "ed\030- \001(\r\022\026\n\016ticks_bad_late\030. \001(\r\022\027\n\017tick"
-  "s_bad_other\030/ \001(\r\022#\n\033tick_missrate_sampl"
-  "es_total\0302 \001(\r\022%\n\035tick_missrate_samples_"
-  "perfect\0303 \001(\r\022(\n tick_missrate_samples_p"
-  "erfectnet\0304 \001(\r\022 \n\030tick_missratenet_p75_"
-  "x10\0305 \001(\r\022 \n\030tick_missratenet_p95_x10\0306 "
-  "\001(\r\022 \n\030tick_missratenet_p99_x10\0307 \001(\r\022\025\n"
-  "\rrecvmargin_p1\030= \001(\021\022\025\n\rrecvmargin_p5\030> "
-  "\001(\021\022\026\n\016recvmargin_p25\030\? \001(\021\022\026\n\016recvmargi"
-  "n_p50\030@ \001(\021\022\026\n\016recvmargin_p75\030A \001(\021\022\026\n\016r"
-  "ecvmargin_p95\030B \001(\021\022\033\n\023netframe_jitter_p"
-  "50\030F \001(\r\022\033\n\023netframe_jitter_p99\030G \001(\r\022\037\n"
-  "\027interval_peakjitter_p50\030H \001(\r\022\037\n\027interv"
-  "al_peakjitter_p95\030I \001(\r\022&\n\036packet_misdel"
-  "ivery_rate_p50_x4\030J \001(\r\022&\n\036packet_misdel"
-  "ivery_rate_p95_x4\030K \001(\r\022\023\n\013net_ping_p5\030P"
-  " \001(\r\022\024\n\014net_ping_p50\030Q \001(\r\022\024\n\014net_ping_p"
-  "95\030R \001(\r\"\373\001\n\035CMsgSource2PerfIntervalSamp"
-  "le\022\031\n\021frame_time_max_ms\030\001 \001(\002\022\031\n\021frame_t"
-  "ime_avg_ms\030\002 \001(\002\022\031\n\021frame_time_min_ms\030\003 "
-  "\001(\002\022\023\n\013frame_count\030\004 \001(\005\022\033\n\023frame_time_t"
-  "otal_ms\030\005 \001(\002\0220\n\004tags\030\006 \003(\0132\".CMsgSource"
-  "2PerfIntervalSample.Tag\032%\n\003Tag\022\013\n\003tag\030\001 "
-  "\001(\t\022\021\n\tmax_value\030\002 \001(\r\"\273\004\n-CSource2Metri"
-  "cs_MatchPerfSummary_Notification\022\r\n\005appi"
-  "d\030\001 \001(\r\022\021\n\tgame_mode\030\002 \001(\t\022\027\n\017server_bui"
-  "ld_id\030\003 \001(\r\022\024\n\014server_popid\030\004 \001(\007\0223\n\016ser"
-  "ver_profile\030\n \001(\0132\033.CMsgSource2VProfLite"
-  "Report\022F\n\007clients\030\013 \003(\01325.CSource2Metric"
-  "s_MatchPerfSummary_Notification.Client\022\013"
-  "\n\003map\030\024 \001(\t\032\256\002\n\006Client\022-\n\014system_specs\030\001"
-  " \001(\0132\027.CMsgSource2SystemSpecs\022,\n\007profile"
-  "\030\002 \001(\0132\033.CMsgSource2VProfLiteReport\022\020\n\010b"
-  "uild_id\030\003 \001(\r\0227\n\017downstream_flow\030\004 \001(\0132\036"
-  ".CMsgSource2NetworkFlowQuality\0225\n\rupstre"
-  "am_flow\030\005 \001(\0132\036.CMsgSource2NetworkFlowQu"
-  "ality\022\017\n\007steamid\030\n \001(\006\0224\n\014perf_samples\030\013"
-  " \003(\0132\036.CMsgSource2PerfIntervalSample\"\225\006\n"
-  "$CMsgSource2PlayStatsPackedRecordList\022\023\n"
-  "\013record_name\030\001 \001(\t\022B\n\nfield_defs\030\002 \003(\0132."
-  ".CMsgSource2PlayStatsPackedRecordList.Fi"
-  "eldDef\022\024\n\014record_count\030\003 \001(\r\022\027\n\013uint64_v"
-  "als\030\004 \003(\004B\002\020\001\022\027\n\013uint32_vals\030\005 \003(\rB\002\020\001\022\027"
-  "\n\013uint16_vals\030\006 \003(\rB\002\020\001\022\026\n\nuint8_vals\030\007 "
-  "\003(\rB\002\020\001\022\026\n\nint64_vals\030\010 \003(\003B\002\020\001\022\026\n\nint32"
-  "_vals\030\t \003(\005B\002\020\001\022\026\n\nint16_vals\030\n \003(\005B\002\020\001\022"
-  "\025\n\tint8_vals\030\013 \003(\005B\002\020\001\022\030\n\014float64_vals\030\014"
-  " \003(\001B\002\020\001\022\030\n\014float32_vals\030\r \003(\002B\002\020\001\022\025\n\tbo"
-  "ol_vals\030\016 \003(\010B\002\020\001\022\023\n\013string_vals\030\017 \003(\t\022#"
-  "\n\033low_cardinality_string_vals\030\020 \003(\t\022\034\n\020u"
-  "tcdatetime_vals\030\021 \003(\007B\002\020\001\022#\n\027steamidtrus"
-  "tbucket_vals\030\022 \003(\006B\002\020\001\022K\n\020trustbucket_va"
-  "ls\030\023 \003(\01321.CMsgSource2PlayStatsPackedRec"
-  "ordList.SteamIDList\022\030\n\014steamid_vals\030\024 \003("
-  "\004B\002\020\001\032i\n\010FieldDef\022\022\n\nfield_name\030\001 \001(\t\022I\n"
-  "\nfield_type\030\002 \001(\0162\033.ESource2PlayStatsFie"
-  "ldType:\030Source2PlayStats_Invalid\032\"\n\013Stea"
-  "mIDList\022\023\n\007steamid\030\001 \003(\006B\002\020\001\"z\n,CSource2"
-  "Metrics_RecordPlayStats_Notification\022;\n\014"
-  "record_types\030\001 \003(\0132%.CMsgSource2PlayStat"
-  "sPackedRecordList\022\r\n\005appid\030\002 \001(\r\"\217\001\n$CSo"
-  "urce2Metrics_FetchMapData_Request\022\r\n\005app"
-  "id\030\001 \001(\r\022\020\n\010map_name\030\002 \001(\t\022\021\n\tgame_type\030"
-  "\003 \001(\r\022\021\n\tgame_mode\030\004 \001(\r\022\r\n\005param\030\005 \001(\t\022"
-  "\021\n\ttime_span\030\006 \001(\r\"\235\001\n%CSource2Metrics_F"
-  "etchMapData_Response\022\?\n\007results\030\001 \003(\0132.."
-  "CSource2Metrics_FetchMapData_Response.Ma"
-  "pData\0323\n\007MapData\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030\002"
-  " \001(\t\022\014\n\004data\030\003 \001(\t\"\306\001\n\033CUserMessage_User"
-  "SentBugBug\022\024\n\014command_line\030\001 \001(\t\022\024\n\014auto"
-  "exec_cfg\030\002 \001(\t\022-\n\014system_specs\030\003 \001(\0132\027.C"
-  "MsgSource2SystemSpecs\022\020\n\010build_id\030\004 \001(\r\022"
-  "\021\n\tosversion\030\005 \001(\005\022\024\n\014command_logs\030\006 \001(\t"
-  "\022\021\n\tbugbug_no\030\007 \001(\005*\320\004\n\032ESource2PlayStat"
-  "sFieldType\022\034\n\030Source2PlayStats_Invalid\020\000"
-  "\022\033\n\027Source2PlayStats_UInt64\020\001\022\033\n\027Source2"
-  "PlayStats_UInt32\020\002\022\033\n\027Source2PlayStats_U"
-  "Int16\020\003\022\032\n\026Source2PlayStats_UInt8\020\004\022\032\n\026S"
-  "ource2PlayStats_Int64\020\005\022\032\n\026Source2PlaySt"
-  "ats_Int32\020\006\022\032\n\026Source2PlayStats_Int16\020\007\022"
-  "\031\n\025Source2PlayStats_Int8\020\010\022\034\n\030Source2Pla"
-  "yStats_Float64\020\t\022\034\n\030Source2PlayStats_Flo"
-  "at32\020\n\022\031\n\025Source2PlayStats_Bool\020\013\022\033\n\027Sou"
-  "rce2PlayStats_String\020\014\022)\n%Source2PlaySta"
-  "ts_LowCardinalityString\020\r\022 \n\034Source2Play"
-  "Stats_UTCDateTime\020\016\022\'\n#Source2PlayStats_"
-  "SteamIDTrustBucket\020\017\022*\n&Source2PlayStats"
-  "_SteamIDTrustBucketMin\020\020\022\034\n\030Source2PlayS"
-  "tats_SteamID\020\021"
+  "ize_p99\030$ \001(\r\022\'\n\037netframes_size_uncompre"
+  "ssed_p50\030\014 \001(\r\022\'\n\037netframes_size_uncompr"
+  "essed_p95\030\r \001(\r\022\'\n\037netframes_size_uncomp"
+  "ressed_p99\030\016 \001(\r\022\'\n\037netframes_size_uncom"
+  "pressed_max\030\017 \001(\r\022\032\n\022netframes_msgs_p50\030"
+  "\020 \001(\r\022\032\n\022netframes_msgs_p95\030\021 \001(\r\022\032\n\022net"
+  "frames_msgs_p99\030\022 \001(\r\022\032\n\022netframes_msgs_"
+  "max\030\023 \001(\r\022\023\n\013ticks_total\030( \001(\r\022\022\n\nticks_"
+  "good\030) \001(\r\022\036\n\026ticks_good_almost_late\030* \001"
+  "(\r\022\033\n\023ticks_fixed_dropped\030+ \001(\r\022\030\n\020ticks"
+  "_fixed_late\030, \001(\r\022\031\n\021ticks_bad_dropped\030-"
+  " \001(\r\022\026\n\016ticks_bad_late\030. \001(\r\022\027\n\017ticks_ba"
+  "d_other\030/ \001(\r\022#\n\033tick_missrate_samples_t"
+  "otal\0302 \001(\r\022%\n\035tick_missrate_samples_perf"
+  "ect\0303 \001(\r\022(\n tick_missrate_samples_perfe"
+  "ctnet\0304 \001(\r\022 \n\030tick_missratenet_p75_x10\030"
+  "5 \001(\r\022 \n\030tick_missratenet_p95_x10\0306 \001(\r\022"
+  " \n\030tick_missratenet_p99_x10\0307 \001(\r\022\025\n\rrec"
+  "vmargin_p1\030= \001(\021\022\025\n\rrecvmargin_p5\030> \001(\021\022"
+  "\026\n\016recvmargin_p25\030\? \001(\021\022\026\n\016recvmargin_p5"
+  "0\030@ \001(\021\022\026\n\016recvmargin_p75\030A \001(\021\022\026\n\016recvm"
+  "argin_p95\030B \001(\021\022\033\n\023netframe_jitter_p50\030F"
+  " \001(\r\022\033\n\023netframe_jitter_p99\030G \001(\r\022\037\n\027int"
+  "erval_peakjitter_p50\030H \001(\r\022\037\n\027interval_p"
+  "eakjitter_p95\030I \001(\r\022&\n\036packet_misdeliver"
+  "y_rate_p50_x4\030J \001(\r\022&\n\036packet_misdeliver"
+  "y_rate_p95_x4\030K \001(\r\022\023\n\013net_ping_p5\030P \001(\r"
+  "\022\024\n\014net_ping_p50\030Q \001(\r\022\024\n\014net_ping_p95\030R"
+  " \001(\r\022\030\n\020msgproc_usec_p50\030Z \001(\r\022\030\n\020msgpro"
+  "c_usec_p95\030[ \001(\r\022\030\n\020msgproc_usec_p99\030\\ \001"
+  "(\r\022\030\n\020msgproc_usec_max\030] \001(\r\022\034\n\024msgproc_"
+  "usec_avg_p50\030^ \001(\r\022\034\n\024msgproc_usec_avg_p"
+  "95\030_ \001(\r\022\034\n\024msgproc_usec_avg_p99\030` \001(\r\022\034"
+  "\n\024msgproc_usec_avg_max\030a \001(\r\022\026\n\016queuedms"
+  "gs_p50\030d \001(\r\022\026\n\016queuedmsgs_p95\030e \001(\r\022\026\n\016"
+  "queuedmsgs_p99\030f \001(\r\022\026\n\016queuedmsgs_max\030g"
+  " \001(\r\"\254\001\n\032CMsgSource2FramePerfSample\022\025\n\rf"
+  "rame_time_ms\030\001 \001(\002\022\023\n\013gpu_time_ms\030\002 \001(\002\022"
+  "-\n\004tags\030\006 \003(\0132\037.CMsgSource2FramePerfSamp"
+  "le.Tag\0323\n\003Tag\022\013\n\003tag\030\001 \001(\t\022\026\n\014value_uint"
+  "16\030\002 \001(\rH\000B\007\n\005value\"\270\004\n-CSource2Metrics_"
+  "MatchPerfSummary_Notification\022\r\n\005appid\030\001"
+  " \001(\r\022\021\n\tgame_mode\030\002 \001(\t\022\027\n\017server_build_"
+  "id\030\003 \001(\r\022\024\n\014server_popid\030\004 \001(\007\0223\n\016server"
+  "_profile\030\n \001(\0132\033.CMsgSource2VProfLiteRep"
+  "ort\022F\n\007clients\030\013 \003(\01325.CSource2Metrics_M"
+  "atchPerfSummary_Notification.Client\022\013\n\003m"
+  "ap\030\024 \001(\t\032\253\002\n\006Client\022-\n\014system_specs\030\001 \001("
+  "\0132\027.CMsgSource2SystemSpecs\022,\n\007profile\030\002 "
+  "\001(\0132\033.CMsgSource2VProfLiteReport\022\020\n\010buil"
+  "d_id\030\003 \001(\r\0227\n\017downstream_flow\030\004 \001(\0132\036.CM"
+  "sgSource2NetworkFlowQuality\0225\n\rupstream_"
+  "flow\030\005 \001(\0132\036.CMsgSource2NetworkFlowQuali"
+  "ty\022\017\n\007steamid\030\n \001(\006\0221\n\014perf_samples\030\014 \003("
+  "\0132\033.CMsgSource2FramePerfSample\"\225\006\n$CMsgS"
+  "ource2PlayStatsPackedRecordList\022\023\n\013recor"
+  "d_name\030\001 \001(\t\022B\n\nfield_defs\030\002 \003(\0132..CMsgS"
+  "ource2PlayStatsPackedRecordList.FieldDef"
+  "\022\024\n\014record_count\030\003 \001(\r\022\027\n\013uint64_vals\030\004 "
+  "\003(\004B\002\020\001\022\027\n\013uint32_vals\030\005 \003(\rB\002\020\001\022\027\n\013uint"
+  "16_vals\030\006 \003(\rB\002\020\001\022\026\n\nuint8_vals\030\007 \003(\rB\002\020"
+  "\001\022\026\n\nint64_vals\030\010 \003(\003B\002\020\001\022\026\n\nint32_vals\030"
+  "\t \003(\005B\002\020\001\022\026\n\nint16_vals\030\n \003(\005B\002\020\001\022\025\n\tint"
+  "8_vals\030\013 \003(\005B\002\020\001\022\030\n\014float64_vals\030\014 \003(\001B\002"
+  "\020\001\022\030\n\014float32_vals\030\r \003(\002B\002\020\001\022\025\n\tbool_val"
+  "s\030\016 \003(\010B\002\020\001\022\023\n\013string_vals\030\017 \003(\t\022#\n\033low_"
+  "cardinality_string_vals\030\020 \003(\t\022\034\n\020utcdate"
+  "time_vals\030\021 \003(\007B\002\020\001\022#\n\027steamidtrustbucke"
+  "t_vals\030\022 \003(\006B\002\020\001\022K\n\020trustbucket_vals\030\023 \003"
+  "(\01321.CMsgSource2PlayStatsPackedRecordLis"
+  "t.SteamIDList\022\030\n\014steamid_vals\030\024 \003(\004B\002\020\001\032"
+  "i\n\010FieldDef\022\022\n\nfield_name\030\001 \001(\t\022I\n\nfield"
+  "_type\030\002 \001(\0162\033.ESource2PlayStatsFieldType"
+  ":\030Source2PlayStats_Invalid\032\"\n\013SteamIDLis"
+  "t\022\023\n\007steamid\030\001 \003(\006B\002\020\001\"z\n,CSource2Metric"
+  "s_RecordPlayStats_Notification\022;\n\014record"
+  "_types\030\001 \003(\0132%.CMsgSource2PlayStatsPacke"
+  "dRecordList\022\r\n\005appid\030\002 \001(\r\"\217\001\n$CSource2M"
+  "etrics_FetchMapData_Request\022\r\n\005appid\030\001 \001"
+  "(\r\022\020\n\010map_name\030\002 \001(\t\022\021\n\tgame_type\030\003 \001(\r\022"
+  "\021\n\tgame_mode\030\004 \001(\r\022\r\n\005param\030\005 \001(\t\022\021\n\ttim"
+  "e_span\030\006 \001(\r\"\235\001\n%CSource2Metrics_FetchMa"
+  "pData_Response\022\?\n\007results\030\001 \003(\0132..CSourc"
+  "e2Metrics_FetchMapData_Response.MapData\032"
+  "3\n\007MapData\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\014"
+  "\n\004data\030\003 \001(\t\"\306\001\n\033CUserMessage_UserSentBu"
+  "gBug\022\024\n\014command_line\030\001 \001(\t\022\024\n\014autoexec_c"
+  "fg\030\002 \001(\t\022-\n\014system_specs\030\003 \001(\0132\027.CMsgSou"
+  "rce2SystemSpecs\022\020\n\010build_id\030\004 \001(\r\022\021\n\tosv"
+  "ersion\030\005 \001(\005\022\024\n\014command_logs\030\006 \001(\t\022\021\n\tbu"
+  "gbug_no\030\007 \001(\005*\320\004\n\032ESource2PlayStatsField"
+  "Type\022\034\n\030Source2PlayStats_Invalid\020\000\022\033\n\027So"
+  "urce2PlayStats_UInt64\020\001\022\033\n\027Source2PlaySt"
+  "ats_UInt32\020\002\022\033\n\027Source2PlayStats_UInt16\020"
+  "\003\022\032\n\026Source2PlayStats_UInt8\020\004\022\032\n\026Source2"
+  "PlayStats_Int64\020\005\022\032\n\026Source2PlayStats_In"
+  "t32\020\006\022\032\n\026Source2PlayStats_Int16\020\007\022\031\n\025Sou"
+  "rce2PlayStats_Int8\020\010\022\034\n\030Source2PlayStats"
+  "_Float64\020\t\022\034\n\030Source2PlayStats_Float32\020\n"
+  "\022\031\n\025Source2PlayStats_Bool\020\013\022\033\n\027Source2Pl"
+  "ayStats_String\020\014\022)\n%Source2PlayStats_Low"
+  "CardinalityString\020\r\022 \n\034Source2PlayStats_"
+  "UTCDateTime\020\016\022\'\n#Source2PlayStats_SteamI"
+  "DTrustBucket\020\017\022*\n&Source2PlayStats_Steam"
+  "IDTrustBucketMin\020\020\022\034\n\030Source2PlayStats_S"
+  "teamID\020\021"
   ;
 static ::_pbi::once_flag descriptor_table_source2_5fsteam_5fstats_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_source2_5fsteam_5fstats_2eproto = {
-    false, false, 5214, descriptor_table_protodef_source2_5fsteam_5fstats_2eproto,
+    false, false, 5728, descriptor_table_protodef_source2_5fsteam_5fstats_2eproto,
     "source2_steam_stats.proto",
     &descriptor_table_source2_5fsteam_5fstats_2eproto_once, nullptr, 0, 16,
     schemas, file_default_instances, TableStruct_source2_5fsteam_5fstats_2eproto::offsets,
@@ -2763,118 +2829,178 @@ class CMsgSource2NetworkFlowQuality::_Internal {
     (*has_bits)[0] |= 32u;
   }
   static void set_has_enginemsgs_total(HasBits* has_bits) {
-    (*has_bits)[0] |= 64u;
-  }
-  static void set_has_enginemsgs_sec_p95(HasBits* has_bits) {
-    (*has_bits)[0] |= 128u;
-  }
-  static void set_has_enginemsgs_sec_p99(HasBits* has_bits) {
-    (*has_bits)[0] |= 256u;
-  }
-  static void set_has_netframes_total(HasBits* has_bits) {
-    (*has_bits)[0] |= 512u;
-  }
-  static void set_has_netframes_dropped(HasBits* has_bits) {
-    (*has_bits)[0] |= 1024u;
-  }
-  static void set_has_netframes_outoforder(HasBits* has_bits) {
-    (*has_bits)[0] |= 2048u;
-  }
-  static void set_has_netframes_size_exceeds_mtu(HasBits* has_bits) {
-    (*has_bits)[0] |= 4096u;
-  }
-  static void set_has_netframes_size_p95(HasBits* has_bits) {
-    (*has_bits)[0] |= 8192u;
-  }
-  static void set_has_netframes_size_p99(HasBits* has_bits) {
     (*has_bits)[0] |= 16384u;
   }
-  static void set_has_ticks_total(HasBits* has_bits) {
+  static void set_has_enginemsgs_sec_p95(HasBits* has_bits) {
     (*has_bits)[0] |= 32768u;
   }
-  static void set_has_ticks_good(HasBits* has_bits) {
+  static void set_has_enginemsgs_sec_p99(HasBits* has_bits) {
     (*has_bits)[0] |= 65536u;
   }
-  static void set_has_ticks_good_almost_late(HasBits* has_bits) {
+  static void set_has_netframes_total(HasBits* has_bits) {
     (*has_bits)[0] |= 131072u;
   }
-  static void set_has_ticks_fixed_dropped(HasBits* has_bits) {
+  static void set_has_netframes_dropped(HasBits* has_bits) {
     (*has_bits)[0] |= 262144u;
   }
-  static void set_has_ticks_fixed_late(HasBits* has_bits) {
+  static void set_has_netframes_outoforder(HasBits* has_bits) {
     (*has_bits)[0] |= 524288u;
   }
-  static void set_has_ticks_bad_dropped(HasBits* has_bits) {
+  static void set_has_netframes_size_exceeds_mtu(HasBits* has_bits) {
     (*has_bits)[0] |= 1048576u;
   }
-  static void set_has_ticks_bad_late(HasBits* has_bits) {
+  static void set_has_netframes_size_p95(HasBits* has_bits) {
     (*has_bits)[0] |= 2097152u;
   }
-  static void set_has_ticks_bad_other(HasBits* has_bits) {
+  static void set_has_netframes_size_p99(HasBits* has_bits) {
     (*has_bits)[0] |= 4194304u;
   }
-  static void set_has_tick_missrate_samples_total(HasBits* has_bits) {
+  static void set_has_netframes_size_uncompressed_p50(HasBits* has_bits) {
+    (*has_bits)[0] |= 64u;
+  }
+  static void set_has_netframes_size_uncompressed_p95(HasBits* has_bits) {
+    (*has_bits)[0] |= 128u;
+  }
+  static void set_has_netframes_size_uncompressed_p99(HasBits* has_bits) {
+    (*has_bits)[0] |= 256u;
+  }
+  static void set_has_netframes_size_uncompressed_max(HasBits* has_bits) {
+    (*has_bits)[0] |= 512u;
+  }
+  static void set_has_netframes_msgs_p50(HasBits* has_bits) {
+    (*has_bits)[0] |= 1024u;
+  }
+  static void set_has_netframes_msgs_p95(HasBits* has_bits) {
+    (*has_bits)[0] |= 2048u;
+  }
+  static void set_has_netframes_msgs_p99(HasBits* has_bits) {
+    (*has_bits)[0] |= 4096u;
+  }
+  static void set_has_netframes_msgs_max(HasBits* has_bits) {
+    (*has_bits)[0] |= 8192u;
+  }
+  static void set_has_ticks_total(HasBits* has_bits) {
     (*has_bits)[0] |= 8388608u;
   }
-  static void set_has_tick_missrate_samples_perfect(HasBits* has_bits) {
+  static void set_has_ticks_good(HasBits* has_bits) {
     (*has_bits)[0] |= 16777216u;
   }
-  static void set_has_tick_missrate_samples_perfectnet(HasBits* has_bits) {
+  static void set_has_ticks_good_almost_late(HasBits* has_bits) {
     (*has_bits)[0] |= 33554432u;
   }
-  static void set_has_tick_missratenet_p75_x10(HasBits* has_bits) {
+  static void set_has_ticks_fixed_dropped(HasBits* has_bits) {
     (*has_bits)[0] |= 67108864u;
   }
-  static void set_has_tick_missratenet_p95_x10(HasBits* has_bits) {
+  static void set_has_ticks_fixed_late(HasBits* has_bits) {
     (*has_bits)[0] |= 134217728u;
   }
-  static void set_has_tick_missratenet_p99_x10(HasBits* has_bits) {
+  static void set_has_ticks_bad_dropped(HasBits* has_bits) {
     (*has_bits)[0] |= 268435456u;
   }
-  static void set_has_recvmargin_p1(HasBits* has_bits) {
+  static void set_has_ticks_bad_late(HasBits* has_bits) {
     (*has_bits)[0] |= 536870912u;
   }
-  static void set_has_recvmargin_p5(HasBits* has_bits) {
+  static void set_has_ticks_bad_other(HasBits* has_bits) {
     (*has_bits)[0] |= 1073741824u;
   }
-  static void set_has_recvmargin_p25(HasBits* has_bits) {
+  static void set_has_tick_missrate_samples_total(HasBits* has_bits) {
     (*has_bits)[0] |= 2147483648u;
   }
-  static void set_has_recvmargin_p50(HasBits* has_bits) {
+  static void set_has_tick_missrate_samples_perfect(HasBits* has_bits) {
     (*has_bits)[1] |= 1u;
   }
-  static void set_has_recvmargin_p75(HasBits* has_bits) {
+  static void set_has_tick_missrate_samples_perfectnet(HasBits* has_bits) {
     (*has_bits)[1] |= 2u;
   }
-  static void set_has_recvmargin_p95(HasBits* has_bits) {
+  static void set_has_tick_missratenet_p75_x10(HasBits* has_bits) {
     (*has_bits)[1] |= 4u;
   }
-  static void set_has_netframe_jitter_p50(HasBits* has_bits) {
+  static void set_has_tick_missratenet_p95_x10(HasBits* has_bits) {
     (*has_bits)[1] |= 8u;
   }
-  static void set_has_netframe_jitter_p99(HasBits* has_bits) {
+  static void set_has_tick_missratenet_p99_x10(HasBits* has_bits) {
     (*has_bits)[1] |= 16u;
   }
-  static void set_has_interval_peakjitter_p50(HasBits* has_bits) {
+  static void set_has_recvmargin_p1(HasBits* has_bits) {
     (*has_bits)[1] |= 32u;
   }
-  static void set_has_interval_peakjitter_p95(HasBits* has_bits) {
+  static void set_has_recvmargin_p5(HasBits* has_bits) {
     (*has_bits)[1] |= 64u;
   }
-  static void set_has_packet_misdelivery_rate_p50_x4(HasBits* has_bits) {
+  static void set_has_recvmargin_p25(HasBits* has_bits) {
     (*has_bits)[1] |= 128u;
   }
-  static void set_has_packet_misdelivery_rate_p95_x4(HasBits* has_bits) {
+  static void set_has_recvmargin_p50(HasBits* has_bits) {
     (*has_bits)[1] |= 256u;
   }
-  static void set_has_net_ping_p5(HasBits* has_bits) {
+  static void set_has_recvmargin_p75(HasBits* has_bits) {
     (*has_bits)[1] |= 512u;
   }
-  static void set_has_net_ping_p50(HasBits* has_bits) {
+  static void set_has_recvmargin_p95(HasBits* has_bits) {
     (*has_bits)[1] |= 1024u;
   }
-  static void set_has_net_ping_p95(HasBits* has_bits) {
+  static void set_has_netframe_jitter_p50(HasBits* has_bits) {
     (*has_bits)[1] |= 2048u;
+  }
+  static void set_has_netframe_jitter_p99(HasBits* has_bits) {
+    (*has_bits)[1] |= 4096u;
+  }
+  static void set_has_interval_peakjitter_p50(HasBits* has_bits) {
+    (*has_bits)[1] |= 8192u;
+  }
+  static void set_has_interval_peakjitter_p95(HasBits* has_bits) {
+    (*has_bits)[1] |= 16384u;
+  }
+  static void set_has_packet_misdelivery_rate_p50_x4(HasBits* has_bits) {
+    (*has_bits)[1] |= 32768u;
+  }
+  static void set_has_packet_misdelivery_rate_p95_x4(HasBits* has_bits) {
+    (*has_bits)[1] |= 65536u;
+  }
+  static void set_has_net_ping_p5(HasBits* has_bits) {
+    (*has_bits)[1] |= 131072u;
+  }
+  static void set_has_net_ping_p50(HasBits* has_bits) {
+    (*has_bits)[1] |= 262144u;
+  }
+  static void set_has_net_ping_p95(HasBits* has_bits) {
+    (*has_bits)[1] |= 524288u;
+  }
+  static void set_has_msgproc_usec_p50(HasBits* has_bits) {
+    (*has_bits)[1] |= 1048576u;
+  }
+  static void set_has_msgproc_usec_p95(HasBits* has_bits) {
+    (*has_bits)[1] |= 2097152u;
+  }
+  static void set_has_msgproc_usec_p99(HasBits* has_bits) {
+    (*has_bits)[1] |= 4194304u;
+  }
+  static void set_has_msgproc_usec_max(HasBits* has_bits) {
+    (*has_bits)[1] |= 8388608u;
+  }
+  static void set_has_msgproc_usec_avg_p50(HasBits* has_bits) {
+    (*has_bits)[1] |= 16777216u;
+  }
+  static void set_has_msgproc_usec_avg_p95(HasBits* has_bits) {
+    (*has_bits)[1] |= 33554432u;
+  }
+  static void set_has_msgproc_usec_avg_p99(HasBits* has_bits) {
+    (*has_bits)[1] |= 67108864u;
+  }
+  static void set_has_msgproc_usec_avg_max(HasBits* has_bits) {
+    (*has_bits)[1] |= 134217728u;
+  }
+  static void set_has_queuedmsgs_p50(HasBits* has_bits) {
+    (*has_bits)[1] |= 268435456u;
+  }
+  static void set_has_queuedmsgs_p95(HasBits* has_bits) {
+    (*has_bits)[1] |= 536870912u;
+  }
+  static void set_has_queuedmsgs_p99(HasBits* has_bits) {
+    (*has_bits)[1] |= 1073741824u;
+  }
+  static void set_has_queuedmsgs_max(HasBits* has_bits) {
+    (*has_bits)[1] |= 2147483648u;
   }
 };
 
@@ -2896,6 +3022,14 @@ CMsgSource2NetworkFlowQuality::CMsgSource2NetworkFlowQuality(const CMsgSource2Ne
     , decltype(_impl_.bytes_total_reliable_){}
     , decltype(_impl_.bytes_total_voice_){}
     , decltype(_impl_.bytes_sec_p99_){}
+    , decltype(_impl_.netframes_size_uncompressed_p50_){}
+    , decltype(_impl_.netframes_size_uncompressed_p95_){}
+    , decltype(_impl_.netframes_size_uncompressed_p99_){}
+    , decltype(_impl_.netframes_size_uncompressed_max_){}
+    , decltype(_impl_.netframes_msgs_p50_){}
+    , decltype(_impl_.netframes_msgs_p95_){}
+    , decltype(_impl_.netframes_msgs_p99_){}
+    , decltype(_impl_.netframes_msgs_max_){}
     , decltype(_impl_.enginemsgs_total_){}
     , decltype(_impl_.enginemsgs_sec_p95_){}
     , decltype(_impl_.enginemsgs_sec_p99_){}
@@ -2933,12 +3067,24 @@ CMsgSource2NetworkFlowQuality::CMsgSource2NetworkFlowQuality(const CMsgSource2Ne
     , decltype(_impl_.packet_misdelivery_rate_p95_x4_){}
     , decltype(_impl_.net_ping_p5_){}
     , decltype(_impl_.net_ping_p50_){}
-    , decltype(_impl_.net_ping_p95_){}};
+    , decltype(_impl_.net_ping_p95_){}
+    , decltype(_impl_.msgproc_usec_p50_){}
+    , decltype(_impl_.msgproc_usec_p95_){}
+    , decltype(_impl_.msgproc_usec_p99_){}
+    , decltype(_impl_.msgproc_usec_max_){}
+    , decltype(_impl_.msgproc_usec_avg_p50_){}
+    , decltype(_impl_.msgproc_usec_avg_p95_){}
+    , decltype(_impl_.msgproc_usec_avg_p99_){}
+    , decltype(_impl_.msgproc_usec_avg_max_){}
+    , decltype(_impl_.queuedmsgs_p50_){}
+    , decltype(_impl_.queuedmsgs_p95_){}
+    , decltype(_impl_.queuedmsgs_p99_){}
+    , decltype(_impl_.queuedmsgs_max_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_impl_.bytes_total_, &from._impl_.bytes_total_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.net_ping_p95_) -
-    reinterpret_cast<char*>(&_impl_.bytes_total_)) + sizeof(_impl_.net_ping_p95_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.queuedmsgs_max_) -
+    reinterpret_cast<char*>(&_impl_.bytes_total_)) + sizeof(_impl_.queuedmsgs_max_));
   // @@protoc_insertion_point(copy_constructor:CMsgSource2NetworkFlowQuality)
 }
 
@@ -2955,6 +3101,14 @@ inline void CMsgSource2NetworkFlowQuality::SharedCtor(
     , decltype(_impl_.bytes_total_reliable_){uint64_t{0u}}
     , decltype(_impl_.bytes_total_voice_){uint64_t{0u}}
     , decltype(_impl_.bytes_sec_p99_){0u}
+    , decltype(_impl_.netframes_size_uncompressed_p50_){0u}
+    , decltype(_impl_.netframes_size_uncompressed_p95_){0u}
+    , decltype(_impl_.netframes_size_uncompressed_p99_){0u}
+    , decltype(_impl_.netframes_size_uncompressed_max_){0u}
+    , decltype(_impl_.netframes_msgs_p50_){0u}
+    , decltype(_impl_.netframes_msgs_p95_){0u}
+    , decltype(_impl_.netframes_msgs_p99_){0u}
+    , decltype(_impl_.netframes_msgs_max_){0u}
     , decltype(_impl_.enginemsgs_total_){0u}
     , decltype(_impl_.enginemsgs_sec_p95_){0u}
     , decltype(_impl_.enginemsgs_sec_p99_){0u}
@@ -2993,6 +3147,18 @@ inline void CMsgSource2NetworkFlowQuality::SharedCtor(
     , decltype(_impl_.net_ping_p5_){0u}
     , decltype(_impl_.net_ping_p50_){0u}
     , decltype(_impl_.net_ping_p95_){0u}
+    , decltype(_impl_.msgproc_usec_p50_){0u}
+    , decltype(_impl_.msgproc_usec_p95_){0u}
+    , decltype(_impl_.msgproc_usec_p99_){0u}
+    , decltype(_impl_.msgproc_usec_max_){0u}
+    , decltype(_impl_.msgproc_usec_avg_p50_){0u}
+    , decltype(_impl_.msgproc_usec_avg_p95_){0u}
+    , decltype(_impl_.msgproc_usec_avg_p99_){0u}
+    , decltype(_impl_.msgproc_usec_avg_max_){0u}
+    , decltype(_impl_.queuedmsgs_p50_){0u}
+    , decltype(_impl_.queuedmsgs_p95_){0u}
+    , decltype(_impl_.queuedmsgs_p99_){0u}
+    , decltype(_impl_.queuedmsgs_max_){0u}
   };
 }
 
@@ -3022,34 +3188,44 @@ void CMsgSource2NetworkFlowQuality::Clear() {
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
     ::memset(&_impl_.bytes_total_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.enginemsgs_sec_p95_) -
-        reinterpret_cast<char*>(&_impl_.bytes_total_)) + sizeof(_impl_.enginemsgs_sec_p95_));
+        reinterpret_cast<char*>(&_impl_.netframes_size_uncompressed_p95_) -
+        reinterpret_cast<char*>(&_impl_.bytes_total_)) + sizeof(_impl_.netframes_size_uncompressed_p95_));
   }
   if (cached_has_bits & 0x0000ff00u) {
+    ::memset(&_impl_.netframes_size_uncompressed_p99_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.enginemsgs_sec_p95_) -
+        reinterpret_cast<char*>(&_impl_.netframes_size_uncompressed_p99_)) + sizeof(_impl_.enginemsgs_sec_p95_));
+  }
+  if (cached_has_bits & 0x00ff0000u) {
     ::memset(&_impl_.enginemsgs_sec_p99_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.ticks_total_) -
         reinterpret_cast<char*>(&_impl_.enginemsgs_sec_p99_)) + sizeof(_impl_.ticks_total_));
   }
-  if (cached_has_bits & 0x00ff0000u) {
+  if (cached_has_bits & 0xff000000u) {
     ::memset(&_impl_.ticks_good_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.tick_missrate_samples_total_) -
         reinterpret_cast<char*>(&_impl_.ticks_good_)) + sizeof(_impl_.tick_missrate_samples_total_));
   }
-  if (cached_has_bits & 0xff000000u) {
+  cached_has_bits = _impl_._has_bits_[1];
+  if (cached_has_bits & 0x000000ffu) {
     ::memset(&_impl_.tick_missrate_samples_perfect_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.recvmargin_p25_) -
         reinterpret_cast<char*>(&_impl_.tick_missrate_samples_perfect_)) + sizeof(_impl_.recvmargin_p25_));
   }
-  cached_has_bits = _impl_._has_bits_[1];
-  if (cached_has_bits & 0x000000ffu) {
+  if (cached_has_bits & 0x0000ff00u) {
     ::memset(&_impl_.recvmargin_p50_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.packet_misdelivery_rate_p50_x4_) -
         reinterpret_cast<char*>(&_impl_.recvmargin_p50_)) + sizeof(_impl_.packet_misdelivery_rate_p50_x4_));
   }
-  if (cached_has_bits & 0x00000f00u) {
+  if (cached_has_bits & 0x00ff0000u) {
     ::memset(&_impl_.packet_misdelivery_rate_p95_x4_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.net_ping_p95_) -
-        reinterpret_cast<char*>(&_impl_.packet_misdelivery_rate_p95_x4_)) + sizeof(_impl_.net_ping_p95_));
+        reinterpret_cast<char*>(&_impl_.msgproc_usec_max_) -
+        reinterpret_cast<char*>(&_impl_.packet_misdelivery_rate_p95_x4_)) + sizeof(_impl_.msgproc_usec_max_));
+  }
+  if (cached_has_bits & 0xff000000u) {
+    ::memset(&_impl_.msgproc_usec_avg_p50_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.queuedmsgs_max_) -
+        reinterpret_cast<char*>(&_impl_.msgproc_usec_avg_p50_)) + sizeof(_impl_.queuedmsgs_max_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -3111,6 +3287,78 @@ const char* CMsgSource2NetworkFlowQuality::_InternalParse(const char* ptr, ::_pb
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
           _Internal::set_has_bytes_sec_p99(&_impl_._has_bits_);
           _impl_.bytes_sec_p99_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 netframes_size_uncompressed_p50 = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
+          _Internal::set_has_netframes_size_uncompressed_p50(&_impl_._has_bits_);
+          _impl_.netframes_size_uncompressed_p50_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 netframes_size_uncompressed_p95 = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
+          _Internal::set_has_netframes_size_uncompressed_p95(&_impl_._has_bits_);
+          _impl_.netframes_size_uncompressed_p95_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 netframes_size_uncompressed_p99 = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
+          _Internal::set_has_netframes_size_uncompressed_p99(&_impl_._has_bits_);
+          _impl_.netframes_size_uncompressed_p99_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 netframes_size_uncompressed_max = 15;
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
+          _Internal::set_has_netframes_size_uncompressed_max(&_impl_._has_bits_);
+          _impl_.netframes_size_uncompressed_max_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 netframes_msgs_p50 = 16;
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
+          _Internal::set_has_netframes_msgs_p50(&_impl_._has_bits_);
+          _impl_.netframes_msgs_p50_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 netframes_msgs_p95 = 17;
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
+          _Internal::set_has_netframes_msgs_p95(&_impl_._has_bits_);
+          _impl_.netframes_msgs_p95_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 netframes_msgs_p99 = 18;
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
+          _Internal::set_has_netframes_msgs_p99(&_impl_._has_bits_);
+          _impl_.netframes_msgs_p99_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 netframes_msgs_max = 19;
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 152)) {
+          _Internal::set_has_netframes_msgs_max(&_impl_._has_bits_);
+          _impl_.netframes_msgs_max_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3457,6 +3705,114 @@ const char* CMsgSource2NetworkFlowQuality::_InternalParse(const char* ptr, ::_pb
         } else
           goto handle_unusual;
         continue;
+      // optional uint32 msgproc_usec_p50 = 90;
+      case 90:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 208)) {
+          _Internal::set_has_msgproc_usec_p50(&_impl_._has_bits_);
+          _impl_.msgproc_usec_p50_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 msgproc_usec_p95 = 91;
+      case 91:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 216)) {
+          _Internal::set_has_msgproc_usec_p95(&_impl_._has_bits_);
+          _impl_.msgproc_usec_p95_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 msgproc_usec_p99 = 92;
+      case 92:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 224)) {
+          _Internal::set_has_msgproc_usec_p99(&_impl_._has_bits_);
+          _impl_.msgproc_usec_p99_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 msgproc_usec_max = 93;
+      case 93:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 232)) {
+          _Internal::set_has_msgproc_usec_max(&_impl_._has_bits_);
+          _impl_.msgproc_usec_max_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 msgproc_usec_avg_p50 = 94;
+      case 94:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 240)) {
+          _Internal::set_has_msgproc_usec_avg_p50(&_impl_._has_bits_);
+          _impl_.msgproc_usec_avg_p50_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 msgproc_usec_avg_p95 = 95;
+      case 95:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 248)) {
+          _Internal::set_has_msgproc_usec_avg_p95(&_impl_._has_bits_);
+          _impl_.msgproc_usec_avg_p95_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 msgproc_usec_avg_p99 = 96;
+      case 96:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 0)) {
+          _Internal::set_has_msgproc_usec_avg_p99(&_impl_._has_bits_);
+          _impl_.msgproc_usec_avg_p99_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 msgproc_usec_avg_max = 97;
+      case 97:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_msgproc_usec_avg_max(&_impl_._has_bits_);
+          _impl_.msgproc_usec_avg_max_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 queuedmsgs_p50 = 100;
+      case 100:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _Internal::set_has_queuedmsgs_p50(&_impl_._has_bits_);
+          _impl_.queuedmsgs_p50_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 queuedmsgs_p95 = 101;
+      case 101:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _Internal::set_has_queuedmsgs_p95(&_impl_._has_bits_);
+          _impl_.queuedmsgs_p95_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 queuedmsgs_p99 = 102;
+      case 102:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _Internal::set_has_queuedmsgs_p99(&_impl_._has_bits_);
+          _impl_.queuedmsgs_p99_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 queuedmsgs_max = 103;
+      case 103:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _Internal::set_has_queuedmsgs_max(&_impl_._has_bits_);
+          _impl_.queuedmsgs_max_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -3523,233 +3879,353 @@ uint8_t* CMsgSource2NetworkFlowQuality::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(11, this->_internal_bytes_sec_p99(), target);
   }
 
-  // optional uint32 enginemsgs_total = 20;
+  // optional uint32 netframes_size_uncompressed_p50 = 12;
   if (cached_has_bits & 0x00000040u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(12, this->_internal_netframes_size_uncompressed_p50(), target);
+  }
+
+  // optional uint32 netframes_size_uncompressed_p95 = 13;
+  if (cached_has_bits & 0x00000080u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(13, this->_internal_netframes_size_uncompressed_p95(), target);
+  }
+
+  // optional uint32 netframes_size_uncompressed_p99 = 14;
+  if (cached_has_bits & 0x00000100u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(14, this->_internal_netframes_size_uncompressed_p99(), target);
+  }
+
+  // optional uint32 netframes_size_uncompressed_max = 15;
+  if (cached_has_bits & 0x00000200u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(15, this->_internal_netframes_size_uncompressed_max(), target);
+  }
+
+  // optional uint32 netframes_msgs_p50 = 16;
+  if (cached_has_bits & 0x00000400u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(16, this->_internal_netframes_msgs_p50(), target);
+  }
+
+  // optional uint32 netframes_msgs_p95 = 17;
+  if (cached_has_bits & 0x00000800u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(17, this->_internal_netframes_msgs_p95(), target);
+  }
+
+  // optional uint32 netframes_msgs_p99 = 18;
+  if (cached_has_bits & 0x00001000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(18, this->_internal_netframes_msgs_p99(), target);
+  }
+
+  // optional uint32 netframes_msgs_max = 19;
+  if (cached_has_bits & 0x00002000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(19, this->_internal_netframes_msgs_max(), target);
+  }
+
+  // optional uint32 enginemsgs_total = 20;
+  if (cached_has_bits & 0x00004000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(20, this->_internal_enginemsgs_total(), target);
   }
 
   // optional uint32 enginemsgs_sec_p95 = 21;
-  if (cached_has_bits & 0x00000080u) {
+  if (cached_has_bits & 0x00008000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(21, this->_internal_enginemsgs_sec_p95(), target);
   }
 
   // optional uint32 enginemsgs_sec_p99 = 22;
-  if (cached_has_bits & 0x00000100u) {
+  if (cached_has_bits & 0x00010000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(22, this->_internal_enginemsgs_sec_p99(), target);
   }
 
   // optional uint32 netframes_total = 30;
-  if (cached_has_bits & 0x00000200u) {
+  if (cached_has_bits & 0x00020000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(30, this->_internal_netframes_total(), target);
   }
 
   // optional uint32 netframes_dropped = 31;
-  if (cached_has_bits & 0x00000400u) {
+  if (cached_has_bits & 0x00040000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(31, this->_internal_netframes_dropped(), target);
   }
 
   // optional uint32 netframes_outoforder = 32;
-  if (cached_has_bits & 0x00000800u) {
+  if (cached_has_bits & 0x00080000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(32, this->_internal_netframes_outoforder(), target);
   }
 
   // optional uint32 netframes_size_exceeds_mtu = 34;
-  if (cached_has_bits & 0x00001000u) {
+  if (cached_has_bits & 0x00100000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(34, this->_internal_netframes_size_exceeds_mtu(), target);
   }
 
   // optional uint32 netframes_size_p95 = 35;
-  if (cached_has_bits & 0x00002000u) {
+  if (cached_has_bits & 0x00200000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(35, this->_internal_netframes_size_p95(), target);
   }
 
   // optional uint32 netframes_size_p99 = 36;
-  if (cached_has_bits & 0x00004000u) {
+  if (cached_has_bits & 0x00400000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(36, this->_internal_netframes_size_p99(), target);
   }
 
   // optional uint32 ticks_total = 40;
-  if (cached_has_bits & 0x00008000u) {
+  if (cached_has_bits & 0x00800000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(40, this->_internal_ticks_total(), target);
   }
 
   // optional uint32 ticks_good = 41;
-  if (cached_has_bits & 0x00010000u) {
+  if (cached_has_bits & 0x01000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(41, this->_internal_ticks_good(), target);
   }
 
   // optional uint32 ticks_good_almost_late = 42;
-  if (cached_has_bits & 0x00020000u) {
+  if (cached_has_bits & 0x02000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(42, this->_internal_ticks_good_almost_late(), target);
   }
 
   // optional uint32 ticks_fixed_dropped = 43;
-  if (cached_has_bits & 0x00040000u) {
+  if (cached_has_bits & 0x04000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(43, this->_internal_ticks_fixed_dropped(), target);
   }
 
   // optional uint32 ticks_fixed_late = 44;
-  if (cached_has_bits & 0x00080000u) {
+  if (cached_has_bits & 0x08000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(44, this->_internal_ticks_fixed_late(), target);
   }
 
   // optional uint32 ticks_bad_dropped = 45;
-  if (cached_has_bits & 0x00100000u) {
+  if (cached_has_bits & 0x10000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(45, this->_internal_ticks_bad_dropped(), target);
   }
 
   // optional uint32 ticks_bad_late = 46;
-  if (cached_has_bits & 0x00200000u) {
+  if (cached_has_bits & 0x20000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(46, this->_internal_ticks_bad_late(), target);
   }
 
   // optional uint32 ticks_bad_other = 47;
-  if (cached_has_bits & 0x00400000u) {
+  if (cached_has_bits & 0x40000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(47, this->_internal_ticks_bad_other(), target);
   }
 
   // optional uint32 tick_missrate_samples_total = 50;
-  if (cached_has_bits & 0x00800000u) {
+  if (cached_has_bits & 0x80000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(50, this->_internal_tick_missrate_samples_total(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 tick_missrate_samples_perfect = 51;
-  if (cached_has_bits & 0x01000000u) {
+  if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(51, this->_internal_tick_missrate_samples_perfect(), target);
   }
 
   // optional uint32 tick_missrate_samples_perfectnet = 52;
-  if (cached_has_bits & 0x02000000u) {
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(52, this->_internal_tick_missrate_samples_perfectnet(), target);
   }
 
   // optional uint32 tick_missratenet_p75_x10 = 53;
-  if (cached_has_bits & 0x04000000u) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(53, this->_internal_tick_missratenet_p75_x10(), target);
   }
 
   // optional uint32 tick_missratenet_p95_x10 = 54;
-  if (cached_has_bits & 0x08000000u) {
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(54, this->_internal_tick_missratenet_p95_x10(), target);
   }
 
   // optional uint32 tick_missratenet_p99_x10 = 55;
-  if (cached_has_bits & 0x10000000u) {
+  if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(55, this->_internal_tick_missratenet_p99_x10(), target);
   }
 
   // optional sint32 recvmargin_p1 = 61;
-  if (cached_has_bits & 0x20000000u) {
+  if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteSInt32ToArray(61, this->_internal_recvmargin_p1(), target);
   }
 
   // optional sint32 recvmargin_p5 = 62;
-  if (cached_has_bits & 0x40000000u) {
+  if (cached_has_bits & 0x00000040u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteSInt32ToArray(62, this->_internal_recvmargin_p5(), target);
   }
 
   // optional sint32 recvmargin_p25 = 63;
-  if (cached_has_bits & 0x80000000u) {
+  if (cached_has_bits & 0x00000080u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteSInt32ToArray(63, this->_internal_recvmargin_p25(), target);
   }
 
-  cached_has_bits = _impl_._has_bits_[1];
   // optional sint32 recvmargin_p50 = 64;
-  if (cached_has_bits & 0x00000001u) {
+  if (cached_has_bits & 0x00000100u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteSInt32ToArray(64, this->_internal_recvmargin_p50(), target);
   }
 
   // optional sint32 recvmargin_p75 = 65;
-  if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x00000200u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteSInt32ToArray(65, this->_internal_recvmargin_p75(), target);
   }
 
   // optional sint32 recvmargin_p95 = 66;
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000400u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteSInt32ToArray(66, this->_internal_recvmargin_p95(), target);
   }
 
   // optional uint32 netframe_jitter_p50 = 70;
-  if (cached_has_bits & 0x00000008u) {
+  if (cached_has_bits & 0x00000800u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(70, this->_internal_netframe_jitter_p50(), target);
   }
 
   // optional uint32 netframe_jitter_p99 = 71;
-  if (cached_has_bits & 0x00000010u) {
+  if (cached_has_bits & 0x00001000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(71, this->_internal_netframe_jitter_p99(), target);
   }
 
   // optional uint32 interval_peakjitter_p50 = 72;
-  if (cached_has_bits & 0x00000020u) {
+  if (cached_has_bits & 0x00002000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(72, this->_internal_interval_peakjitter_p50(), target);
   }
 
   // optional uint32 interval_peakjitter_p95 = 73;
-  if (cached_has_bits & 0x00000040u) {
+  if (cached_has_bits & 0x00004000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(73, this->_internal_interval_peakjitter_p95(), target);
   }
 
   // optional uint32 packet_misdelivery_rate_p50_x4 = 74;
-  if (cached_has_bits & 0x00000080u) {
+  if (cached_has_bits & 0x00008000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(74, this->_internal_packet_misdelivery_rate_p50_x4(), target);
   }
 
   // optional uint32 packet_misdelivery_rate_p95_x4 = 75;
-  if (cached_has_bits & 0x00000100u) {
+  if (cached_has_bits & 0x00010000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(75, this->_internal_packet_misdelivery_rate_p95_x4(), target);
   }
 
   // optional uint32 net_ping_p5 = 80;
-  if (cached_has_bits & 0x00000200u) {
+  if (cached_has_bits & 0x00020000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(80, this->_internal_net_ping_p5(), target);
   }
 
   // optional uint32 net_ping_p50 = 81;
-  if (cached_has_bits & 0x00000400u) {
+  if (cached_has_bits & 0x00040000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(81, this->_internal_net_ping_p50(), target);
   }
 
   // optional uint32 net_ping_p95 = 82;
-  if (cached_has_bits & 0x00000800u) {
+  if (cached_has_bits & 0x00080000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(82, this->_internal_net_ping_p95(), target);
+  }
+
+  // optional uint32 msgproc_usec_p50 = 90;
+  if (cached_has_bits & 0x00100000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(90, this->_internal_msgproc_usec_p50(), target);
+  }
+
+  // optional uint32 msgproc_usec_p95 = 91;
+  if (cached_has_bits & 0x00200000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(91, this->_internal_msgproc_usec_p95(), target);
+  }
+
+  // optional uint32 msgproc_usec_p99 = 92;
+  if (cached_has_bits & 0x00400000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(92, this->_internal_msgproc_usec_p99(), target);
+  }
+
+  // optional uint32 msgproc_usec_max = 93;
+  if (cached_has_bits & 0x00800000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(93, this->_internal_msgproc_usec_max(), target);
+  }
+
+  // optional uint32 msgproc_usec_avg_p50 = 94;
+  if (cached_has_bits & 0x01000000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(94, this->_internal_msgproc_usec_avg_p50(), target);
+  }
+
+  // optional uint32 msgproc_usec_avg_p95 = 95;
+  if (cached_has_bits & 0x02000000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(95, this->_internal_msgproc_usec_avg_p95(), target);
+  }
+
+  // optional uint32 msgproc_usec_avg_p99 = 96;
+  if (cached_has_bits & 0x04000000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(96, this->_internal_msgproc_usec_avg_p99(), target);
+  }
+
+  // optional uint32 msgproc_usec_avg_max = 97;
+  if (cached_has_bits & 0x08000000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(97, this->_internal_msgproc_usec_avg_max(), target);
+  }
+
+  // optional uint32 queuedmsgs_p50 = 100;
+  if (cached_has_bits & 0x10000000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(100, this->_internal_queuedmsgs_p50(), target);
+  }
+
+  // optional uint32 queuedmsgs_p95 = 101;
+  if (cached_has_bits & 0x20000000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(101, this->_internal_queuedmsgs_p95(), target);
+  }
+
+  // optional uint32 queuedmsgs_p99 = 102;
+  if (cached_has_bits & 0x40000000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(102, this->_internal_queuedmsgs_p99(), target);
+  }
+
+  // optional uint32 queuedmsgs_max = 103;
+  if (cached_has_bits & 0x80000000u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(103, this->_internal_queuedmsgs_max(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3800,281 +4276,417 @@ size_t CMsgSource2NetworkFlowQuality::ByteSizeLong() const {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bytes_sec_p99());
     }
 
-    // optional uint32 enginemsgs_total = 20;
+    // optional uint32 netframes_size_uncompressed_p50 = 12;
     if (cached_has_bits & 0x00000040u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_netframes_size_uncompressed_p50());
+    }
+
+    // optional uint32 netframes_size_uncompressed_p95 = 13;
+    if (cached_has_bits & 0x00000080u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_netframes_size_uncompressed_p95());
+    }
+
+  }
+  if (cached_has_bits & 0x0000ff00u) {
+    // optional uint32 netframes_size_uncompressed_p99 = 14;
+    if (cached_has_bits & 0x00000100u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_netframes_size_uncompressed_p99());
+    }
+
+    // optional uint32 netframes_size_uncompressed_max = 15;
+    if (cached_has_bits & 0x00000200u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_netframes_size_uncompressed_max());
+    }
+
+    // optional uint32 netframes_msgs_p50 = 16;
+    if (cached_has_bits & 0x00000400u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_netframes_msgs_p50());
+    }
+
+    // optional uint32 netframes_msgs_p95 = 17;
+    if (cached_has_bits & 0x00000800u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_netframes_msgs_p95());
+    }
+
+    // optional uint32 netframes_msgs_p99 = 18;
+    if (cached_has_bits & 0x00001000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_netframes_msgs_p99());
+    }
+
+    // optional uint32 netframes_msgs_max = 19;
+    if (cached_has_bits & 0x00002000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_netframes_msgs_max());
+    }
+
+    // optional uint32 enginemsgs_total = 20;
+    if (cached_has_bits & 0x00004000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_enginemsgs_total());
     }
 
     // optional uint32 enginemsgs_sec_p95 = 21;
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00008000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_enginemsgs_sec_p95());
     }
 
   }
-  if (cached_has_bits & 0x0000ff00u) {
+  if (cached_has_bits & 0x00ff0000u) {
     // optional uint32 enginemsgs_sec_p99 = 22;
-    if (cached_has_bits & 0x00000100u) {
+    if (cached_has_bits & 0x00010000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_enginemsgs_sec_p99());
     }
 
     // optional uint32 netframes_total = 30;
-    if (cached_has_bits & 0x00000200u) {
+    if (cached_has_bits & 0x00020000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_netframes_total());
     }
 
     // optional uint32 netframes_dropped = 31;
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00040000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_netframes_dropped());
     }
 
     // optional uint32 netframes_outoforder = 32;
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00080000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_netframes_outoforder());
     }
 
     // optional uint32 netframes_size_exceeds_mtu = 34;
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00100000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_netframes_size_exceeds_mtu());
     }
 
     // optional uint32 netframes_size_p95 = 35;
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00200000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_netframes_size_p95());
     }
 
     // optional uint32 netframes_size_p99 = 36;
-    if (cached_has_bits & 0x00004000u) {
+    if (cached_has_bits & 0x00400000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_netframes_size_p99());
     }
 
     // optional uint32 ticks_total = 40;
-    if (cached_has_bits & 0x00008000u) {
+    if (cached_has_bits & 0x00800000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_ticks_total());
     }
 
   }
-  if (cached_has_bits & 0x00ff0000u) {
+  if (cached_has_bits & 0xff000000u) {
     // optional uint32 ticks_good = 41;
-    if (cached_has_bits & 0x00010000u) {
+    if (cached_has_bits & 0x01000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_ticks_good());
     }
 
     // optional uint32 ticks_good_almost_late = 42;
-    if (cached_has_bits & 0x00020000u) {
+    if (cached_has_bits & 0x02000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_ticks_good_almost_late());
     }
 
     // optional uint32 ticks_fixed_dropped = 43;
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x04000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_ticks_fixed_dropped());
     }
 
     // optional uint32 ticks_fixed_late = 44;
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x08000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_ticks_fixed_late());
     }
 
     // optional uint32 ticks_bad_dropped = 45;
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x10000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_ticks_bad_dropped());
     }
 
     // optional uint32 ticks_bad_late = 46;
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x20000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_ticks_bad_late());
     }
 
     // optional uint32 ticks_bad_other = 47;
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x40000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_ticks_bad_other());
     }
 
     // optional uint32 tick_missrate_samples_total = 50;
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x80000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_tick_missrate_samples_total());
     }
 
   }
-  if (cached_has_bits & 0xff000000u) {
+  cached_has_bits = _impl_._has_bits_[1];
+  if (cached_has_bits & 0x000000ffu) {
     // optional uint32 tick_missrate_samples_perfect = 51;
-    if (cached_has_bits & 0x01000000u) {
+    if (cached_has_bits & 0x00000001u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_tick_missrate_samples_perfect());
     }
 
     // optional uint32 tick_missrate_samples_perfectnet = 52;
-    if (cached_has_bits & 0x02000000u) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_tick_missrate_samples_perfectnet());
     }
 
     // optional uint32 tick_missratenet_p75_x10 = 53;
-    if (cached_has_bits & 0x04000000u) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_tick_missratenet_p75_x10());
     }
 
     // optional uint32 tick_missratenet_p95_x10 = 54;
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_tick_missratenet_p95_x10());
     }
 
     // optional uint32 tick_missratenet_p99_x10 = 55;
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_tick_missratenet_p99_x10());
     }
 
     // optional sint32 recvmargin_p1 = 61;
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x00000020u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::SInt32Size(
           this->_internal_recvmargin_p1());
     }
 
     // optional sint32 recvmargin_p5 = 62;
-    if (cached_has_bits & 0x40000000u) {
+    if (cached_has_bits & 0x00000040u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::SInt32Size(
           this->_internal_recvmargin_p5());
     }
 
     // optional sint32 recvmargin_p25 = 63;
-    if (cached_has_bits & 0x80000000u) {
+    if (cached_has_bits & 0x00000080u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::SInt32Size(
           this->_internal_recvmargin_p25());
     }
 
   }
-  cached_has_bits = _impl_._has_bits_[1];
-  if (cached_has_bits & 0x000000ffu) {
+  if (cached_has_bits & 0x0000ff00u) {
     // optional sint32 recvmargin_p50 = 64;
-    if (cached_has_bits & 0x00000001u) {
+    if (cached_has_bits & 0x00000100u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::SInt32Size(
           this->_internal_recvmargin_p50());
     }
 
     // optional sint32 recvmargin_p75 = 65;
-    if (cached_has_bits & 0x00000002u) {
+    if (cached_has_bits & 0x00000200u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::SInt32Size(
           this->_internal_recvmargin_p75());
     }
 
     // optional sint32 recvmargin_p95 = 66;
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000400u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::SInt32Size(
           this->_internal_recvmargin_p95());
     }
 
     // optional uint32 netframe_jitter_p50 = 70;
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000800u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_netframe_jitter_p50());
     }
 
     // optional uint32 netframe_jitter_p99 = 71;
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00001000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_netframe_jitter_p99());
     }
 
     // optional uint32 interval_peakjitter_p50 = 72;
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00002000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_interval_peakjitter_p50());
     }
 
     // optional uint32 interval_peakjitter_p95 = 73;
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00004000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_interval_peakjitter_p95());
     }
 
     // optional uint32 packet_misdelivery_rate_p50_x4 = 74;
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00008000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_packet_misdelivery_rate_p50_x4());
     }
 
   }
-  if (cached_has_bits & 0x00000f00u) {
+  if (cached_has_bits & 0x00ff0000u) {
     // optional uint32 packet_misdelivery_rate_p95_x4 = 75;
-    if (cached_has_bits & 0x00000100u) {
+    if (cached_has_bits & 0x00010000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_packet_misdelivery_rate_p95_x4());
     }
 
     // optional uint32 net_ping_p5 = 80;
-    if (cached_has_bits & 0x00000200u) {
+    if (cached_has_bits & 0x00020000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_net_ping_p5());
     }
 
     // optional uint32 net_ping_p50 = 81;
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00040000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_net_ping_p50());
     }
 
     // optional uint32 net_ping_p95 = 82;
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00080000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_net_ping_p95());
+    }
+
+    // optional uint32 msgproc_usec_p50 = 90;
+    if (cached_has_bits & 0x00100000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_msgproc_usec_p50());
+    }
+
+    // optional uint32 msgproc_usec_p95 = 91;
+    if (cached_has_bits & 0x00200000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_msgproc_usec_p95());
+    }
+
+    // optional uint32 msgproc_usec_p99 = 92;
+    if (cached_has_bits & 0x00400000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_msgproc_usec_p99());
+    }
+
+    // optional uint32 msgproc_usec_max = 93;
+    if (cached_has_bits & 0x00800000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_msgproc_usec_max());
+    }
+
+  }
+  if (cached_has_bits & 0xff000000u) {
+    // optional uint32 msgproc_usec_avg_p50 = 94;
+    if (cached_has_bits & 0x01000000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_msgproc_usec_avg_p50());
+    }
+
+    // optional uint32 msgproc_usec_avg_p95 = 95;
+    if (cached_has_bits & 0x02000000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_msgproc_usec_avg_p95());
+    }
+
+    // optional uint32 msgproc_usec_avg_p99 = 96;
+    if (cached_has_bits & 0x04000000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_msgproc_usec_avg_p99());
+    }
+
+    // optional uint32 msgproc_usec_avg_max = 97;
+    if (cached_has_bits & 0x08000000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_msgproc_usec_avg_max());
+    }
+
+    // optional uint32 queuedmsgs_p50 = 100;
+    if (cached_has_bits & 0x10000000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_queuedmsgs_p50());
+    }
+
+    // optional uint32 queuedmsgs_p95 = 101;
+    if (cached_has_bits & 0x20000000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_queuedmsgs_p95());
+    }
+
+    // optional uint32 queuedmsgs_p99 = 102;
+    if (cached_has_bits & 0x40000000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_queuedmsgs_p99());
+    }
+
+    // optional uint32 queuedmsgs_max = 103;
+    if (cached_has_bits & 0x80000000u) {
+      total_size += 2 +
+        ::_pbi::WireFormatLite::UInt32Size(
+          this->_internal_queuedmsgs_max());
     }
 
   }
@@ -4117,134 +4729,200 @@ void CMsgSource2NetworkFlowQuality::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& 
       _this->_impl_.bytes_sec_p99_ = from._impl_.bytes_sec_p99_;
     }
     if (cached_has_bits & 0x00000040u) {
-      _this->_impl_.enginemsgs_total_ = from._impl_.enginemsgs_total_;
+      _this->_impl_.netframes_size_uncompressed_p50_ = from._impl_.netframes_size_uncompressed_p50_;
     }
     if (cached_has_bits & 0x00000080u) {
-      _this->_impl_.enginemsgs_sec_p95_ = from._impl_.enginemsgs_sec_p95_;
+      _this->_impl_.netframes_size_uncompressed_p95_ = from._impl_.netframes_size_uncompressed_p95_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   if (cached_has_bits & 0x0000ff00u) {
     if (cached_has_bits & 0x00000100u) {
-      _this->_impl_.enginemsgs_sec_p99_ = from._impl_.enginemsgs_sec_p99_;
+      _this->_impl_.netframes_size_uncompressed_p99_ = from._impl_.netframes_size_uncompressed_p99_;
     }
     if (cached_has_bits & 0x00000200u) {
-      _this->_impl_.netframes_total_ = from._impl_.netframes_total_;
+      _this->_impl_.netframes_size_uncompressed_max_ = from._impl_.netframes_size_uncompressed_max_;
     }
     if (cached_has_bits & 0x00000400u) {
-      _this->_impl_.netframes_dropped_ = from._impl_.netframes_dropped_;
+      _this->_impl_.netframes_msgs_p50_ = from._impl_.netframes_msgs_p50_;
     }
     if (cached_has_bits & 0x00000800u) {
-      _this->_impl_.netframes_outoforder_ = from._impl_.netframes_outoforder_;
+      _this->_impl_.netframes_msgs_p95_ = from._impl_.netframes_msgs_p95_;
     }
     if (cached_has_bits & 0x00001000u) {
-      _this->_impl_.netframes_size_exceeds_mtu_ = from._impl_.netframes_size_exceeds_mtu_;
+      _this->_impl_.netframes_msgs_p99_ = from._impl_.netframes_msgs_p99_;
     }
     if (cached_has_bits & 0x00002000u) {
-      _this->_impl_.netframes_size_p95_ = from._impl_.netframes_size_p95_;
+      _this->_impl_.netframes_msgs_max_ = from._impl_.netframes_msgs_max_;
     }
     if (cached_has_bits & 0x00004000u) {
-      _this->_impl_.netframes_size_p99_ = from._impl_.netframes_size_p99_;
+      _this->_impl_.enginemsgs_total_ = from._impl_.enginemsgs_total_;
     }
     if (cached_has_bits & 0x00008000u) {
-      _this->_impl_.ticks_total_ = from._impl_.ticks_total_;
+      _this->_impl_.enginemsgs_sec_p95_ = from._impl_.enginemsgs_sec_p95_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   if (cached_has_bits & 0x00ff0000u) {
     if (cached_has_bits & 0x00010000u) {
-      _this->_impl_.ticks_good_ = from._impl_.ticks_good_;
+      _this->_impl_.enginemsgs_sec_p99_ = from._impl_.enginemsgs_sec_p99_;
     }
     if (cached_has_bits & 0x00020000u) {
-      _this->_impl_.ticks_good_almost_late_ = from._impl_.ticks_good_almost_late_;
+      _this->_impl_.netframes_total_ = from._impl_.netframes_total_;
     }
     if (cached_has_bits & 0x00040000u) {
-      _this->_impl_.ticks_fixed_dropped_ = from._impl_.ticks_fixed_dropped_;
+      _this->_impl_.netframes_dropped_ = from._impl_.netframes_dropped_;
     }
     if (cached_has_bits & 0x00080000u) {
-      _this->_impl_.ticks_fixed_late_ = from._impl_.ticks_fixed_late_;
+      _this->_impl_.netframes_outoforder_ = from._impl_.netframes_outoforder_;
     }
     if (cached_has_bits & 0x00100000u) {
-      _this->_impl_.ticks_bad_dropped_ = from._impl_.ticks_bad_dropped_;
+      _this->_impl_.netframes_size_exceeds_mtu_ = from._impl_.netframes_size_exceeds_mtu_;
     }
     if (cached_has_bits & 0x00200000u) {
-      _this->_impl_.ticks_bad_late_ = from._impl_.ticks_bad_late_;
+      _this->_impl_.netframes_size_p95_ = from._impl_.netframes_size_p95_;
     }
     if (cached_has_bits & 0x00400000u) {
-      _this->_impl_.ticks_bad_other_ = from._impl_.ticks_bad_other_;
+      _this->_impl_.netframes_size_p99_ = from._impl_.netframes_size_p99_;
     }
     if (cached_has_bits & 0x00800000u) {
-      _this->_impl_.tick_missrate_samples_total_ = from._impl_.tick_missrate_samples_total_;
+      _this->_impl_.ticks_total_ = from._impl_.ticks_total_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   if (cached_has_bits & 0xff000000u) {
     if (cached_has_bits & 0x01000000u) {
-      _this->_impl_.tick_missrate_samples_perfect_ = from._impl_.tick_missrate_samples_perfect_;
+      _this->_impl_.ticks_good_ = from._impl_.ticks_good_;
     }
     if (cached_has_bits & 0x02000000u) {
-      _this->_impl_.tick_missrate_samples_perfectnet_ = from._impl_.tick_missrate_samples_perfectnet_;
+      _this->_impl_.ticks_good_almost_late_ = from._impl_.ticks_good_almost_late_;
     }
     if (cached_has_bits & 0x04000000u) {
-      _this->_impl_.tick_missratenet_p75_x10_ = from._impl_.tick_missratenet_p75_x10_;
+      _this->_impl_.ticks_fixed_dropped_ = from._impl_.ticks_fixed_dropped_;
     }
     if (cached_has_bits & 0x08000000u) {
-      _this->_impl_.tick_missratenet_p95_x10_ = from._impl_.tick_missratenet_p95_x10_;
+      _this->_impl_.ticks_fixed_late_ = from._impl_.ticks_fixed_late_;
     }
     if (cached_has_bits & 0x10000000u) {
-      _this->_impl_.tick_missratenet_p99_x10_ = from._impl_.tick_missratenet_p99_x10_;
+      _this->_impl_.ticks_bad_dropped_ = from._impl_.ticks_bad_dropped_;
     }
     if (cached_has_bits & 0x20000000u) {
-      _this->_impl_.recvmargin_p1_ = from._impl_.recvmargin_p1_;
+      _this->_impl_.ticks_bad_late_ = from._impl_.ticks_bad_late_;
     }
     if (cached_has_bits & 0x40000000u) {
-      _this->_impl_.recvmargin_p5_ = from._impl_.recvmargin_p5_;
+      _this->_impl_.ticks_bad_other_ = from._impl_.ticks_bad_other_;
     }
     if (cached_has_bits & 0x80000000u) {
-      _this->_impl_.recvmargin_p25_ = from._impl_.recvmargin_p25_;
+      _this->_impl_.tick_missrate_samples_total_ = from._impl_.tick_missrate_samples_total_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   cached_has_bits = from._impl_._has_bits_[1];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      _this->_impl_.recvmargin_p50_ = from._impl_.recvmargin_p50_;
+      _this->_impl_.tick_missrate_samples_perfect_ = from._impl_.tick_missrate_samples_perfect_;
     }
     if (cached_has_bits & 0x00000002u) {
-      _this->_impl_.recvmargin_p75_ = from._impl_.recvmargin_p75_;
+      _this->_impl_.tick_missrate_samples_perfectnet_ = from._impl_.tick_missrate_samples_perfectnet_;
     }
     if (cached_has_bits & 0x00000004u) {
-      _this->_impl_.recvmargin_p95_ = from._impl_.recvmargin_p95_;
+      _this->_impl_.tick_missratenet_p75_x10_ = from._impl_.tick_missratenet_p75_x10_;
     }
     if (cached_has_bits & 0x00000008u) {
-      _this->_impl_.netframe_jitter_p50_ = from._impl_.netframe_jitter_p50_;
+      _this->_impl_.tick_missratenet_p95_x10_ = from._impl_.tick_missratenet_p95_x10_;
     }
     if (cached_has_bits & 0x00000010u) {
-      _this->_impl_.netframe_jitter_p99_ = from._impl_.netframe_jitter_p99_;
+      _this->_impl_.tick_missratenet_p99_x10_ = from._impl_.tick_missratenet_p99_x10_;
     }
     if (cached_has_bits & 0x00000020u) {
-      _this->_impl_.interval_peakjitter_p50_ = from._impl_.interval_peakjitter_p50_;
+      _this->_impl_.recvmargin_p1_ = from._impl_.recvmargin_p1_;
     }
     if (cached_has_bits & 0x00000040u) {
-      _this->_impl_.interval_peakjitter_p95_ = from._impl_.interval_peakjitter_p95_;
+      _this->_impl_.recvmargin_p5_ = from._impl_.recvmargin_p5_;
     }
     if (cached_has_bits & 0x00000080u) {
+      _this->_impl_.recvmargin_p25_ = from._impl_.recvmargin_p25_;
+    }
+    _this->_impl_._has_bits_[1] |= cached_has_bits;
+  }
+  if (cached_has_bits & 0x0000ff00u) {
+    if (cached_has_bits & 0x00000100u) {
+      _this->_impl_.recvmargin_p50_ = from._impl_.recvmargin_p50_;
+    }
+    if (cached_has_bits & 0x00000200u) {
+      _this->_impl_.recvmargin_p75_ = from._impl_.recvmargin_p75_;
+    }
+    if (cached_has_bits & 0x00000400u) {
+      _this->_impl_.recvmargin_p95_ = from._impl_.recvmargin_p95_;
+    }
+    if (cached_has_bits & 0x00000800u) {
+      _this->_impl_.netframe_jitter_p50_ = from._impl_.netframe_jitter_p50_;
+    }
+    if (cached_has_bits & 0x00001000u) {
+      _this->_impl_.netframe_jitter_p99_ = from._impl_.netframe_jitter_p99_;
+    }
+    if (cached_has_bits & 0x00002000u) {
+      _this->_impl_.interval_peakjitter_p50_ = from._impl_.interval_peakjitter_p50_;
+    }
+    if (cached_has_bits & 0x00004000u) {
+      _this->_impl_.interval_peakjitter_p95_ = from._impl_.interval_peakjitter_p95_;
+    }
+    if (cached_has_bits & 0x00008000u) {
       _this->_impl_.packet_misdelivery_rate_p50_x4_ = from._impl_.packet_misdelivery_rate_p50_x4_;
     }
     _this->_impl_._has_bits_[1] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x00000f00u) {
-    if (cached_has_bits & 0x00000100u) {
+  if (cached_has_bits & 0x00ff0000u) {
+    if (cached_has_bits & 0x00010000u) {
       _this->_impl_.packet_misdelivery_rate_p95_x4_ = from._impl_.packet_misdelivery_rate_p95_x4_;
     }
-    if (cached_has_bits & 0x00000200u) {
+    if (cached_has_bits & 0x00020000u) {
       _this->_impl_.net_ping_p5_ = from._impl_.net_ping_p5_;
     }
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00040000u) {
       _this->_impl_.net_ping_p50_ = from._impl_.net_ping_p50_;
     }
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00080000u) {
       _this->_impl_.net_ping_p95_ = from._impl_.net_ping_p95_;
+    }
+    if (cached_has_bits & 0x00100000u) {
+      _this->_impl_.msgproc_usec_p50_ = from._impl_.msgproc_usec_p50_;
+    }
+    if (cached_has_bits & 0x00200000u) {
+      _this->_impl_.msgproc_usec_p95_ = from._impl_.msgproc_usec_p95_;
+    }
+    if (cached_has_bits & 0x00400000u) {
+      _this->_impl_.msgproc_usec_p99_ = from._impl_.msgproc_usec_p99_;
+    }
+    if (cached_has_bits & 0x00800000u) {
+      _this->_impl_.msgproc_usec_max_ = from._impl_.msgproc_usec_max_;
+    }
+    _this->_impl_._has_bits_[1] |= cached_has_bits;
+  }
+  if (cached_has_bits & 0xff000000u) {
+    if (cached_has_bits & 0x01000000u) {
+      _this->_impl_.msgproc_usec_avg_p50_ = from._impl_.msgproc_usec_avg_p50_;
+    }
+    if (cached_has_bits & 0x02000000u) {
+      _this->_impl_.msgproc_usec_avg_p95_ = from._impl_.msgproc_usec_avg_p95_;
+    }
+    if (cached_has_bits & 0x04000000u) {
+      _this->_impl_.msgproc_usec_avg_p99_ = from._impl_.msgproc_usec_avg_p99_;
+    }
+    if (cached_has_bits & 0x08000000u) {
+      _this->_impl_.msgproc_usec_avg_max_ = from._impl_.msgproc_usec_avg_max_;
+    }
+    if (cached_has_bits & 0x10000000u) {
+      _this->_impl_.queuedmsgs_p50_ = from._impl_.queuedmsgs_p50_;
+    }
+    if (cached_has_bits & 0x20000000u) {
+      _this->_impl_.queuedmsgs_p95_ = from._impl_.queuedmsgs_p95_;
+    }
+    if (cached_has_bits & 0x40000000u) {
+      _this->_impl_.queuedmsgs_p99_ = from._impl_.queuedmsgs_p99_;
+    }
+    if (cached_has_bits & 0x80000000u) {
+      _this->_impl_.queuedmsgs_max_ = from._impl_.queuedmsgs_max_;
     }
     _this->_impl_._has_bits_[1] |= cached_has_bits;
   }
@@ -4268,8 +4946,8 @@ void CMsgSource2NetworkFlowQuality::InternalSwap(CMsgSource2NetworkFlowQuality* 
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   swap(_impl_._has_bits_[1], other->_impl_._has_bits_[1]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CMsgSource2NetworkFlowQuality, _impl_.net_ping_p95_)
-      + sizeof(CMsgSource2NetworkFlowQuality::_impl_.net_ping_p95_)
+      PROTOBUF_FIELD_OFFSET(CMsgSource2NetworkFlowQuality, _impl_.queuedmsgs_max_)
+      + sizeof(CMsgSource2NetworkFlowQuality::_impl_.queuedmsgs_max_)
       - PROTOBUF_FIELD_OFFSET(CMsgSource2NetworkFlowQuality, _impl_.bytes_total_)>(
           reinterpret_cast<char*>(&_impl_.bytes_total_),
           reinterpret_cast<char*>(&other->_impl_.bytes_total_));
@@ -4283,31 +4961,29 @@ void CMsgSource2NetworkFlowQuality::InternalSwap(CMsgSource2NetworkFlowQuality* 
 
 // ===================================================================
 
-class CMsgSource2PerfIntervalSample_Tag::_Internal {
+class CMsgSource2FramePerfSample_Tag::_Internal {
  public:
-  using HasBits = decltype(std::declval<CMsgSource2PerfIntervalSample_Tag>()._impl_._has_bits_);
+  using HasBits = decltype(std::declval<CMsgSource2FramePerfSample_Tag>()._impl_._has_bits_);
   static void set_has_tag(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
-  static void set_has_max_value(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
 };
 
-CMsgSource2PerfIntervalSample_Tag::CMsgSource2PerfIntervalSample_Tag(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+CMsgSource2FramePerfSample_Tag::CMsgSource2FramePerfSample_Tag(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:CMsgSource2PerfIntervalSample.Tag)
+  // @@protoc_insertion_point(arena_constructor:CMsgSource2FramePerfSample.Tag)
 }
-CMsgSource2PerfIntervalSample_Tag::CMsgSource2PerfIntervalSample_Tag(const CMsgSource2PerfIntervalSample_Tag& from)
+CMsgSource2FramePerfSample_Tag::CMsgSource2FramePerfSample_Tag(const CMsgSource2FramePerfSample_Tag& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  CMsgSource2PerfIntervalSample_Tag* const _this = this; (void)_this;
+  CMsgSource2FramePerfSample_Tag* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.tag_){}
-    , decltype(_impl_.max_value_){}};
+    , decltype(_impl_.value_){}
+    , /*decltype(_impl_._oneof_case_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.tag_.InitDefault();
@@ -4318,11 +4994,20 @@ CMsgSource2PerfIntervalSample_Tag::CMsgSource2PerfIntervalSample_Tag(const CMsgS
     _this->_impl_.tag_.Set(from._internal_tag(), 
       _this->GetArenaForAllocation());
   }
-  _this->_impl_.max_value_ = from._impl_.max_value_;
-  // @@protoc_insertion_point(copy_constructor:CMsgSource2PerfIntervalSample.Tag)
+  clear_has_value();
+  switch (from.value_case()) {
+    case kValueUint16: {
+      _this->_internal_set_value_uint16(from._internal_value_uint16());
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:CMsgSource2FramePerfSample.Tag)
 }
 
-inline void CMsgSource2PerfIntervalSample_Tag::SharedCtor(
+inline void CMsgSource2FramePerfSample_Tag::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
@@ -4330,16 +5015,18 @@ inline void CMsgSource2PerfIntervalSample_Tag::SharedCtor(
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.tag_){}
-    , decltype(_impl_.max_value_){0u}
+    , decltype(_impl_.value_){}
+    , /*decltype(_impl_._oneof_case_)*/{}
   };
   _impl_.tag_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.tag_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  clear_has_value();
 }
 
-CMsgSource2PerfIntervalSample_Tag::~CMsgSource2PerfIntervalSample_Tag() {
-  // @@protoc_insertion_point(destructor:CMsgSource2PerfIntervalSample.Tag)
+CMsgSource2FramePerfSample_Tag::~CMsgSource2FramePerfSample_Tag() {
+  // @@protoc_insertion_point(destructor:CMsgSource2FramePerfSample.Tag)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -4347,17 +5034,35 @@ CMsgSource2PerfIntervalSample_Tag::~CMsgSource2PerfIntervalSample_Tag() {
   SharedDtor();
 }
 
-inline void CMsgSource2PerfIntervalSample_Tag::SharedDtor() {
+inline void CMsgSource2FramePerfSample_Tag::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.tag_.Destroy();
+  if (has_value()) {
+    clear_value();
+  }
 }
 
-void CMsgSource2PerfIntervalSample_Tag::SetCachedSize(int size) const {
+void CMsgSource2FramePerfSample_Tag::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void CMsgSource2PerfIntervalSample_Tag::Clear() {
-// @@protoc_insertion_point(message_clear_start:CMsgSource2PerfIntervalSample.Tag)
+void CMsgSource2FramePerfSample_Tag::clear_value() {
+// @@protoc_insertion_point(one_of_clear_start:CMsgSource2FramePerfSample.Tag)
+  switch (value_case()) {
+    case kValueUint16: {
+      // No need to clear
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
+  }
+  _impl_._oneof_case_[0] = VALUE_NOT_SET;
+}
+
+
+void CMsgSource2FramePerfSample_Tag::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgSource2FramePerfSample.Tag)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4366,12 +5071,12 @@ void CMsgSource2PerfIntervalSample_Tag::Clear() {
   if (cached_has_bits & 0x00000001u) {
     _impl_.tag_.ClearNonDefaultToEmpty();
   }
-  _impl_.max_value_ = 0u;
+  clear_value();
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* CMsgSource2PerfIntervalSample_Tag::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* CMsgSource2FramePerfSample_Tag::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
@@ -4385,16 +5090,15 @@ const char* CMsgSource2PerfIntervalSample_Tag::_InternalParse(const char* ptr, :
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           #ifndef NDEBUG
-          ::_pbi::VerifyUTF8(str, "CMsgSource2PerfIntervalSample.Tag.tag");
+          ::_pbi::VerifyUTF8(str, "CMsgSource2FramePerfSample.Tag.tag");
           #endif  // !NDEBUG
         } else
           goto handle_unusual;
         continue;
-      // optional uint32 max_value = 2;
+      // uint32 value_uint16 = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _Internal::set_has_max_value(&has_bits);
-          _impl_.max_value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _internal_set_value_uint16(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4423,9 +5127,9 @@ failure:
 #undef CHK_
 }
 
-uint8_t* CMsgSource2PerfIntervalSample_Tag::_InternalSerialize(
+uint8_t* CMsgSource2FramePerfSample_Tag::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:CMsgSource2PerfIntervalSample.Tag)
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgSource2FramePerfSample.Tag)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4435,91 +5139,96 @@ uint8_t* CMsgSource2PerfIntervalSample_Tag::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_tag().data(), static_cast<int>(this->_internal_tag().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "CMsgSource2PerfIntervalSample.Tag.tag");
+      "CMsgSource2FramePerfSample.Tag.tag");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_tag(), target);
   }
 
-  // optional uint32 max_value = 2;
-  if (cached_has_bits & 0x00000002u) {
+  // uint32 value_uint16 = 2;
+  if (_internal_has_value_uint16()) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_max_value(), target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_value_uint16(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:CMsgSource2PerfIntervalSample.Tag)
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgSource2FramePerfSample.Tag)
   return target;
 }
 
-size_t CMsgSource2PerfIntervalSample_Tag::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:CMsgSource2PerfIntervalSample.Tag)
+size_t CMsgSource2FramePerfSample_Tag::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgSource2FramePerfSample.Tag)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // optional string tag = 1;
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    // optional string tag = 1;
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_tag());
-    }
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_tag());
+  }
 
-    // optional uint32 max_value = 2;
-    if (cached_has_bits & 0x00000002u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_max_value());
+  switch (value_case()) {
+    // uint32 value_uint16 = 2;
+    case kValueUint16: {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_value_uint16());
+      break;
     }
-
+    case VALUE_NOT_SET: {
+      break;
+    }
   }
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgSource2PerfIntervalSample_Tag::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgSource2FramePerfSample_Tag::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    CMsgSource2PerfIntervalSample_Tag::MergeImpl
+    CMsgSource2FramePerfSample_Tag::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgSource2PerfIntervalSample_Tag::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgSource2FramePerfSample_Tag::GetClassData() const { return &_class_data_; }
 
 
-void CMsgSource2PerfIntervalSample_Tag::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<CMsgSource2PerfIntervalSample_Tag*>(&to_msg);
-  auto& from = static_cast<const CMsgSource2PerfIntervalSample_Tag&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgSource2PerfIntervalSample.Tag)
+void CMsgSource2FramePerfSample_Tag::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgSource2FramePerfSample_Tag*>(&to_msg);
+  auto& from = static_cast<const CMsgSource2FramePerfSample_Tag&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgSource2FramePerfSample.Tag)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_internal_set_tag(from._internal_tag());
+  if (from._internal_has_tag()) {
+    _this->_internal_set_tag(from._internal_tag());
+  }
+  switch (from.value_case()) {
+    case kValueUint16: {
+      _this->_internal_set_value_uint16(from._internal_value_uint16());
+      break;
     }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_impl_.max_value_ = from._impl_.max_value_;
+    case VALUE_NOT_SET: {
+      break;
     }
-    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void CMsgSource2PerfIntervalSample_Tag::CopyFrom(const CMsgSource2PerfIntervalSample_Tag& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:CMsgSource2PerfIntervalSample.Tag)
+void CMsgSource2FramePerfSample_Tag::CopyFrom(const CMsgSource2FramePerfSample_Tag& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgSource2FramePerfSample.Tag)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool CMsgSource2PerfIntervalSample_Tag::IsInitialized() const {
+bool CMsgSource2FramePerfSample_Tag::IsInitialized() const {
   return true;
 }
 
-void CMsgSource2PerfIntervalSample_Tag::InternalSwap(CMsgSource2PerfIntervalSample_Tag* other) {
+void CMsgSource2FramePerfSample_Tag::InternalSwap(CMsgSource2FramePerfSample_Tag* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
@@ -4529,10 +5238,11 @@ void CMsgSource2PerfIntervalSample_Tag::InternalSwap(CMsgSource2PerfIntervalSamp
       &_impl_.tag_, lhs_arena,
       &other->_impl_.tag_, rhs_arena
   );
-  swap(_impl_.max_value_, other->_impl_.max_value_);
+  swap(_impl_.value_, other->_impl_.value_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata CMsgSource2PerfIntervalSample_Tag::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgSource2FramePerfSample_Tag::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_source2_5fsteam_5fstats_2eproto_getter, &descriptor_table_source2_5fsteam_5fstats_2eproto_once,
       file_level_metadata_source2_5fsteam_5fstats_2eproto[4]);
@@ -4540,53 +5250,41 @@ void CMsgSource2PerfIntervalSample_Tag::InternalSwap(CMsgSource2PerfIntervalSamp
 
 // ===================================================================
 
-class CMsgSource2PerfIntervalSample::_Internal {
+class CMsgSource2FramePerfSample::_Internal {
  public:
-  using HasBits = decltype(std::declval<CMsgSource2PerfIntervalSample>()._impl_._has_bits_);
-  static void set_has_frame_time_max_ms(HasBits* has_bits) {
+  using HasBits = decltype(std::declval<CMsgSource2FramePerfSample>()._impl_._has_bits_);
+  static void set_has_frame_time_ms(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
-  static void set_has_frame_time_avg_ms(HasBits* has_bits) {
+  static void set_has_gpu_time_ms(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
-  }
-  static void set_has_frame_time_min_ms(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_frame_count(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static void set_has_frame_time_total_ms(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
   }
 };
 
-CMsgSource2PerfIntervalSample::CMsgSource2PerfIntervalSample(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+CMsgSource2FramePerfSample::CMsgSource2FramePerfSample(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:CMsgSource2PerfIntervalSample)
+  // @@protoc_insertion_point(arena_constructor:CMsgSource2FramePerfSample)
 }
-CMsgSource2PerfIntervalSample::CMsgSource2PerfIntervalSample(const CMsgSource2PerfIntervalSample& from)
+CMsgSource2FramePerfSample::CMsgSource2FramePerfSample(const CMsgSource2FramePerfSample& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  CMsgSource2PerfIntervalSample* const _this = this; (void)_this;
+  CMsgSource2FramePerfSample* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.tags_){from._impl_.tags_}
-    , decltype(_impl_.frame_time_max_ms_){}
-    , decltype(_impl_.frame_time_avg_ms_){}
-    , decltype(_impl_.frame_time_min_ms_){}
-    , decltype(_impl_.frame_count_){}
-    , decltype(_impl_.frame_time_total_ms_){}};
+    , decltype(_impl_.frame_time_ms_){}
+    , decltype(_impl_.gpu_time_ms_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.frame_time_max_ms_, &from._impl_.frame_time_max_ms_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.frame_time_total_ms_) -
-    reinterpret_cast<char*>(&_impl_.frame_time_max_ms_)) + sizeof(_impl_.frame_time_total_ms_));
-  // @@protoc_insertion_point(copy_constructor:CMsgSource2PerfIntervalSample)
+  ::memcpy(&_impl_.frame_time_ms_, &from._impl_.frame_time_ms_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.gpu_time_ms_) -
+    reinterpret_cast<char*>(&_impl_.frame_time_ms_)) + sizeof(_impl_.gpu_time_ms_));
+  // @@protoc_insertion_point(copy_constructor:CMsgSource2FramePerfSample)
 }
 
-inline void CMsgSource2PerfIntervalSample::SharedCtor(
+inline void CMsgSource2FramePerfSample::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
@@ -4594,16 +5292,13 @@ inline void CMsgSource2PerfIntervalSample::SharedCtor(
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.tags_){arena}
-    , decltype(_impl_.frame_time_max_ms_){0}
-    , decltype(_impl_.frame_time_avg_ms_){0}
-    , decltype(_impl_.frame_time_min_ms_){0}
-    , decltype(_impl_.frame_count_){0}
-    , decltype(_impl_.frame_time_total_ms_){0}
+    , decltype(_impl_.frame_time_ms_){0}
+    , decltype(_impl_.gpu_time_ms_){0}
   };
 }
 
-CMsgSource2PerfIntervalSample::~CMsgSource2PerfIntervalSample() {
-  // @@protoc_insertion_point(destructor:CMsgSource2PerfIntervalSample)
+CMsgSource2FramePerfSample::~CMsgSource2FramePerfSample() {
+  // @@protoc_insertion_point(destructor:CMsgSource2FramePerfSample)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -4611,85 +5306,58 @@ CMsgSource2PerfIntervalSample::~CMsgSource2PerfIntervalSample() {
   SharedDtor();
 }
 
-inline void CMsgSource2PerfIntervalSample::SharedDtor() {
+inline void CMsgSource2FramePerfSample::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.tags_.~RepeatedPtrField();
 }
 
-void CMsgSource2PerfIntervalSample::SetCachedSize(int size) const {
+void CMsgSource2FramePerfSample::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void CMsgSource2PerfIntervalSample::Clear() {
-// @@protoc_insertion_point(message_clear_start:CMsgSource2PerfIntervalSample)
+void CMsgSource2FramePerfSample::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgSource2FramePerfSample)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.tags_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
-    ::memset(&_impl_.frame_time_max_ms_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.frame_time_total_ms_) -
-        reinterpret_cast<char*>(&_impl_.frame_time_max_ms_)) + sizeof(_impl_.frame_time_total_ms_));
+  if (cached_has_bits & 0x00000003u) {
+    ::memset(&_impl_.frame_time_ms_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.gpu_time_ms_) -
+        reinterpret_cast<char*>(&_impl_.frame_time_ms_)) + sizeof(_impl_.gpu_time_ms_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* CMsgSource2PerfIntervalSample::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* CMsgSource2FramePerfSample::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // optional float frame_time_max_ms = 1;
+      // optional float frame_time_ms = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
-          _Internal::set_has_frame_time_max_ms(&has_bits);
-          _impl_.frame_time_max_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          _Internal::set_has_frame_time_ms(&has_bits);
+          _impl_.frame_time_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
         continue;
-      // optional float frame_time_avg_ms = 2;
+      // optional float gpu_time_ms = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
-          _Internal::set_has_frame_time_avg_ms(&has_bits);
-          _impl_.frame_time_avg_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          _Internal::set_has_gpu_time_ms(&has_bits);
+          _impl_.gpu_time_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
           ptr += sizeof(float);
         } else
           goto handle_unusual;
         continue;
-      // optional float frame_time_min_ms = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _Internal::set_has_frame_time_min_ms(&has_bits);
-          _impl_.frame_time_min_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional int32 frame_count = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _Internal::set_has_frame_count(&has_bits);
-          _impl_.frame_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional float frame_time_total_ms = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _Internal::set_has_frame_time_total_ms(&has_bits);
-          _impl_.frame_time_total_ms_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .CMsgSource2PerfIntervalSample.Tag tags = 6;
+      // repeated .CMsgSource2FramePerfSample.Tag tags = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           ptr -= 1;
@@ -4726,44 +5394,26 @@ failure:
 #undef CHK_
 }
 
-uint8_t* CMsgSource2PerfIntervalSample::_InternalSerialize(
+uint8_t* CMsgSource2FramePerfSample::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:CMsgSource2PerfIntervalSample)
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgSource2FramePerfSample)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  // optional float frame_time_max_ms = 1;
+  // optional float frame_time_ms = 1;
   if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_frame_time_max_ms(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_frame_time_ms(), target);
   }
 
-  // optional float frame_time_avg_ms = 2;
+  // optional float gpu_time_ms = 2;
   if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_frame_time_avg_ms(), target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_gpu_time_ms(), target);
   }
 
-  // optional float frame_time_min_ms = 3;
-  if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_frame_time_min_ms(), target);
-  }
-
-  // optional int32 frame_count = 4;
-  if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_frame_count(), target);
-  }
-
-  // optional float frame_time_total_ms = 5;
-  if (cached_has_bits & 0x00000010u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_frame_time_total_ms(), target);
-  }
-
-  // repeated .CMsgSource2PerfIntervalSample.Tag tags = 6;
+  // repeated .CMsgSource2FramePerfSample.Tag tags = 6;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_tags_size()); i < n; i++) {
     const auto& repfield = this->_internal_tags(i);
@@ -4775,19 +5425,19 @@ uint8_t* CMsgSource2PerfIntervalSample::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:CMsgSource2PerfIntervalSample)
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgSource2FramePerfSample)
   return target;
 }
 
-size_t CMsgSource2PerfIntervalSample::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:CMsgSource2PerfIntervalSample)
+size_t CMsgSource2FramePerfSample::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgSource2FramePerfSample)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .CMsgSource2PerfIntervalSample.Tag tags = 6;
+  // repeated .CMsgSource2FramePerfSample.Tag tags = 6;
   total_size += 1UL * this->_internal_tags_size();
   for (const auto& msg : this->_impl_.tags_) {
     total_size +=
@@ -4795,29 +5445,14 @@ size_t CMsgSource2PerfIntervalSample::ByteSizeLong() const {
   }
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
-    // optional float frame_time_max_ms = 1;
+  if (cached_has_bits & 0x00000003u) {
+    // optional float frame_time_ms = 1;
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 + 4;
     }
 
-    // optional float frame_time_avg_ms = 2;
+    // optional float gpu_time_ms = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 + 4;
-    }
-
-    // optional float frame_time_min_ms = 3;
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 + 4;
-    }
-
-    // optional int32 frame_count = 4;
-    if (cached_has_bits & 0x00000008u) {
-      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_frame_count());
-    }
-
-    // optional float frame_time_total_ms = 5;
-    if (cached_has_bits & 0x00000010u) {
       total_size += 1 + 4;
     }
 
@@ -4825,69 +5460,60 @@ size_t CMsgSource2PerfIntervalSample::ByteSizeLong() const {
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgSource2PerfIntervalSample::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgSource2FramePerfSample::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    CMsgSource2PerfIntervalSample::MergeImpl
+    CMsgSource2FramePerfSample::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgSource2PerfIntervalSample::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgSource2FramePerfSample::GetClassData() const { return &_class_data_; }
 
 
-void CMsgSource2PerfIntervalSample::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<CMsgSource2PerfIntervalSample*>(&to_msg);
-  auto& from = static_cast<const CMsgSource2PerfIntervalSample&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgSource2PerfIntervalSample)
+void CMsgSource2FramePerfSample::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgSource2FramePerfSample*>(&to_msg);
+  auto& from = static_cast<const CMsgSource2FramePerfSample&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgSource2FramePerfSample)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   _this->_impl_.tags_.MergeFrom(from._impl_.tags_);
   cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      _this->_impl_.frame_time_max_ms_ = from._impl_.frame_time_max_ms_;
+      _this->_impl_.frame_time_ms_ = from._impl_.frame_time_ms_;
     }
     if (cached_has_bits & 0x00000002u) {
-      _this->_impl_.frame_time_avg_ms_ = from._impl_.frame_time_avg_ms_;
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _this->_impl_.frame_time_min_ms_ = from._impl_.frame_time_min_ms_;
-    }
-    if (cached_has_bits & 0x00000008u) {
-      _this->_impl_.frame_count_ = from._impl_.frame_count_;
-    }
-    if (cached_has_bits & 0x00000010u) {
-      _this->_impl_.frame_time_total_ms_ = from._impl_.frame_time_total_ms_;
+      _this->_impl_.gpu_time_ms_ = from._impl_.gpu_time_ms_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void CMsgSource2PerfIntervalSample::CopyFrom(const CMsgSource2PerfIntervalSample& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:CMsgSource2PerfIntervalSample)
+void CMsgSource2FramePerfSample::CopyFrom(const CMsgSource2FramePerfSample& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgSource2FramePerfSample)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool CMsgSource2PerfIntervalSample::IsInitialized() const {
+bool CMsgSource2FramePerfSample::IsInitialized() const {
   return true;
 }
 
-void CMsgSource2PerfIntervalSample::InternalSwap(CMsgSource2PerfIntervalSample* other) {
+void CMsgSource2FramePerfSample::InternalSwap(CMsgSource2FramePerfSample* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.tags_.InternalSwap(&other->_impl_.tags_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CMsgSource2PerfIntervalSample, _impl_.frame_time_total_ms_)
-      + sizeof(CMsgSource2PerfIntervalSample::_impl_.frame_time_total_ms_)
-      - PROTOBUF_FIELD_OFFSET(CMsgSource2PerfIntervalSample, _impl_.frame_time_max_ms_)>(
-          reinterpret_cast<char*>(&_impl_.frame_time_max_ms_),
-          reinterpret_cast<char*>(&other->_impl_.frame_time_max_ms_));
+      PROTOBUF_FIELD_OFFSET(CMsgSource2FramePerfSample, _impl_.gpu_time_ms_)
+      + sizeof(CMsgSource2FramePerfSample::_impl_.gpu_time_ms_)
+      - PROTOBUF_FIELD_OFFSET(CMsgSource2FramePerfSample, _impl_.frame_time_ms_)>(
+          reinterpret_cast<char*>(&_impl_.frame_time_ms_),
+          reinterpret_cast<char*>(&other->_impl_.frame_time_ms_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata CMsgSource2PerfIntervalSample::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgSource2FramePerfSample::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_source2_5fsteam_5fstats_2eproto_getter, &descriptor_table_source2_5fsteam_5fstats_2eproto_once,
       file_level_metadata_source2_5fsteam_5fstats_2eproto[5]);
@@ -5108,16 +5734,16 @@ const char* CSource2Metrics_MatchPerfSummary_Notification_Client::_InternalParse
         } else
           goto handle_unusual;
         continue;
-      // repeated .CMsgSource2PerfIntervalSample perf_samples = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
+      // repeated .CMsgSource2FramePerfSample perf_samples = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_perf_samples(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<90>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<98>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -5192,12 +5818,12 @@ uint8_t* CSource2Metrics_MatchPerfSummary_Notification_Client::_InternalSerializ
     target = ::_pbi::WireFormatLite::WriteFixed64ToArray(10, this->_internal_steamid(), target);
   }
 
-  // repeated .CMsgSource2PerfIntervalSample perf_samples = 11;
+  // repeated .CMsgSource2FramePerfSample perf_samples = 12;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_perf_samples_size()); i < n; i++) {
     const auto& repfield = this->_internal_perf_samples(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(11, repfield, repfield.GetCachedSize(), target, stream);
+        InternalWriteMessage(12, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5216,7 +5842,7 @@ size_t CSource2Metrics_MatchPerfSummary_Notification_Client::ByteSizeLong() cons
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .CMsgSource2PerfIntervalSample perf_samples = 11;
+  // repeated .CMsgSource2FramePerfSample perf_samples = 12;
   total_size += 1UL * this->_internal_perf_samples_size();
   for (const auto& msg : this->_impl_.perf_samples_) {
     total_size +=
@@ -8864,13 +9490,13 @@ template<> PROTOBUF_NOINLINE ::CMsgSource2NetworkFlowQuality*
 Arena::CreateMaybeMessage< ::CMsgSource2NetworkFlowQuality >(Arena* arena) {
   return Arena::CreateMessageInternal< ::CMsgSource2NetworkFlowQuality >(arena);
 }
-template<> PROTOBUF_NOINLINE ::CMsgSource2PerfIntervalSample_Tag*
-Arena::CreateMaybeMessage< ::CMsgSource2PerfIntervalSample_Tag >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::CMsgSource2PerfIntervalSample_Tag >(arena);
+template<> PROTOBUF_NOINLINE ::CMsgSource2FramePerfSample_Tag*
+Arena::CreateMaybeMessage< ::CMsgSource2FramePerfSample_Tag >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgSource2FramePerfSample_Tag >(arena);
 }
-template<> PROTOBUF_NOINLINE ::CMsgSource2PerfIntervalSample*
-Arena::CreateMaybeMessage< ::CMsgSource2PerfIntervalSample >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::CMsgSource2PerfIntervalSample >(arena);
+template<> PROTOBUF_NOINLINE ::CMsgSource2FramePerfSample*
+Arena::CreateMaybeMessage< ::CMsgSource2FramePerfSample >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgSource2FramePerfSample >(arena);
 }
 template<> PROTOBUF_NOINLINE ::CSource2Metrics_MatchPerfSummary_Notification_Client*
 Arena::CreateMaybeMessage< ::CSource2Metrics_MatchPerfSummary_Notification_Client >(Arena* arena) {
